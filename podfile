@@ -1,0 +1,3 @@
+target 'ANKHupu' do
+   pod 'AFNetworking'
+end
