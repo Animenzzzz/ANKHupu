@@ -12,7 +12,7 @@
 
 @interface ANKViewController ()
 
-@property (nonatomic, strong) ANKNavigationView *navigationView;
+
 
 @end
 

@@ -7,8 +7,9 @@
 //
 
 #import "NewsViewController.h"
+#import "ANKNavigationViewSearch.h"
 
-@interface NewsViewController ()
+@interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationView.searchDelegate = self;
 }
 
 
@@ -31,7 +33,15 @@
 #pragma mark UITableViewDataSource
 #pragma mark UITableViewDelegate
 
-#pragma mark - Custom protocol 
+#pragma mark - Custom protocol   ANKNavigationViewSearchDelegate
+
+- (void)searchStatuBarClick{
+    NSLog(@"");
+}
+- (void)issueClick{
+    NSLog(@"");
+    
+}
 #pragma mark - Custom functions
 
 #pragma mark - Notification(addNotificationaObserver)

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ANKViewController : UIViewController
 
+@property (nonatomic, strong) ANKNavigationView *navigationView;
+
 - (instancetype)initWithNavigationViewType:(NavigationViewType)naviType;
 
 @end

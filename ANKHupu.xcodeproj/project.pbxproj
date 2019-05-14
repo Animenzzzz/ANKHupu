@@ -17,6 +17,8 @@
 		4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */; };
 		4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEA228AD16B0091E341 /* NewsViewController.m */; };
 		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
+		4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */; };
+		4AE5F701228AF15500BFC9C8 /* ANKNavigationViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -1992,6 +1994,9 @@
 		4ABDCAEA228AD16B0091E341 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		4ABDCAEE228AD2070091E341 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		4ABDCAEF228AD2070091E341 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4AE5F6FD228AF13F00BFC9C8 /* ANKNavigationViewTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewTitle.h; sourceTree = "<group>"; };
+		4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewTitle.m; sourceTree = "<group>"; };
+		4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewTitle.xib; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3975,6 +3980,9 @@
 				4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */,
 				4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */,
 				4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */,
+				4AE5F6FD228AF13F00BFC9C8 /* ANKNavigationViewTitle.h */,
+				4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */,
+				4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */,
 			);
 			path = ANKNavigationView;
 			sourceTree = "<group>";
@@ -6942,6 +6950,7 @@
 				4AF66D03228A64D100DFC1AF /* logo14@2x.png in Resources */,
 				4AF66A15228A64D000DFC1AF /* grayArrow.png in Resources */,
 				4AF66FF3228A64D200DFC1AF /* tab_analysis_btn_1@2x.png in Resources */,
+				4AE5F701228AF15500BFC9C8 /* ANKNavigationViewTitle.xib in Resources */,
 				4AF66DB4228A64D100DFC1AF /* vote_vote_icon_disable@3x.png in Resources */,
 				4AF66F10228A64D200DFC1AF /* replay_more_bg_1@3x.png in Resources */,
 				4AF66CB5228A64D100DFC1AF /* logo3@3x.png in Resources */,
@@ -8134,6 +8143,7 @@
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
+				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,

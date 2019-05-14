@@ -26,11 +26,11 @@
 
 
 - (void)searchViewTap{
-    NSLog(@"");
+    [self super_searchStatuBarClick];
 }
 
 - (IBAction)commentClick:(id)sender {
-    NSLog(@"");
+    [self super_issueClick];
 }
 
 @end
