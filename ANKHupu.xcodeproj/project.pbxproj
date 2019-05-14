@@ -15,6 +15,8 @@
 		4ABDCADF228ABD780091E341 /* ANKNavigationViewSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */; };
 		4ABDCAE3228AC7980091E341 /* ANKNavigationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */; };
 		4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */; };
+		4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEA228AD16B0091E341 /* NewsViewController.m */; };
+		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -1986,6 +1988,10 @@
 		4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewFactory.m; sourceTree = "<group>"; };
 		4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewSearch.h; sourceTree = "<group>"; };
 		4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewSearch.m; sourceTree = "<group>"; };
+		4ABDCAE9228AD16B0091E341 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		4ABDCAEA228AD16B0091E341 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		4ABDCAEE228AD2070091E341 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		4ABDCAEF228AD2070091E341 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3973,6 +3979,56 @@
 			path = ANKNavigationView;
 			sourceTree = "<group>";
 		};
+		4ABDCAE7228AD1210091E341 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
+				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
+				4ABDCAED228AD1AE0091E341 /* View */,
+				4ABDCAEC228AD1A70091E341 /* Model */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		4ABDCAE8228AD12C0091E341 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDCAEE228AD2070091E341 /* GameViewController.h */,
+				4ABDCAEF228AD2070091E341 /* GameViewController.m */,
+				4ABDCAF1228AD2480091E341 /* View */,
+				4ABDCAF2228AD24D0091E341 /* Model */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		4ABDCAEC228AD1A70091E341 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ABDCAED228AD1AE0091E341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4ABDCAF1228AD2480091E341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4ABDCAF2228AD24D0091E341 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4AF660C922897F0500DFC1AF = {
 			isa = PBXGroup;
 			children = (
@@ -3994,8 +4050,10 @@
 		4AF660D422897F0500DFC1AF /* ANKHupu */ = {
 			isa = PBXGroup;
 			children = (
-				4AF660EB22897F2800DFC1AF /* Third */,
+				4ABDCAE8228AD12C0091E341 /* Game */,
+				4ABDCAE7228AD1210091E341 /* News */,
 				4AF660EE22897F3700DFC1AF /* Base */,
+				4AF660EB22897F2800DFC1AF /* Third */,
 				4AF660F9228A64BE00DFC1AF /* HupuRes */,
 				4AF660D522897F0500DFC1AF /* AppDelegate.h */,
 				4AF660D622897F0500DFC1AF /* AppDelegate.m */,
@@ -8074,7 +8132,9 @@
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
+				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
+				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,

@@ -9,6 +9,9 @@
 #import "ANKTabBarController.h"
 #import "ANKViewController.h"
 #import "ANKNavigationController.h"
+
+#import "NewsViewController.h"
+#import "GameViewController.h"
 @interface ANKTabBarController ()
 
 @end
@@ -19,14 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    ANKViewController *news = [[ANKViewController alloc] initWithNavigationViewType:NavigationViewSearch];
+    NewsViewController *news = [[NewsViewController alloc] initWithNavigationViewType:NavigationViewSearch];
     [self setTabBarStyleWithCon:news seletImage:@"tab_news_btn_1" normlImage:@"tab_news_btn_night"];
-    ANKNavigationController *nav = [[ANKNavigationController alloc] initWithRootViewController:news];
-//    news.navigationView.naviType = NavigationViewSearch;
+    ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
     
-    ANKViewController *news1 = [ANKViewController new];
-    [self setTabBarStyleWithCon:news1 seletImage:@"tab_games1_btn_select" normlImage:@"tab_games1_btn_normal_night"];
-    ANKNavigationController *nav1 = [[ANKNavigationController alloc] initWithRootViewController:news1];
+    GameViewController *game = [GameViewController new];
+    [self setTabBarStyleWithCon:game seletImage:@"tab_games1_btn_select" normlImage:@"tab_games1_btn_normal_night"];
+    ANKNavigationController *gameNav = [[ANKNavigationController alloc] initWithRootViewController:game];
    
     ANKViewController *news2 = [ANKViewController new];
     [self setTabBarStyleWithCon:news2 seletImage:@"tab_bbs_btn_1" normlImage:@"tab_bbs_btn_night"];
@@ -40,7 +42,7 @@
     [self setTabBarStyleWithCon:news4 seletImage:@"tab_more_btn_1" normlImage:@"tab_more_btn_night"];
     ANKNavigationController *nav4 = [[ANKNavigationController alloc] initWithRootViewController:news4];
 
-    self.viewControllers = @[nav,nav1,nav2,nav3,nav4];
+    self.viewControllers = @[newNav,gameNav,nav2,nav3,nav4];
     
 }
 
