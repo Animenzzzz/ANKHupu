@@ -1,3 +1,4 @@
 target 'ANKHupu' do
    pod 'AFNetworking'
+   pod 'Masonry'
 end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ANKTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ANKTabBarController *tab = [[ANKTabBarController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tab];
+    [nav setNavigationBarHidden:YES];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
