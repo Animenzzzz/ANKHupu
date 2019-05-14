@@ -23,4 +23,7 @@
 
 #endif
 
+
+//PS: 1.改成public前记得把 公司开发证书信息去掉
+
 #endif /* AnkHupuPrefixHeader_pch */

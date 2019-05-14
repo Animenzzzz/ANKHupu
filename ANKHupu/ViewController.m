@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ANKHttpServer.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [ANKHttpServer getNBAInfoWithParams:nil success:^(NSDictionary * data) {
+        NSLog(@"");
+    } failure:^(NSDictionary * data, NSError * error) {
+        NSLog(@"");
+    }];
 }
 
 

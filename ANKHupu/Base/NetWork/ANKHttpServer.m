@@ -110,6 +110,7 @@
     [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *data = (NSDictionary *)responseObject;
+        ANKLog(@"成功请求到数据:%@",data);
         successBlock(data);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
