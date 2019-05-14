@@ -8,7 +8,11 @@
 
 #import "ANKViewController.h"
 #import "Masonry.h"
+
+
 @interface ANKViewController ()
+
+@property (nonatomic, strong) ANKNavigationView *navigationView;
 
 @end
 
@@ -22,26 +26,33 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    _navigationView = [[ANKNavigationView alloc] init];
     [self.view addSubview:_navigationView];
     
     [_navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view);
         make.top.equalTo(self.view);
         make.right.equalTo(self.view);
-        make.height.mas_equalTo(44);
+        make.height.mas_equalTo(kNavigationBarHeight);
     }];
 
 }
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
 }
 
-
 #pragma mark - Init（initVars initViews）
+
+- (instancetype)initWithNavigationViewType:(NavigationViewType)naviType{
+    self = [super init];
+    if (self) {
+        _navigationView = [ANKNavigationViewFactory navigationViewFactory:naviType];
+    }
+    return self;
+}
+
 #pragma mark - Layout Subviews（layoutSubview）
 - (void)loadView{
     [super loadView];

@@ -1,14 +1,16 @@
 //
-//  ANKNavigationView.h
+//  ANKNavigationViewFactory.h
 //  ANKHupu
 //
 //  Created by Animenzzz on 2019/5/14.
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "ANKNavigationView.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 
 typedef NS_ENUM(NSInteger,NavigationViewType) {
     NavigationViewSearch = 1, //首页的那个红色的带搜索的view
@@ -16,9 +18,9 @@ typedef NS_ENUM(NSInteger,NavigationViewType) {
     NavigationViewCrystal = 3, //专题类的，透明的，也带有返回和分享
 };
 
-@interface ANKNavigationView : UIView
+@interface ANKNavigationViewFactory : NSObject
 
-@property (nonatomic, assign) NavigationViewType naviType;
++ (ANKNavigationView *)navigationViewFactory:(NavigationViewType)type;
 
 @end
 

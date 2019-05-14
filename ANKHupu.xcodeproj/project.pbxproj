@@ -11,6 +11,10 @@
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
 		4ABDCAD3228A8D4C0091E341 /* ANKNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */; };
 		4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */; };
+		4ABDCADB228AB52D0091E341 /* search_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABDCADA228AB52D0091E341 /* search_bg.png */; };
+		4ABDCADF228ABD780091E341 /* ANKNavigationViewSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */; };
+		4ABDCAE3228AC7980091E341 /* ANKNavigationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */; };
+		4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -1975,6 +1979,13 @@
 		4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationView.m; sourceTree = "<group>"; };
 		4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationController.h; sourceTree = "<group>"; };
 		4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationController.m; sourceTree = "<group>"; };
+		4ABDCAD9228A999E0091E341 /* ANKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKMacro.h; sourceTree = "<group>"; };
+		4ABDCADA228AB52D0091E341 /* search_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bg.png; sourceTree = "<group>"; };
+		4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewSearch.xib; sourceTree = "<group>"; };
+		4ABDCAE1228AC7980091E341 /* ANKNavigationViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewFactory.h; sourceTree = "<group>"; };
+		4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewFactory.m; sourceTree = "<group>"; };
+		4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewSearch.h; sourceTree = "<group>"; };
+		4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewSearch.m; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3948,6 +3959,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ABDCAE0228AC7570091E341 /* ANKNavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDCAE1228AC7980091E341 /* ANKNavigationViewFactory.h */,
+				4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */,
+				4ABDCAD1228A8D4C0091E341 /* ANKNavigationView.h */,
+				4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */,
+				4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */,
+				4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */,
+				4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */,
+			);
+			path = ANKNavigationView;
+			sourceTree = "<group>";
+		};
 		4AF660C922897F0500DFC1AF = {
 			isa = PBXGroup;
 			children = (
@@ -4014,6 +4039,7 @@
 			isa = PBXGroup;
 			children = (
 				4AF660F322897F3700DFC1AF /* ANKHttpMacro.h */,
+				4ABDCAD9228A999E0091E341 /* ANKMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -4021,6 +4047,7 @@
 		4AF660F9228A64BE00DFC1AF /* HupuRes */ = {
 			isa = PBXGroup;
 			children = (
+				4ABDCADA228AB52D0091E341 /* search_bg.png */,
 				4AF665B7228A64C600DFC1AF /* 0_ic@2x.png */,
 				4AF665DB228A64C600DFC1AF /* 0_ic@3x.png */,
 				4AF6675B228A64CB00DFC1AF /* 1_ic@2x.png */,
@@ -5973,8 +6000,7 @@
 		4AF6702C228A66A200DFC1AF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4ABDCAD1228A8D4C0091E341 /* ANKNavigationView.h */,
-				4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */,
+				4ABDCAE0228AC7570091E341 /* ANKNavigationView */,
 				4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */,
 				4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */,
 				4ABDCACE228A8CB60091E341 /* ANKViewController.h */,
@@ -6278,6 +6304,7 @@
 				4AF66D86228A64D100DFC1AF /* me_message_choose_btn@2x.png in Resources */,
 				4AF66C10228A64D100DFC1AF /* host_ic_night@2x.png in Resources */,
 				4AF66FEA228A64D200DFC1AF /* replay_more_bg_1_night@2x.png in Resources */,
+				4ABDCADF228ABD780091E341 /* ANKNavigationViewSearch.xib in Resources */,
 				4AF66BBF228A64D100DFC1AF /* weixin@2x.png in Resources */,
 				4AF66980228A64D000DFC1AF /* hpgm_battle_s_ic@3x.png in Resources */,
 				4AF66BF9228A64D100DFC1AF /* left_more_ic@2x.png in Resources */,
@@ -7314,6 +7341,7 @@
 				4AF66F02228A64D200DFC1AF /* hpgm_home_assist_ic_night@2x.png in Resources */,
 				4AF66C18228A64D100DFC1AF /* hupu_coin_ic@3x.png in Resources */,
 				4AF66C85228A64D100DFC1AF /* logo1@2x.png in Resources */,
+				4ABDCADB228AB52D0091E341 /* search_bg.png in Resources */,
 				4AF66997228A64D000DFC1AF /* vode_delete_icon@3x.png in Resources */,
 				4AF66CE8228A64D100DFC1AF /* recharge_btn_bg_h_1_night.png in Resources */,
 				4AF668B7228A64D000DFC1AF /* search_del_btn_1_night@3x.png in Resources */,
@@ -8049,6 +8077,8 @@
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
+				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
+				4ABDCAE3228AC7980091E341 /* ANKNavigationViewFactory.m in Sources */,
 				4ABDCAD3228A8D4C0091E341 /* ANKNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

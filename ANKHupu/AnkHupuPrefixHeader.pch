@@ -26,4 +26,8 @@
 
 //PS: 1.改成public前记得把 公司开发证书信息去掉
 
+
+#import "ANKHttpMacro.h"
+#import "ANKMacro.h"
+
 #endif /* AnkHupuPrefixHeader_pch */
