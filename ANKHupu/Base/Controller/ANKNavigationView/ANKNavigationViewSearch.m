@@ -11,6 +11,7 @@
 @interface ANKNavigationViewSearch()
 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet CWCalendarLabel *cwHotSearchLab;
 
 @end
 
@@ -26,11 +27,11 @@
 
 
 - (void)searchViewTap{
-    [self super_searchStatuBarClick];
+//    [self super_searchStatuBarClick];
 }
 
 - (IBAction)commentClick:(id)sender {
-    [self super_issueClick];
+//    [self super_issueClick];
 }
 
 @end

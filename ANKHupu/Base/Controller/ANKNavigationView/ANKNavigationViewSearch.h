@@ -6,11 +6,15 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "ANKNavigationView.h"
 
+
+
+
+#import <UIKit/UIKit.h>
+@class CWCalendarLabel;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANKNavigationViewSearch : ANKNavigationView
+@interface ANKNavigationViewSearch : UIView
 
 @end
 

@@ -11,7 +11,7 @@
 #import "ANKTagScroll.h"
 #import "Masonry.h"
 
-@interface NewsViewController ()<ANKNavigationViewSearchDelegate>
+@interface NewsViewController ()
 
 @property (nonatomic, strong) ANKTagScroll *scrollView;
 
@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationView.searchDelegate = self;
+//    self.navigationView.searchDelegate = self;
     
     NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
     NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];

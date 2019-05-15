@@ -26,13 +26,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:_navigationView];
-    [_navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view);
-        make.top.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.height.mas_equalTo(kNavigationBarHeight);
-    }];
+
     
 
 }
@@ -45,13 +39,7 @@
 
 #pragma mark - Init（initVars initViews）
 
-- (instancetype)initWithNavigationViewType:(NavigationViewType)naviType{
-    self = [super init];
-    if (self) {
-        _navigationView = [ANKNavigationViewFactory navigationViewFactory:naviType];
-    }
-    return self;
-}
+
 
 #pragma mark - Layout Subviews（layoutSubview）
 - (void)loadView{

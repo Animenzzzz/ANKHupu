@@ -39,15 +39,27 @@
                                 <constraint firstAttribute="height" constant="1" id="W2E-U3-PoC"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oO-0x-9Y7" customClass="CWCalendarLabel">
+                            <rect key="frame" x="33" y="9" width="202" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="59Z-Bg-ut6"/>
+                                <constraint firstAttribute="width" constant="202" id="Bcp-YU-CYz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.75268465279999996" green="0.116945006" blue="0.18303096290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="QDw-Mk-WzL" secondAttribute="bottom" constant="1" id="0UI-PC-Cwv"/>
+                        <constraint firstItem="3oO-0x-9Y7" firstAttribute="leading" secondItem="ebS-h5-dVi" secondAttribute="trailing" constant="8" id="2gs-2h-Thg"/>
                         <constraint firstItem="ebS-h5-dVi" firstAttribute="leading" secondItem="K6T-ix-z0c" secondAttribute="leading" id="BTQ-LA-2Ym"/>
                         <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="ebS-h5-dVi" secondAttribute="bottom" constant="4.5" id="Mu2-QK-sZt"/>
                         <constraint firstAttribute="trailing" secondItem="QDw-Mk-WzL" secondAttribute="trailing" id="b2x-ZD-USN"/>
                         <constraint firstItem="QDw-Mk-WzL" firstAttribute="leading" secondItem="K6T-ix-z0c" secondAttribute="leading" id="cS3-aU-kRa"/>
                         <constraint firstAttribute="width" constant="243" id="er6-nK-w5t"/>
+                        <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="3oO-0x-9Y7" secondAttribute="bottom" constant="6" id="uy2-jz-g6o"/>
                         <constraint firstAttribute="height" constant="38" id="wXz-PT-Ima"/>
                     </constraints>
                 </view>
@@ -74,6 +86,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cwHotSearchLab" destination="3oO-0x-9Y7" id="BQZ-Nk-YzW"/>
                 <outlet property="searchView" destination="K6T-ix-z0c" id="acX-Mc-COi"/>
             </connections>
             <point key="canvasLocation" x="48.550724637681164" y="-289.28571428571428"/>

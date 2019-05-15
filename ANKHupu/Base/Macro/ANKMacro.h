@@ -16,6 +16,9 @@
 #define k_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define k_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+//分割线颜色
+#define kSeperatLineColor [UIColor colorWithHexString:@"eaeaea"]
+
 //导航栏高度
 #define kNavigationBarHeight 64.0
 

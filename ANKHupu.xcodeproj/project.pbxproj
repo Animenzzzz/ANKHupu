@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */; };
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
-		4ABDCAD3228A8D4C0091E341 /* ANKNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */; };
 		4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */; };
 		4ABDCADB228AB52D0091E341 /* search_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ABDCADA228AB52D0091E341 /* search_bg.png */; };
 		4ABDCADF228ABD780091E341 /* ANKNavigationViewSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */; };
-		4ABDCAE3228AC7980091E341 /* ANKNavigationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */; };
 		4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */; };
 		4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEA228AD16B0091E341 /* NewsViewController.m */; };
 		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
@@ -26,6 +24,8 @@
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
 		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
+		4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */; };
+		4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -1986,15 +1986,11 @@
 		4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKTabBarController.m; sourceTree = "<group>"; };
 		4ABDCACE228A8CB60091E341 /* ANKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKViewController.h; sourceTree = "<group>"; };
 		4ABDCACF228A8CB60091E341 /* ANKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKViewController.m; sourceTree = "<group>"; };
-		4ABDCAD1228A8D4C0091E341 /* ANKNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationView.h; sourceTree = "<group>"; };
-		4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationView.m; sourceTree = "<group>"; };
 		4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationController.h; sourceTree = "<group>"; };
 		4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationController.m; sourceTree = "<group>"; };
 		4ABDCAD9228A999E0091E341 /* ANKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKMacro.h; sourceTree = "<group>"; };
 		4ABDCADA228AB52D0091E341 /* search_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bg.png; sourceTree = "<group>"; };
 		4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewSearch.xib; sourceTree = "<group>"; };
-		4ABDCAE1228AC7980091E341 /* ANKNavigationViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewFactory.h; sourceTree = "<group>"; };
-		4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewFactory.m; sourceTree = "<group>"; };
 		4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewSearch.h; sourceTree = "<group>"; };
 		4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewSearch.m; sourceTree = "<group>"; };
 		4ABDCAE9228AD16B0091E341 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -2015,6 +2011,10 @@
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		4AE5F713228BB96D00BFC9C8 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NewsTag.plist; sourceTree = "<group>"; };
+		4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCalendarLabel.m; sourceTree = "<group>"; };
+		4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCalendarLabel.h; sourceTree = "<group>"; };
+		4AE5F71E228C080700BFC9C8 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
+		4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3991,10 +3991,6 @@
 		4ABDCAE0228AC7570091E341 /* ANKNavigationView */ = {
 			isa = PBXGroup;
 			children = (
-				4ABDCAE1228AC7980091E341 /* ANKNavigationViewFactory.h */,
-				4ABDCAE2228AC7980091E341 /* ANKNavigationViewFactory.m */,
-				4ABDCAD1228A8D4C0091E341 /* ANKNavigationView.h */,
-				4ABDCAD2228A8D4C0091E341 /* ANKNavigationView.m */,
 				4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */,
 				4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */,
 				4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */,
@@ -4085,8 +4081,19 @@
 				4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */,
 				4AE5F70F228BB92F00BFC9C8 /* UILabel+AutoFit.h */,
 				4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */,
+				4AE5F71E228C080700BFC9C8 /* UIColor+Category.h */,
+				4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */,
 			);
 			path = "UIKit+Category";
+			sourceTree = "<group>";
+		};
+		4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */,
+				4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */,
+			);
+			path = CWCalendarLabel;
 			sourceTree = "<group>";
 		};
 		4AF660C922897F0500DFC1AF = {
@@ -4129,6 +4136,7 @@
 		4AF660EB22897F2800DFC1AF /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
 			);
 			path = Third;
@@ -8206,10 +8214,10 @@
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AE5F70A228BB6B700BFC9C8 /* ANKTagScrollItem.m in Sources */,
 				4AE5F705228BAF2B00BFC9C8 /* ANKTagScroll.m in Sources */,
+				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
+				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
-				4ABDCAE3228AC7980091E341 /* ANKNavigationViewFactory.m in Sources */,
-				4ABDCAD3228A8D4C0091E341 /* ANKNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
