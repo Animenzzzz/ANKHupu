@@ -29,5 +29,5 @@
 
 #import "ANKHttpMacro.h"
 #import "ANKMacro.h"
-
+#import "EXTScope.h"
 #endif /* AnkHupuPrefixHeader_pch */

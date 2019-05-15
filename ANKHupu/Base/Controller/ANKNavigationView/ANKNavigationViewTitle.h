@@ -10,7 +10,17 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol ANKNavigationViewTitleDelegate <NSObject>
+
+- (void)backClick;
+- (void)shareClick;
+
+@end
+
 @interface ANKNavigationViewTitle : UIView
+
+@property (nonatomic, weak) id<ANKNavigationViewTitleDelegate> delegate;
 
 @end
 

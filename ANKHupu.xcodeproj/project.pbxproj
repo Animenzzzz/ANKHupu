@@ -2015,6 +2015,8 @@
 		4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCalendarLabel.h; sourceTree = "<group>"; };
 		4AE5F71E228C080700BFC9C8 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
+		4AE5F726228C180E00BFC9C8 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		4AE5F727228C180E00BFC9C8 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -4004,11 +4006,11 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
 				4ABDCAED228AD1AE0091E341 /* View */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
-				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -4136,6 +4138,8 @@
 		4AF660EB22897F2800DFC1AF /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
+				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
 				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
 			);

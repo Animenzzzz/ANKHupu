@@ -11,7 +11,6 @@
 @interface ANKNavigationViewSearch()
 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
-@property (weak, nonatomic) IBOutlet CWCalendarLabel *cwHotSearchLab;
 
 @end
 
@@ -22,16 +21,33 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchViewTap)];
     self.searchView.userInteractionEnabled = YES;
     [self.searchView addGestureRecognizer:tap];
+    self.cwHotSearchLab.animateDuration = 1.0;
 
+}
+
+
++ (instancetype)shareInstance {
+    static ANKNavigationViewSearch *shareInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareInstance = [[[UINib nibWithNibName:@"ANKNavigationViewSearch" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    });
+    return shareInstance;
 }
 
 
 - (void)searchViewTap{
-//    [self super_searchStatuBarClick];
+    
+    if ([self.delegate respondsToSelector:@selector(hotSearchViewClick)]) {
+        [self.delegate hotSearchViewClick];
+    }
 }
 
 - (IBAction)commentClick:(id)sender {
-//    [self super_issueClick];
+    
+    if ([self.delegate respondsToSelector:@selector(commentClick)]) {
+        [self.delegate commentClick];
+    }
 }
 
 @end

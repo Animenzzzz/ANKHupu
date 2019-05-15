@@ -17,7 +17,7 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 
 + (void)getNBANewsWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
-+ (void)getHotSearchWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
++ (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock;
 
 @end
 

@@ -69,7 +69,7 @@
     }];
 }
 
-+ (void)getHotSearchWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
++ (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock{
     
     NSString *fullURL = kHotSearch_FullPath;
     ANKLog(@"请求URL:%@",fullURL);
@@ -77,7 +77,13 @@
         
         NSDictionary *data = (NSDictionary *)responseObject;
         ANKLog(@"成功请求到数据:%@",data);
-        successBlock(data);
+        NSArray *list = data[@"result"][@"list"];
+        NSMutableArray *result_data = [NSMutableArray array];
+        for (NSDictionary *dic in list) {
+            [result_data addObject:[dic objectForKey:@"name"]];
+        }
+        
+        successBlock(result_data);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"");

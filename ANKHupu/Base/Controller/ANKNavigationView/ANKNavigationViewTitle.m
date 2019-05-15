@@ -23,12 +23,17 @@
 }
 - (IBAction)backClick:(id)sender {
     
-//    [self super_backClick];
+    if ([self.delegate respondsToSelector:@selector(backClick)]) {
+        [self.delegate backClick];
+    }
 }
 
 - (IBAction)shareClick:(id)sender {
     
-//    [self super_shareClick];
+    if ([self.delegate respondsToSelector:@selector(shareClick)]) {
+        [self.delegate shareClick];
+    }
+    
 }
 
 - (void)setshareBtnHidden:(BOOL)shareBtnHidden{

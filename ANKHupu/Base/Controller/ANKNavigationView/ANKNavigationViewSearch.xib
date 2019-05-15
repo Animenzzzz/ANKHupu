@@ -26,40 +26,40 @@
                     <rect key="frame" x="63" y="21" width="243" height="38"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_btn_search.png" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-h5-dVi">
-                            <rect key="frame" x="0.0" y="6.5" width="25" height="25"/>
+                            <rect key="frame" x="0.0" y="11" width="20" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="EdS-sn-tg2"/>
-                                <constraint firstAttribute="height" constant="25" id="PDr-p0-i30"/>
+                                <constraint firstAttribute="width" constant="20" id="EdS-sn-tg2"/>
+                                <constraint firstAttribute="height" constant="20" id="PDr-p0-i30"/>
                             </constraints>
                         </imageView>
                         <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDw-Mk-WzL">
-                            <rect key="frame" x="0.0" y="36" width="243" height="1"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="34" width="243" height="1"/>
+                            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="W2E-U3-PoC"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oO-0x-9Y7" customClass="CWCalendarLabel">
-                            <rect key="frame" x="33" y="9" width="202" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oO-0x-9Y7" customClass="CWCalendarLabel">
+                            <rect key="frame" x="28" y="10" width="202" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="59Z-Bg-ut6"/>
                                 <constraint firstAttribute="width" constant="202" id="Bcp-YU-CYz"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.75268465279999996" green="0.116945006" blue="0.18303096290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="QDw-Mk-WzL" secondAttribute="bottom" constant="1" id="0UI-PC-Cwv"/>
+                        <constraint firstAttribute="bottom" secondItem="QDw-Mk-WzL" secondAttribute="bottom" constant="3" id="0UI-PC-Cwv"/>
                         <constraint firstItem="3oO-0x-9Y7" firstAttribute="leading" secondItem="ebS-h5-dVi" secondAttribute="trailing" constant="8" id="2gs-2h-Thg"/>
                         <constraint firstItem="ebS-h5-dVi" firstAttribute="leading" secondItem="K6T-ix-z0c" secondAttribute="leading" id="BTQ-LA-2Ym"/>
-                        <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="ebS-h5-dVi" secondAttribute="bottom" constant="4.5" id="Mu2-QK-sZt"/>
+                        <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="ebS-h5-dVi" secondAttribute="bottom" constant="3" id="Mu2-QK-sZt"/>
                         <constraint firstAttribute="trailing" secondItem="QDw-Mk-WzL" secondAttribute="trailing" id="b2x-ZD-USN"/>
                         <constraint firstItem="QDw-Mk-WzL" firstAttribute="leading" secondItem="K6T-ix-z0c" secondAttribute="leading" id="cS3-aU-kRa"/>
                         <constraint firstAttribute="width" constant="243" id="er6-nK-w5t"/>
-                        <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="3oO-0x-9Y7" secondAttribute="bottom" constant="6" id="uy2-jz-g6o"/>
+                        <constraint firstItem="QDw-Mk-WzL" firstAttribute="top" secondItem="3oO-0x-9Y7" secondAttribute="bottom" constant="3" id="uy2-jz-g6o"/>
                         <constraint firstAttribute="height" constant="38" id="wXz-PT-Ima"/>
                     </constraints>
                 </view>
@@ -87,7 +87,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="cwHotSearchLab" destination="3oO-0x-9Y7" id="BQZ-Nk-YzW"/>
-                <outlet property="searchView" destination="K6T-ix-z0c" id="acX-Mc-COi"/>
+                <outlet property="searchView" destination="K6T-ix-z0c" id="2Og-Su-ZN1"/>
             </connections>
             <point key="canvasLocation" x="48.550724637681164" y="-289.28571428571428"/>
         </view>

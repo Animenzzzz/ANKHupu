@@ -7,14 +7,24 @@
 //
 
 
-
-
-
 #import <UIKit/UIKit.h>
-@class CWCalendarLabel;
+#import "CWCalendarLabel.h"
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ANKNavigationViewSearchDelegate <NSObject>
+
+- (void)hotSearchViewClick;
+- (void)commentClick;
+
+@end
+
 @interface ANKNavigationViewSearch : UIView
+
++ (instancetype)shareInstance;
+
+@property (weak, nonatomic) IBOutlet CWCalendarLabel *cwHotSearchLab;
+
+@property (weak, nonatomic) id<ANKNavigationViewSearchDelegate>delegate;
 
 @end
 
