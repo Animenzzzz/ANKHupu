@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>推荐</key>
+	<string>/url</string>
+	<key>NBA</key>
+	<string>/url</string>
+	<key>视频</key>
+	<string>/url</string>
+	<key>影视娱乐</key>
+	<string>/url</string>
+	<key>绝地求生</key>
+	<string>/url</string>
+	<key>关注</key>
+	<string>/url</string>
+	<key>数码</key>
+	<string>/url</string>
+	<key>装备</key>
+	<string>/url</string>
+	<key>英雄联盟</key>
+	<string>/url</string>
+	<key>中国足球</key>
+	<string>/url</string>
+	<key>欧洲杯</key>
+	<string>/url</string>
+	<key>意甲</key>
+	<string>/url</string>
+	<key>德甲</key>
+	<string>/url</string>
+	<key>欧冠</key>
+	<string>/url</string>
+	<key>法甲</key>
+	<string>/url</string>
+	<key>英超</key>
+	<string>/url</string>
+	<key>西甲</key>
+	<string>/url</string>
+	<key>路人王</key>
+	<string>/url</string>
+	<key>王者荣耀</key>
+	<string>/url</string>
+	<key>中国篮球</key>
+	<string>/url</string>
+	<key>国际足球</key>
+	<string>/url</string>
+	<key>型男</key>
+	<string>/url</string>
+	<key>欧联</key>
+	<string>/url</string>
+	<key>联合会杯</key>
+	<string>/url</string>
+</dict>
+</plist>

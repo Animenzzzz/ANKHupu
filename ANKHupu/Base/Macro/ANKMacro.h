@@ -20,7 +20,9 @@
 #define kNavigationBarHeight 64.0
 
 //导航栏下方 滚动条的字体大小
-#define kScrollTitleSize_NO_Select 14.0
-#define kScrollTitleSize_Select 14.0 //TODO...选中大小就改变
+#define kScrollTitleSize_NO_Select 15.0
+#define kScrollTitleSize_Select 15.0 //TODO...选中大小就改变
+//导航栏下方 滚动条的高度
+#define kScrollTagHeight 44.0
 
 #endif /* ANKMacro_h */

@@ -12,11 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="UUC-od-jfg" customClass="ANKTagScroll">
-            <rect key="frame" x="0.0" y="0.0" width="379" height="34"/>
+            <rect key="frame" x="0.0" y="0.0" width="379" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjO-2o-eSB">
-                    <rect key="frame" x="335" y="0.0" width="44" height="34"/>
+                    <rect key="frame" x="335" y="0.0" width="44" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="SeK-Py-k00"/>
                     </constraints>
@@ -26,7 +26,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-jV-GWr">
-                    <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
+                    <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ob5-dk-j2d">
                         <size key="itemSize" width="50" height="50"/>
@@ -39,6 +39,13 @@
                         <outlet property="delegate" destination="UUC-od-jfg" id="j6Z-1R-Ul9"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dD-l8-ST8">
+                    <rect key="frame" x="0.0" y="43" width="379" height="1"/>
+                    <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ID9-0h-qUH"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -46,9 +53,12 @@
                 <constraint firstItem="o3s-jV-GWr" firstAttribute="leading" secondItem="UUC-od-jfg" secondAttribute="leading" id="7C0-E7-kEC"/>
                 <constraint firstItem="WjO-2o-eSB" firstAttribute="leading" secondItem="o3s-jV-GWr" secondAttribute="trailing" id="Lsh-0D-JKF"/>
                 <constraint firstAttribute="trailing" secondItem="WjO-2o-eSB" secondAttribute="trailing" id="RFj-jK-d5W"/>
-                <constraint firstAttribute="bottom" secondItem="WjO-2o-eSB" secondAttribute="bottom" id="Trx-8L-k3D"/>
+                <constraint firstAttribute="bottom" secondItem="WjO-2o-eSB" secondAttribute="bottom" constant="1" id="Trx-8L-k3D"/>
+                <constraint firstAttribute="trailing" secondItem="4dD-l8-ST8" secondAttribute="trailing" id="XSM-wI-JUE"/>
+                <constraint firstAttribute="bottom" secondItem="4dD-l8-ST8" secondAttribute="bottom" id="aUB-x1-aoE"/>
+                <constraint firstItem="4dD-l8-ST8" firstAttribute="leading" secondItem="UUC-od-jfg" secondAttribute="leading" id="hdY-Bn-qre"/>
                 <constraint firstItem="o3s-jV-GWr" firstAttribute="top" secondItem="UUC-od-jfg" secondAttribute="top" id="pfX-J9-VPz"/>
-                <constraint firstAttribute="bottom" secondItem="o3s-jV-GWr" secondAttribute="bottom" id="rZK-Sk-9ub"/>
+                <constraint firstAttribute="bottom" secondItem="o3s-jV-GWr" secondAttribute="bottom" constant="1" id="rZK-Sk-9ub"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -25,6 +25,7 @@
 		4AE5F70C228BB6CF00BFC9C8 /* ANKTagScrollItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F70B228BB6CF00BFC9C8 /* ANKTagScrollItem.xib */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
+		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -2013,6 +2014,7 @@
 		4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoFit.m"; sourceTree = "<group>"; };
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		4AE5F713228BB96D00BFC9C8 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
+		4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NewsTag.plist; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -4010,6 +4012,7 @@
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
 				4ABDCAED228AD1AE0091E341 /* View */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
+				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -7730,6 +7733,7 @@
 				4AF66C1F228A64D100DFC1AF /* guess_winning_bg_night@3x.png in Resources */,
 				4AF66A2E228A64D000DFC1AF /* nbaTeam_btn_1@2x.png in Resources */,
 				4AF66B56228A64D100DFC1AF /* football_weather_clear_night@3x.png in Resources */,
+				4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */,
 				4AF66FEB228A64D200DFC1AF /* open_box_more_gold_pic_night@3x.png in Resources */,
 				4AF66987228A64D000DFC1AF /* hpgm_home_money_ic_night@3x.png in Resources */,
 				4AF66A42228A64D000DFC1AF /* rank_ic@2x.png in Resources */,

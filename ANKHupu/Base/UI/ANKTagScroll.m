@@ -28,8 +28,8 @@ static NSString *const kANKTagScrollCellID = @"ANKTagScrollCellID";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     //宽高
-    layout.itemSize = CGSizeMake(42, 34);
-    CGFloat  margin = 5;
+    layout.itemSize = CGSizeMake(42, kScrollTagHeight);
+    CGFloat  margin = 8;
 //    if(iPhone6plus){
 //        margin = 30;
 //    }else{
@@ -71,9 +71,12 @@ static NSString *const kANKTagScrollCellID = @"ANKTagScrollCellID";
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    //不用复用。。。避免在选中的时候多个cell样式同时改变。。TODO...待优化
     ANKTagScrollItem *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kANKTagScrollCellID forIndexPath:indexPath];
-    NSString *title = [self.selectDataArray objectAtIndex:indexPath.item];
+    NSString *title = [self.selectDataArray objectAtIndex:indexPath.row];
     cell.seletTitle = title;
+    
+    NSLog(@"%@   %ld",title,(long)indexPath.row);
     
     return cell;
 }
@@ -81,9 +84,8 @@ static NSString *const kANKTagScrollCellID = @"ANKTagScrollCellID";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGSize size;
 //    size.width = [(NSString*)[self.selectDataArray objectAtIndex:indexPath.row] sizeWithAttributes:NULL].width;
-    size.height = 34.0;
+    size.height = kScrollTagHeight;
     size.width = [UILabel getWidthWithTitle:(NSString*)[self.selectDataArray objectAtIndex:indexPath.row] font:[UIFont fontWithName:@"Helvetica-Bold" size:kScrollTitleSize_NO_Select]];
-    NSLog(@"");
     return size;
 }
 
@@ -94,6 +96,7 @@ static NSString *const kANKTagScrollCellID = @"ANKTagScrollCellID";
     ANKTagScrollItem *cell = (ANKTagScrollItem *)[collectionView cellForItemAtIndexPath:indexPath];
     [cell redLineHiddenStatue:NO];
 //    [self.collectionView reloadData];
+
 }
 
 //取消选中操作

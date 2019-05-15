@@ -27,16 +27,9 @@
     // Do any additional setup after loading the view.
     self.navigationView.searchDelegate = self;
     
-//    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
-//    _scrollView.moreListEnable = YES;
-//    _scrollView.selectDataArray = @[@"fas",@"fasdfdsafasdf",@"flasiu",@"a"];
-//    [self.view addSubview:_scrollView];
-//    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(kNavigationBarHeight);
-//        make.left.equalTo(self.view);
-//        make.right.equalTo(self.view);
-//        make.height.mas_equalTo(34);
-//    }];
+    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
+    _scrollView.selectDataArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
 
 }
 
@@ -48,13 +41,12 @@
     [super loadView];
     _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
     _scrollView.moreListEnable = YES;
-    _scrollView.selectDataArray = @[@"fas",@"fasdfdsafasdf",@"flasiu",@"a"];
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(kNavigationBarHeight);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
-        make.height.mas_equalTo(34);
+        make.height.mas_equalTo(kScrollTagHeight);
     }];
 }
 #pragma mark - Layout Subviews（layoutSubview）
