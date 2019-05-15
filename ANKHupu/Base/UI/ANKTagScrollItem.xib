@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMA-AB-n52" customClass="ANKBannerScrollCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMA-AB-n52" customClass="ANKTagScrollItem">
             <rect key="frame" x="0.0" y="0.0" width="42" height="34"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -25,16 +24,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Yw-zJ-NlI">
+                        <rect key="frame" x="0.0" y="33" width="42" height="1"/>
+                        <color key="backgroundColor" red="0.75268465279999996" green="0.116945006" blue="0.18303096290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="OPb-it-FdT"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zOY-AV-dTE" secondAttribute="trailing" id="14r-P0-5Ql"/>
                 <constraint firstItem="zOY-AV-dTE" firstAttribute="top" secondItem="pMA-AB-n52" secondAttribute="top" id="Avk-AB-eNH"/>
+                <constraint firstAttribute="trailing" secondItem="0Yw-zJ-NlI" secondAttribute="trailing" id="DGN-Z9-sSH"/>
+                <constraint firstItem="0Yw-zJ-NlI" firstAttribute="leading" secondItem="pMA-AB-n52" secondAttribute="leading" id="UNr-Nh-z9q"/>
+                <constraint firstAttribute="bottom" secondItem="0Yw-zJ-NlI" secondAttribute="bottom" id="coA-Cf-Ic7"/>
                 <constraint firstAttribute="bottom" secondItem="zOY-AV-dTE" secondAttribute="bottom" id="dMQ-e9-8Eo"/>
                 <constraint firstItem="zOY-AV-dTE" firstAttribute="leading" secondItem="pMA-AB-n52" secondAttribute="leading" id="iUG-Pp-MMI"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Nbd-My-DLd"/>
             <size key="customSize" width="42" height="34"/>
+            <connections>
+                <outlet property="redLine" destination="0Yw-zJ-NlI" id="f4w-4k-nr4"/>
+                <outlet property="seleLab" destination="zOY-AV-dTE" id="I3W-Qa-yfT"/>
+            </connections>
             <point key="canvasLocation" x="107.24637681159422" y="119.19642857142857"/>
         </collectionViewCell>
     </objects>

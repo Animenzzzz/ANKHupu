@@ -8,8 +8,12 @@
 
 #import "NewsViewController.h"
 #import "ANKNavigationViewSearch.h"
+#import "ANKTagScroll.h"
+#import "Masonry.h"
 
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
+
+@property (nonatomic, strong) ANKTagScroll *scrollView;
 
 @end
 
@@ -22,10 +26,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationView.searchDelegate = self;
+    
+//    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
+//    _scrollView.moreListEnable = YES;
+//    _scrollView.selectDataArray = @[@"fas",@"fasdfdsafasdf",@"flasiu",@"a"];
+//    [self.view addSubview:_scrollView];
+//    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(kNavigationBarHeight);
+//        make.left.equalTo(self.view);
+//        make.right.equalTo(self.view);
+//        make.height.mas_equalTo(34);
+//    }];
+
 }
 
 
 #pragma mark - Init（initVars initViews）
+
+- (void)loadView{
+    
+    [super loadView];
+    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
+    _scrollView.moreListEnable = YES;
+    _scrollView.selectDataArray = @[@"fas",@"fasdfdsafasdf",@"flasiu",@"a"];
+    [self.view addSubview:_scrollView];
+    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(kNavigationBarHeight);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.height.mas_equalTo(34);
+    }];
+}
 #pragma mark - Layout Subviews（layoutSubview）
 #pragma mark - Network request
 

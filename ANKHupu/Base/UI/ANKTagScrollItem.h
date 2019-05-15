@@ -1,5 +1,5 @@
 //
-//  ANKBannerScroll.h
+//  ANKTagScrollCell.h
 //  ANKHupu
 //
 //  Created by Animenzzz on 2019/5/15.
@@ -10,14 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANKBannerScroll : UIView
+@interface ANKTagScrollItem : UICollectionViewCell
 
-@property (nonatomic, assign) BOOL moreListEnable;
+@property (nonatomic, copy) NSString *seletTitle;
 
-//可选择的项
-@property (nonatomic, strong) NSMutableArray *selectDataArray;
-
-
+- (void)redLineHiddenStatue:(BOOL)hidden;
 
 @end
 

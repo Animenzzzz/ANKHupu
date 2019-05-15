@@ -16,6 +16,11 @@
 #define k_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define k_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+//导航栏高度
 #define kNavigationBarHeight 64.0
+
+//导航栏下方 滚动条的字体大小
+#define kScrollTitleSize_NO_Select 14.0
+#define kScrollTitleSize_Select 14.0 //TODO...选中大小就改变
 
 #endif /* ANKMacro_h */

@@ -27,13 +27,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:_navigationView];
-    
     [_navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view);
         make.top.equalTo(self.view);
         make.right.equalTo(self.view);
         make.height.mas_equalTo(kNavigationBarHeight);
     }];
+    
 
 }
 
@@ -58,6 +58,7 @@
     [super loadView];
     
 }
+
 #pragma mark - Network request
 
 #pragma mark - System protocol 
