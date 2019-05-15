@@ -15,7 +15,9 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 
 @interface ANKHttpServer : NSObject
 
-+ (void)getNBAInfoWithParams:(NSMutableDictionary *)param success:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
++ (void)getNBANewsWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
+
++ (void)getHotSearchWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
 @end
 
