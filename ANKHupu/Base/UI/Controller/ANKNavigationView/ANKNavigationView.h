@@ -28,8 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ANKNavigationView : UIView
 
+//导航标题
+@property (nonatomic, copy) NSString *title;
+
+//是否显示分享按钮
+@property (nonatomic, assign) BOOL shareBtnHidden;
+
 @property (nonatomic, weak) id<ANKNavigationViewSearchDelegate>searchDelegate;
 @property (nonatomic, weak) id<ANKNavigationViewTitleDelegate>titleDelegate;
+
 
 - (void)super_searchStatuBarClick;
 - (void)super_issueClick;

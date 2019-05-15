@@ -20,6 +20,9 @@
                     <rect key="frame" x="16" y="30" width="20" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="zhuangbei_back_btn.png"/>
+                    <connections>
+                        <action selector="backClick:" destination="IYj-rx-NVC" eventType="touchUpInside" id="8ux-Gr-Qis"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBr-xC-mHt">
                     <rect key="frame" x="118" y="30" width="138" height="21"/>
@@ -32,11 +35,18 @@
                     <rect key="frame" x="346" y="27" width="20" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="share_btn_night.png"/>
+                    <connections>
+                        <action selector="shareClick:" destination="IYj-rx-NVC" eventType="touchUpInside" id="j7a-qV-Jty"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="AdP-0d-jLb"/>
+            <connections>
+                <outlet property="shareBtn" destination="tg2-1E-iJT" id="V9q-hi-Cbu"/>
+                <outlet property="titleLab" destination="vBr-xC-mHt" id="dOl-TM-gXK"/>
+            </connections>
             <point key="canvasLocation" x="158.69565217391306" y="-323.4375"/>
         </view>
     </objects>

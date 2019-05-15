@@ -4037,6 +4037,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4AE5F702228BAE7400BFC9C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDCAE0228AC7570091E341 /* ANKNavigationView */,
+				4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */,
+				4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */,
+				4ABDCACE228A8CB60091E341 /* ANKViewController.h */,
+				4ABDCACF228A8CB60091E341 /* ANKViewController.m */,
+				4ABDCAC6228A6E630091E341 /* ANKTabBarController.h */,
+				4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4AF660C922897F0500DFC1AF = {
 			isa = PBXGroup;
 			children = (
@@ -6066,13 +6080,7 @@
 		4AF6702C228A66A200DFC1AF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4ABDCAE0228AC7570091E341 /* ANKNavigationView */,
-				4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */,
-				4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */,
-				4ABDCACE228A8CB60091E341 /* ANKViewController.h */,
-				4ABDCACF228A8CB60091E341 /* ANKViewController.m */,
-				4ABDCAC6228A6E630091E341 /* ANKTabBarController.h */,
-				4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */,
+				4AE5F702228BAE7400BFC9C8 /* Controller */,
 			);
 			path = UI;
 			sourceTree = "<group>";

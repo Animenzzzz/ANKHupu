@@ -26,19 +26,19 @@
     [self setTabBarStyleWithCon:news seletImage:@"tab_news_btn_1" normlImage:@"tab_news_btn_night"];
     ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
     
-    GameViewController *game = [GameViewController new];
+    GameViewController *game = [[GameViewController  alloc] initWithNavigationViewType:NavigationViewSearch];
     [self setTabBarStyleWithCon:game seletImage:@"tab_games1_btn_select" normlImage:@"tab_games1_btn_normal_night"];
     ANKNavigationController *gameNav = [[ANKNavigationController alloc] initWithRootViewController:game];
    
-    ANKViewController *news2 = [ANKViewController new];
+    ANKViewController *news2 = [[ANKViewController  alloc] initWithNavigationViewType:NavigationViewSearch];
     [self setTabBarStyleWithCon:news2 seletImage:@"tab_bbs_btn_1" normlImage:@"tab_bbs_btn_night"];
     ANKNavigationController *nav2 = [[ANKNavigationController alloc] initWithRootViewController:news2];
     
-    ANKViewController *news3 = [ANKViewController new];
+    ANKViewController *news3 = [[ANKViewController  alloc] initWithNavigationViewType:NavigationViewSearch];
     [self setTabBarStyleWithCon:news3 seletImage:@"tab_shoes_btn_select" normlImage:@"tab_shoes_btn_night"];
     ANKNavigationController *nav3 = [[ANKNavigationController alloc] initWithRootViewController:news3];
     
-    ANKViewController *news4 = [ANKViewController new];
+    ANKViewController *news4 = [[ANKViewController  alloc] initWithNavigationViewType:NavigationViewSearch];
     [self setTabBarStyleWithCon:news4 seletImage:@"tab_more_btn_1" normlImage:@"tab_more_btn_night"];
     ANKNavigationController *nav4 = [[ANKNavigationController alloc] initWithRootViewController:news4];
 
