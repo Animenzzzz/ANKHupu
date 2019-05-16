@@ -30,10 +30,9 @@
     
     [self initViews];
     [self laySubView];
+    [self requesData];
     
-//    [self requesData];
-    
-    [self.tableView.mj_header beginRefreshing];
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 
@@ -51,6 +50,8 @@
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
+        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
     
     return _tableView;
@@ -92,7 +93,7 @@
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -100,10 +101,6 @@
     return cell;
 }
 #pragma mark UITableViewDelegate
-//为了消除cell顶部的空间
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.1;
-}
 
 #pragma mark - Custom protocol 
 #pragma mark - Custom functions
