@@ -3,4 +3,5 @@ target 'ANKHupu' do
    pod 'Masonry'
    pod 'YYModel'
    pod 'MJRefresh'
+   pod 'SVProgressHUD'
 end

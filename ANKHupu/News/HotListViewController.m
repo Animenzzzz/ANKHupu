@@ -11,6 +11,8 @@
 #import "HotListModel.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
+#import "SVProgressHUD.h"
+#import "ANKReachabilityManager.h"
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -31,8 +33,6 @@
     [self initViews];
     [self laySubView];
     [self requesData];
-    
-//    [self.tableView.mj_header beginRefreshing];
 }
 
 
@@ -40,7 +40,7 @@
 
 - (void)initViews{
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requesData)];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requesData)];
     
 }
 
@@ -73,10 +73,14 @@
 
 - (void)requesData{
     
+    [SVProgressHUD showWithStatus:@"加载中..."];
+    if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
+        [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
+        [SVProgressHUD dismissWithDelay:2.0f];
+        return;
+    }
     [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-        
-        [self.tableView.mj_header endRefreshing];
-        
+        [SVProgressHUD dismiss];
         NSDictionary *dic =data[@"error"];
         if (dic) {//请求报错
             NSString *errorInfo = [dic objectForKey:@"text"];

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
+		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
+		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
+		4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */; };
 		4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6FDC5228D319800A967A0 /* HotListModel.m */; };
 		4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */; };
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
@@ -1988,6 +1991,11 @@
 		490A8B8CECA460B580653E91 /* Pods-ANKHupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANKHupu.release.xcconfig"; path = "Target Support Files/Pods-ANKHupu/Pods-ANKHupu.release.xcconfig"; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
+		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4A8112AC228D98440036D3C5 /* ANKReachabilityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKReachabilityManager.h; sourceTree = "<group>"; };
+		4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKReachabilityManager.m; sourceTree = "<group>"; };
 		4AA6FDC4228D319800A967A0 /* HotListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListModel.h; sourceTree = "<group>"; };
 		4AA6FDC5228D319800A967A0 /* HotListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListModel.m; sourceTree = "<group>"; };
 		4ABDCAC6228A6E630091E341 /* ANKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKTabBarController.h; sourceTree = "<group>"; };
@@ -3997,6 +4005,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */,
 				CAAE67FB603718797253C5BF /* libPods-ANKHupu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4004,6 +4013,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A8112A8228D98070036D3C5 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				4A8112AA228D98110036D3C5 /* Reachability.h */,
+				4A8112A9228D98110036D3C5 /* Reachability.m */,
+				4A8112AC228D98440036D3C5 /* ANKReachabilityManager.h */,
+				4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		4ABDCAE0228AC7570091E341 /* ANKNavigationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4183,6 +4203,7 @@
 		4AF660EB22897F2800DFC1AF /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4A8112A8228D98070036D3C5 /* Reachability */,
 				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4AEF80A4228CFA01001E56B3 /* WMPageController */,
 				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
@@ -6186,6 +6207,7 @@
 		8A3ABD129B66E2C3306A487E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */,
 				996604EC0ED7F9DAB1AA0930 /* libPods-ANKHupu.a */,
 			);
 			name = Frameworks;
@@ -8217,12 +8239,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ANKHupu/Pods-ANKHupu-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -8268,6 +8292,7 @@
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4A8112AB228D98110036D3C5 /* Reachability.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
@@ -8275,6 +8300,7 @@
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
+				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
