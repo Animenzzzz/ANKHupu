@@ -8,16 +8,16 @@
 
 #import "NewsViewController.h"
 #import "ANKNavigationViewSearch.h"
-#import "ANKTagScroll.h"
 #import "Masonry.h"
 #import "ANKHttpServer.h"
 #import "HotListViewController.h"
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
-//@property (nonatomic, strong) ANKTagScroll *scrollView;
 @property (nonatomic, strong) ANKNavigationViewSearch *navigationView;
 
 @property (nonatomic, strong) NSTimer *timer;
+
+
 
 @end
 
@@ -35,11 +35,6 @@ static NSInteger timeCount = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
-//    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
-//    _seletTagArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
-//    _scrollView.selectDataArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
     
     @weakify(self)
     [ANKHttpServer getHotSearchWithResponData:^(NSMutableArray * _Nonnull data) {
@@ -68,17 +63,6 @@ static NSInteger timeCount = 0;
     
     [super loadView];
     
-    //设置导航栏下的tag选择滚动栏
-//    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
-//    _scrollView.moreListEnable = YES;
-//    [self.view addSubview:_scrollView];
-//    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(kNavigationBarHeight);
-//        make.left.equalTo(self.view);
-//        make.right.equalTo(self.view);
-//        make.height.mas_equalTo(kScrollTagHeight);
-//    }];
-    
     //设置导航栏
     [self.view addSubview:self.navigationView];
     [self.navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,6 +71,8 @@ static NSInteger timeCount = 0;
         make.right.equalTo(self.view);
         make.height.mas_equalTo(kNavigationBarHeight);
     }];
+    
+    
 }
 
 - (ANKNavigationViewSearch *)navigationView{
@@ -98,6 +84,8 @@ static NSInteger timeCount = 0;
     return _navigationView;
 }
 #pragma mark - Layout Subviews（layoutSubview）
+
+
 #pragma mark - Network request
 
 #pragma mark - System protocol 
@@ -111,14 +99,6 @@ static NSInteger timeCount = 0;
 - (void)commentClick{
     NSLog(@"");
 }
-
-//-(UIColor *)menuView:(WMMenuView *)menu titleColorForState:(WMMenuItemState)state atIndex:(NSInteger)index{
-//    if (state == WMMenuItemStateNormal) {
-//        return [UIColor grayColor];
-//    }
-//    return [UIColor redColor];
-//
-//}
 
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController{
     NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
@@ -148,13 +128,10 @@ static NSInteger timeCount = 0;
 
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-//    if (self.menuViewPosition == WMMenuViewPositionBottom) {
-//        menuView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
-//        return CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44);
-//    }
     CGFloat leftMargin = self.showOnNavigationBar ? 50 : 0;
     CGFloat originY = 64;
-    return CGRectMake(leftMargin, originY, self.view.frame.size.width - 2*leftMargin, 44);
+    CGFloat moreBtnOffset = self.showMore ? kScrollTagMoreBtnWidth:0;
+    return CGRectMake(leftMargin, originY, self.view.frame.size.width - 2*leftMargin - moreBtnOffset, 44);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {

@@ -19,10 +19,6 @@
 		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
 		4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */; };
 		4AE5F701228AF15500BFC9C8 /* ANKNavigationViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */; };
-		4AE5F705228BAF2B00BFC9C8 /* ANKTagScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F704228BAF2B00BFC9C8 /* ANKTagScroll.m */; };
-		4AE5F707228BB27500BFC9C8 /* ANKTagScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F706228BB27500BFC9C8 /* ANKTagScroll.xib */; };
-		4AE5F70A228BB6B700BFC9C8 /* ANKTagScrollItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F709228BB6B700BFC9C8 /* ANKTagScrollItem.m */; };
-		4AE5F70C228BB6CF00BFC9C8 /* ANKTagScrollItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F70B228BB6CF00BFC9C8 /* ANKTagScrollItem.xib */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
 		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
@@ -2012,12 +2008,6 @@
 		4AE5F6FD228AF13F00BFC9C8 /* ANKNavigationViewTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewTitle.h; sourceTree = "<group>"; };
 		4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewTitle.m; sourceTree = "<group>"; };
 		4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewTitle.xib; sourceTree = "<group>"; };
-		4AE5F703228BAF2B00BFC9C8 /* ANKTagScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKTagScroll.h; sourceTree = "<group>"; };
-		4AE5F704228BAF2B00BFC9C8 /* ANKTagScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKTagScroll.m; sourceTree = "<group>"; };
-		4AE5F706228BB27500BFC9C8 /* ANKTagScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKTagScroll.xib; sourceTree = "<group>"; };
-		4AE5F708228BB6B700BFC9C8 /* ANKTagScrollItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKTagScrollItem.h; sourceTree = "<group>"; };
-		4AE5F709228BB6B700BFC9C8 /* ANKTagScrollItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKTagScrollItem.m; sourceTree = "<group>"; };
-		4AE5F70B228BB6CF00BFC9C8 /* ANKTagScrollItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKTagScrollItem.xib; sourceTree = "<group>"; };
 		4AE5F70F228BB92F00BFC9C8 /* UILabel+AutoFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoFit.h"; sourceTree = "<group>"; };
 		4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoFit.m"; sourceTree = "<group>"; };
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
@@ -4130,10 +4120,10 @@
 			isa = PBXGroup;
 			children = (
 				4AEF80A7228CFA01001E56B3 /* WMMenuView */,
-				4AEF80A5228CFA01001E56B3 /* WMPageController.m */,
+				4AEF80B1228CFA01001E56B3 /* UIViewController+WMPageController.h */,
 				4AEF80A6228CFA01001E56B3 /* UIViewController+WMPageController.m */,
 				4AEF80B0228CFA01001E56B3 /* WMPageController.h */,
-				4AEF80B1228CFA01001E56B3 /* UIViewController+WMPageController.h */,
+				4AEF80A5228CFA01001E56B3 /* WMPageController.m */,
 			);
 			path = WMPageController;
 			sourceTree = "<group>";
@@ -4206,7 +4196,6 @@
 			isa = PBXGroup;
 			children = (
 				4AE5F702228BAE7400BFC9C8 /* Controller */,
-				4AF6702C228A66A200DFC1AF /* UI */,
 				4AE5F70D228BB90700BFC9C8 /* Extensions */,
 				4AF660EF22897F3700DFC1AF /* NetWork */,
 				4AF660F222897F3700DFC1AF /* Macro */,
@@ -6185,19 +6174,6 @@
 			path = HupuRes;
 			sourceTree = "<group>";
 		};
-		4AF6702C228A66A200DFC1AF /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				4AE5F703228BAF2B00BFC9C8 /* ANKTagScroll.h */,
-				4AE5F704228BAF2B00BFC9C8 /* ANKTagScroll.m */,
-				4AE5F706228BB27500BFC9C8 /* ANKTagScroll.xib */,
-				4AE5F708228BB6B700BFC9C8 /* ANKTagScrollItem.h */,
-				4AE5F709228BB6B700BFC9C8 /* ANKTagScrollItem.m */,
-				4AE5F70B228BB6CF00BFC9C8 /* ANKTagScrollItem.xib */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		8246F12B2C687D1256F41F66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -6650,7 +6626,6 @@
 				4AF66B53228A64D100DFC1AF /* football_weather_cloudy@3x.png in Resources */,
 				4AF66BAF228A64D100DFC1AF /* guess_hupu@2x.png in Resources */,
 				4AF66CF2228A64D100DFC1AF /* zoom_btn_1_night@2x.png in Resources */,
-				4AE5F707228BB27500BFC9C8 /* ANKTagScroll.xib in Resources */,
 				4AF66C46228A64D100DFC1AF /* team_away_Jersey_night@3x.png in Resources */,
 				4AF66A44228A64D000DFC1AF /* fb_shoot_direction_right@2x.png in Resources */,
 				4AF668BB228A64D000DFC1AF /* bbscamera_重拍@3x.png in Resources */,
@@ -7240,7 +7215,6 @@
 				4AF66B9A228A64D100DFC1AF /* sound_s_ic_night@2x.png in Resources */,
 				4AF66E2E228A64D200DFC1AF /* follow_btn_bg_1_search_night.png in Resources */,
 				4AF66FB1228A64D200DFC1AF /* bbscamera_按住拍@2x.png in Resources */,
-				4AE5F70C228BB6CF00BFC9C8 /* ANKTagScrollItem.xib in Resources */,
 				4AF669E3228A64D000DFC1AF /* video_ic@3x.png in Resources */,
 				4AF66AA1228A64D000DFC1AF /* 弹幕开关-on@2x.png in Resources */,
 				4AF66C8E228A64D100DFC1AF /* camera_flash_on@2x.png in Resources */,
@@ -8279,8 +8253,6 @@
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
-				4AE5F70A228BB6B700BFC9C8 /* ANKTagScrollItem.m in Sources */,
-				4AE5F705228BAF2B00BFC9C8 /* ANKTagScroll.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,

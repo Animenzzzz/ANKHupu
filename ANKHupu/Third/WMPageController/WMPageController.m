@@ -95,6 +95,11 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [self wm_adjustScrollViewFrame];
     [self wm_adjustMenuViewFrame];
     [self wm_adjustDisplayingViewControllersFrame];
+    
+    //Mychange
+    if (self.showMore) {
+        self.moreBtn.frame = CGRectMake(self.menuView.frame.origin.x+self.menuView.frame.size.width, self.menuView.frame.origin.y,kScrollTagMoreBtnWidth, kScrollTagHeight);
+    }
 }
 
 - (void)setScrollEnable:(BOOL)scrollEnable {
@@ -448,6 +453,17 @@ static NSInteger const kWMControllerCountUndefined = -1;
     }
 }
 
+//MyChange
+- (void)ank_addMoreTagButton {
+    UIButton *tagBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScrollTagMoreBtnWidth, kScrollTagHeight)];
+    [tagBtn setBackgroundImage:[UIImage imageNamed:@"arrange_btn"] forState:UIControlStateNormal];
+    [self.view addSubview:tagBtn];
+    UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
+    grayLine.backgroundColor = kSeperatLineColor;
+    [tagBtn addSubview:grayLine];
+    self.moreBtn = tagBtn;
+}
+
 - (void)wm_addMenuView {
     WMMenuView *menuView = [[WMMenuView alloc] initWithFrame:CGRectZero];
     menuView.delegate = self;
@@ -691,6 +707,11 @@ static NSInteger const kWMControllerCountUndefined = -1;
     self.currentViewController = self.displayVC[@(self.selectIndex)];
     [self wm_addMenuView];
     [self didEnterController:self.currentViewController atIndex:self.selectIndex];
+    
+    //MyChange
+    if (self.showMore) {
+        [self ank_addMoreTagButton];
+    }
 }
 
 - (void)viewDidLayoutSubviews {

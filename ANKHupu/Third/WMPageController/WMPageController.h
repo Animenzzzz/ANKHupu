@@ -304,6 +304,10 @@ extern NSString *const WMControllerDidFullyDisplayedNotification;
 /** 内部容器 */
 @property (nonatomic, nullable, weak) WMScrollView *scrollView;
 
+/** MyChange */
+@property (nonatomic, assign) BOOL showMore;
+@property (nonatomic, nullable, weak) UIButton *moreBtn;
+
 /** MenuView 内部视图与左右的间距 */
 @property (nonatomic, assign) CGFloat menuViewContentMargin;
 

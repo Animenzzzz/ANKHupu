@@ -27,6 +27,7 @@
     news.menuViewStyle = WMMenuViewStyleLine;
     news.selectIndex = 0;
     news.automaticallyCalculatesItemWidths = YES;
+    news.showMore = YES;
     ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
     
     GameViewController *game = [GameViewController new];
