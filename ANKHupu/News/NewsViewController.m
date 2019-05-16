@@ -11,6 +11,7 @@
 #import "ANKTagScroll.h"
 #import "Masonry.h"
 #import "ANKHttpServer.h"
+#import "HotListViewController.h"
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
 //@property (nonatomic, strong) ANKTagScroll *scrollView;
@@ -39,13 +40,11 @@ static NSInteger timeCount = 0;
 //    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
 //    _seletTagArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
 //    _scrollView.selectDataArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
- 
+    
     @weakify(self)
     [ANKHttpServer getHotSearchWithResponData:^(NSMutableArray * _Nonnull data) {
         @strongify(self)
         self->_hotSearchDataArray = data;
-        
-        
         NSString *showString = [NSString stringWithFormat:@"%@ | %@ | %@",data[0],data[1],data[2]];
         [self.navigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
         [self startTimer];
@@ -134,11 +133,11 @@ static NSInteger timeCount = 0;
 }
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-//    switch (index % 3) {
-//        case 0: return [[WMTableViewController alloc] init];
+    switch (index % 10) {
+        case 0: return [[HotListViewController alloc] initWithStyle:UITableViewStyleGrouped];//推荐页
 //        case 1: return [[WMViewController alloc] init];
 //        case 2: return [[WMCollectionViewController alloc] init];
-//    }
+    }
     return [[UIViewController alloc] init];
 }
 

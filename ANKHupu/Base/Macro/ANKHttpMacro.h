@@ -20,9 +20,10 @@
 #define kParam_night       @"night=0"
 #define kParam_crt         @"crt=1557906702"
 #define kParam_time_zone   @"time_zone=Asia%2FShanghai"
-#define kParam_sign        @"sign=53d4ad9a87f32e057cb986611e72e9c1"
+#define kParam_sign        @"sign=3366090f5a1d473a7b9ff3904c816af7"
+
 //固定参数拼接
-#define kParam_full  [NSString stringWithFormat:@"%@?%@?%@?%@?%@?%@%@?%@",kParam_client,kParam_clientId,kParam_advId,kParam_ssid,kParam_night,kParam_crt,kParam_time_zone,kParam_sign]
+#define kParam_full  [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@&%@&%@",kParam_client,kParam_clientId,kParam_advId,kParam_ssid,kParam_night,kParam_crt,kParam_time_zone,kParam_sign]
 
 
 
@@ -35,7 +36,7 @@
 #define kNBA_param5    @"preload=0"
 #define kNBA_param6    @"direc=next"
 #define kNBA_param7    @"num=20"
-#define kNBA_full_Params    [NSString stringWithFormat:@"?%@?%@?%@?%@?%@?%@%@?%@",kNBA_param1,kNBA_param2,kNBA_param3,kNBA_param4,kNBA_param5,kNBA_param6,kNBA_param7,kParam_full]
+#define kNBA_full_Params    [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@&%@&%@",kNBA_param1,kNBA_param2,kNBA_param3,kNBA_param4,kNBA_param5,kNBA_param6,kNBA_param7,kParam_full]
 #define kNBA_FullPath [NSString stringWithFormat:@"%@%@%@",kHPServiceHost,kNBA,kNBA_full_Params]
 
 
@@ -47,8 +48,8 @@
 
 //------推荐（额外参数：1个）
 #define kHotList            @"/3/7.3.12/buffer/hotList"
-#define kHotList_param1     @"is_first=0"
-#define kHotList_full_Params [NSString stringWithFormat:@"?%@?%@",kHotList_param1,kParam_full]
+#define kHotList_param1     @"is_first=1"
+#define kHotList_full_Params [NSString stringWithFormat:@"?%@&%@",kHotList_param1,kParam_full]
 #define kHotList_FullPath [NSString stringWithFormat:@"%@%@%@",kHPServiceHost,kHotList,kHotList_full_Params]
 
 

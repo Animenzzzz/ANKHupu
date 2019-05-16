@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA6FDC0228D1E3C00A967A0 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6FDBF228D1E3C00A967A0 /* HotListViewController.m */; };
+		4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6FDC5228D319800A967A0 /* HotListModel.m */; };
 		4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */; };
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
 		4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */; };
@@ -1988,6 +1990,10 @@
 
 /* Begin PBXFileReference section */
 		490A8B8CECA460B580653E91 /* Pods-ANKHupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANKHupu.release.xcconfig"; path = "Target Support Files/Pods-ANKHupu/Pods-ANKHupu.release.xcconfig"; sourceTree = "<group>"; };
+		4AA6FDBE228D1E3C00A967A0 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
+		4AA6FDBF228D1E3C00A967A0 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
+		4AA6FDC4228D319800A967A0 /* HotListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListModel.h; sourceTree = "<group>"; };
+		4AA6FDC5228D319800A967A0 /* HotListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListModel.m; sourceTree = "<group>"; };
 		4ABDCAC6228A6E630091E341 /* ANKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKTabBarController.h; sourceTree = "<group>"; };
 		4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKTabBarController.m; sourceTree = "<group>"; };
 		4ABDCACE228A8CB60091E341 /* ANKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKViewController.h; sourceTree = "<group>"; };
@@ -4027,6 +4033,8 @@
 				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
+				4AA6FDBE228D1E3C00A967A0 /* HotListViewController.h */,
+				4AA6FDBF228D1E3C00A967A0 /* HotListViewController.m */,
 				4ABDCAED228AD1AE0091E341 /* View */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
 			);
@@ -4047,6 +4055,8 @@
 		4ABDCAEC228AD1A70091E341 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AA6FDC4228D319800A967A0 /* HotListModel.h */,
+				4AA6FDC5228D319800A967A0 /* HotListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -8258,7 +8268,9 @@
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
+				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4AA6FDC0228D1E3C00A967A0 /* HotListViewController.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
