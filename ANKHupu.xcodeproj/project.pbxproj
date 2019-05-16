@@ -6202,6 +6202,7 @@
 				4AF660CE22897F0500DFC1AF /* Sources */,
 				4AF660CF22897F0500DFC1AF /* Frameworks */,
 				4AF660D022897F0500DFC1AF /* Resources */,
+				2B02C31F7A63EEC955D861A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -8206,6 +8207,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B02C31F7A63EEC955D861A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ANKHupu/Pods-ANKHupu-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ANKHupu/Pods-ANKHupu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9772A3ED33A4B7438FF995E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

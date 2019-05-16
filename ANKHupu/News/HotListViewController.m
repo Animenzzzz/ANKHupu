@@ -10,7 +10,7 @@
 #import "ANKHttpServer.h"
 #import "HotListModel.h"
 #import "Masonry.h"
-
+#import "MJRefresh.h"
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,30 +28,22 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kScrollTagHeight);
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
-    }];
+    [self initViews];
+    [self laySubView];
     
-    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-        NSDictionary *dic =data[@"error"];
-        if (dic) {//请求报错
-            NSString *errorInfo = [dic objectForKey:@"text"];
-            NSLog(@"%@",errorInfo);
-        }else{
-            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-            NSLog(@"");
-        }
-    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-        NSLog(@"");
-    }];
+//    [self requesData];
+    
+    [self.tableView.mj_header beginRefreshing];
 }
 
 
 #pragma mark - Init（initVars initViews）
+
+- (void)initViews{
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requesData)];
+    
+}
 
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -64,7 +56,38 @@
     return _tableView;
 }
 #pragma mark - Layout Subviews（layoutSubview）
+
+- (void)laySubView{
+    
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(kScrollTagHeight);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
+    
+}
 #pragma mark - Network request
+
+- (void)requesData{
+    
+    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+        
+        [self.tableView.mj_header endRefreshing];
+        
+        NSDictionary *dic =data[@"error"];
+        if (dic) {//请求报错
+            NSString *errorInfo = [dic objectForKey:@"text"];
+            NSLog(@"%@",errorInfo);
+        }else{
+            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+            NSLog(@"");
+        }
+    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        NSLog(@"");
+    }];
+}
 
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
