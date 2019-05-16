@@ -114,7 +114,7 @@ static NSInteger timeCount = 0;
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index % 10) {
-        case 0: return [[HotListViewController alloc] initWithStyle:UITableViewStyleGrouped];//推荐页
+        case 0: return [[HotListViewController alloc] init];//推荐页
 //        case 1: return [[WMViewController alloc] init];
 //        case 2: return [[WMCollectionViewController alloc] init];
     }
