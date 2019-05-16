@@ -13,7 +13,7 @@
 #import "ANKHttpServer.h"
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
-@property (nonatomic, strong) ANKTagScroll *scrollView;
+//@property (nonatomic, strong) ANKTagScroll *scrollView;
 @property (nonatomic, strong) ANKNavigationViewSearch *navigationView;
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -25,6 +25,7 @@ static NSInteger timeCount = 0;
 @implementation NewsViewController
 {
     NSMutableArray *_hotSearchDataArray;
+    NSMutableArray *_seletTagArray;
 }
 
 
@@ -34,11 +35,11 @@ static NSInteger timeCount = 0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
-    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
-    _scrollView.selectDataArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
-    
-    
+//    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+//    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
+//    _seletTagArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
+//    _scrollView.selectDataArray = [NSMutableArray arrayWithArray:[dataDic allKeys]];
+ 
     @weakify(self)
     [ANKHttpServer getHotSearchWithResponData:^(NSMutableArray * _Nonnull data) {
         @strongify(self)
@@ -54,6 +55,8 @@ static NSInteger timeCount = 0;
 
 }
 
+
+
 - (void)dealloc
 {
     [self.timer invalidate];
@@ -67,15 +70,15 @@ static NSInteger timeCount = 0;
     [super loadView];
     
     //设置导航栏下的tag选择滚动栏
-    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
-    _scrollView.moreListEnable = YES;
-    [self.view addSubview:_scrollView];
-    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kNavigationBarHeight);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.height.mas_equalTo(kScrollTagHeight);
-    }];
+//    _scrollView = [[[UINib nibWithNibName:@"ANKTagScroll" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil]firstObject];
+//    _scrollView.moreListEnable = YES;
+//    [self.view addSubview:_scrollView];
+//    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(kNavigationBarHeight);
+//        make.left.equalTo(self.view);
+//        make.right.equalTo(self.view);
+//        make.height.mas_equalTo(kScrollTagHeight);
+//    }];
     
     //设置导航栏
     [self.view addSubview:self.navigationView];
@@ -99,8 +102,7 @@ static NSInteger timeCount = 0;
 #pragma mark - Network request
 
 #pragma mark - System protocol 
-#pragma mark UITableViewDataSource
-#pragma mark UITableViewDelegate
+
 
 #pragma mark - Custom protocol   ANKNavigationViewSearchDelegate
 
@@ -110,6 +112,64 @@ static NSInteger timeCount = 0;
 - (void)commentClick{
     NSLog(@"");
 }
+
+//-(UIColor *)menuView:(WMMenuView *)menu titleColorForState:(WMMenuItemState)state atIndex:(NSInteger)index{
+//    if (state == WMMenuItemStateNormal) {
+//        return [UIColor grayColor];
+//    }
+//    return [UIColor redColor];
+//
+//}
+
+- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController{
+    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+    NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
+    _seletTagArray = [dataDic copy];
+    return _seletTagArray.count;
+}
+
+- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
+   
+    return [_seletTagArray objectAtIndex:index];
+}
+
+- (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+//    switch (index % 3) {
+//        case 0: return [[WMTableViewController alloc] init];
+//        case 1: return [[WMViewController alloc] init];
+//        case 2: return [[WMCollectionViewController alloc] init];
+//    }
+    return [[UIViewController alloc] init];
+}
+
+- (CGFloat)menuView:(WMMenuView *)menu widthForItemAtIndex:(NSInteger)index {
+    CGFloat width = [super menuView:menu widthForItemAtIndex:index];
+    return width + 20;
+}
+
+
+- (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
+//    if (self.menuViewPosition == WMMenuViewPositionBottom) {
+//        menuView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+//        return CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44);
+//    }
+    CGFloat leftMargin = self.showOnNavigationBar ? 50 : 0;
+    CGFloat originY = 64;
+    return CGRectMake(leftMargin, originY, self.view.frame.size.width - 2*leftMargin, 44);
+}
+
+- (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
+//    if (self.menuViewPosition == WMMenuViewPositionBottom) {
+//        return CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 44);
+//    }
+    CGFloat originY = 64;
+//    if (self.menuViewStyle == WMMenuViewStyleTriangle) {
+//        originY += self.redView.frame.size.height;
+//    }
+    return CGRectMake(0, originY, self.view.frame.size.width, self.view.frame.size.height - originY);
+}
+
+
 #pragma mark - Custom functions
 
 - (void)startTimer

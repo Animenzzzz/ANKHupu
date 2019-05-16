@@ -24,6 +24,9 @@
     
     NewsViewController *news = [NewsViewController new];
     [self setTabBarStyleWithCon:news seletImage:@"tab_news_btn_1" normlImage:@"tab_news_btn_night"];
+    news.menuViewStyle = WMMenuViewStyleLine;
+    news.selectIndex = 1;
+    news.automaticallyCalculatesItemWidths = YES;
     ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
     
     GameViewController *game = [GameViewController new];

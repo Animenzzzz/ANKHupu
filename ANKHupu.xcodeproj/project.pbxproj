@@ -26,6 +26,12 @@
 		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
 		4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */; };
 		4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */; };
+		4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80A5228CFA01001E56B3 /* WMPageController.m */; };
+		4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80A6228CFA01001E56B3 /* UIViewController+WMPageController.m */; };
+		4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AC228CFA01001E56B3 /* WMMenuItem.m */; };
+		4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AD228CFA01001E56B3 /* WMScrollView.m */; };
+		4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AE228CFA01001E56B3 /* WMMenuView.m */; };
+		4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AF228CFA01001E56B3 /* WMProgressView.m */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -2017,6 +2023,18 @@
 		4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		4AE5F726228C180E00BFC9C8 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		4AE5F727228C180E00BFC9C8 /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		4AEF80A5228CFA01001E56B3 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		4AEF80A6228CFA01001E56B3 /* UIViewController+WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WMPageController.m"; sourceTree = "<group>"; };
+		4AEF80A8228CFA01001E56B3 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		4AEF80A9228CFA01001E56B3 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		4AEF80AA228CFA01001E56B3 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		4AEF80AB228CFA01001E56B3 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		4AEF80AC228CFA01001E56B3 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		4AEF80AD228CFA01001E56B3 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		4AEF80AE228CFA01001E56B3 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		4AEF80AF228CFA01001E56B3 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		4AEF80B0228CFA01001E56B3 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		4AEF80B1228CFA01001E56B3 /* UIViewController+WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WMPageController.h"; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -4098,6 +4116,33 @@
 			path = CWCalendarLabel;
 			sourceTree = "<group>";
 		};
+		4AEF80A4228CFA01001E56B3 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF80A7228CFA01001E56B3 /* WMMenuView */,
+				4AEF80A5228CFA01001E56B3 /* WMPageController.m */,
+				4AEF80A6228CFA01001E56B3 /* UIViewController+WMPageController.m */,
+				4AEF80B0228CFA01001E56B3 /* WMPageController.h */,
+				4AEF80B1228CFA01001E56B3 /* UIViewController+WMPageController.h */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		4AEF80A7228CFA01001E56B3 /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF80A9228CFA01001E56B3 /* WMMenuItem.h */,
+				4AEF80AC228CFA01001E56B3 /* WMMenuItem.m */,
+				4AEF80AA228CFA01001E56B3 /* WMMenuView.h */,
+				4AEF80AE228CFA01001E56B3 /* WMMenuView.m */,
+				4AEF80AB228CFA01001E56B3 /* WMProgressView.h */,
+				4AEF80AF228CFA01001E56B3 /* WMProgressView.m */,
+				4AEF80A8228CFA01001E56B3 /* WMScrollView.h */,
+				4AEF80AD228CFA01001E56B3 /* WMScrollView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
 		4AF660C922897F0500DFC1AF = {
 			isa = PBXGroup;
 			children = (
@@ -4138,9 +4183,10 @@
 		4AF660EB22897F2800DFC1AF /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
+				4AEF80A4228CFA01001E56B3 /* WMPageController */,
 				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
 				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
-				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
 			);
 			path = Third;
@@ -8212,12 +8258,18 @@
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
+				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
+				4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */,
+				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
+				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
+				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AE5F70A228BB6B700BFC9C8 /* ANKTagScrollItem.m in Sources */,
 				4AE5F705228BAF2B00BFC9C8 /* ANKTagScroll.m in Sources */,
+				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,

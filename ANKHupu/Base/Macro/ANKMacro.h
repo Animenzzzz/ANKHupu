@@ -8,7 +8,7 @@
 
 #ifndef ANKMacro_h
 #define ANKMacro_h
-
+#import "UIColor+Category.h"
 
 #define SCREEN_WIDTH (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 #define SCREEN_HEIGHT (MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
