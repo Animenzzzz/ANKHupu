@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HotListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HotListViewCellHotInfo : UIView
 
 @property (nonatomic, strong) NSString *title;
+
+- (void)laySubViewWithInfoModel:(HotListModel *)model;
 
 @end
 

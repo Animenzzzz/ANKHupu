@@ -25,14 +25,20 @@
 
 + (CGFloat)caculateHeightWithHotInfoModel:(HotListModel *)hotInfo{
     CGFloat topView_height = HotListViewCellTopicView_xib_height;
-    CGFloat hotInfoView_height = 10;
+    CGFloat hotInfoView_height = HotListViewCellHotInfo_xib_titleLab_height;//111
     CGFloat commentView_height = 10;
     CGFloat socialView_height = HotListViewCellSocial_xib_height;
     
-    if (hotInfo.hotInfo.light_replies.count) {//有评论，才加载视图
+    if (hotInfo.hotInfo.pics.count) {//判断内容除了title，是否还有图片,有要另外加上高度
+        hotInfoView_height = hotInfoView_height+HotListViewCellHotInfo_xib_collectPic_height;
     }
     
-    return topView_height+socialView_height+commentView_height+hotInfoView_height;
+    if (hotInfo.hotInfo.light_replies.count) {//有评论，才加载视图
+        hotInfoView_height = hotInfoView_height+21;// 评论title高 21
+        
+    }
+    
+    return topView_height+socialView_height+commentView_height+hotInfoView_height+kHotListCell_top;
 }
 
 @end

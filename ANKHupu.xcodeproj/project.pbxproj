@@ -16,6 +16,8 @@
 		4A02625C228E87A700B9F86D /* HotListViewCellCommentInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */; };
 		4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02625E228E881400B9F86D /* HotListViewCellSocial.m */; };
 		4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */; };
+		4A026263228EA37B00B9F86D /* HotListCellCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */; };
+		4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */; };
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
@@ -2012,6 +2014,9 @@
 		4A02625D228E881400B9F86D /* HotListViewCellSocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellSocial.h; sourceTree = "<group>"; };
 		4A02625E228E881400B9F86D /* HotListViewCellSocial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellSocial.m; sourceTree = "<group>"; };
 		4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellSocial.xib; sourceTree = "<group>"; };
+		4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListCellCollectionCell.xib; sourceTree = "<group>"; };
+		4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListCellCollectionCell.h; sourceTree = "<group>"; };
+		4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListCellCollectionCell.m; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -4105,6 +4110,9 @@
 				4A026253228E865D00B9F86D /* HotListViewCellHotInfo.h */,
 				4A026254228E865D00B9F86D /* HotListViewCellHotInfo.m */,
 				4A026256228E867600B9F86D /* HotListViewCellHotInfo.xib */,
+				4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */,
+				4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */,
+				4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */,
 				4A026258228E879D00B9F86D /* HotListViewCellCommentInfo.h */,
 				4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */,
 				4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */,
@@ -7390,6 +7398,7 @@
 				4AF66DDF228A64D100DFC1AF /* penalty_ic_1@2x.png in Resources */,
 				4AF66E5B228A64D200DFC1AF /* team_list_bg@2x.png in Resources */,
 				4AF66AD4228A64D100DFC1AF /* guess_list_bg@2x.png in Resources */,
+				4A026263228EA37B00B9F86D /* HotListCellCollectionCell.xib in Resources */,
 				4AF66E5F228A64D200DFC1AF /* tab_chat_night@3x.png in Resources */,
 				4AF668F3228A64D000DFC1AF /* blackArrow.png in Resources */,
 				4AF66E99228A64D200DFC1AF /* 7_ic@3x.png in Resources */,
@@ -8325,6 +8334,7 @@
 			files = (
 				4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */,
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
+				4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */,
 				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
 				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,

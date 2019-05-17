@@ -22,31 +22,46 @@
                         <constraint firstAttribute="height" constant="25" id="hGE-Mn-kLh"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZT-i8-VcG">
-                    <rect key="frame" x="44" y="2" width="73" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZT-i8-VcG">
+                    <rect key="frame" x="36" y="2" width="73" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="2xU-ze-JLL"/>
+                        <constraint firstAttribute="height" constant="21" id="MwA-8b-dlV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-yi-Mq5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-yi-Mq5">
                     <rect key="frame" x="132" y="2" width="73" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="QL5-ZU-iK6"/>
+                        <constraint firstAttribute="height" constant="21" id="ROH-0Q-QMg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaZ-MJ-MOH">
-                    <rect key="frame" x="323" y="0.0" width="36" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="more"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaZ-MJ-MOH">
+                    <rect key="frame" x="340" y="0.0" width="23" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="23" id="YGP-Ah-STB"/>
+                        <constraint firstAttribute="height" constant="25" id="ePj-EH-bjN"/>
+                    </constraints>
+                    <state key="normal" image="share_btn_1_night.png"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iVG-x7-r3R" firstAttribute="leading" secondItem="53e-lv-uGn" secondAttribute="leading" id="9KO-X2-aCt"/>
                 <constraint firstAttribute="bottom" secondItem="iVG-x7-r3R" secondAttribute="bottom" id="Dli-NM-brP"/>
+                <constraint firstItem="5Nh-yi-Mq5" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="KPt-ao-UYm"/>
+                <constraint firstItem="FZT-i8-VcG" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="ay2-mS-NFn"/>
+                <constraint firstItem="5Nh-yi-Mq5" firstAttribute="leading" secondItem="FZT-i8-VcG" secondAttribute="trailing" constant="23" id="nFQ-DP-ujs"/>
                 <constraint firstItem="iVG-x7-r3R" firstAttribute="top" secondItem="53e-lv-uGn" secondAttribute="top" id="nto-DR-wUz"/>
+                <constraint firstAttribute="trailing" secondItem="SaZ-MJ-MOH" secondAttribute="trailing" constant="12" id="r9y-rb-y5y"/>
+                <constraint firstItem="FZT-i8-VcG" firstAttribute="leading" secondItem="iVG-x7-r3R" secondAttribute="trailing" constant="12" id="ry4-65-R7L"/>
+                <constraint firstItem="SaZ-MJ-MOH" firstAttribute="top" secondItem="53e-lv-uGn" secondAttribute="top" id="wqI-Vx-jOK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -54,7 +69,10 @@
                 <outlet property="topicImage" destination="iVG-x7-r3R" id="KRG-ZN-VAi"/>
                 <outlet property="topicNameLab" destination="FZT-i8-VcG" id="Hta-bA-340"/>
             </connections>
-            <point key="canvasLocation" x="-68.840579710144937" y="-56.919642857142854"/>
+            <point key="canvasLocation" x="-431.15942028985512" y="-150.33482142857142"/>
         </view>
     </objects>
+    <resources>
+        <image name="share_btn_1_night.png" width="30" height="40"/>
+    </resources>
 </document>

@@ -55,16 +55,21 @@
     [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(kHotListCell_top);
         make.left.mas_equalTo(kHotListCell_left);
+        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
+        make.width.mas_equalTo(375);
     }];
     
     //信息正文
     self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.hotInfoView.title = model.hotInfo.title;
+    [self.hotInfoView laySubViewWithInfoModel:model];
     //信息正文___布局
     [self addSubview:self.hotInfoView];
     [self.hotInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topicView.mas_bottom).with.mas_offset(3);
         make.left.mas_equalTo(kHotListCell_left);
+        make.height.mas_equalTo(100);
+        make.width.mas_equalTo(375);
     }];
     
     //评论信息
@@ -89,6 +94,8 @@
             make.top.equalTo(self.topicView.mas_bottom).with.mas_offset(3);
         }
         make.left.mas_equalTo(kHotListCell_left);
+        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(375);
     }];
 }
 

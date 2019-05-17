@@ -13,24 +13,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="R2Q-Ov-8Ng" customClass="HotListViewCellHotInfo">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Mx-JWP">
-                    <rect key="frame" x="23" y="15" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Mx-JWP">
+                    <rect key="frame" x="0.0" y="0.0" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="m20-BN-9OV"/>
+                        <constraint firstAttribute="width" constant="307" id="oo1-WY-pcl"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SjP-o9-Phu">
+                    <rect key="frame" x="0.0" y="29" width="375" height="111"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="cml-2P-pKf"/>
+                        <constraint firstAttribute="height" constant="111" id="jWg-fe-Lcy"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GvT-Lh-WbU">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="R2Q-Ov-8Ng" id="LLL-uQ-z1x"/>
+                        <outlet property="delegate" destination="R2Q-Ov-8Ng" id="Kw7-SM-LF8"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SjP-o9-Phu" firstAttribute="leading" secondItem="RUs-8S-awn" secondAttribute="leading" id="J14-oa-3lu"/>
+                <constraint firstAttribute="bottom" secondItem="SjP-o9-Phu" secondAttribute="bottom" id="Kkj-sr-llr"/>
+                <constraint firstItem="SjP-o9-Phu" firstAttribute="trailing" secondItem="RUs-8S-awn" secondAttribute="trailing" id="Mdv-lk-S3L"/>
+                <constraint firstItem="07Q-Mx-JWP" firstAttribute="top" secondItem="R2Q-Ov-8Ng" secondAttribute="top" id="Vev-ly-pcd"/>
+                <constraint firstItem="07Q-Mx-JWP" firstAttribute="leading" secondItem="R2Q-Ov-8Ng" secondAttribute="leading" id="sW4-mt-bcn"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="RUs-8S-awn"/>
             <connections>
+                <outlet property="collectionView" destination="SjP-o9-Phu" id="IhI-TS-1dK"/>
                 <outlet property="titleLab" destination="07Q-Mx-JWP" id="XTq-kk-fpv"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="-34.821428571428569"/>
+            <point key="canvasLocation" x="349" y="-147"/>
         </view>
     </objects>
 </document>
