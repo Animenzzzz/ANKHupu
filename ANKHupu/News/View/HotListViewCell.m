@@ -113,7 +113,7 @@
         make.top.mas_equalTo(kHotListCell_top);
         make.left.mas_equalTo(kHotListCell_left);
         make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
-        make.width.mas_equalTo(375);
+        make.width.mas_equalTo(SCREEN_WIDTH);
     }];
     
     //信息正文
@@ -145,7 +145,7 @@
         make.bottom.mas_equalTo(-(kHotListCell_bottom));
         make.left.mas_equalTo(kHotListCell_left);
         make.height.mas_equalTo(HotListViewCellSocial_xib_height);
-        make.width.mas_equalTo(375);
+        make.width.mas_equalTo(SCREEN_WIDTH);
     }];
 
 }

@@ -13,9 +13,6 @@
 #define SCREEN_WIDTH (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 #define SCREEN_HEIGHT (MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 
-#define k_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define k_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-
 //分割线颜色
 #define kSeperatLineColor [UIColor colorWithHexString:@"eaeaea"]
 
