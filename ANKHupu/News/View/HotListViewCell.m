@@ -43,12 +43,12 @@
 - (void)layoutSubviews{
 
     //话题信息栏___布局
-    [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kHotListCell_top);
-        make.left.mas_equalTo(kHotListCell_left);
-        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
-        make.width.mas_equalTo(375);
-    }];
+//    [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(kHotListCell_top);
+//        make.left.mas_equalTo(kHotListCell_left);
+//        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
+//        make.width.mas_equalTo(375);
+//    }];
     
     
     //信息正文___布局
@@ -109,6 +109,12 @@
     }];
     //话题信息栏___布局
     [self addSubview:self.topicView];
+    [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(kHotListCell_top);
+        make.left.mas_equalTo(kHotListCell_left);
+        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
+        make.width.mas_equalTo(375);
+    }];
     
     //信息正文
 //    self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
@@ -132,21 +138,16 @@
 //    }
     
     //分享、点赞等信息
-//    self.socialView = [[[UINib nibWithNibName:@"HotListViewCellSocial" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.socialView = [[[UINib nibWithNibName:@"HotListViewCellSocial" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     //分享、点赞等信息___布局
-//    [self addSubview:self.socialView];
-//    [self.socialView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        if (model.hotInfo.light_replies.count){
-//            make.top.equalTo(self.commentInfoView.mas_bottom).with.mas_offset(3);
-//        }else{
-//            make.top.equalTo(self.hotInfoView.mas_bottom).with.mas_offset(3);
-//        }
-//        make.left.mas_equalTo(kHotListCell_left);
-//        make.height.mas_equalTo(25);
-//        make.width.mas_equalTo(375);
-//    }];
-//    [self setNeedsLayout];
-//    [self layoutIfNeeded];
+    [self addSubview:self.socialView];
+    [self.socialView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-(kHotListCell_bottom));
+        make.left.mas_equalTo(kHotListCell_left);
+        make.height.mas_equalTo(HotListViewCellSocial_xib_height);
+        make.width.mas_equalTo(375);
+    }];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
