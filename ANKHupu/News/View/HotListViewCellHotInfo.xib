@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,8 +29,8 @@
                     <rect key="frame" x="0.0" y="29" width="375" height="111"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="375" id="cml-2P-pKf"/>
-                        <constraint firstAttribute="height" constant="111" id="jWg-fe-Lcy"/>
+                        <constraint firstAttribute="width" constant="375" id="Col-8m-4za"/>
+                        <constraint firstAttribute="height" constant="111" id="GUb-gH-5AB"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GvT-Lh-WbU">
                         <size key="itemSize" width="50" height="50"/>
@@ -47,19 +46,35 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="SjP-o9-Phu" firstAttribute="leading" secondItem="RUs-8S-awn" secondAttribute="leading" id="J14-oa-3lu"/>
-                <constraint firstAttribute="bottom" secondItem="SjP-o9-Phu" secondAttribute="bottom" id="Kkj-sr-llr"/>
-                <constraint firstItem="SjP-o9-Phu" firstAttribute="trailing" secondItem="RUs-8S-awn" secondAttribute="trailing" id="Mdv-lk-S3L"/>
+                <constraint firstAttribute="trailing" secondItem="SjP-o9-Phu" secondAttribute="trailing" id="EGI-Dh-jA8"/>
+                <constraint firstItem="SjP-o9-Phu" firstAttribute="leading" secondItem="R2Q-Ov-8Ng" secondAttribute="leading" id="RAv-mU-cy9"/>
                 <constraint firstItem="07Q-Mx-JWP" firstAttribute="top" secondItem="R2Q-Ov-8Ng" secondAttribute="top" id="Vev-ly-pcd"/>
                 <constraint firstItem="07Q-Mx-JWP" firstAttribute="leading" secondItem="R2Q-Ov-8Ng" secondAttribute="leading" id="sW4-mt-bcn"/>
+                <constraint firstItem="SjP-o9-Phu" firstAttribute="top" secondItem="07Q-Mx-JWP" secondAttribute="bottom" constant="8" id="z7I-bb-hPS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="RUs-8S-awn"/>
             <connections>
                 <outlet property="collectionView" destination="SjP-o9-Phu" id="IhI-TS-1dK"/>
-                <outlet property="titleLab" destination="07Q-Mx-JWP" id="XTq-kk-fpv"/>
+                <outlet property="titleLab" destination="07Q-Mx-JWP" id="ixp-sd-oeW"/>
+                <outlet property="titleLab_small" destination="vdB-Ni-FbJ" id="jct-Ln-GKr"/>
             </connections>
-            <point key="canvasLocation" x="349" y="-147"/>
+            <point key="canvasLocation" x="1380" y="-680"/>
+        </view>
+        <view contentMode="scaleToFill" id="t6B-5h-3Sg" customClass="HotListViewCellHotInfo">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-Ni-FbJ">
+                    <rect key="frame" x="0.0" y="7" width="208" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1379" y="-568"/>
         </view>
     </objects>
 </document>

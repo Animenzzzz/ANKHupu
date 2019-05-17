@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HotListViewCellCommentInfo : UIView
 
-
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
+@property (nonatomic, strong) NSString *nickName;
+@property (nonatomic, strong) NSString *comment;
 
 @end
 

@@ -115,25 +115,48 @@
     }];
     
     //信息正文
-//    self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//    self.hotInfoView.title = model.hotInfo.title;
-//    [self.hotInfoView laySubViewWithInfoModel:model];
-//    //信息正文___布局
-//    [self addSubview:self.hotInfoView];
+    if (!model.hotInfo.pics.count) {//内容没有图片，直接放一个lable
+        
+        self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] lastObject];
+    }else{
+        self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    }
+    self.hotInfoView.title = model.hotInfo.title;
+    [self.hotInfoView laySubViewWithInfoModel:model];
+    //信息正文___布局
+    [self addSubview:self.hotInfoView];
+    [self.hotInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(kHotListCell_top+HotListViewCellTopicView_xib_height+TopicToInfoOffset_height);
+        make.left.mas_equalTo(kHotListCell_left);
+        //内容有图片
+        if (!model.hotInfo.pics.count) {   make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height+HotListViewCellHotInfo_xib_collectPic_height);
+        }else{
+            make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height);
+        }
+    
+        make.width.mas_equalTo(375);
+    }];
     
     
 //    //评论信息
-//    if (model.hotInfo.light_replies.count) {//有评论，才加载视图
-//        self.commentInfoView = [[[UINib nibWithNibName:@"HotListViewCellCommentInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//    //评论信息___布局
-//        [self addSubview:self.commentInfoView];
-//        [self.commentInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.hotInfoView.frame.origin.y+self.hotInfoView.frame.size.height+5);
-//            make.left.mas_equalTo(kHotListCell_left);
-//            make.height.mas_equalTo(20);
-//            make.width.mas_equalTo(375);
-//        }];
-//    }
+    if (model.hotInfo.light_replies.count) {//有评论，才加载视图
+        self.commentInfoView = [[[UINib nibWithNibName:@"HotListViewCellCommentInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+        RepliesModel *repls = [model.hotInfo.light_replies objectAtIndex:0];
+        self.commentInfoView.comment = repls.content;
+        self.commentInfoView.nickName = repls.nickname;
+        NSArray *arr = [repls.header componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
+        [self.commentInfoView.iconImage sd_setImageWithURL:[NSURL URLWithString:arr[0]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            self.commentInfoView.iconImage.image = image;
+        }];
+    //评论信息___布局
+        [self addSubview:self.commentInfoView];
+        [self.commentInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-(kHotListCell_bottom+HotListViewCellSocial_xib_height+CommentToShare_height));
+            make.left.mas_equalTo(kHotListCell_left);
+            make.height.mas_equalTo(Comment_height);
+            make.width.mas_equalTo(SCREEN_WIDTH-20);
+        }];
+    }
     
     //分享、点赞等信息
     self.socialView = [[[UINib nibWithNibName:@"HotListViewCellSocial" bundle:nil] instantiateWithOwner:self options:nil] firstObject];

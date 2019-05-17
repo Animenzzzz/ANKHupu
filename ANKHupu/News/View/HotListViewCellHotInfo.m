@@ -13,6 +13,7 @@
 @interface HotListViewCellHotInfo()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab_small;
 
 @end
 
@@ -28,15 +29,20 @@ static NSString *kCollectionCellID = @"CollectionCellID";
 
 - (void)setTitle:(NSString *)title{
     self.titleLab.text = title;
+    self.titleLab_small.text = title;
 }
 
 - (void)laySubViewWithInfoModel:(HotListModel *)model{
     
+    if (!model.hotInfo.pics.count) {
+        self.collectionView.hidden = YES;
+        return;
+    }
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.itemSize = CGSizeMake(HotListViewCellHotInfo_xib_collectPic_height, HotListViewCellHotInfo_xib_collectPic_height);
-    CGFloat margin = 0;
+    CGFloat margin = 2;//这是cell之间的间隔
     layout.minimumLineSpacing = margin;
     [_collectionView setCollectionViewLayout:layout];
     
@@ -45,9 +51,7 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     [self.collectionView registerNib:[UINib nibWithNibName:@"HotListCellCollectionCell" bundle:nil] forCellWithReuseIdentifier:kCollectionCellID];
     _dataModel = model;
     
-    if (!model.hotInfo.pics.count) {
-        self.collectionView.hidden = YES;
-    }
+    
 
 }
 
@@ -62,7 +66,8 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     NSDictionary *dic = [_dataModel.hotInfo.pics objectAtIndex:indexPath.row];
     NSString *imgURL = [dic objectForKey:@"url"];
     NSArray *arr = [imgURL componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
-
+    
+    cell.commentPic.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
     [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         cell.commentPic.image = image;
     }];

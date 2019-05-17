@@ -51,7 +51,7 @@
                     <state key="normal" image="share_btn_1_night.png"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.99607843139999996" green="0.83529411760000005" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iVG-x7-r3R" firstAttribute="leading" secondItem="53e-lv-uGn" secondAttribute="leading" id="9KO-X2-aCt"/>
                 <constraint firstAttribute="bottom" secondItem="iVG-x7-r3R" secondAttribute="bottom" id="Dli-NM-brP"/>
@@ -69,7 +69,7 @@
                 <outlet property="topicImage" destination="iVG-x7-r3R" id="KRG-ZN-VAi"/>
                 <outlet property="topicNameLab" destination="FZT-i8-VcG" id="Hta-bA-340"/>
             </connections>
-            <point key="canvasLocation" x="-431.15942028985512" y="-150.33482142857142"/>
+            <point key="canvasLocation" x="-827" y="-310"/>
         </view>
     </objects>
     <resources>
