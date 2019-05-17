@@ -36,8 +36,8 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.itemSize = CGSizeMake(HotListViewCellHotInfo_xib_collectPic_height, HotListViewCellHotInfo_xib_collectPic_height);
-//    layout.minimumLineSpacing = margin;
-//    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    CGFloat margin = 0;
+    layout.minimumLineSpacing = margin;
     [_collectionView setCollectionViewLayout:layout];
     
     self.collectionView.delegate = self;

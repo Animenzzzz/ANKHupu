@@ -20,6 +20,7 @@
     [super awakeFromNib];
 }
 
+
 - (void)setNickName:(NSString *)nickName{
     self.nickNameLab.text = nickName;
 }

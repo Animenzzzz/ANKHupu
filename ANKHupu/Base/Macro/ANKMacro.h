@@ -35,7 +35,7 @@
 //推荐页(hotList)
 #define HotListViewCellTopicView_xib_height 25
 #define HotListViewCellSocial_xib_height 25
-#define kHotListCell_top 15
+#define kHotListCell_top (15+kCellSeparaOffset)
 #define kHotListCell_left 10
 #define kHotListCell_bottom 5
 #define HotListViewCellHotInfo_xib_titleLab_height 21 //内容的title高度
