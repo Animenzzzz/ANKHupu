@@ -23,7 +23,7 @@
 @end
 
 @implementation HotListViewCell{
-    HotListModel *_hotDataModel;
+    
 }
 
 - (void)awakeFromNib {
@@ -98,8 +98,6 @@
 
 - (void)bindWithHotListModel:(HotListModel *)model{
     
-    _hotDataModel = model;
-    
     //话题信息栏
     self.topicView = [[[UINib nibWithNibName:@"HotListViewCellTopicView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.topicView.nickName = model.hotInfo.nickname;
@@ -139,6 +137,10 @@
     
     //分享、点赞等信息
     self.socialView = [[[UINib nibWithNibName:@"HotListViewCellSocial" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.socialView.visits = [NSString stringWithFormat:@"查看:%ld",model.hotInfo.visits];
+    self.socialView.replies = [NSString stringWithFormat:@"回复:%ld",model.hotInfo.replies];
+    self.socialView.shareNum = [NSString stringWithFormat:@"分享:%ld",model.hotInfo.share_num];
+    self.socialView.lights = [NSString stringWithFormat:@"赞:%ld",model.hotInfo.lights];
     //分享、点赞等信息___布局
     [self addSubview:self.socialView];
     [self.socialView mas_makeConstraints:^(MASConstraintMaker *make) {

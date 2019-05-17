@@ -8,14 +8,31 @@
 
 #import "HotListViewCellSocial.h"
 
+
+@interface HotListViewCellSocial()
+@property (weak, nonatomic) IBOutlet UILabel *visitLab;
+@property (weak, nonatomic) IBOutlet UILabel *replieLab;
+@property (weak, nonatomic) IBOutlet UILabel *lightLab;
+@property (weak, nonatomic) IBOutlet UILabel *shareLab;
+
+@end
+
 @implementation HotListViewCellSocial
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setLights:(NSString *)lights{
+    self.lightLab.text = lights;
 }
-*/
+
+- (void)setVisits:(NSString *)visits{
+    self.visitLab.text = visits;
+}
+
+- (void)setReplies:(NSString *)replies{
+    self.replieLab.text = replies;
+}
+
+- (void)setShareNum:(NSString *)shareNum{
+    self.shareLab.text = shareNum;
+}
 
 @end

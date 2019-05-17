@@ -33,8 +33,8 @@
 #define HotListViewCellTopicView_xib_height 25 //topic栏，高度
 #define HotListViewCellSocial_xib_height 25 //分享、赞等栏，高度
 #define kHotListCell_top (15+kCellSeparaOffset)
-#define kHotListCell_left 10
-#define kHotListCell_bottom (15+kCellSeparaOffset)
+#define kHotListCell_left 12
+#define kHotListCell_bottom 15
 #define HotListViewCellHotInfo_xib_titleLab_height 21 //内容的title高度
 #define HotListViewCellHotInfo_xib_collectPic_height 111 //内容的图片高度
 
