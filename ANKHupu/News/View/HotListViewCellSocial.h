@@ -1,5 +1,5 @@
 //
-//  HotListViewCell.h
+//  HotListViewCellSocial.h
 //  ANKHupu
 //
 //  Created by Animenzzz on 2019/5/17.
@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HotListModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HotListViewCell : UITableViewCell
-
-- (void)bindWithHotListModel:(HotListModel *)model;
+@interface HotListViewCellSocial : UIView
 
 @end
 

@@ -20,7 +20,9 @@
 
 @end
 
-@implementation HotListViewController
+@implementation HotListViewController{
+    NSMutableArray *_hotListDataArray;
+}
 
 
 #pragma mark - Lify cycle
@@ -48,9 +50,10 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = [UIColor lightGrayColor];
+        _tableView.backgroundColor = kGrayBackGroundColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.separatorColor = [UIColor whiteColor];//消除间隔线
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
         _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
@@ -80,15 +83,19 @@
         [SVProgressHUD dismissWithDelay:2.0f];
         return;
     }
+    @weakify(self)
     [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
         [SVProgressHUD dismiss];
+        @strongify(self)
         NSDictionary *dic =data[@"error"];
         if (dic) {//请求报错
             NSString *errorInfo = [dic objectForKey:@"text"];
-            NSLog(@"%@",errorInfo);
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+            [SVProgressHUD dismissWithDelay:2.0f];
         }else{
             HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-            NSLog(@"");
+            self->_hotListDataArray = [model.result.hotList mutableCopy];
+            [self.tableView reloadData];
         }
     } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
         NSLog(@"");
@@ -105,37 +112,50 @@
         return;
     }
     
-    
-//    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-//        NSDictionary *dic =data[@"error"];
-//        if (dic) {//请求报错
-//            NSString *errorInfo = [dic objectForKey:@"text"];
-//            NSLog(@"%@",errorInfo);
-//        }else{
-//            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-//            NSLog(@"");
-//        }
-//    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-//        NSLog(@"");
-//    }];
+    @weakify(self)
+    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+        
+        [self.tableView.mj_header endRefreshing];
+        @strongify(self)
+        NSDictionary *dic =data[@"error"];
+        if (dic) {//请求报错
+            NSString *errorInfo = [dic objectForKey:@"text"];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+            [SVProgressHUD dismissWithDelay:2.0f];
+        }else{
+            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+            self->_hotListDataArray = [model.result.hotList mutableCopy];
+            [self.tableView reloadData];
+        }
+    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        NSLog(@"");
+    }];
     
 }
 
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return _hotListDataArray.count;
 }
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//    return 5;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    HotListModel *model = [_hotListDataArray objectAtIndex:indexPath.row];
+    
     HotListViewCell *cell = [[HotListViewCell alloc] init];
+    [cell bindWithHotListModel:model];
     return cell;
 }
 #pragma mark UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_hotListDataArray.count) {
+        return 10;
+    }
+    return [HotListModel caculateHeightWithHotInfoModel:[_hotListDataArray objectAtIndex:indexPath.row]];
+    
+}
 
 #pragma mark - Custom protocol 
 #pragma mark - Custom functions

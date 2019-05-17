@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02624C228E746100B9F86D /* HotListViewCell.m */; };
+		4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */; };
+		4A026252228E84C800B9F86D /* HotListViewCellTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */; };
+		4A026255228E865D00B9F86D /* HotListViewCellHotInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026254228E865D00B9F86D /* HotListViewCellHotInfo.m */; };
+		4A026257228E867600B9F86D /* HotListViewCellHotInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026256228E867600B9F86D /* HotListViewCellHotInfo.xib */; };
+		4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */; };
+		4A02625C228E87A700B9F86D /* HotListViewCellCommentInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */; };
+		4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02625E228E881400B9F86D /* HotListViewCellSocial.m */; };
+		4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */; };
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
@@ -1992,6 +2000,18 @@
 		490A8B8CECA460B580653E91 /* Pods-ANKHupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANKHupu.release.xcconfig"; path = "Target Support Files/Pods-ANKHupu/Pods-ANKHupu.release.xcconfig"; sourceTree = "<group>"; };
 		4A02624B228E746100B9F86D /* HotListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCell.h; sourceTree = "<group>"; };
 		4A02624C228E746100B9F86D /* HotListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCell.m; sourceTree = "<group>"; };
+		4A02624E228E84BC00B9F86D /* HotListViewCellTopicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellTopicView.h; sourceTree = "<group>"; };
+		4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellTopicView.m; sourceTree = "<group>"; };
+		4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellTopicView.xib; sourceTree = "<group>"; };
+		4A026253228E865D00B9F86D /* HotListViewCellHotInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellHotInfo.h; sourceTree = "<group>"; };
+		4A026254228E865D00B9F86D /* HotListViewCellHotInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellHotInfo.m; sourceTree = "<group>"; };
+		4A026256228E867600B9F86D /* HotListViewCellHotInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellHotInfo.xib; sourceTree = "<group>"; };
+		4A026258228E879D00B9F86D /* HotListViewCellCommentInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellCommentInfo.h; sourceTree = "<group>"; };
+		4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellCommentInfo.m; sourceTree = "<group>"; };
+		4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellCommentInfo.xib; sourceTree = "<group>"; };
+		4A02625D228E881400B9F86D /* HotListViewCellSocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellSocial.h; sourceTree = "<group>"; };
+		4A02625E228E881400B9F86D /* HotListViewCellSocial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellSocial.m; sourceTree = "<group>"; };
+		4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellSocial.xib; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -4079,6 +4099,18 @@
 			children = (
 				4A02624B228E746100B9F86D /* HotListViewCell.h */,
 				4A02624C228E746100B9F86D /* HotListViewCell.m */,
+				4A02624E228E84BC00B9F86D /* HotListViewCellTopicView.h */,
+				4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */,
+				4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */,
+				4A026253228E865D00B9F86D /* HotListViewCellHotInfo.h */,
+				4A026254228E865D00B9F86D /* HotListViewCellHotInfo.m */,
+				4A026256228E867600B9F86D /* HotListViewCellHotInfo.xib */,
+				4A026258228E879D00B9F86D /* HotListViewCellCommentInfo.h */,
+				4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */,
+				4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */,
+				4A02625D228E881400B9F86D /* HotListViewCellSocial.h */,
+				4A02625E228E881400B9F86D /* HotListViewCellSocial.m */,
+				4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6302,6 +6334,7 @@
 				4AF66ED0228A64D200DFC1AF /* bg_next@2x.png in Resources */,
 				4AF66C79228A64D100DFC1AF /* tab_news_btn_1_pad@2x.png in Resources */,
 				4AF66AC5228A64D100DFC1AF /* close_btn@2x.png in Resources */,
+				4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */,
 				4AF66D4C228A64D100DFC1AF /* sound-control_s_bg@2x.png in Resources */,
 				4AF668F1228A64D000DFC1AF /* 未关注@3x.png in Resources */,
 				4AF66E0F228A64D200DFC1AF /* football_tactic_ground@3x.png in Resources */,
@@ -6612,6 +6645,7 @@
 				4AF66DB8228A64D100DFC1AF /* tab_statistics_night@3x.png in Resources */,
 				4AF66DDC228A64D100DFC1AF /* clock_1@3x.png in Resources */,
 				4AF66F2E228A64D200DFC1AF /* tab_chat@2x.png in Resources */,
+				4A026257228E867600B9F86D /* HotListViewCellHotInfo.xib in Resources */,
 				4AF66FD3228A64D200DFC1AF /* 7_ic@2x.png in Resources */,
 				4AF66A33228A64D000DFC1AF /* football_weather_cloudy_night@3x.png in Resources */,
 				4AF66BD1228A64D100DFC1AF /* del_ic_1@3x.png in Resources */,
@@ -7594,6 +7628,7 @@
 				4AF66B25228A64D100DFC1AF /* mark_star_ic_night@3x.png in Resources */,
 				4AF66AEC228A64D100DFC1AF /* pop_Cancel_btn_1.png in Resources */,
 				4AF66BFD228A64D100DFC1AF /* tab_bbs_btn_1_night@2x.png in Resources */,
+				4A02625C228E87A700B9F86D /* HotListViewCellCommentInfo.xib in Resources */,
 				4AF66EE0228A64D200DFC1AF /* Foot_Overtime_ic_night@3x.png in Resources */,
 				4AF66FAB228A64D200DFC1AF /* AppIcon20x20@2x~ipad.png in Resources */,
 				4AF66F9A228A64D200DFC1AF /* logo5@2x.png in Resources */,
@@ -8142,6 +8177,7 @@
 				4AF66D0C228A64D100DFC1AF /* tab_report_pad@2x.png in Resources */,
 				4AF66DEE228A64D100DFC1AF /* del_btn_search@3x.png in Resources */,
 				4AF66A61228A64D000DFC1AF /* bbsCamera_flip@2x.png in Resources */,
+				4A026252228E84C800B9F86D /* HotListViewCellTopicView.xib in Resources */,
 				4AF669FD228A64D000DFC1AF /* 已关注@3x.png in Resources */,
 				4AF66B4B228A64D100DFC1AF /* person_author_ic@3x.png in Resources */,
 				4AF66DE6228A64D100DFC1AF /* unadd_ic@3x.png in Resources */,
@@ -8289,20 +8325,24 @@
 			files = (
 				4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */,
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
+				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
 				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
+				4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4A026255228E865D00B9F86D /* HotListViewCellHotInfo.m in Sources */,
 				4A8112AB228D98110036D3C5 /* Reachability.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
 				4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */,
+				4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */,
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,

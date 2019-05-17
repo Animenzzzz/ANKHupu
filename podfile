@@ -4,4 +4,5 @@ target 'ANKHupu' do
    pod 'YYModel'
    pod 'MJRefresh'
    pod 'SVProgressHUD'
+   pod 'SDWebImage'
 end

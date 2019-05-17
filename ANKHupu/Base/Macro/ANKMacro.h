@@ -20,14 +20,23 @@
 #define kSeperatLineColor [UIColor colorWithHexString:@"eaeaea"]
 
 //导航栏高度
-#define kNavigationBarHeight 64.0
+#define kNavigationBarHeight 64.0 //TODO...待优化，适配机型
 
-//导航栏下方 滚动条的字体大小
-#define kScrollTitleSize_NO_Select 15.0
-#define kScrollTitleSize_Select 15.0 //TODO...选中大小就改变
 //导航栏下方 滚动条的高度
 #define kScrollTagHeight 44.0
 //导航栏下方 滚动条右边更多按钮的宽度
 #define kScrollTagMoreBtnWidth 44.0
+
+//tableview灰色背景y颜色
+#define kGrayBackGroundColor [UIColor colorWithHexString:@"eaeaea"]
+//tableview cell间隔
+#define kCellSeparaOffset 3.0
+
+//推荐页(hotList)
+#define HotListViewCellTopicView_xib_height 25
+#define HotListViewCellSocial_xib_height 25
+#define kHotListCell_top 5
+#define kHotListCell_left 5
+#define kHotListCell_bottom 5
 
 #endif /* ANKMacro_h */

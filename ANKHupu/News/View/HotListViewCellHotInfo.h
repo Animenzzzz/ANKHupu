@@ -1,5 +1,5 @@
 //
-//  HotListViewCell.h
+//  HotListViewCellHotInfo.h
 //  ANKHupu
 //
 //  Created by Animenzzz on 2019/5/17.
@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HotListModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HotListViewCell : UITableViewCell
+@interface HotListViewCellHotInfo : UIView
 
-- (void)bindWithHotListModel:(HotListModel *)model;
+@property (nonatomic, strong) NSString *title;
 
 @end
 
