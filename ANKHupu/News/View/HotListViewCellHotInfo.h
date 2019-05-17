@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HotListViewCellHotInfo : UIView
 
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *titleSmall;
 
 - (void)laySubViewWithInfoModel:(HotListModel *)model;
 

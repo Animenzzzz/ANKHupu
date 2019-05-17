@@ -67,7 +67,7 @@
             <connections>
                 <outlet property="nickNameLab" destination="5Nh-yi-Mq5" id="U1F-nF-CGz"/>
                 <outlet property="topicImage" destination="iVG-x7-r3R" id="KRG-ZN-VAi"/>
-                <outlet property="topicNameLab" destination="FZT-i8-VcG" id="Hta-bA-340"/>
+                <outlet property="topicNameLab" destination="FZT-i8-VcG" id="2Pf-B7-Bs6"/>
             </connections>
             <point key="canvasLocation" x="-827" y="-310"/>
         </view>

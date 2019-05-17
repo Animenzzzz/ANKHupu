@@ -24,24 +24,29 @@
 
 
 + (CGFloat)caculateHeightWithHotInfoModel:(HotListModel *)hotInfo{
-    CGFloat topView_height = HotListViewCellTopicView_xib_height;
-    CGFloat hotInfoView_height = HotListViewCellHotInfo_xib_titleLab_height;//111
-    CGFloat commentView_height = 0;
-    CGFloat socialView_height = HotListViewCellSocial_xib_height;
     
-    if (hotInfo.hotInfo.pics.count) {//判断内容除了title，是否还有图片,有要另外加上高度
-        hotInfoView_height = hotInfoView_height+HotListViewCellHotInfo_xib_collectPic_height;
+    CGFloat topView_height = topic_1;
+    CGFloat hotInfoView_height = info_wu_3;
+    CGFloat commentView_height = 0;
+    CGFloat socialView_height = share_7;
+    
+    if (hotInfo.hotInfo.pics.count) {//内容有图
+        hotInfoView_height = info_you_3+topic_info_2;
+    }else{//无图
+        hotInfoView_height = info_wu_3+topic_info_2;
     }
-    hotInfoView_height = hotInfoView_height+TopicToInfoOffset_height;
+   
     
     if (hotInfo.hotInfo.light_replies.count) {//有评论，才加载视图
-        commentView_height = Comment_height+InfoToComment_height+CommentToShare_height;// 评论title高 21
+        commentView_height = comment_5+info_comment_4+comment_share_6;// 评论title高 21
     }else{
-        commentView_height = CommentToShare_height;
+        commentView_height = comment_share_6;
     }
 
     //到顶部高度 + topic栏_高 + topic栏-->内容栏间隔 + 内容栏_高 + 内容栏-->评论栏 + 评论栏_高 + 评论栏-->share + share_高 + 到底部高度
-    return kHotListCell_top +topView_height+socialView_height+commentView_height+hotInfoView_height+kHotListCell_bottom;
+    CGFloat allHeight = kHotListCell_top +topView_height+socialView_height+commentView_height+hotInfoView_height+kHotListCell_bottom;
+//    NSLog(@"总高度：%f  分享: %ld",allHeight,(long)hotInfo.hotInfo.visits);
+    return allHeight;
 }
 
 @end

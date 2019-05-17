@@ -13,7 +13,7 @@
 @interface HotListViewCellHotInfo()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab_small;
+@property (weak, nonatomic) IBOutlet UILabel *tieSmall;
 
 @end
 
@@ -29,11 +29,16 @@ static NSString *kCollectionCellID = @"CollectionCellID";
 
 - (void)setTitle:(NSString *)title{
     self.titleLab.text = title;
-    self.titleLab_small.text = title;
+//    self.titleLab_small.text = title;
+}
+
+- (void)setTitleSmall:(NSString *)titleSmall{
+    self.tieSmall.text = titleSmall;
 }
 
 - (void)laySubViewWithInfoModel:(HotListModel *)model{
     
+    _dataModel = model;
     if (!model.hotInfo.pics.count) {
         self.collectionView.hidden = YES;
         return;
@@ -41,7 +46,7 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.itemSize = CGSizeMake(HotListViewCellHotInfo_xib_collectPic_height, HotListViewCellHotInfo_xib_collectPic_height);
+    layout.itemSize = CGSizeMake(info_you_other, info_you_other);
     CGFloat margin = 2;//这是cell之间的间隔
     layout.minimumLineSpacing = margin;
     [_collectionView setCollectionViewLayout:layout];
@@ -49,9 +54,6 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:@"HotListCellCollectionCell" bundle:nil] forCellWithReuseIdentifier:kCollectionCellID];
-    _dataModel = model;
-    
-    
 
 }
 
@@ -68,9 +70,7 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     NSArray *arr = [imgURL componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
     
     cell.commentPic.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
-    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        cell.commentPic.image = image;
-    }];
+    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[UIImage imageNamed:@"pic_btn_1_night@2x.png"]];
     
     return cell;
 }

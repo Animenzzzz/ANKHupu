@@ -30,17 +30,18 @@
 #define kCellSeparaOffset 3.0
 
 //推荐页(hotList)
-#define HotListViewCellTopicView_xib_height 25 //topic栏，高度
-#define TopicToInfoOffset_height 5 //topic栏--->内容  
-#define HotListViewCellHotInfo_xib_titleLab_height 21 //内容的title高度
-#define HotListViewCellHotInfo_xib_collectPic_height 111 //内容的图片高度
-#define InfoToComment_height 5 //内容--->评论
-#define Comment_height 80   //评论高度
-#define CommentToShare_height 5 //评论-->share
-#define HotListViewCellSocial_xib_height 25 //分享、赞等栏，高度
-#define kHotListCell_top (15+kCellSeparaOffset)
-#define kHotListCell_left 12
-#define kHotListCell_bottom 15
 //到顶部高度 + topic栏_高 + topic栏-->内容栏间隔 + 内容栏_高 + 内容栏-->评论栏 + 评论栏_高 + 评论栏-->share + share_高 + 到底部高度
+#define kHotListCell_bottom 15
+#define kHotListCell_left 12
+#define kHotListCell_top    (15+kCellSeparaOffset)
+#define topic_1             25 //topic栏，高度
+#define topic_info_2        25 //topic栏--->内容
+#define info_wu_3           34 //内容_无图
+#define info_you_3          140 //内容_有图
+#define info_you_other      111 //内容_有图
+#define info_comment_4      5 //内容--->评论
+#define comment_5           80   //评论
+#define comment_share_6     5   //评论-->share
+#define share_7             25   //评论
 
 #endif /* ANKMacro_h */

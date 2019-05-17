@@ -40,60 +40,6 @@
     [super setFrame:frame];
 }
 
-- (void)layoutSubviews{
-
-    //话题信息栏___布局
-//    [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(kHotListCell_top);
-//        make.left.mas_equalTo(kHotListCell_left);
-//        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
-//        make.width.mas_equalTo(375);
-//    }];
-    
-    
-    //信息正文___布局
-//    [self.hotInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(kHotListCell_top+HotListViewCellTopicView_xib_height+5);
-//        make.left.mas_equalTo(kHotListCell_left);
-//        //内容有图片
-//        if (!self->_hotDataModel.hotInfo.pics.count) {   make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height+HotListViewCellHotInfo_xib_collectPic_height);
-//        }else{
-//            make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height);
-//        }
-//
-//        make.width.mas_equalTo(375);
-//    }];
-//
-//
-//    //评论信息
-//    if (self->_hotDataModel.hotInfo.light_replies.count) {//有评论，才加载视图
-//        self.commentInfoView = [[[UINib nibWithNibName:@"HotListViewCellCommentInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//        //评论信息___布局
-//        [self addSubview:self.commentInfoView];
-//        [self.commentInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.hotInfoView.frame.origin.y+self.hotInfoView.frame.size.height+5);
-//            make.left.mas_equalTo(kHotListCell_left);
-//            make.height.mas_equalTo(20);
-//            make.width.mas_equalTo(375);
-//        }];
-//    }
-//
-//
-//    //分享、点赞等信息___布局
-//    [self.socialView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        if (self->_hotDataModel.hotInfo.light_replies.count){
-//            make.top.equalTo(self.commentInfoView.mas_bottom).with.mas_offset(3);
-//        }else{
-//            make.top.equalTo(self.hotInfoView.mas_bottom).with.mas_offset(3);
-//        }
-//        make.left.mas_equalTo(kHotListCell_left);
-//        make.height.mas_equalTo(25);
-//        make.width.mas_equalTo(375);
-//    }];
-//    NSLog(@"");
-
-}
-
 
 
 - (void)bindWithHotListModel:(HotListModel *)model{
@@ -110,28 +56,30 @@
     [self.topicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(kHotListCell_top);
         make.left.mas_equalTo(kHotListCell_left);
-        make.height.mas_equalTo(HotListViewCellTopicView_xib_height);
+        make.height.mas_equalTo(topic_1);
         make.width.mas_equalTo(SCREEN_WIDTH);
     }];
     
     //信息正文
     if (!model.hotInfo.pics.count) {//内容没有图片，直接放一个lable
-        
-        self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] lastObject];
+        self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo2" bundle:nil] instantiateWithOwner:self options:nil][0];
+        self.hotInfoView.titleSmall = model.hotInfo.title;
     }else{
-        self.hotInfoView = [[[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+        self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil][0];
+        self.hotInfoView.title = model.hotInfo.title;
     }
-    self.hotInfoView.title = model.hotInfo.title;
+    
     [self.hotInfoView laySubViewWithInfoModel:model];
     //信息正文___布局
     [self addSubview:self.hotInfoView];
     [self.hotInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kHotListCell_top+HotListViewCellTopicView_xib_height+TopicToInfoOffset_height);
+        make.top.mas_equalTo(kHotListCell_top+topic_info_2+topic_1);
         make.left.mas_equalTo(kHotListCell_left);
-        //内容有图片
-        if (!model.hotInfo.pics.count) {   make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height+HotListViewCellHotInfo_xib_collectPic_height);
+        //内容无图片
+        if (!model.hotInfo.pics.count) {
+            make.height.mas_equalTo(info_wu_3);
         }else{
-            make.height.mas_equalTo(HotListViewCellHotInfo_xib_titleLab_height);
+            make.height.mas_equalTo(info_you_3);
         }
     
         make.width.mas_equalTo(375);
@@ -151,13 +99,13 @@
     //评论信息___布局
         [self addSubview:self.commentInfoView];
         [self.commentInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-(kHotListCell_bottom+HotListViewCellSocial_xib_height+CommentToShare_height));
+            make.bottom.mas_equalTo(-(kHotListCell_bottom+share_7+comment_share_6));
             make.left.mas_equalTo(kHotListCell_left);
-            make.height.mas_equalTo(Comment_height);
+            make.height.mas_equalTo(comment_5);
             make.width.mas_equalTo(SCREEN_WIDTH-20);
         }];
     }
-    
+
     //分享、点赞等信息
     self.socialView = [[[UINib nibWithNibName:@"HotListViewCellSocial" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.socialView.visits = [NSString stringWithFormat:@"查看:%ld",model.hotInfo.visits];
@@ -169,7 +117,7 @@
     [self.socialView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(-(kHotListCell_bottom));
         make.left.mas_equalTo(kHotListCell_left);
-        make.height.mas_equalTo(HotListViewCellSocial_xib_height);
+        make.height.mas_equalTo(share_7);
         make.width.mas_equalTo(SCREEN_WIDTH);
     }];
 

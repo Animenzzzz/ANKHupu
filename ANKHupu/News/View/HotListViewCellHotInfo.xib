@@ -56,25 +56,8 @@
             <connections>
                 <outlet property="collectionView" destination="SjP-o9-Phu" id="IhI-TS-1dK"/>
                 <outlet property="titleLab" destination="07Q-Mx-JWP" id="ixp-sd-oeW"/>
-                <outlet property="titleLab_small" destination="vdB-Ni-FbJ" id="jct-Ln-GKr"/>
             </connections>
             <point key="canvasLocation" x="1380" y="-680"/>
-        </view>
-        <view contentMode="scaleToFill" id="t6B-5h-3Sg" customClass="HotListViewCellHotInfo">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-Ni-FbJ">
-                    <rect key="frame" x="0.0" y="7" width="208" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1379" y="-568"/>
         </view>
     </objects>
 </document>
