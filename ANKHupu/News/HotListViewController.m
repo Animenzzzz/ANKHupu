@@ -13,6 +13,7 @@
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
 #import "ANKReachabilityManager.h"
+#import "HotListViewCell.h"
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -40,14 +41,14 @@
 
 - (void)initViews{
     
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requesData)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dropDownRequesData)];
     
 }
 
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.backgroundColor = [UIColor lightGrayColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
@@ -94,14 +95,44 @@
     }];
 }
 
+//下拉刷新
+- (void)dropDownRequesData{
+    
+    if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
+        [self.tableView.mj_header endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
+        [SVProgressHUD dismissWithDelay:2.0f];
+        return;
+    }
+    
+    
+//    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+//        NSDictionary *dic =data[@"error"];
+//        if (dic) {//请求报错
+//            NSString *errorInfo = [dic objectForKey:@"text"];
+//            NSLog(@"%@",errorInfo);
+//        }else{
+//            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+//            NSLog(@"");
+//        }
+//    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+//        NSLog(@"");
+//    }];
+    
+}
+
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
 }
 
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//    return 5;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [UITableViewCell new];
+    HotListViewCell *cell = [[HotListViewCell alloc] init];
     return cell;
 }
 #pragma mark UITableViewDelegate

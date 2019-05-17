@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02624C228E746100B9F86D /* HotListViewCell.m */; };
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
@@ -1989,6 +1990,8 @@
 
 /* Begin PBXFileReference section */
 		490A8B8CECA460B580653E91 /* Pods-ANKHupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANKHupu.release.xcconfig"; path = "Target Support Files/Pods-ANKHupu/Pods-ANKHupu.release.xcconfig"; sourceTree = "<group>"; };
+		4A02624B228E746100B9F86D /* HotListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCell.h; sourceTree = "<group>"; };
+		4A02624C228E746100B9F86D /* HotListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCell.m; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -4074,6 +4077,8 @@
 		4ABDCAED228AD1AE0091E341 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A02624B228E746100B9F86D /* HotListViewCell.h */,
+				4A02624C228E746100B9F86D /* HotListViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8284,6 +8289,7 @@
 			files = (
 				4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */,
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
+				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
