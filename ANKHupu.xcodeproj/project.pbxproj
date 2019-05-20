@@ -31,6 +31,7 @@
 		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
 		4ACD93FE229275C20043E05F /* FPSLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD93FD229275C20043E05F /* FPSLable.m */; };
 		4ACD9401229276190043E05F /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9400229276190043E05F /* WeakProxy.m */; };
+		4ACD9407229296760043E05F /* ResUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9406229296760043E05F /* ResUtil.m */; };
 		4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */; };
 		4AE5F701228AF15500BFC9C8 /* ANKNavigationViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
@@ -2043,6 +2044,8 @@
 		4ACD93FD229275C20043E05F /* FPSLable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSLable.m; sourceTree = "<group>"; };
 		4ACD93FF229276190043E05F /* WeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
 		4ACD9400229276190043E05F /* WeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+		4ACD9405229296760043E05F /* ResUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResUtil.h; sourceTree = "<group>"; };
+		4ACD9406229296760043E05F /* ResUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResUtil.m; sourceTree = "<group>"; };
 		4AE5F6FD228AF13F00BFC9C8 /* ANKNavigationViewTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewTitle.h; sourceTree = "<group>"; };
 		4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewTitle.m; sourceTree = "<group>"; };
 		4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewTitle.xib; sourceTree = "<group>"; };
@@ -4151,6 +4154,15 @@
 			path = FPSLable;
 			sourceTree = "<group>";
 		};
+		4ACD9404229296530043E05F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				4ACD9405229296760043E05F /* ResUtil.h */,
+				4ACD9406229296760043E05F /* ResUtil.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		4AE5F702228BAE7400BFC9C8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -4243,6 +4255,7 @@
 		4AF660D422897F0500DFC1AF /* ANKHupu */ = {
 			isa = PBXGroup;
 			children = (
+				4ACD9404229296530043E05F /* Tools */,
 				4ABDCAE8228AD12C0091E341 /* Game */,
 				4ABDCAE7228AD1210091E341 /* News */,
 				4AF660EE22897F3700DFC1AF /* Base */,
@@ -8358,6 +8371,7 @@
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
+				4ACD9407229296760043E05F /* ResUtil.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,

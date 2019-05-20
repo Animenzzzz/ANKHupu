@@ -59,7 +59,9 @@ static NSString *kCollectionViewCellID = @"CollectionCellID";
     NSArray *arr = [imgURL componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
     
     cell.commentPic.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
-    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[UIImage imageNamed:@"placehold_big@2x.png"]];
+    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        cell.commentPic.image = image;
+    }];
     
     return cell;
 }

@@ -43,8 +43,16 @@
 
 - (void)initViews{
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dropDownRequesData)];
     
+    if (@available(iOS 11.0, *)) {
+        self.tableView.estimatedRowHeight           = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
+    }
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dropDownRequesData)];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(pullUpLoadMoreData)];
 }
 
 - (UITableView *)tableView{
@@ -135,7 +143,42 @@
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-                    self->_hotListDataArray = [model.result.hotList mutableCopy];
+                    self->_hotListDataArray = [NSMutableArray arrayWithArray:[model.result.hotList mutableCopy]];
+                    [self.tableView reloadData];
+                }
+            });
+            
+        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+            NSLog(@"");
+        }];
+    });
+}
+
+//上拉加载更多
+- (void)pullUpLoadMoreData{
+    
+    if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
+        [self.tableView.mj_footer endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
+        [SVProgressHUD dismissWithDelay:2.0f];
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @weakify(self)
+        [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView.mj_footer endRefreshing];
+                @strongify(self)
+                NSDictionary *dic =data[@"error"];
+                if (dic) {//请求报错
+                    NSString *errorInfo = [dic objectForKey:@"text"];
+                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                    [SVProgressHUD dismissWithDelay:2.0f];
+                }else{
+                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+                    self->_hotListDataArray = [[self->_hotListDataArray arrayByAddingObjectsFromArray:[model.result.hotList mutableCopy]] mutableCopy];
                     [self.tableView reloadData];
                 }
             });
