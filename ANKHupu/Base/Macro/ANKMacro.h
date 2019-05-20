@@ -31,19 +31,17 @@
 
 //推荐页(hotList)
 //到顶部高度 + topic栏_高 + topic栏-->内容栏间隔 + 内容栏_高 + 内容栏-->评论栏 + 评论栏_高 + 评论栏-->share + share_高 + 到底部高度
-#define kHotListCell_bottom 15
-#define kHotListCell_left 12
-#define kHotListCell_top    (15+kCellSeparaOffset)
-#define kHotInfoWidth      (SCREEN_WIDTH-kCellSeparaOffset*2-kHotListCell_left*2)
-#define topic_1             25 //topic栏，高度
-#define topic_info_2        10 //topic栏--->内容
-//#define topic_to_infoTitle_2        10 //topic栏--->内容title,内容title要动态计算
-#define info_wu_3           34 //内容_无图
-#define info_you_3          140 //内容_有图
-#define info_you_other      111 //内容_有图
-#define info_comment_4      5 //内容--->评论
-#define comment_5           80   //评论
-#define comment_share_6     5   //评论-->share
+#define kHotListCell_bottom  15
+#define kHotListCell_left    12
+#define kHotListCell_top     (15+kCellSeparaOffset)
+#define kHotInfoWidth        (SCREEN_WIDTH-kCellSeparaOffset*2-kHotListCell_left*2)
+#define topic_1              25                                                    //topic栏，高度
+#define topic_to_infoTitle_2 8                                                    //topic栏--->内容title,内容title要动态计算
+#define infoTitle_to_photo_3 8 //内容title ---> 内容图片
+#define collectionPhotoHeight       111                                                   //内容_有图
+#define info_to_comment_4       15                                                     //内容--->评论
+#define comment_5            80                                                    //评论
+#define comment_share_6      5                                                     //评论-->share
 #define share_7             25   //评论
 
 #endif /* ANKMacro_h */

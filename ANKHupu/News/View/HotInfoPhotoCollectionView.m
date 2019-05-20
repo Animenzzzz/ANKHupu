@@ -30,7 +30,7 @@ static NSString *kCollectionViewCellID = @"CollectionCellID";
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(info_you_other, info_you_other);
+        layout.itemSize = CGSizeMake(collectionPhotoHeight, collectionPhotoHeight);
         CGFloat margin = 2;//这是cell之间的间隔
         layout.minimumLineSpacing = margin;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];

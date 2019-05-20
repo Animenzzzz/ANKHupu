@@ -71,7 +71,7 @@
     [self addSubview:titleLab];
     //信息正文___布局
     [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kHotListCell_top+topic_info_2+topic_1);
+        make.top.mas_equalTo(kHotListCell_top+topic_to_infoTitle_2+topic_1);
         make.left.mas_equalTo(kHotListCell_left);
         make.height.mas_equalTo(fitHeight);
         make.width.mas_equalTo(kHotInfoWidth);
@@ -79,10 +79,10 @@
     
     //信息正文(图片)
     if (model.hotInfo.pics.count){
-        HotInfoPhotoCollectionView *collectionView = [[HotInfoPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, info_you_other, info_you_other)];
+        HotInfoPhotoCollectionView *collectionView = [[HotInfoPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, collectionPhotoHeight, collectionPhotoHeight)];
         [self addSubview:collectionView];
         [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(titleLab.mas_bottom).offset(8);
+            make.top.equalTo(titleLab.mas_bottom).offset(topic_to_infoTitle_2);
             make.left.mas_equalTo(kHotListCell_left);
         }];
         
@@ -97,6 +97,7 @@
         self.commentInfoView.comment = repls.content;
         self.commentInfoView.nickName = repls.nickname;
         NSArray *arr = [repls.header componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
+        self.commentInfoView.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
         [self.commentInfoView.iconImage sd_setImageWithURL:[NSURL URLWithString:arr[0]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             self.commentInfoView.iconImage.image = image;
         }];
