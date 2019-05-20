@@ -8,7 +8,8 @@
 
 #import "HotListViewCell.h"
 #import "HotListViewCellTopicView.h"
-#import "HotListViewCellHotInfo.h"
+//#import "HotListViewCellHotInfo.h"
+#import "HotInfoPhotoCollectionView.h"
 #import "HotListViewCellCommentInfo.h"
 #import "HotListViewCellSocial.h"
 #import "SDWebImage.h"
@@ -17,7 +18,7 @@
 @interface HotListViewCell()
 
 @property (nonatomic, weak) HotListViewCellTopicView *topicView;
-@property (nonatomic, weak) HotListViewCellHotInfo *hotInfoView;
+//@property (nonatomic, weak) HotListViewCellHotInfo *hotInfoView;
 @property (nonatomic, weak) HotListViewCellCommentInfo *commentInfoView;
 @property (nonatomic, weak) HotListViewCellSocial *socialView;
 
@@ -60,36 +61,34 @@
         make.height.mas_equalTo(topic_1);
         make.width.mas_equalTo(SCREEN_WIDTH);
     }];
-    
+
     //信息正文
-    CGFloat fitHeight = [UILabel getHeightByWidth:SCREEN_WIDTH title:model.hotInfo.title font:self.hotInfoView.titleLab.font];//动态计算高度
-    CGFloat labHeight = fitHeight > topic_1 ?fitHeight:topic_1;
-    if (!model.hotInfo.pics.count) {//内容没有图片，直接放一个lable
-        self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo2" bundle:nil] instantiateWithOwner:self options:nil][0];
-        self.hotInfoView.titleSmall = model.hotInfo.title;
-        self.hotInfoView.hotInfoTitleHeight2.constant = labHeight;
-    }else{
-        self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil][0];
-        self.hotInfoView.title = model.hotInfo.title;
-        self.hotInfoView.hotInfoTitleHeight.constant = labHeight;
-    }
-    
-    [self.hotInfoView laySubViewWithInfoModel:model];
+    UILabel *titleLab = [UILabel new];
+    titleLab.font = [UIFont systemFontOfSize:17];
+    titleLab.text = model.hotInfo.title;
+    titleLab.numberOfLines = 0;
+    CGFloat fitHeight = [UILabel getHeightByWidth:kHotInfoWidth title:model.hotInfo.title font:titleLab.font];//动态计算高度
+    [self addSubview:titleLab];
     //信息正文___布局
-    [self addSubview:self.hotInfoView];
-    [self.hotInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(kHotListCell_top+topic_info_2+topic_1);
         make.left.mas_equalTo(kHotListCell_left);
-        //内容无图片
-        if (!model.hotInfo.pics.count) {
-            make.height.mas_equalTo(info_wu_3-topic_1+labHeight);
-        }else{
-            make.height.mas_equalTo(info_you_3-topic_1+labHeight);
-        }
-    
-        make.width.mas_equalTo(375);
+        make.height.mas_equalTo(fitHeight);
+        make.width.mas_equalTo(kHotInfoWidth);
     }];
     
+    //信息正文(图片)
+    if (model.hotInfo.pics.count){
+        HotInfoPhotoCollectionView *collectionView = [[HotInfoPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, info_you_other, info_you_other)];
+        [self addSubview:collectionView];
+        [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(titleLab.mas_bottom).offset(8);
+            make.left.mas_equalTo(kHotListCell_left);
+        }];
+        
+        [collectionView laySubViewWithInfoModel:model];
+    }
+
     
 //    //评论信息
     if (model.hotInfo.light_replies.count) {//有评论，才加载视图
