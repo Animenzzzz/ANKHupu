@@ -460,8 +460,15 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [self.view addSubview:tagBtn];
     UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
     grayLine.backgroundColor = kSeperatLineColor;
+    [tagBtn addTarget:self action:@selector(moreBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [tagBtn addSubview:grayLine];
     self.moreBtn = tagBtn;
+}
+- (void)moreBtnClick{
+    
+    if ([self.delegate respondsToSelector:@selector(moreBtnDidClick)]) {
+        [self.delegate moreBtnDidClick];
+    }
 }
 
 - (void)wm_addMenuView {

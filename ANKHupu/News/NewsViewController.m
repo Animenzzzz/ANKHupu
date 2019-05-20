@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "ANKHttpServer.h"
 #import "HotListViewController.h"
+#import "TagsViewController.h"
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
 @property (nonatomic, strong) ANKNavigationViewSearch *navigationView;
@@ -91,13 +92,19 @@ static NSInteger timeCount = 0;
 #pragma mark - System protocol 
 
 
-#pragma mark - Custom protocol   ANKNavigationViewSearchDelegate
+#pragma mark - Custom protocol
 
 - (void)hotSearchViewClick{
     NSLog(@"");
 }
 - (void)commentClick{
     NSLog(@"");
+}
+
+- (void)moreBtnDidClick{
+    TagsViewController *tagViewCon = [TagsViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tagViewCon];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController{

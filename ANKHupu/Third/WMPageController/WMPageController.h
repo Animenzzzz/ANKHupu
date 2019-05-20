@@ -129,6 +129,9 @@ extern NSString *const WMControllerDidFullyDisplayedNotification;
  */
 - (void)pageController:(WMPageController *)pageController didEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info;
 
+//Mychange
+- (void)moreBtnDidClick;
+
 @end
 
 @interface WMPageController : UIViewController <WMMenuViewDelegate, WMMenuViewDataSource, UIScrollViewDelegate, WMPageControllerDataSource, WMPageControllerDelegate>

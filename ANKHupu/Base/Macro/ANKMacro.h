@@ -22,7 +22,7 @@
 //导航栏下方 滚动条的高度
 #define kScrollTagHeight                                                      44.0
 //导航栏下方 滚动条右边更多按钮的宽度
-#define kScrollTagMoreBtnWidth                                                44.0
+#define kScrollTagMoreBtnWidth                                                54.0
 
 //tableview灰色背景y颜色
 #define kGrayBackGroundColor [UIColor                                         colorWithHexString:@"eaeaea"]
@@ -43,5 +43,12 @@
 #define comment_5             80                                                    //评论
 #define comment_share_6       5                                                     //评论-->share
 #define share_7               25                                                    //评论
+
+
+
+#define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+
+#define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 
 #endif /* ANKMacro_h */

@@ -58,6 +58,19 @@
     return self.frame.size.height;
 }
 
+
+
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+/** size */
+- (CGSize)size {
+    return self.frame.size;
+}
+
 - (void)addTapAction:(SEL)tapAction target:(id)target {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:tapAction];
