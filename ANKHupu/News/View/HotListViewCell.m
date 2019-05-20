@@ -13,6 +13,7 @@
 #import "HotListViewCellSocial.h"
 #import "SDWebImage.h"
 #import "Masonry.h"
+#import "UILabel+AutoFit.h"
 @interface HotListViewCell()
 
 @property (nonatomic, weak) HotListViewCellTopicView *topicView;
@@ -61,12 +62,16 @@
     }];
     
     //信息正文
+    CGFloat fitHeight = [UILabel getHeightByWidth:SCREEN_WIDTH title:model.hotInfo.title font:self.hotInfoView.titleLab.font];//动态计算高度
+    CGFloat labHeight = fitHeight > topic_1 ?fitHeight:topic_1;
     if (!model.hotInfo.pics.count) {//内容没有图片，直接放一个lable
         self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo2" bundle:nil] instantiateWithOwner:self options:nil][0];
         self.hotInfoView.titleSmall = model.hotInfo.title;
+        self.hotInfoView.hotInfoTitleHeight2.constant = labHeight;
     }else{
         self.hotInfoView = [[UINib nibWithNibName:@"HotListViewCellHotInfo" bundle:nil] instantiateWithOwner:self options:nil][0];
         self.hotInfoView.title = model.hotInfo.title;
+        self.hotInfoView.hotInfoTitleHeight.constant = labHeight;
     }
     
     [self.hotInfoView laySubViewWithInfoModel:model];
@@ -77,9 +82,9 @@
         make.left.mas_equalTo(kHotListCell_left);
         //内容无图片
         if (!model.hotInfo.pics.count) {
-            make.height.mas_equalTo(info_wu_3);
+            make.height.mas_equalTo(info_wu_3-topic_1+labHeight);
         }else{
-            make.height.mas_equalTo(info_you_3);
+            make.height.mas_equalTo(info_you_3-topic_1+labHeight);
         }
     
         make.width.mas_equalTo(375);

@@ -7,7 +7,7 @@
 //
 
 #import "HotListModel.h"
-
+#import "UILabel+AutoFit.h"
 @implementation HotListModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
@@ -30,10 +30,13 @@
     CGFloat commentView_height = 0;
     CGFloat socialView_height = share_7;
     
+    CGFloat fitHeight = [UILabel getHeightByWidth:SCREEN_WIDTH title:hotInfo.hotInfo.title font:[UIFont systemFontOfSize:17]];//动态计算高度
+    CGFloat labHeight = fitHeight > topic_1 ?fitHeight:topic_1;
+    
     if (hotInfo.hotInfo.pics.count) {//内容有图
-        hotInfoView_height = info_you_3+topic_info_2;
+        hotInfoView_height = info_you_3+topic_info_2-topic_1+labHeight;
     }else{//无图
-        hotInfoView_height = info_wu_3+topic_info_2;
+        hotInfoView_height = info_wu_3+topic_info_2-topic_1+labHeight;
     }
    
     

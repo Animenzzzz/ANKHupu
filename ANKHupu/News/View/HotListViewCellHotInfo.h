@@ -12,8 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HotListViewCellHotInfo : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;//因为外面要根据uifont获取宽度，所以先暴露出来 TODO...
+
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *titleSmall;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotInfoTitleHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotInfoTitleHeight2;
 
 - (void)laySubViewWithInfoModel:(HotListModel *)model;
 

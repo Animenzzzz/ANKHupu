@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Mx-JWP">
-                    <rect key="frame" x="0.0" y="0.0" width="307" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="m20-BN-9OV"/>
-                        <constraint firstAttribute="width" constant="307" id="oo1-WY-pcl"/>
+                        <constraint firstAttribute="width" constant="375" id="oo1-WY-pcl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -55,6 +55,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="SjP-o9-Phu" id="IhI-TS-1dK"/>
+                <outlet property="hotInfoTitleHeight" destination="m20-BN-9OV" id="vl7-9v-UOC"/>
                 <outlet property="titleLab" destination="07Q-Mx-JWP" id="ixp-sd-oeW"/>
             </connections>
             <point key="canvasLocation" x="1380" y="-680"/>

@@ -35,7 +35,7 @@
 #define kHotListCell_left 12
 #define kHotListCell_top    (15+kCellSeparaOffset)
 #define topic_1             25 //topic栏，高度
-#define topic_info_2        25 //topic栏--->内容
+#define topic_info_2        15 //topic栏--->内容
 #define info_wu_3           34 //内容_无图
 #define info_you_3          140 //内容_有图
 #define info_you_other      111 //内容_有图

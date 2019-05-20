@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-yi-Mq5">
-                    <rect key="frame" x="132" y="2" width="73" height="21"/>
+                    <rect key="frame" x="119" y="2" width="73" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="73" id="QL5-ZU-iK6"/>
                         <constraint firstAttribute="height" constant="21" id="ROH-0Q-QMg"/>
@@ -57,7 +57,7 @@
                 <constraint firstAttribute="bottom" secondItem="iVG-x7-r3R" secondAttribute="bottom" id="Dli-NM-brP"/>
                 <constraint firstItem="5Nh-yi-Mq5" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="KPt-ao-UYm"/>
                 <constraint firstItem="FZT-i8-VcG" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="ay2-mS-NFn"/>
-                <constraint firstItem="5Nh-yi-Mq5" firstAttribute="leading" secondItem="FZT-i8-VcG" secondAttribute="trailing" constant="23" id="nFQ-DP-ujs"/>
+                <constraint firstItem="5Nh-yi-Mq5" firstAttribute="leading" secondItem="FZT-i8-VcG" secondAttribute="trailing" constant="10" id="nFQ-DP-ujs"/>
                 <constraint firstItem="iVG-x7-r3R" firstAttribute="top" secondItem="53e-lv-uGn" secondAttribute="top" id="nto-DR-wUz"/>
                 <constraint firstAttribute="trailing" secondItem="SaZ-MJ-MOH" secondAttribute="trailing" constant="12" id="r9y-rb-y5y"/>
                 <constraint firstItem="FZT-i8-VcG" firstAttribute="leading" secondItem="iVG-x7-r3R" secondAttribute="trailing" constant="12" id="ry4-65-R7L"/>
@@ -66,6 +66,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="nickNameLab" destination="5Nh-yi-Mq5" id="U1F-nF-CGz"/>
+                <outlet property="nickNameLabWidth" destination="QL5-ZU-iK6" id="iRO-ck-0BP"/>
+                <outlet property="topNameLabWidth" destination="2xU-ze-JLL" id="6ZY-D0-gGp"/>
                 <outlet property="topicImage" destination="iVG-x7-r3R" id="KRG-ZN-VAi"/>
                 <outlet property="topicNameLab" destination="FZT-i8-VcG" id="2Pf-B7-Bs6"/>
             </connections>

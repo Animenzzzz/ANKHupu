@@ -11,7 +11,6 @@
 #import "HotListCellCollectionCell.h"
 #import "SDWebImage.h"
 @interface HotListViewCellHotInfo()<UICollectionViewDelegate,UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UILabel *tieSmall;
 
@@ -70,7 +69,7 @@ static NSString *kCollectionCellID = @"CollectionCellID";
     NSArray *arr = [imgURL componentsSeparatedByString:@"?"];//通过空格符来分隔字符串
     
     cell.commentPic.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
-    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[UIImage imageNamed:@"pic_btn_1_night@2x.png"]];
+    [cell.commentPic sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[UIImage imageNamed:@"placehold_big@2x.png"]];
     
     return cell;
 }
