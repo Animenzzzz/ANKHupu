@@ -29,6 +29,8 @@
 		4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAE5228ACAC50091E341 /* ANKNavigationViewSearch.m */; };
 		4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEA228AD16B0091E341 /* NewsViewController.m */; };
 		4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEF228AD2070091E341 /* GameViewController.m */; };
+		4ACD93FE229275C20043E05F /* FPSLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD93FD229275C20043E05F /* FPSLable.m */; };
+		4ACD9401229276190043E05F /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9400229276190043E05F /* WeakProxy.m */; };
 		4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */; };
 		4AE5F701228AF15500BFC9C8 /* ANKNavigationViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
@@ -2037,6 +2039,10 @@
 		4ABDCAEA228AD16B0091E341 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		4ABDCAEE228AD2070091E341 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		4ABDCAEF228AD2070091E341 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4ACD93FC229275C20043E05F /* FPSLable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPSLable.h; sourceTree = "<group>"; };
+		4ACD93FD229275C20043E05F /* FPSLable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSLable.m; sourceTree = "<group>"; };
+		4ACD93FF229276190043E05F /* WeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		4ACD9400229276190043E05F /* WeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
 		4AE5F6FD228AF13F00BFC9C8 /* ANKNavigationViewTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewTitle.h; sourceTree = "<group>"; };
 		4AE5F6FE228AF13F00BFC9C8 /* ANKNavigationViewTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationViewTitle.m; sourceTree = "<group>"; };
 		4AE5F700228AF15500BFC9C8 /* ANKNavigationViewTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewTitle.xib; sourceTree = "<group>"; };
@@ -4134,6 +4140,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4ACD93FB229275940043E05F /* FPSLable */ = {
+			isa = PBXGroup;
+			children = (
+				4ACD93FC229275C20043E05F /* FPSLable.h */,
+				4ACD93FD229275C20043E05F /* FPSLable.m */,
+				4ACD93FF229276190043E05F /* WeakProxy.h */,
+				4ACD9400229276190043E05F /* WeakProxy.m */,
+			);
+			path = FPSLable;
+			sourceTree = "<group>";
+		};
 		4AE5F702228BAE7400BFC9C8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -4245,6 +4262,7 @@
 		4AF660EB22897F2800DFC1AF /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4ACD93FB229275940043E05F /* FPSLable */,
 				4A8112A8228D98070036D3C5 /* Reachability */,
 				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4AEF80A4228CFA01001E56B3 /* WMPageController */,
@@ -8334,6 +8352,7 @@
 				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
 				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
+				4ACD9401229276190043E05F /* WeakProxy.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
 				4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
@@ -8342,6 +8361,7 @@
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4ACD93FE229275C20043E05F /* FPSLable.m in Sources */,
 				4A8112AB228D98110036D3C5 /* Reachability.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,

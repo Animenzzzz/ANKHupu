@@ -12,7 +12,12 @@
 
 #import "NewsViewController.h"
 #import "GameViewController.h"
+
+#import "FPSLable.h"
+
 @interface ANKTabBarController ()
+
+@property (nonatomic, strong) FPSLable *fpsLabel;
 
 @end
 
@@ -47,6 +52,15 @@
     ANKNavigationController *nav4 = [[ANKNavigationController alloc] initWithRootViewController:news4];
 
     self.viewControllers = @[newNav,gameNav,nav2,nav3,nav4];
+    
+#if DEBUG
+    _fpsLabel = [FPSLable new];
+    [_fpsLabel sizeToFit];
+    
+    _fpsLabel.frame = CGRectMake(50, SCREEN_HEIGHT-300, 50, 30);
+    [self.view addSubview:_fpsLabel];
+    [self.view bringSubviewToFront:_fpsLabel];
+#endif
     
 }
 
