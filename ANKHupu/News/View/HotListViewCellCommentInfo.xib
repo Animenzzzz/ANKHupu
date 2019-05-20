@@ -84,7 +84,7 @@
                 <outlet property="iconImage" destination="cJo-Tk-GRy" id="d0j-Fs-9kZ"/>
                 <outlet property="nickNameLab" destination="br7-7g-TSm" id="9hq-tM-2rA"/>
             </connections>
-            <point key="canvasLocation" x="39" y="-417"/>
+            <point key="canvasLocation" x="-358" y="-495"/>
         </view>
     </objects>
     <resources>

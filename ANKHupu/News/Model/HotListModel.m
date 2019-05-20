@@ -35,9 +35,13 @@
         part_2 = part_2+infoTitle_to_photo_3+collectionPhotoHeight;
     }
     
-    CGFloat part_3 = info_to_comment_4+comment_5+comment_share_6+share_7+kHotListCell_bottom;
-    
-    return part_1+part_2+part_3;
+    CGFloat part_3 = share_7+kHotListCell_bottom;
+    if (hotInfo.hotInfo.light_replies.count) {//有评论
+        
+        part_3 = info_to_comment_4+comment_5+comment_share_6;
+    }
+
+    return part_1+part_2+part_3+40;
 }
 
 @end
