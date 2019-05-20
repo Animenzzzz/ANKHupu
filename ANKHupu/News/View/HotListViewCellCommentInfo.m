@@ -16,6 +16,12 @@
 
 @implementation HotListViewCellCommentInfo
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.iconImage.layer.cornerRadius = 3.0;
+}
+
 - (void)setNickName:(NSString *)nickName{
     self.nickNameLab.text = nickName;
 }

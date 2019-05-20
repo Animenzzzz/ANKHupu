@@ -19,22 +19,22 @@
                     <rect key="frame" x="0.0" y="0.0" width="360" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="br7-7g-TSm">
-                            <rect key="frame" x="33" y="2" width="120" height="21"/>
+                            <rect key="frame" x="29" y="2" width="120" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="fa3-0L-kbG"/>
                                 <constraint firstAttribute="height" constant="21" id="faN-9r-OHx"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="73" id="fy8-DE-4QU"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="ruX-in-8Mj"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cJo-Tk-GRy">
-                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                            <rect key="frame" x="6" y="3.5" width="18" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="SQK-8E-6aI"/>
-                                <constraint firstAttribute="height" constant="25" id="Upj-uD-nQs"/>
+                                <constraint firstAttribute="width" constant="18" id="SQK-8E-6aI"/>
+                                <constraint firstAttribute="height" constant="18" id="Upj-uD-nQs"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_news_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="7s6-9P-twW">
@@ -47,20 +47,20 @@
                     </subviews>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="cJo-Tk-GRy" firstAttribute="centerY" secondItem="8WL-eD-Gyq" secondAttribute="centerY" id="2cr-KM-edt"/>
                         <constraint firstItem="br7-7g-TSm" firstAttribute="centerY" secondItem="8WL-eD-Gyq" secondAttribute="centerY" id="95J-In-aWj"/>
-                        <constraint firstItem="cJo-Tk-GRy" firstAttribute="top" secondItem="8WL-eD-Gyq" secondAttribute="top" id="FL4-Qr-wTu"/>
                         <constraint firstItem="7s6-9P-twW" firstAttribute="top" secondItem="8WL-eD-Gyq" secondAttribute="top" id="cYI-vx-iWz"/>
                         <constraint firstAttribute="height" constant="25" id="gFv-AN-NFN"/>
-                        <constraint firstItem="cJo-Tk-GRy" firstAttribute="leading" secondItem="8WL-eD-Gyq" secondAttribute="leading" id="nTX-Di-cvM"/>
+                        <constraint firstItem="cJo-Tk-GRy" firstAttribute="leading" secondItem="8WL-eD-Gyq" secondAttribute="leading" constant="6" id="nTX-Di-cvM"/>
                         <constraint firstAttribute="trailing" secondItem="7s6-9P-twW" secondAttribute="trailing" id="s2y-WV-nQh"/>
-                        <constraint firstItem="br7-7g-TSm" firstAttribute="leading" secondItem="cJo-Tk-GRy" secondAttribute="trailing" constant="8" id="xVd-9g-fEL"/>
+                        <constraint firstItem="br7-7g-TSm" firstAttribute="leading" secondItem="cJo-Tk-GRy" secondAttribute="trailing" constant="5" id="xVd-9g-fEL"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-jV-oxf">
                     <rect key="frame" x="0.0" y="25" width="360" height="55"/>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <connections>

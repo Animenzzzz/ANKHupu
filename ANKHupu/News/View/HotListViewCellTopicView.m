@@ -22,6 +22,8 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
+    
+    self.topicImage.layer.cornerRadius = 3.0;
 }
 
 

@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iVG-x7-r3R">
-                    <rect key="frame" x="0.0" y="0.0" width="24" height="25"/>
+                    <rect key="frame" x="0.0" y="2.5" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="24" id="Crs-mM-mAz"/>
-                        <constraint firstAttribute="height" constant="25" id="hGE-Mn-kLh"/>
+                        <constraint firstAttribute="width" constant="20" id="Crs-mM-mAz"/>
+                        <constraint firstAttribute="height" constant="20" id="hGE-Mn-kLh"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZT-i8-VcG">
-                    <rect key="frame" x="36" y="2" width="73" height="21"/>
+                    <rect key="frame" x="32" y="2" width="73" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="73" id="2xU-ze-JLL"/>
                         <constraint firstAttribute="height" constant="21" id="MwA-8b-dlV"/>
@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nh-yi-Mq5">
-                    <rect key="frame" x="119" y="2" width="73" height="21"/>
+                    <rect key="frame" x="115" y="2" width="73" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="73" id="QL5-ZU-iK6"/>
                         <constraint firstAttribute="height" constant="21" id="ROH-0Q-QMg"/>
@@ -54,13 +54,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iVG-x7-r3R" firstAttribute="leading" secondItem="53e-lv-uGn" secondAttribute="leading" id="9KO-X2-aCt"/>
-                <constraint firstAttribute="bottom" secondItem="iVG-x7-r3R" secondAttribute="bottom" id="Dli-NM-brP"/>
                 <constraint firstItem="5Nh-yi-Mq5" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="KPt-ao-UYm"/>
                 <constraint firstItem="FZT-i8-VcG" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="ay2-mS-NFn"/>
                 <constraint firstItem="5Nh-yi-Mq5" firstAttribute="leading" secondItem="FZT-i8-VcG" secondAttribute="trailing" constant="10" id="nFQ-DP-ujs"/>
-                <constraint firstItem="iVG-x7-r3R" firstAttribute="top" secondItem="53e-lv-uGn" secondAttribute="top" id="nto-DR-wUz"/>
                 <constraint firstAttribute="trailing" secondItem="SaZ-MJ-MOH" secondAttribute="trailing" constant="12" id="r9y-rb-y5y"/>
                 <constraint firstItem="FZT-i8-VcG" firstAttribute="leading" secondItem="iVG-x7-r3R" secondAttribute="trailing" constant="12" id="ry4-65-R7L"/>
+                <constraint firstItem="iVG-x7-r3R" firstAttribute="centerY" secondItem="53e-lv-uGn" secondAttribute="centerY" id="spH-Hd-Vid"/>
                 <constraint firstItem="SaZ-MJ-MOH" firstAttribute="top" secondItem="53e-lv-uGn" secondAttribute="top" id="wqI-Vx-jOK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

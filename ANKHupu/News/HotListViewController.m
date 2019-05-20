@@ -83,23 +83,32 @@
         [SVProgressHUD dismissWithDelay:2.0f];
         return;
     }
-    @weakify(self)
-    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-        [SVProgressHUD dismiss];
-        @strongify(self)
-        NSDictionary *dic =data[@"error"];
-        if (dic) {//请求报错
-            NSString *errorInfo = [dic objectForKey:@"text"];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-            [SVProgressHUD dismissWithDelay:2.0f];
-        }else{
-            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-            self->_hotListDataArray = [model.result.hotList mutableCopy];
-            [self.tableView reloadData];
-        }
-    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-        NSLog(@"");
-    }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @weakify(self)
+        [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+                @strongify(self)
+                NSDictionary *dic =data[@"error"];
+                if (dic) {//请求报错
+                    NSString *errorInfo = [dic objectForKey:@"text"];
+                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                    [SVProgressHUD dismissWithDelay:2.0f];
+                }else{
+                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+                    self->_hotListDataArray = [model.result.hotList mutableCopy];
+                    [self.tableView reloadData];
+                }
+            });
+
+        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+            NSLog(@"");
+        }];
+    });
+    
+    
 }
 
 //下拉刷新
@@ -112,25 +121,29 @@
         return;
     }
     
-    @weakify(self)
-    [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-        
-        [self.tableView.mj_header endRefreshing];
-        @strongify(self)
-        NSDictionary *dic =data[@"error"];
-        if (dic) {//请求报错
-            NSString *errorInfo = [dic objectForKey:@"text"];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-            [SVProgressHUD dismissWithDelay:2.0f];
-        }else{
-            HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-            self->_hotListDataArray = [model.result.hotList mutableCopy];
-            [self.tableView reloadData];
-        }
-    } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-        NSLog(@"");
-    }];
-    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @weakify(self)
+        [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView.mj_header endRefreshing];
+                @strongify(self)
+                NSDictionary *dic =data[@"error"];
+                if (dic) {//请求报错
+                    NSString *errorInfo = [dic objectForKey:@"text"];
+                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                    [SVProgressHUD dismissWithDelay:2.0f];
+                }else{
+                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
+                    self->_hotListDataArray = [model.result.hotList mutableCopy];
+                    [self.tableView reloadData];
+                }
+            });
+            
+        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+            NSLog(@"");
+        }];
+    });
 }
 
 #pragma mark - System protocol 
