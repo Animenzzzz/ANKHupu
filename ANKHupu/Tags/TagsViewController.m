@@ -258,7 +258,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     TagCellView *tag = [[[UINib nibWithNibName:@"TagCellView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     tag.delegate = self;
     if (indexPath.section == 0) {
-        tag.actionType = TagDeleteAction;
+        tag.actionType = indexPath.row == 0 ? TagNoneAction:TagDeleteAction;
         tag.title = [_orderUserDataArray objectAtIndex:indexPath.row];
     }else{
         tag.actionType = TagAddAction;
@@ -317,6 +317,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
             NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
             NSMutableArray *arr = [dataDic mutableCopy];
+            [arr removeObject:@"推荐"];
             [self updateOrderUserDataWithKey:key multArray:arr];
             result = [arr mutableCopy];
         }

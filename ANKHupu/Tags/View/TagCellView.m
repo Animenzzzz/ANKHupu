@@ -30,6 +30,9 @@
 - (void)setTitle:(NSString *)title{
     
     self.titleLab.text = title;
+    if ([title isEqualToString:@"推荐"]) {
+        self.titleLab.textColor = [UIColor grayColor];
+    }
 }
 
 - (void)setActionType:(TagActionType)actionType{
@@ -39,6 +42,8 @@
         self.tagImageView.image = [ResUtil imageNamed:@"post_textfield_delete"];
     }else if (actionType == TagAddAction){
         self.tagImageView.image = [ResUtil imageNamed:@"post_tex_add"];
+    }else if(actionType == TagNoneAction){
+        self.tagImageView.hidden = YES;
     }
 }
 
@@ -46,7 +51,9 @@
 
 // 单击手势
 - (void)singleTapGesture:(UITapGestureRecognizer *)gesture {
-    NSLog(@"singleTapGesture");
+    if ([self.titleLab.text isEqualToString:@"推荐"]) {
+        return;
+    }
     if ([self.delegate respondsToSelector:@selector(tagCellViewDidTapInViewWithType:title:)]) {
         [self.delegate tagCellViewDidTapInViewWithType:self.actionType title:self.titleLab.text];
     }
