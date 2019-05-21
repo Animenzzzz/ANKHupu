@@ -214,6 +214,12 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
+    NSLog(@"");
+    //TODO...以后再写吧。。。。。太多了东西了。。。
+}
+
 #pragma mark - Custom protocol 
 #pragma mark - Custom functions
 

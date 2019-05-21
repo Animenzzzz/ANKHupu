@@ -4088,6 +4088,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A5AC81A2293EDDD0026BE7E /* HotList */ = {
+			isa = PBXGroup;
+			children = (
+				4A135AC9228D68730060EAA6 /* HotListViewController.h */,
+				4A135ACA228D68730060EAA6 /* HotListViewController.m */,
+				4ABDCAED228AD1AE0091E341 /* View */,
+				4ABDCAEC228AD1A70091E341 /* Model */,
+			);
+			path = HotList;
+			sourceTree = "<group>";
+		};
 		4A8112A8228D98070036D3C5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -4115,13 +4126,10 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AC81A2293EDDD0026BE7E /* HotList */,
 				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
-				4A135AC9228D68730060EAA6 /* HotListViewController.h */,
-				4A135ACA228D68730060EAA6 /* HotListViewController.m */,
-				4ABDCAED228AD1AE0091E341 /* View */,
-				4ABDCAEC228AD1A70091E341 /* Model */,
 			);
 			path = News;
 			sourceTree = "<group>";
