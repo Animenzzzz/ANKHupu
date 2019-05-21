@@ -22,6 +22,16 @@
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
 		4A5AC7FB229396370026BE7E /* post_tex_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */; };
+		4A5AC81E2293EE430026BE7E /* NBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC81D2293EE430026BE7E /* NBAViewController.m */; };
+		4A5AC8332293F3310026BE7E /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8212293F32D0026BE7E /* Result.m */; };
+		4A5AC8342293F3310026BE7E /* NBAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8222293F32E0026BE7E /* NBAModel.m */; };
+		4A5AC8352293F3310026BE7E /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8242293F32E0026BE7E /* Game.m */; };
+		4A5AC8362293F3310026BE7E /* Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8252293F32E0026BE7E /* Tab.m */; };
+		4A5AC8372293F3310026BE7E /* RecommendData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8292293F32F0026BE7E /* RecommendData.m */; };
+		4A5AC8382293F3310026BE7E /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82B2293F32F0026BE7E /* Data.m */; };
+		4A5AC8392293F3310026BE7E /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82C2293F32F0026BE7E /* Badge.m */; };
+		4A5AC83A2293F3310026BE7E /* GameList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82E2293F3300026BE7E /* GameList.m */; };
+		4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8302293F3300026BE7E /* AdGameBorder.m */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
 		4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */; };
@@ -2030,6 +2040,26 @@
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
 		4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@2x.png"; sourceTree = "<group>"; };
 		4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@3x.png"; sourceTree = "<group>"; };
+		4A5AC81C2293EE430026BE7E /* NBAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAViewController.h; sourceTree = "<group>"; };
+		4A5AC81D2293EE430026BE7E /* NBAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAViewController.m; sourceTree = "<group>"; };
+		4A5AC8212293F32D0026BE7E /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
+		4A5AC8222293F32E0026BE7E /* NBAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAModel.m; sourceTree = "<group>"; };
+		4A5AC8232293F32E0026BE7E /* Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab.h; sourceTree = "<group>"; };
+		4A5AC8242293F32E0026BE7E /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		4A5AC8252293F32E0026BE7E /* Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab.m; sourceTree = "<group>"; };
+		4A5AC8262293F32E0026BE7E /* NBAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBAModel.h; sourceTree = "<group>"; };
+		4A5AC8272293F32E0026BE7E /* GameList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameList.h; sourceTree = "<group>"; };
+		4A5AC8282293F32F0026BE7E /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badge.h; sourceTree = "<group>"; };
+		4A5AC8292293F32F0026BE7E /* RecommendData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendData.m; sourceTree = "<group>"; };
+		4A5AC82A2293F32F0026BE7E /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		4A5AC82B2293F32F0026BE7E /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		4A5AC82C2293F32F0026BE7E /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
+		4A5AC82D2293F32F0026BE7E /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		4A5AC82E2293F3300026BE7E /* GameList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameList.m; sourceTree = "<group>"; };
+		4A5AC82F2293F3300026BE7E /* RecommendData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendData.h; sourceTree = "<group>"; };
+		4A5AC8302293F3300026BE7E /* AdGameBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdGameBorder.m; sourceTree = "<group>"; };
+		4A5AC8312293F3300026BE7E /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		4A5AC8322293F3300026BE7E /* AdGameBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdGameBorder.h; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -4099,6 +4129,49 @@
 			path = HotList;
 			sourceTree = "<group>";
 		};
+		4A5AC81B2293EE270026BE7E /* NBA */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC81C2293EE430026BE7E /* NBAViewController.h */,
+				4A5AC81D2293EE430026BE7E /* NBAViewController.m */,
+				4A5AC8202293EE590026BE7E /* Model */,
+				4A5AC81F2293EE520026BE7E /* View */,
+			);
+			path = NBA;
+			sourceTree = "<group>";
+		};
+		4A5AC81F2293EE520026BE7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A5AC8202293EE590026BE7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC8322293F3300026BE7E /* AdGameBorder.h */,
+				4A5AC8302293F3300026BE7E /* AdGameBorder.m */,
+				4A5AC8282293F32F0026BE7E /* Badge.h */,
+				4A5AC82C2293F32F0026BE7E /* Badge.m */,
+				4A5AC8312293F3300026BE7E /* Data.h */,
+				4A5AC82B2293F32F0026BE7E /* Data.m */,
+				4A5AC82A2293F32F0026BE7E /* Game.h */,
+				4A5AC8242293F32E0026BE7E /* Game.m */,
+				4A5AC8272293F32E0026BE7E /* GameList.h */,
+				4A5AC82E2293F3300026BE7E /* GameList.m */,
+				4A5AC82F2293F3300026BE7E /* RecommendData.h */,
+				4A5AC8292293F32F0026BE7E /* RecommendData.m */,
+				4A5AC82D2293F32F0026BE7E /* Result.h */,
+				4A5AC8212293F32D0026BE7E /* Result.m */,
+				4A5AC8262293F32E0026BE7E /* NBAModel.h */,
+				4A5AC8222293F32E0026BE7E /* NBAModel.m */,
+				4A5AC8232293F32E0026BE7E /* Tab.h */,
+				4A5AC8252293F32E0026BE7E /* Tab.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4A8112A8228D98070036D3C5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -4126,6 +4199,7 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AC81B2293EE270026BE7E /* NBA */,
 				4A5AC81A2293EDDD0026BE7E /* HotList */,
 				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
@@ -8418,19 +8492,27 @@
 				4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */,
 				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
 				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
+				4A5AC8392293F3310026BE7E /* Badge.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
 				4ACD9401229276190043E05F /* WeakProxy.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
+				4A5AC8342293F3310026BE7E /* NBAModel.m in Sources */,
+				4A5AC8362293F3310026BE7E /* Tab.m in Sources */,
 				4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
+				4A5AC8382293F3310026BE7E /* Data.m in Sources */,
 				4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */,
+				4A5AC83A2293F3310026BE7E /* GameList.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
 				4ACD9407229296760043E05F /* ResUtil.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */,
 				4ACD93FE229275C20043E05F /* FPSLable.m in Sources */,
+				4A5AC8372293F3310026BE7E /* RecommendData.m in Sources */,
+				4A5AC8332293F3310026BE7E /* Result.m in Sources */,
 				4A8112AB228D98110036D3C5 /* Reachability.m in Sources */,
 				4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */,
 				4AE5F6FF228AF13F00BFC9C8 /* ANKNavigationViewTitle.m in Sources */,
@@ -8438,6 +8520,7 @@
 				4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */,
 				4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */,
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
+				4A5AC81E2293EE430026BE7E /* NBAViewController.m in Sources */,
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,
@@ -8445,6 +8528,7 @@
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
+				4A5AC8352293F3310026BE7E /* Game.m in Sources */,
 				4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */,
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
