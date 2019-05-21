@@ -33,8 +33,8 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _orderUserDataArray = [self getOrderUserDataWithKey:kOrderUserData];
-    _unOrderUserDataArray = [self getOrderUserDataWithKey:kUnOrderUserData];
+    _orderUserDataArray = [[self getOrderUserDataWithKey:kOrderUserData] mutableCopy];
+    _unOrderUserDataArray = [[self getOrderUserDataWithKey:kUnOrderUserData] mutableCopy];
     
     [self initViews];
     [self laySubView];
@@ -248,7 +248,13 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIDentify forIndexPath:indexPath];
-//    cell.backgroundColor = randomColor;
+    
+    for (UIView *subv in cell.subviews) {
+        if ([subv isKindOfClass:[TagCellView class]]) {
+            [subv removeFromSuperview];
+        }
+    }
+
     TagCellView *tag = [[[UINib nibWithNibName:@"TagCellView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     tag.delegate = self;
     if (indexPath.section == 0) {
