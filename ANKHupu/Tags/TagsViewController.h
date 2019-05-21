@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ANKViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TagsViewController : UIViewController
+@interface TagsViewController : ANKViewController
 
 @end
 

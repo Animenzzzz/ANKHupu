@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ANKViewController : UIViewController
 
-
+@property(nonatomic, copy) NSString *controllerTitle;
+@property(nonatomic, assign) BOOL showBack;//默认显示
+@property(nonatomic, assign) BOOL showShare;//默认显示
 
 @end
 

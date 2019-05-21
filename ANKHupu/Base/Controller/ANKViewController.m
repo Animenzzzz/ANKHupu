@@ -8,11 +8,12 @@
 
 #import "ANKViewController.h"
 #import "Masonry.h"
-
+#import "UIView+frame.h"
 
 @interface ANKViewController ()
 
-
+@property(nonatomic,strong) UIButton *backBtn;
+@property(nonatomic,strong) UIButton *shareBtn;
 
 @end
 
@@ -26,8 +27,30 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"" forState:UIControlStateNormal];
+    [button setImage:[ResUtil imageNamed:@"zhuangbei_back_btn"] forState:UIControlStateNormal];
+    button.size = CGSizeMake(25, 25);
+    [button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    // 让按钮内部的所有内容左对齐
+    //    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    //    // 让按钮的内容往左边偏移10
+    button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+    // 修改导航栏左边的item
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.backBtn = button;
+    
+    
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [shareButton setTitle:@"" forState:UIControlStateNormal];
+    [shareButton setImage:[ResUtil imageNamed:@"share_btn_night"] forState:UIControlStateNormal];
+    shareButton.size = CGSizeMake(25, 25);
+    [shareButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    shareButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10);
+    // 修改导航栏左边的item
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    self.shareBtn = shareButton;
 
 }
 
@@ -39,7 +62,17 @@
 
 #pragma mark - Init（initVars initViews）
 
+-(void)setControllerTitle:(NSString *)controllerTitle{
+    self.navigationItem.title = controllerTitle;
+}
 
+- (void)setShowBack:(BOOL)showBack{
+    self.backBtn.hidden = !showBack;
+}
+
+- (void)setShowShare:(BOOL)showShare{
+    self.shareBtn.hidden = !showShare;
+}
 
 #pragma mark - Layout Subviews（layoutSubview）
 - (void)loadView{
@@ -56,6 +89,14 @@
 #pragma mark - Custom protocol 
 #pragma mark - Custom functions
 
+- (void)backClick{
+    
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 #pragma mark - Notification(addNotificationaObserver)
 
 #pragma mark - Event response

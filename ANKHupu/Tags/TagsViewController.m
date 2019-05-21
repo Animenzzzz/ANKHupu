@@ -39,31 +39,14 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     [self initViews];
     [self laySubView];
     [self requestData];
-
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kOrderUserData];
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUnOrderUserData];
-
-    
 }
 
 
 #pragma mark - Init（initVars initViews）
 - (void)initViews{
 
-    self.navigationItem.title = @"自定义频道";
-    self.view.backgroundColor = [UIColor whiteColor];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"" forState:UIControlStateNormal];
-    [button setImage:[ResUtil imageNamed:@"zhuangbei_back_btn"] forState:UIControlStateNormal];
-    button.size = CGSizeMake(25, 25);
-    [button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
-    // 让按钮内部的所有内容左对齐
-//    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//    // 让按钮的内容往左边偏移10
-    button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
-    // 修改导航栏左边的item
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
+    self.controllerTitle = @"自定义频道";
+    self.showShare = NO;
 
 }
 
@@ -296,14 +279,6 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 }
 
 #pragma mark - Custom functions
-- (void)backClick{
-    
-    if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
 
 - (NSMutableArray *)getOrderUserDataWithKey:(NSString *)key{
 
