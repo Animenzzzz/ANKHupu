@@ -47,20 +47,20 @@ static NSInteger timeCount = 0;
     } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
         NSLog(@"");
     }];
-    
-//    UIButton *tagBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-kScrollTagMoreBtnWidth, 64, kScrollTagMoreBtnWidth, kScrollTagHeight)];
-//    [tagBtn setBackgroundImage:[UIImage imageNamed:@"arrange_btn"] forState:UIControlStateNormal];
-//    [self.view addSubview:tagBtn];
-//    UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
-//    grayLine.backgroundColor = kSeperatLineColor;
-//    [tagBtn addTarget:self action:@selector(moreBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
-//    [tagBtn addSubview:grayLine];
-//    [self.view bringSubviewToFront:tagBtn];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSArray *userArra = [self getOrderUserData];
+    if (_seletTagArray.count == userArra.count) {
+        for (NSInteger i = 0; i<_seletTagArray.count; i++) {
+            if (![_seletTagArray[i] isEqualToString:[userArra objectAtIndex:i]]) {
+                break;
+            }
+        }
+        return;
+    }
     _seletTagArray = [[self getOrderUserData] copy];
     [self reloadData];
 }
