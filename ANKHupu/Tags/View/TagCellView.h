@@ -16,10 +16,17 @@ typedef  NS_ENUM(NSInteger,TagActionType){
     TagAddAction = 2,
 };
 
+@protocol TagCellViewDelegate <NSObject>
+
+- (void)tagCellViewDidTapInViewWithType:(TagActionType)type title:(NSString *)title;
+
+@end
+
 @interface TagCellView : UIView
 
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic,assign) TagActionType actionType;
+@property(nonatomic, weak) id<TagCellViewDelegate>delegate;
 
 @end
 

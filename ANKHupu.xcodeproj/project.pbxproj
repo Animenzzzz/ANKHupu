@@ -20,6 +20,8 @@
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
+		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
+		4A5AC7FB229396370026BE7E /* post_tex_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
 		4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */; };
@@ -2026,6 +2028,8 @@
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
+		4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@2x.png"; sourceTree = "<group>"; };
+		4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@3x.png"; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -4355,6 +4359,8 @@
 		4AF660F9228A64BE00DFC1AF /* HupuRes */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */,
+				4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */,
 				4ABDCADA228AB52D0091E341 /* search_bg.png */,
 				4AF665B7228A64C600DFC1AF /* 0_ic@2x.png */,
 				4AF665DB228A64C600DFC1AF /* 0_ic@3x.png */,
@@ -6824,6 +6830,7 @@
 				4AF66C82228A64D100DFC1AF /* mark_talk_box@2x.png in Resources */,
 				4AF66B4C228A64D100DFC1AF /* LaunchImage-800-667h@2x.png in Resources */,
 				4AF66EF5228A64D200DFC1AF /* GPS_up_btn_1_night@2x.png in Resources */,
+				4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */,
 				4AF668A5228A64D000DFC1AF /* tab_situation_1@3x.png in Resources */,
 				4AF6699D228A64D000DFC1AF /* hpgm_battle_ic@3x.png in Resources */,
 				4AF669BF228A64D000DFC1AF /* btn_red_1@2x.png in Resources */,
@@ -7324,6 +7331,7 @@
 				4AF66C80228A64D100DFC1AF /* audience_ic_night@2x.png in Resources */,
 				4AF66F20228A64D200DFC1AF /* x_ic@2x.png in Resources */,
 				4AF66C41228A64D100DFC1AF /* team_home_Jersey_pressed@3x.png in Resources */,
+				4A5AC7FB229396370026BE7E /* post_tex_add@3x.png in Resources */,
 				4AF66BFE228A64D100DFC1AF /* 全屏弹幕-未选_night@2x.png in Resources */,
 				4AF66DD3228A64D100DFC1AF /* AppIcon83.5x83.5@2x~ipad.png in Resources */,
 				4AF66CB4228A64D100DFC1AF /* me_message_official_ic_night@2x.png in Resources */,

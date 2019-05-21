@@ -11,7 +11,7 @@
 #import "TagCellView.h"
 #import "Masonry.h"
 #import "UILabel+AutoFit.h"
-@interface TagsViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface TagsViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,TagCellViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UICollectionView *tagListColleView;
@@ -22,7 +22,10 @@
 static NSString* const kCellIDentify = @"cell";
 static NSString* const kHeaderViewIDentify = @"HeaderView";
 
-@implementation TagsViewController
+@implementation TagsViewController{
+    NSMutableArray *_orderUserDataArray;
+    NSMutableArray *_unOrderUserDataArray;
+}
 
 
 #pragma mark - Lify cycle
@@ -30,9 +33,17 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _orderUserDataArray = [self getOrderUserDataWithKey:kOrderUserData];
+    _unOrderUserDataArray = [self getOrderUserDataWithKey:kUnOrderUserData];
+    
     [self initViews];
     [self laySubView];
     [self requestData];
+
+//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kOrderUserData];
+//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUnOrderUserData];
+
+    
 }
 
 
@@ -76,9 +87,10 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
 //        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = CGSizeMake((SCREEN_WIDTH)/4, 40);
-        layout.minimumLineSpacing = 5;//垂直方向间距
+        layout.minimumLineSpacing = 4;//垂直方向间距
         layout.minimumInteritemSpacing = 0;//水平方向间距
         layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 50);
+//        layout.sectionInset = UIEdgeInsetsMake(0, 4, 0, 4);
         _tagListColleView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _tagListColleView.delegate = self;
         _tagListColleView.dataSource = self;
@@ -147,7 +159,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             make.top.mas_equalTo(5);
             make.left.right.mas_equalTo(0);
             make.width.mas_equalTo(SCREEN_WIDTH);
-            make.height.mas_equalTo(300);
+            make.height.mas_equalTo(440);
         }];
         return cell;
     }
@@ -166,7 +178,12 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 
 #pragma mark  UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    
+    if (section == 0) {
+        return _orderUserDataArray.count;
+    }
+    
+    return _unOrderUserDataArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -179,6 +196,10 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderViewIDentify forIndexPath:indexPath];
+        
+        for (UIView *view in headerView.subviews) {
+            [view removeFromSuperview];
+        }
         
         UILabel *l1 = [UILabel new];
         [l1 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:17]];
@@ -229,12 +250,13 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIDentify forIndexPath:indexPath];
 //    cell.backgroundColor = randomColor;
     TagCellView *tag = [[[UINib nibWithNibName:@"TagCellView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    tag.delegate = self;
     if (indexPath.section == 0) {
         tag.actionType = TagDeleteAction;
-        tag.title = @"aa";
+        tag.title = [_orderUserDataArray objectAtIndex:indexPath.row];
     }else{
-        tag.title = @"bb";
         tag.actionType = TagAddAction;
+        tag.title = [_unOrderUserDataArray objectAtIndex:indexPath.row];
     }
     
     [cell addSubview:tag];
@@ -250,7 +272,23 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
 
 }
 
-#pragma mark - Custom protocol 
+#pragma mark - Custom protocol
+
+#pragma mark TagCellViewDelegate
+- (void)tagCellViewDidTapInViewWithType:(TagActionType)type title:(NSString *)title{
+    if (type == TagDeleteAction) {
+        [_orderUserDataArray removeObject:title];
+        [_unOrderUserDataArray addObject:title];
+    }else if(type == TagAddAction){
+        [_unOrderUserDataArray removeObject:title];
+        [_orderUserDataArray addObject:title];
+    }
+    
+    [self updateOrderUserDataWithKey:kOrderUserData multArray:[_orderUserDataArray mutableCopy]];
+    [self updateOrderUserDataWithKey:kUnOrderUserData multArray:[_unOrderUserDataArray mutableCopy]];
+    [self.tagListColleView reloadData];
+}
+
 #pragma mark - Custom functions
 - (void)backClick{
     
@@ -259,6 +297,32 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (NSMutableArray *)getOrderUserDataWithKey:(NSString *)key{
+
+    NSMutableArray *result = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if (!result.count) {//第一次进入
+        if ([key isEqualToString:kOrderUserData]) {//我的频道
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐", nil];
+            [self updateOrderUserDataWithKey:key multArray:arr];
+            result = [arr mutableCopy];
+        }else{
+            NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+            NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
+            NSMutableArray *arr = [dataDic mutableCopy];
+            [self updateOrderUserDataWithKey:key multArray:arr];
+            result = [arr mutableCopy];
+        }
+    }
+    
+    return result;
+}
+
+- (void)updateOrderUserDataWithKey:(NSString *)key multArray:(NSMutableArray *)dataArray{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    [[NSUserDefaults standardUserDefaults] setObject:dataArray forKey:key];
+    return ;
 }
 #pragma mark - Notification(addNotificationaObserver)
 

@@ -51,4 +51,8 @@
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 
+#define kOrderUserData @"OrderUserData"
+#define kUnOrderUserData @"UnOrderUserData"
+
+
 #endif /* ANKMacro_h */
