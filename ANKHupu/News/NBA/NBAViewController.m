@@ -13,6 +13,9 @@
 #import "ANKReachabilityManager.h"
 #import "ANKHttpServer.h"
 #import "NBAModel.h"
+#import "NBANewsCell.h"
+#import "UILabel+AutoFit.h"
+#import "SDWebImage.h"
 @interface NBAViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -58,7 +61,7 @@
         _tableView.backgroundColor = kGrayBackGroundColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = [UIColor whiteColor];//消除间隔线
+        _tableView.separatorColor = kSeperatLineColor;//间隔线
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
         _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
@@ -100,8 +103,6 @@
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-                    //                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-                    //                    self.hotListDataArray = [model.result.hotList mutableCopy];
                     NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
                     self.NBADataArray = [nbaModel.result.data mutableCopy];
                     [self.tableView reloadData];
@@ -125,8 +126,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-            
+        [ANKHttpServer getNBANewsWithSuccesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView.mj_header endRefreshing];
                 @strongify(self)
@@ -136,12 +136,11 @@
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-//                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-//                    self.hotListDataArray = [NSMutableArray arrayWithArray:[model.result.hotList mutableCopy]];
+                    NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
+                    self.NBADataArray = [nbaModel.result.data mutableCopy];
                     [self.tableView reloadData];
                 }
             });
-            
         } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
             NSLog(@"");
         }];
@@ -186,17 +185,37 @@
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return self.NBADataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
-//
-//    HotListViewCell *cell = [[HotListViewCell alloc] init];
-//    [cell bindWithHotListModel:model];
+    Data *model = [self.NBADataArray objectAtIndex:indexPath.row];
+
+    NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font];
+    cell.titleHeight.constant = heigh;
+    cell.newsTitle = model.title;
+    NSArray *arr = [model.img componentsSeparatedByString:@"?"];
+    [cell.newsImg sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        cell.newsImg.image = image;
+    }];
     
-    return nil;
+    cell.readLab.text = model.read;
+    CGFloat width = [UILabel getWidthWithTitle:cell.readLab.text font:cell.readLab.font];
+    cell.readLabWidth.constant = width;
+    
+    if ([model.lights isEqualToString:@"0"]) {
+        cell.lightImg.hidden = YES;
+        cell.lightLab.hidden = YES;
+    }else{
+        cell.lightLab.text = model.lights;
+        CGFloat width = [UILabel getWidthWithTitle:cell.lightLab.text font:cell.lightLab.font];
+        cell.lightWidth.constant = width;
+    }
+    
+    return cell;
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -204,7 +223,7 @@
 //        return 10;
 //    }
 //    return [HotListModel caculateHeightWithHotInfoModel:[self.hotListDataArray objectAtIndex:indexPath.row]];
-    return 10;
+    return 92;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

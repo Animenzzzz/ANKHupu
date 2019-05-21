@@ -32,6 +32,12 @@
 		4A5AC8392293F3310026BE7E /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82C2293F32F0026BE7E /* Badge.m */; };
 		4A5AC83A2293F3310026BE7E /* GameList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82E2293F3300026BE7E /* GameList.m */; };
 		4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8302293F3300026BE7E /* AdGameBorder.m */; };
+		4A5AC83E2293F5A40026BE7E /* NBANewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */; };
+		4A5AC8402293F5AE0026BE7E /* NBANewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */; };
+		4A5AC8432294055B0026BE7E /* pinglun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC8412294055A0026BE7E /* pinglun@3x.png */; };
+		4A5AC8442294055B0026BE7E /* pinglun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC8422294055B0026BE7E /* pinglun@2x.png */; };
+		4A5AC847229407630026BE7E /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC845229407620026BE7E /* light@2x.png */; };
+		4A5AC848229407630026BE7E /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC846229407630026BE7E /* light@3x.png */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
 		4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */; };
@@ -2060,6 +2066,13 @@
 		4A5AC8302293F3300026BE7E /* AdGameBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdGameBorder.m; sourceTree = "<group>"; };
 		4A5AC8312293F3300026BE7E /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		4A5AC8322293F3300026BE7E /* AdGameBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdGameBorder.h; sourceTree = "<group>"; };
+		4A5AC83C2293F5A40026BE7E /* NBANewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBANewsCell.h; sourceTree = "<group>"; };
+		4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBANewsCell.m; sourceTree = "<group>"; };
+		4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBANewsCell.xib; sourceTree = "<group>"; };
+		4A5AC8412294055A0026BE7E /* pinglun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinglun@3x.png"; sourceTree = "<group>"; };
+		4A5AC8422294055B0026BE7E /* pinglun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinglun@2x.png"; sourceTree = "<group>"; };
+		4A5AC845229407620026BE7E /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
+		4A5AC846229407630026BE7E /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -4143,6 +4156,9 @@
 		4A5AC81F2293EE520026BE7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AC83C2293F5A40026BE7E /* NBANewsCell.h */,
+				4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */,
+				4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4441,6 +4457,10 @@
 		4AF660F9228A64BE00DFC1AF /* HupuRes */ = {
 			isa = PBXGroup;
 			children = (
+				4A5AC845229407620026BE7E /* light@2x.png */,
+				4A5AC846229407630026BE7E /* light@3x.png */,
+				4A5AC8422294055B0026BE7E /* pinglun@2x.png */,
+				4A5AC8412294055A0026BE7E /* pinglun@3x.png */,
 				4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */,
 				4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */,
 				4ABDCADA228AB52D0091E341 /* search_bg.png */,
@@ -6663,6 +6683,7 @@
 				4AF66CF1228A64D100DFC1AF /* tab_guess@3x.png in Resources */,
 				4AF66F48228A64D200DFC1AF /* arrow_ic_comment_msg_1_night@3x.png in Resources */,
 				4AF66E67228A64D200DFC1AF /* icon_float_background@2x.png in Resources */,
+				4A5AC8432294055B0026BE7E /* pinglun@3x.png in Resources */,
 				4AF6701A228A64D200DFC1AF /* vertical_sound_control_s_bg_night@2x.png in Resources */,
 				4AF6700C228A64D200DFC1AF /* account_password_ic@3x.png in Resources */,
 				4AF66FA1228A64D200DFC1AF /* GPS_ic@3x.png in Resources */,
@@ -7298,6 +7319,7 @@
 				4AF669C8228A64D000DFC1AF /* search_gear_ic_search@2x.png in Resources */,
 				4AF669AD228A64D000DFC1AF /* news_msg_btn@2x.png in Resources */,
 				4AF66D21228A64D100DFC1AF /* album_choose_btn_1@3x.png in Resources */,
+				4A5AC8442294055B0026BE7E /* pinglun@2x.png in Resources */,
 				4AF66B79228A64D100DFC1AF /* TeamPlayer_coach_bg@2x.png in Resources */,
 				4AF66AD9228A64D100DFC1AF /* bbs_btn_1_search@3x.png in Resources */,
 				4AF67019228A64D200DFC1AF /* AppIcon76x76~ipad.png in Resources */,
@@ -7449,6 +7471,7 @@
 				4AF66A7D228A64D000DFC1AF /* arrow_down@2x.png in Resources */,
 				4AF66F85228A64D200DFC1AF /* team_player_list_bg_1@2x.png in Resources */,
 				4AF66C4B228A64D100DFC1AF /* foot_goal_door_ic@2x.png in Resources */,
+				4A5AC848229407630026BE7E /* light@3x.png in Resources */,
 				4AF66B3A228A64D100DFC1AF /* del_ic_1@2x.png in Resources */,
 				4AF668E4228A64D000DFC1AF /* ad_banner828@2x.png in Resources */,
 				4AF66E4E228A64D200DFC1AF /* history_btn_Highlighted@2x.png in Resources */,
@@ -8289,6 +8312,7 @@
 				4AF67000228A64D200DFC1AF /* add_btn@3x.png in Resources */,
 				4AF6701D228A64D200DFC1AF /* history_btn_Highlighted@3x.png in Resources */,
 				4AF66F6D228A64D200DFC1AF /* newslist_no_pic_s_night@2x.png in Resources */,
+				4A5AC8402293F5AE0026BE7E /* NBANewsCell.xib in Resources */,
 				4AF66DCE228A64D100DFC1AF /* pop_pop_box_night@2x.png in Resources */,
 				4AF66E86228A64D200DFC1AF /* post_l_btn_1@3x.png in Resources */,
 				4AF66BE9228A64D100DFC1AF /* football_tactic_ground_dot@3x.png in Resources */,
@@ -8404,6 +8428,7 @@
 				4AF66F3E228A64D200DFC1AF /* replay_more_ic@3x.png in Resources */,
 				4AF66DFF228A64D200DFC1AF /* foot_line@2x.png in Resources */,
 				4AF66D4D228A64D100DFC1AF /* 全屏弹幕-选中_night@2x.png in Resources */,
+				4A5AC847229407630026BE7E /* light@2x.png in Resources */,
 				4AF66DC1228A64D100DFC1AF /* back_btn_1@2x.png in Resources */,
 				4AF669A9228A64D000DFC1AF /* hpgm_home_money_ic_night@2x.png in Resources */,
 				4AF66B16228A64D100DFC1AF /* 3_ic@2x.png in Resources */,
@@ -8529,6 +8554,7 @@
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
 				4A5AC8352293F3310026BE7E /* Game.m in Sources */,
+				4A5AC83E2293F5A40026BE7E /* NBANewsCell.m in Sources */,
 				4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */,
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
