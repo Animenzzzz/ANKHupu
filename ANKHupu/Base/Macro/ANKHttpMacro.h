@@ -27,16 +27,15 @@
 
 
 
-//------NBA（额外参数：7个）
+//------NBA（额外参数：7个）  翻页规则： 1：pre_count=0为页数 0，20，40  2：nid参数为上一个请求的最后一条nid
 #define kNBA           @"/3/7.3.12/nba/getNews"
 #define kNBA_param1    @"news_first_navi=NBA"
-#define kNBA_param2    @"pre_count=0"
 #define kNBA_param3    @"nid=0"
 #define kNBA_param4    @"first_navi_numbers=2"
 #define kNBA_param5    @"preload=0"
 #define kNBA_param6    @"direc=next"
 #define kNBA_param7    @"num=20"
-#define kNBA_full_Params    [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@&%@&%@",kNBA_param1,kNBA_param2,kNBA_param3,kNBA_param4,kNBA_param5,kNBA_param6,kNBA_param7,kParam_full]
+#define kNBA_full_Params    [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@&%@",kNBA_param1,kNBA_param3,kNBA_param4,kNBA_param5,kNBA_param6,kNBA_param7,kParam_full]
 #define kNBA_FullPath [NSString stringWithFormat:@"%@%@%@",kHPServiceHost,kNBA,kNBA_full_Params]
 
 

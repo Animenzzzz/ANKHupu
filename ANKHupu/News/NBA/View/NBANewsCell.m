@@ -9,7 +9,6 @@
 #import "NBANewsCell.h"
 
 @interface NBANewsCell ()
-
 @end
 
 @implementation NBANewsCell

@@ -52,9 +52,13 @@
     
 }
 
-+ (void)getNBANewsWithSuccesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
++ (void)getNBANewsWithParams:(NSMutableDictionary *)params succesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
     
-    NSString *fullURL = kNBA_FullPath;
+//    NSString *fullURL = kNBA_FullPath;
+    NSNumber *page = [params objectForKey:@"pre_count"];
+    NSString *nid = [params objectForKey:@"nid"];
+    NSString *paramsString = [NSString stringWithFormat:@"pre_count=%ld&nid=%@",[page integerValue]*20,nid];
+    NSString *fullURL = [NSString stringWithFormat:@"%@&%@",kNBA_FullPath,paramsString];
     ANKLog(@"请求URL:%@",fullURL);
     [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         

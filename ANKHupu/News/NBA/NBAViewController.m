@@ -93,7 +93,10 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        [ANKHttpServer getNBANewsWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        [params setValue:@(0) forKey:@"pre_count"];
+        [params setValue:@"0" forKey:@"nid"];
+        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SVProgressHUD dismiss];
                 @strongify(self)
@@ -126,7 +129,10 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        [ANKHttpServer getNBANewsWithSuccesBlock:^(NSDictionary * _Nonnull data) {
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        [params setValue:@(0) forKey:@"pre_count"];
+        [params setValue:@"0" forKey:@"nid"];
+        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView.mj_header endRefreshing];
                 @strongify(self)
@@ -159,8 +165,11 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        [ANKHttpServer getHotListWithSuccesBlock:^(NSDictionary * _Nonnull data) {
-            
+        Data *model = [self.NBADataArray objectAtIndex:self.NBADataArray.count-1];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        [params setValue:@(0) forKey:@"pre_count"];
+        [params setValue:model.nid forKey:@"nid"];
+        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView.mj_footer endRefreshing];
                 @strongify(self)
@@ -170,12 +179,11 @@
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-//                    HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-//                    self.hotListDataArray = [[self.hotListDataArray arrayByAddingObjectsFromArray:[model.result.hotList mutableCopy]] mutableCopy];
+                    NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
+                    self.NBADataArray = [[self.NBADataArray arrayByAddingObjectsFromArray:[nbaModel.result.data mutableCopy]] mutableCopy];
                     [self.tableView reloadData];
                 }
             });
-            
         } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
             NSLog(@"");
         }];
@@ -202,7 +210,7 @@
         cell.newsImg.image = image;
     }];
     
-    cell.readLab.text = model.read;
+    cell.readLab.text = model.replies;
     CGFloat width = [UILabel getWidthWithTitle:cell.readLab.text font:cell.readLab.font];
     cell.readLabWidth.constant = width;
     
@@ -213,6 +221,25 @@
         cell.lightLab.text = model.lights;
         CGFloat width = [UILabel getWidthWithTitle:cell.lightLab.text font:cell.lightLab.font];
         cell.lightWidth.constant = width;
+    }
+    
+    if (model.type != 2) {//专题
+        cell.zhuntiLab.hidden = YES;
+    }else{
+        cell.zhuntiLab.textColor = [UIColor orangeColor];
+        cell.zhuntiLab.layer.borderColor = [UIColor orangeColor].CGColor;
+        cell.zhuntiLab.layer.borderWidth = 1.0;
+    }
+    
+    if ([model.isTop isEqualToString:@"1"]) {//置顶
+        cell.zhidingLab.layer.borderColor = [UIColor redColor].CGColor;
+        cell.zhidingLab.layer.borderWidth = 1.0;
+        if (model.type != 2){
+            cell.zhidingTrailing.constant = 11;
+        }
+        
+    }else{
+        cell.zhidingLab.hidden = YES;
     }
     
     return cell;

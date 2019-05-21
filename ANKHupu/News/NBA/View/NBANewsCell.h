@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *lightImg;
 @property (weak, nonatomic) IBOutlet UILabel *lightLab;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lightWidth;
+@property (weak, nonatomic) IBOutlet UILabel *zhuntiLab;
+@property (weak, nonatomic) IBOutlet UILabel *zhidingLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *zhidingTrailing;
 
 @end
 
