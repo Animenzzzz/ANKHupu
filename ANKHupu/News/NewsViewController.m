@@ -47,7 +47,22 @@ static NSInteger timeCount = 0;
     } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
         NSLog(@"");
     }];
+    
+//    UIButton *tagBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-kScrollTagMoreBtnWidth, 64, kScrollTagMoreBtnWidth, kScrollTagHeight)];
+//    [tagBtn setBackgroundImage:[UIImage imageNamed:@"arrange_btn"] forState:UIControlStateNormal];
+//    [self.view addSubview:tagBtn];
+//    UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
+//    grayLine.backgroundColor = kSeperatLineColor;
+//    [tagBtn addTarget:self action:@selector(moreBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
+//    [tagBtn addSubview:grayLine];
+//    [self.view bringSubviewToFront:tagBtn];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _seletTagArray = [[self getOrderUserData] copy];
+    [self reloadData];
 }
 
 
@@ -94,6 +109,16 @@ static NSInteger timeCount = 0;
 
 #pragma mark - Custom protocol
 
+- (NSArray *)getOrderUserData{
+    NSMutableArray *result = [[NSUserDefaults standardUserDefaults] objectForKey:kOrderUserData];
+    if (!result.count) {//第一次进入
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐", nil];
+        result = [arr mutableCopy];
+    }
+    
+    return [result copy];
+}
+
 - (void)hotSearchViewClick{
     NSLog(@"");
 }
@@ -108,9 +133,9 @@ static NSInteger timeCount = 0;
 }
 
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController{
-    NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
-    NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
-    _seletTagArray = [dataDic copy];
+
+    _seletTagArray = [[self getOrderUserData] copy];
+    
     return _seletTagArray.count;
 }
 
@@ -118,6 +143,8 @@ static NSInteger timeCount = 0;
    
     return [_seletTagArray objectAtIndex:index];
 }
+
+
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index % 10) {

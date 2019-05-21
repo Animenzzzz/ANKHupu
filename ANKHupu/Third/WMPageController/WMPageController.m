@@ -188,6 +188,9 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [self wm_resetMenuView];
     [self viewDidLayoutSubviews];
     [self didEnterController:self.currentViewController atIndex:self.selectIndex];
+    if (self.showMore) {
+        [self ank_addMoreTagButton];
+    }
 }
 
 - (void)updateTitle:(NSString *)title atIndex:(NSInteger)index {

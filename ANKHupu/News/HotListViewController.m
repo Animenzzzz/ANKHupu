@@ -17,11 +17,12 @@
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *hotListDataArray;
 
 @end
 
 @implementation HotListViewController{
-    NSMutableArray *_hotListDataArray;
+//    NSMutableArray *_hotListDataArray;
 }
 
 
@@ -106,7 +107,7 @@
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-                    self->_hotListDataArray = [model.result.hotList mutableCopy];
+                    self.hotListDataArray = [model.result.hotList mutableCopy];
                     [self.tableView reloadData];
                 }
             });
@@ -143,7 +144,7 @@
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-                    self->_hotListDataArray = [NSMutableArray arrayWithArray:[model.result.hotList mutableCopy]];
+                    self.hotListDataArray = [NSMutableArray arrayWithArray:[model.result.hotList mutableCopy]];
                     [self.tableView reloadData];
                 }
             });
@@ -178,7 +179,7 @@
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     HotListResponeModel *model = [HotListResponeModel yy_modelWithDictionary:data];
-                    self->_hotListDataArray = [[self->_hotListDataArray arrayByAddingObjectsFromArray:[model.result.hotList mutableCopy]] mutableCopy];
+                    self.hotListDataArray = [[self.hotListDataArray arrayByAddingObjectsFromArray:[model.result.hotList mutableCopy]] mutableCopy];
                     [self.tableView reloadData];
                 }
             });
@@ -192,12 +193,12 @@
 #pragma mark - System protocol 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _hotListDataArray.count;
+    return self.hotListDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    HotListModel *model = [_hotListDataArray objectAtIndex:indexPath.row];
+    HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
     
     HotListViewCell *cell = [[HotListViewCell alloc] init];
     [cell bindWithHotListModel:model];
@@ -206,10 +207,10 @@
 #pragma mark UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!_hotListDataArray.count) {
+    if (!self.hotListDataArray.count) {
         return 10;
     }
-    return [HotListModel caculateHeightWithHotInfoModel:[_hotListDataArray objectAtIndex:indexPath.row]];
+    return [HotListModel caculateHeightWithHotInfoModel:[self.hotListDataArray objectAtIndex:indexPath.row]];
     
 }
 
