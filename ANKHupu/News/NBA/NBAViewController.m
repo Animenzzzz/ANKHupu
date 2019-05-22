@@ -16,6 +16,7 @@
 #import "NBANewsCell.h"
 #import "UILabel+AutoFit.h"
 #import "SDWebImage.h"
+#import "H5DetailViewController.h"
 @interface NBAViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -25,7 +26,7 @@
 
 @implementation NBAViewController
 
-
+static int pageNum = 0;
 #pragma mark - Lify cycle
 
 - (void)viewDidLoad {
@@ -165,9 +166,9 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        Data *model = [self.NBADataArray objectAtIndex:self.NBADataArray.count-1];
+        NBAData *model = [self.NBADataArray objectAtIndex:self.NBADataArray.count-1];
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        [params setValue:@(0) forKey:@"pre_count"];
+        [params setValue:@(pageNum) forKey:@"pre_count"];
         [params setValue:model.nid forKey:@"nid"];
         [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -179,6 +180,7 @@
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
+                    pageNum++;
                     NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
                     self.NBADataArray = [[self.NBADataArray arrayByAddingObjectsFromArray:[nbaModel.result.data mutableCopy]] mutableCopy];
                     [self.tableView reloadData];
@@ -199,7 +201,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Data *model = [self.NBADataArray objectAtIndex:indexPath.row];
+    NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
 
     NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font];
@@ -254,9 +256,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
-//    NSLog(@"");
-    //TODO...以后再写吧。。。。。太多了东西了。。。
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
+    H5DetailViewController *detail = [H5DetailViewController new];
+    detail.nid = model.nid;
+    detail.controllerTitle = @"Detail";
+    [self.navigationController pushViewController:detail animated:YES];
+    
+   
 }
 
 #pragma mark - Custom protocol 

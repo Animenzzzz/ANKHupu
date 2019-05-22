@@ -4,14 +4,14 @@
 
 
 
-#import "Game.h"
+#import "NBAGame.h"
 
 NSString *const kGameGameLists = @"game_lists";
 NSString *const kGameRefreshTime = @"refresh_time";
 
-@interface Game ()
+@interface NBAGame ()
 @end
-@implementation Game
+@implementation NBAGame
 
 
 
@@ -89,7 +89,7 @@ NSString *const kGameRefreshTime = @"refresh_time";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	Game *copy = [Game new];
+	NBAGame *copy = [NBAGame new];
 
 	copy.gameLists = [self.gameLists copy];
 	copy.refreshTime = self.refreshTime;

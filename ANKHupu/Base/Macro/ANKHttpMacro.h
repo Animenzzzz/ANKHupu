@@ -38,6 +38,7 @@
 #define kNBA_full_Params    [NSString stringWithFormat:@"?%@&%@&%@&%@&%@&%@&%@",kNBA_param1,kNBA_param3,kNBA_param4,kNBA_param5,kNBA_param6,kNBA_param7,kParam_full]
 #define kNBA_FullPath [NSString stringWithFormat:@"%@%@%@",kHPServiceHost,kNBA,kNBA_full_Params]
 
+#define kNBA_DetailH5 @"http://games.mobileapi.hupu.com/3/7.3.12/news/createNewsDetailH5?offline=json&leaguesEn=nba&entrance=&night=0&nopic=0&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0"
 
 //------热搜（额外参数：0个）
 #define kHotSearch          @"/3/7.3.12/search/hotkeylist"

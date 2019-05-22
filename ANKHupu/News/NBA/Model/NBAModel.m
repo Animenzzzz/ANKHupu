@@ -33,7 +33,7 @@ NSString *const kRootClassResult = @"result";
 	}
 
 	if(![dictionary[kRootClassResult] isKindOfClass:[NSNull class]]){
-		self.result = [[Result alloc] initWithDictionary:dictionary[kRootClassResult]];
+		self.result = [[NBAResult alloc] initWithDictionary:dictionary[kRootClassResult]];
 	}
 
 	return self;

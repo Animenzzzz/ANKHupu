@@ -1,19 +1,19 @@
 #import <UIKit/UIKit.h>
 #import "AdGameBorder.h"
 #import "AdGameBorder.h"
-#import "Data.h"
-#import "Game.h"
+#import "NBAData.h"
+#import "NBAGame.h"
 #import "RecommendData.h"
-#import "Tab.h"
+#import "NBATab.h"
 
-@interface Result : NSObject
+@interface NBAResult : NSObject
 
 @property (nonatomic, strong) AdGameBorder * adGameBorder;
 @property (nonatomic, strong) AdGameBorder * adPoster;
 @property (nonatomic, strong) NSArray * data;
 @property (nonatomic, assign) NSInteger displayNewCount;
 @property (nonatomic, assign) NSInteger displayType;
-@property (nonatomic, strong) Game * game;
+@property (nonatomic, strong) NBAGame * game;
 @property (nonatomic, assign) NSInteger nextDataExists;
 @property (nonatomic, strong) NSArray * recommendData;
 @property (nonatomic, assign) NSInteger showHotNews;

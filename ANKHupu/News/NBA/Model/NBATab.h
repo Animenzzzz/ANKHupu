@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface Tab : NSObject
+@interface NBATab : NSObject
 
 @property (nonatomic, strong) NSString * icon;
 @property (nonatomic, strong) NSString * name;

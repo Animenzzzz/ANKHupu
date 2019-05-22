@@ -4,7 +4,7 @@
 
 
 
-#import "Result.h"
+#import "NBAResult.h"
 
 NSString *const kResultAdGameBorder = @"ad_game_border";
 NSString *const kResultAdPoster = @"ad_poster";
@@ -18,9 +18,9 @@ NSString *const kResultShowHotNews = @"show_hot_news";
 NSString *const kResultShowNewsLights = @"show_news_lights";
 NSString *const kResultTabs = @"tabs";
 
-@interface Result ()
+@interface NBAResult ()
 @end
-@implementation Result
+@implementation NBAResult
 
 
 
@@ -44,7 +44,7 @@ NSString *const kResultTabs = @"tabs";
 		NSArray * dataDictionaries = dictionary[kResultData];
 		NSMutableArray * dataItems = [NSMutableArray array];
 		for(NSDictionary * dataDictionary in dataDictionaries){
-			Data * dataItem = [[Data alloc] initWithDictionary:dataDictionary];
+			NBAData * dataItem = [[NBAData alloc] initWithDictionary:dataDictionary];
 			[dataItems addObject:dataItem];
 		}
 		self.data = dataItems;
@@ -58,7 +58,7 @@ NSString *const kResultTabs = @"tabs";
 	}
 
 	if(![dictionary[kResultGame] isKindOfClass:[NSNull class]]){
-		self.game = [[Game alloc] initWithDictionary:dictionary[kResultGame]];
+		self.game = [[NBAGame alloc] initWithDictionary:dictionary[kResultGame]];
 	}
 
 	if(![dictionary[kResultNextDataExists] isKindOfClass:[NSNull class]]){
@@ -86,7 +86,7 @@ NSString *const kResultTabs = @"tabs";
 		NSArray * tabsDictionaries = dictionary[kResultTabs];
 		NSMutableArray * tabsItems = [NSMutableArray array];
 		for(NSDictionary * tabsDictionary in tabsDictionaries){
-			Tab * tabsItem = [[Tab alloc] initWithDictionary:tabsDictionary];
+			NBATab * tabsItem = [[NBATab alloc] initWithDictionary:tabsDictionary];
 			[tabsItems addObject:tabsItem];
 		}
 		self.tabs = tabsItems;
@@ -109,7 +109,7 @@ NSString *const kResultTabs = @"tabs";
 	}
 	if(self.data != nil){
 		NSMutableArray * dictionaryElements = [NSMutableArray array];
-		for(Data * dataElement in self.data){
+		for(NBAData * dataElement in self.data){
 			[dictionaryElements addObject:[dataElement toDictionary]];
 		}
 		dictionary[kResultData] = dictionaryElements;
@@ -131,7 +131,7 @@ NSString *const kResultTabs = @"tabs";
 	dictionary[kResultShowNewsLights] = @(self.showNewsLights);
 	if(self.tabs != nil){
 		NSMutableArray * dictionaryElements = [NSMutableArray array];
-		for(Tab * tabsElement in self.tabs){
+		for(NBATab * tabsElement in self.tabs){
 			[dictionaryElements addObject:[tabsElement toDictionary]];
 		}
 		dictionary[kResultTabs] = dictionaryElements;
@@ -195,7 +195,7 @@ NSString *const kResultTabs = @"tabs";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	Result *copy = [Result new];
+	NBAResult *copy = [NBAResult new];
 
 	copy.adGameBorder = [self.adGameBorder copy];
 	copy.adPoster = [self.adPoster copy];

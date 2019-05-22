@@ -4,15 +4,15 @@
 
 
 
-#import "Tab.h"
+#import "NBATab.h"
 
 NSString *const kTabIcon = @"icon";
 NSString *const kTabName = @"name";
 NSString *const kTabSchema = @"schema";
 
-@interface Tab ()
+@interface NBATab ()
 @end
-@implementation Tab
+@implementation NBATab
 
 
 
@@ -94,7 +94,7 @@ NSString *const kTabSchema = @"schema";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	Tab *copy = [Tab new];
+	NBATab *copy = [NBATab new];
 
 	copy.icon = [self.icon copy];
 	copy.name = [self.name copy];

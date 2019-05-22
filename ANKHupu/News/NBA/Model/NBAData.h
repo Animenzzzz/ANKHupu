@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Badge.h"
 
-@interface Data : NSObject
+@interface NBAData : NSObject
 
 @property (nonatomic, strong) NSArray * badge;
 @property (nonatomic, strong) NSString * hid;

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "GameList.h"
 
-@interface Game : NSObject
+@interface NBAGame : NSObject
 
 @property (nonatomic, strong) NSArray * gameLists;
 @property (nonatomic, assign) NSInteger refreshTime;

@@ -4,7 +4,7 @@
 
 
 
-#import "Data.h"
+#import "NBAData.h"
 
 NSString *const kDataBadge = @"badge";
 NSString *const kDataHid = @"hid";
@@ -22,9 +22,9 @@ NSString *const kDataType = @"type";
 NSString *const kDataUnReplay = @"un_replay";
 NSString *const kDataUptime = @"uptime";
 
-@interface Data ()
+@interface NBAData ()
 @end
-@implementation Data
+@implementation NBAData
 
 
 
@@ -224,7 +224,7 @@ NSString *const kDataUptime = @"uptime";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	Data *copy = [Data new];
+	NBAData *copy = [NBAData new];
 
 	copy.badge = [self.badge copy];
 	copy.hid = [self.hid copy];

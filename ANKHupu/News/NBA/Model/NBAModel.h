@@ -1,11 +1,11 @@
 #import <UIKit/UIKit.h>
-#import "Result.h"
+#import "NBAResult.h"
 
 @interface NBAModel : NSObject
 
 @property (nonatomic, assign) NSInteger crt;
 @property (nonatomic, assign) NSInteger isLogin;
-@property (nonatomic, strong) Result * result;
+@property (nonatomic, strong) NBAResult * result;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

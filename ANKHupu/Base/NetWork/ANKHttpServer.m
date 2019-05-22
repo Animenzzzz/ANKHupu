@@ -73,6 +73,26 @@
     }];
 }
 
++ (void)getNBANewsDetailWithParams:(NSMutableDictionary *)params succesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
+
+    NSString *nid = [params objectForKey:@"nid"];
+    NSString *nid_full = [NSString stringWithFormat:@"nid=%@",nid];
+    NSString *fullURL = [NSString stringWithFormat:@"%@&%@",kNBA_DetailH5,nid_full];
+    ANKLog(@"请求URL:%@",fullURL);
+    [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary *data = (NSDictionary *)responseObject;
+        ANKLog(@"成功请求到数据:%@",data);
+        successBlock(data);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"");
+        NSDictionary *data = (NSDictionary *)task.response;
+        failureBlock(data,error);
+    }];
+}
+
+
 + (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock{
     
     NSString *fullURL = kHotSearch_FullPath;
