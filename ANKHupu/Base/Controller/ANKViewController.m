@@ -60,6 +60,12 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //在pop回界面的时候，使用动画
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 #pragma mark - Init（initVars initViews）
 
 -(void)setControllerTitle:(NSString *)controllerTitle{

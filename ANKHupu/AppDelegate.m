@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ANKTabBarController.h"
+#import "ANKNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,9 +21,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ANKTabBarController *tab = [[ANKTabBarController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tab];
+    ANKNavigationController *nav = [[ANKNavigationController alloc] initWithRootViewController:tab];
     [nav setNavigationBarHidden:YES];
     self.window.rootViewController = nav;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
