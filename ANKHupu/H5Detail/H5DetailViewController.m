@@ -17,8 +17,8 @@
 #import "UIView+frame.h"
 #import <WebKit/WebKit.h>
 #import "SDWebImage.h"
-static NSString *kDetailCellID = @"DetailCellID";
-
+static NSString *kDetailTitleCellID = @"DetailTitleCellID";
+static NSString *kDetailWebCellID = @"DetailWebCellID";
 #define kNewsTitleToCellTop  5
 #define kNewsTitleToCellLeft 15
 #define kNewsTitleWidth (SCREEN_WIDTH - kNewsTitleToCellLeft*2)
@@ -90,7 +90,8 @@ static NSString *kDetailCellID = @"DetailCellID";
         _tableView.separatorColor = kSeperatLineColor;//间隔线
 //        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 1)];
 //        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailCellID];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailWebCellID];
     }
     
     return _tableView;
@@ -250,7 +251,7 @@ static NSString *kDetailCellID = @"DetailCellID";
     if (section == 0) {
         return 2;
     }
-    return 9;
+    return 20;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -260,20 +261,13 @@ static NSString *kDetailCellID = @"DetailCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailCellID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailCellID];
-    }
-    
-//    for (UIView *subV in cell.subviews) {
-//        if ([subV isKindOfClass:[UITableViewCellContentView class]]) {
-//            NSLog(@"");
-//        }
-//    }
-    
     if (indexPath.section == 0) {
+        
         if (indexPath.row == 0) {//新闻头部
-            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailTitleCellID];
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailTitleCellID];
+            }
             self.newsTitleLab.text = self.dataModel.data.news.title;
             [cell addSubview:self.newsTitleLab];
             CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:self.newsTitleLab.font];
@@ -292,8 +286,14 @@ static NSString *kDetailCellID = @"DetailCellID";
                 make.width.mas_equalTo(160);
                 make.height.mas_equalTo(kAddTimeHeight);
             }];
+         
+            return cell;
             
         }else{//新闻正文
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailWebCellID];
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailWebCellID];
+            }
             [cell addSubview:self.newsImageView];
             [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.left.mas_equalTo(5);
@@ -307,14 +307,15 @@ static NSString *kDetailCellID = @"DetailCellID";
                 make.height.mas_equalTo(400);
                 make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
             }];
-
+          
+            return cell;
         }
     }else{
-        cell = [UITableViewCell new];
+        return [UITableViewCell new];
     }
-    
-    return cell;
 }
+
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
