@@ -40,6 +40,21 @@
 
 #define kNBA_DetailH5 @"http://games.mobileapi.hupu.com/3/7.3.12/news/createNewsDetailH5?offline=json&leaguesEn=nba&entrance=&night=0&nopic=0&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0"
 
+
+//type
+//1:视频+正常新闻？？？
+//2:专题
+//3:cell上有多个图片（在 thumbs 数组里面）
+//5:话题。。球鞋。。经典回顾
+
+
+//以下是type=5
+//307626
+//27549885--（这个数据在 link 字段里面）
+//http://bbs.mobileapi.hupu.com/3/7.3.12/threads/27549885?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&fid=1048&entrance=6&isScheme=1&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1558598038&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%2FShanghai&sign=eacc415f819d085abc8f86418bef4f23
+
+//http://bbs.mobileapi.hupu.com/3/7.3.12/threads/27545739?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&fid=1048&entrance=6&isScheme=1&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1558598785&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%2FShanghai&sign=c7490fccebba3ab7cabf9bb60f751795
+
 //------热搜（额外参数：0个）
 #define kHotSearch          @"/3/7.3.12/search/hotkeylist"
 #define kHotSearchParams    [NSString stringWithFormat:@"?%@",kParam_full]

@@ -17,6 +17,8 @@
 #import "UIView+frame.h"
 #import <WebKit/WebKit.h>
 #import "SDWebImage.h"
+#import "ANKWebView.h"
+
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
 #define kNewsTitleToCellTop  5
@@ -26,13 +28,13 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 #define kAddTimeHeight       10
 #define kAddTimeToButtom 10
 
-@interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,WKNavigationDelegate>
+@interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
 @property(nonatomic, strong) NewsDetailModel *dataModel;
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UILabel *newsTitleLab;
 @property(nonatomic, strong) UILabel *addTimeLab;
-@property(nonatomic, strong) WKWebView *contentWebView;
+@property(nonatomic, strong) ANKWebView *contentWebView;
 @property(nonatomic, strong) UIImageView *newsImageView;
 @property(nonatomic, assign) CGFloat webViewHeight;
 @end
@@ -129,11 +131,9 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 
 - (WKWebView *)contentWebView{
     if (!_contentWebView) {
-        _contentWebView = [WKWebView new];
-        _contentWebView.navigationDelegate = self;
-        _contentWebView.scrollView.scrollEnabled = NO;
+        _contentWebView = [[ANKWebView alloc] initWithFrame:CGRectZero];
+        _contentWebView.delegate = self;
     }
-    
     return _contentWebView;
 }
 #pragma mark - Layout Subviews（layoutSubview）
@@ -176,30 +176,9 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
                     [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.data.news.img] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                         self.newsImageView.image = image;
                     }];
-                    
-                    NSString *fullHtml = [NSString stringWithFormat:@"\
-                                      <html>\
-                                      <head>\
-                                      <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>\
-                                      </head>\
-                                      <body style='-webkit-text-size-adjust: 130%%;'>\
-                                      <script type='text/javascript'>\
-                                      window.onload = function(){\
-                                      var $img = document.getElementsByTagName('img');\
-                                      for(var p in  $img){\
-                                      $img[p].style.width = '100%%';\
-                                      $img[p].style.height ='auto'\
-                                      }\
-                                      }\
-                                      </script>\
-                                      %@\
-                                      </body>\
-                                      </html>\
-                                      ",self.dataModel.data.news.content];
-                   
-                    [self.contentWebView loadHTMLString:fullHtml baseURL:nil];
+            
+                    [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
                     [self.tableView reloadData];
-                    NSLog(@"网页字符：%@",self.dataModel.data.news.content);
                 }
             });
         } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
@@ -347,18 +326,17 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
     return 32;
 }
 
-#pragma mark WKNavigationDelegate
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    [SVProgressHUD dismiss];
+#pragma mark ANKNavigationDelegate
 
-    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-        // 计算webView高度
-        self.webViewHeight = [result doubleValue];
-        // 刷新tableView
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }];
+- (void)webViewDidFinishLoadWithSelfHeight:(CGFloat)height{
+    [SVProgressHUD dismiss];
+    self.webViewHeight = height;
+    // 刷新tableView
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
+
+
 
 #pragma mark - Custom protocol 
 #pragma mark - Custom functions

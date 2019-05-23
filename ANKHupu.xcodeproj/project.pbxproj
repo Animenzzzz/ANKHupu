@@ -16,6 +16,7 @@
 		4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */; };
 		4A026263228EA37B00B9F86D /* HotListCellCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */; };
 		4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */; };
+		4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EFF1722968EC100C2A345 /* ANKWebView.m */; };
 		4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12BC842292A2D100AF21BD /* TagsViewController.m */; };
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
@@ -2043,6 +2044,8 @@
 		4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListCellCollectionCell.xib; sourceTree = "<group>"; };
 		4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListCellCollectionCell.h; sourceTree = "<group>"; };
 		4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListCellCollectionCell.m; sourceTree = "<group>"; };
+		4A0EFF1622968EC100C2A345 /* ANKWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKWebView.h; sourceTree = "<group>"; };
+		4A0EFF1722968EC100C2A345 /* ANKWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKWebView.m; sourceTree = "<group>"; };
 		4A12BC832292A2D100AF21BD /* TagsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
 		4A12BC842292A2D100AF21BD /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
@@ -4237,6 +4240,8 @@
 		4A64E3372294F78D007CE6E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A0EFF1622968EC100C2A345 /* ANKWebView.h */,
+				4A0EFF1722968EC100C2A345 /* ANKWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8618,6 +8623,7 @@
 				4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */,
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
+				4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */,
 				4AF04A4F229249ED0014C506 /* HotInfoPhotoCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
