@@ -34,6 +34,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 @property(nonatomic, strong) UILabel *addTimeLab;
 @property(nonatomic, strong) WKWebView *contentWebView;
 @property(nonatomic, strong) UIImageView *newsImageView;
+@property(nonatomic, assign) CGFloat webViewHeight;
 @end
 
 @implementation H5DetailViewController
@@ -47,6 +48,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;//半透明属性设置为no,  fix:返回的控制器导航栏是红色，消除视图切换影响
+    self.webViewHeight = 0;
     [self initViews];
     [self laySubView];
     [self requestData];
@@ -127,24 +129,9 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 
 - (WKWebView *)contentWebView{
     if (!_contentWebView) {
-        
-        
-        //js脚本
-        NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
-        //注入
-        WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-        WKUserContentController *wkUController = [[WKUserContentController alloc] init];
-        [wkUController addUserScript:wkUScript];
-        //配置对象
-        WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
-        wkWebConfig.userContentController = wkUController;
-        //改变初始化方法
-        _contentWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:wkWebConfig];
-        
-//        _contentWebView = [WKWebView new];
+        _contentWebView = [WKWebView new];
         _contentWebView.navigationDelegate = self;
         _contentWebView.scrollView.scrollEnabled = NO;
-        
     }
     
     return _contentWebView;
@@ -190,10 +177,29 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
                         self.newsImageView.image = image;
                     }];
                     
-                    [self.contentWebView loadHTMLString:self.dataModel.data.news.content baseURL:nil];
-                    
+                    NSString *fullHtml = [NSString stringWithFormat:@"\
+                                      <html>\
+                                      <head>\
+                                      <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>\
+                                      </head>\
+                                      <body style='-webkit-text-size-adjust: 130%%;'>\
+                                      <script type='text/javascript'>\
+                                      window.onload = function(){\
+                                      var $img = document.getElementsByTagName('img');\
+                                      for(var p in  $img){\
+                                      $img[p].style.width = '100%%';\
+                                      $img[p].style.height ='auto'\
+                                      }\
+                                      }\
+                                      </script>\
+                                      %@\
+                                      </body>\
+                                      </html>\
+                                      ",self.dataModel.data.news.content];
+                   
+                    [self.contentWebView loadHTMLString:fullHtml baseURL:nil];
                     [self.tableView reloadData];
-//                    NSLog(@"网页字符：%@",self.dataModel.data.news.content);
+                    NSLog(@"网页字符：%@",self.dataModel.data.news.content);
                 }
             });
         } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
@@ -302,9 +308,11 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
             }];
             
             [cell addSubview:self.contentWebView];
+            CGFloat webHeight = self.webViewHeight == 0?400:self.webViewHeight;
             [self.contentWebView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.mas_equalTo(0);
-                make.height.mas_equalTo(400);
+                make.left.mas_equalTo(5);
+                make.right.mas_equalTo(-5);
+                make.height.mas_equalTo(webHeight);
                 make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
             }];
           
@@ -320,8 +328,17 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section == 0) {
-        if (indexPath.row == 1) {
-            return 650;
+        if (indexPath.row == 1) {//webView那个cell
+            CGFloat resultHeith = self.webViewHeight == 0 ? 800:(self.webViewHeight+200);
+            if (self.webViewHeight != 0) {
+                [self.contentWebView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(5);
+                    make.right.mas_equalTo(-5);
+                    make.height.mas_equalTo(self.webViewHeight);
+                    make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
+                }];
+            }
+            return resultHeith;
         }else{
             CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:self.newsTitleLab.font];
             return height+kNewsTitleToCellTop+kAddTimeToTile+kAddTimeHeight+kAddTimeToButtom;
@@ -330,12 +347,17 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
     return 32;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return 0.1;
-//}
-
+#pragma mark WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     [SVProgressHUD dismiss];
+
+    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        // 计算webView高度
+        self.webViewHeight = [result doubleValue];
+        // 刷新tableView
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }];
 }
 
 #pragma mark - Custom protocol 
@@ -345,5 +367,6 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 
 #pragma mark - Event response
 #pragma mark - KVO
+
 
 @end
