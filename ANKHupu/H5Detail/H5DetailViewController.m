@@ -18,22 +18,24 @@
 #import <WebKit/WebKit.h>
 #import "SDWebImage.h"
 #import "ANKWebView.h"
+#import "H5DetailTitleCell.h"
 
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
+static NSString *k_title = @"H5DetailTitleCell";
+
 #define kNewsTitleToCellTop  5
 #define kNewsTitleToCellLeft 15
 #define kNewsTitleWidth (SCREEN_WIDTH - kNewsTitleToCellLeft*2)
 #define kAddTimeToTile       10
 #define kAddTimeHeight       10
 #define kAddTimeToButtom 10
+#define kNewBigImageHeight 300
 
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
 @property(nonatomic, strong) NewsDetailModel *dataModel;
 @property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong) UILabel *newsTitleLab;
-@property(nonatomic, strong) UILabel *addTimeLab;
 @property(nonatomic, strong) ANKWebView *contentWebView;
 @property(nonatomic, strong) UIImageView *newsImageView;
 @property(nonatomic, assign) CGFloat webViewHeight;
@@ -73,16 +75,11 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
         self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
         
-        
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
         self.automaticallyAdjustsScrollViewInsets=NO;
-        
-       
-      
     }
-    
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(pullUpLoadMoreData)];
 }
 
@@ -97,34 +94,18 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 //        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailWebCellID];
+        [_tableView registerClass:[H5DetailTitleCell class] forCellReuseIdentifier:k_title];
     }
     
     return _tableView;
-}
-
-- (UILabel *)newsTitleLab{
-    if (!_newsTitleLab) {
-        _newsTitleLab = [UILabel new];
-        [_newsTitleLab setFont:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
-        _newsTitleLab.numberOfLines = 0;
-    }
-    return _newsTitleLab;
-}
-
-- (UILabel *)addTimeLab{
-    if (!_addTimeLab) {
-        _addTimeLab = [UILabel new];
-        _addTimeLab.font = [UIFont systemFontOfSize:13];
-        _addTimeLab.textColor = [UIColor grayColor];
-    }
-    return _addTimeLab;
 }
 
 - (UIImageView *)newsImageView{
     
     if (!_newsImageView) {
         _newsImageView = [UIImageView new];
-        _newsImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _newsImageView.contentMode = UIViewContentModeScaleAspectFit;
+//        _newsImageView.clipsToBounds = true;//用了UIViewContentModeScaleAspectFill的模式，图片太大会溢出cell
     }
     
     return _newsImageView;
@@ -162,6 +143,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
         @weakify(self)
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:self.nid forKey:@"nid"];
+        [params setValue:[NSString stringWithFormat: @"%ld", (long)self.newsType] forKey:@"type"];
         [ANKHttpServer getNBANewsDetailWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 @strongify(self)
@@ -172,14 +154,20 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     
-                    self.dataModel = [[NewsDetailModel alloc] initWithDictionary:data];
+                    if (self.newsType == NewsTypeNormal) {
+                        self.dataModel = [[NewsDetailModel alloc] initWithDictionary:data];
+                        
+                        [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.data.news.img] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                            self.newsImageView.image = image;
+                        }];
+                        
+                        [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
+                        [self.tableView reloadData];
+                    }else if(self.newsType == NewsTypeTopic){
+                        
+                    }
                     
-                    [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.data.news.img] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                        self.newsImageView.image = image;
-                    }];
-            
-                    [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
-                    [self.tableView reloadData];
+                    
                 }
             });
         } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
@@ -250,29 +238,11 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
     if (indexPath.section == 0) {
         
         if (indexPath.row == 0) {//新闻头部
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailTitleCellID];
+            H5DetailTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:k_title];
             if (!cell) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailTitleCellID];
+                cell = [[H5DetailTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:k_title];
             }
-            self.newsTitleLab.text = self.dataModel.data.news.title;
-            [cell addSubview:self.newsTitleLab];
-            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:self.newsTitleLab.font];
-            [self.newsTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(kNewsTitleToCellTop);
-                make.left.mas_equalTo(kNewsTitleToCellLeft);
-                make.width.mas_equalTo(kNewsTitleWidth);
-                make.height.mas_equalTo(height);
-            }];
-            
-            self.addTimeLab.text = [NSString stringWithFormat:@"%@ %@",self.dataModel.data.news.addtime,self.dataModel.data.news.origin];
-            [cell addSubview:self.addTimeLab];
-            [self.addTimeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.newsTitleLab.mas_bottom).offset(kAddTimeToTile);
-                make.left.mas_equalTo(kNewsTitleToCellLeft);
-                make.width.mas_equalTo(160);
-                make.height.mas_equalTo(kAddTimeHeight);
-            }];
-         
+            [cell setStyleWithModel:self.dataModel newsType:self.newsType];
             return cell;
             
         }else{//新闻正文
@@ -284,7 +254,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
             [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.left.mas_equalTo(5);
                 make.right.mas_equalTo(-5);
-                make.height.mas_equalTo(200);
+                make.height.mas_equalTo(kNewBigImageHeight);
             }];
             
             [cell addSubview:self.contentWebView];
@@ -309,7 +279,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 
     if (indexPath.section == 0) {
         if (indexPath.row == 1) {//webView那个cell
-            CGFloat resultHeith = self.webViewHeight == 0 ? 800:(self.webViewHeight+200);
+            CGFloat resultHeith = self.webViewHeight == 0 ? 800:(self.webViewHeight+kNewBigImageHeight);
             if (self.webViewHeight != 0) {
                 [self.contentWebView mas_remakeConstraints:^(MASConstraintMaker *make) {
                     make.left.mas_equalTo(5);
@@ -320,7 +290,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
             }
             return resultHeith;
         }else{
-            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:self.newsTitleLab.font];
+            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
             return height+kNewsTitleToCellTop+kAddTimeToTile+kAddTimeHeight+kAddTimeToButtom;
         }
     }
