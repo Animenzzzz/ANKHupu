@@ -54,6 +54,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
     [self initViews];
     [self laySubView];
     [self requestData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
