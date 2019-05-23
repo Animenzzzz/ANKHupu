@@ -54,8 +54,6 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
     [self initViews];
     [self laySubView];
     [self requestData];
-    
-    NSLog(@"test11分支");
 }
 
 - (void)viewWillAppear:(BOOL)animated{
