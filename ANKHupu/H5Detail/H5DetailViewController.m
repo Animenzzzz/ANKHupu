@@ -7,7 +7,6 @@
 //
 
 #import "H5DetailViewController.h"
-#import "ANKReachabilityManager.h"
 #import "ANKHttpServer.h"
 #import "NewsDetailModel.h"
 #import <WebKit/WebKit.h>
@@ -90,6 +89,9 @@ static NSString *k_title = @"H5DetailTitleCell";
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailWebCellID];
         [_tableView registerClass:[H5DetailTitleCell class] forCellReuseIdentifier:k_title];
+        if (self.type == NewsTypeTopic) {
+            _tableView.separatorColor = [UIColor whiteColor];
+        }
     }
     
     return _tableView;
@@ -99,8 +101,8 @@ static NSString *k_title = @"H5DetailTitleCell";
     
     if (!_newsImageView) {
         _newsImageView = [UIImageView new];
-        _newsImageView.contentMode = UIViewContentModeScaleAspectFit;
-//        _newsImageView.clipsToBounds = true;//用了UIViewContentModeScaleAspectFill的模式，图片太大会溢出cell
+        _newsImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _newsImageView.clipsToBounds = true;//用了UIViewContentModeScaleAspectFill的模式，图片太大会溢出cell
     }
     
     return _newsImageView;
@@ -248,12 +250,17 @@ static NSString *k_title = @"H5DetailTitleCell";
             if (!cell) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailWebCellID];
             }
-            [cell addSubview:self.newsImageView];
-            [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.left.mas_equalTo(5);
-                make.right.mas_equalTo(-5);
-                make.height.mas_equalTo(kNewBigImageHeight);
-            }];
+            
+            //有图才添加这个imageView
+            if (self.dataModel.data.news.img) {
+                [cell addSubview:self.newsImageView];
+                [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.left.mas_equalTo(5);
+                    make.right.mas_equalTo(-5);
+                    make.height.mas_equalTo(kNewBigImageHeight);
+                }];
+            }
+            
             
             [cell addSubview:self.contentWebView];
             CGFloat webHeight = self.webViewHeight == 0?400:self.webViewHeight;
@@ -261,7 +268,12 @@ static NSString *k_title = @"H5DetailTitleCell";
                 make.left.mas_equalTo(5);
                 make.right.mas_equalTo(-5);
                 make.height.mas_equalTo(webHeight);
-                make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
+                if (self.dataModel.data.news.img){
+                    make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
+                }else{
+                    make.top.mas_equalTo(5);
+                }
+                
             }];
           
             return cell;
@@ -283,7 +295,11 @@ static NSString *k_title = @"H5DetailTitleCell";
                     make.left.mas_equalTo(5);
                     make.right.mas_equalTo(-5);
                     make.height.mas_equalTo(self.webViewHeight);
-                    make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
+                    if (self.dataModel.data.news.img){
+                        make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
+                    }else{
+                        make.top.mas_equalTo(5);
+                    }
                 }];
             }
             return resultHeith;

@@ -17,7 +17,7 @@
     [super awakeFromNib];
     // Initialization code
     self.titleLab.numberOfLines = 0;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.newsImg.contentMode = UIViewContentModeScaleAspectFill;
     
     
 }

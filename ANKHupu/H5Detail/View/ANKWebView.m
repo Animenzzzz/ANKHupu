@@ -35,13 +35,13 @@
                           <head>\
                           <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>\
                           </head>\
-                          <body style='-webkit-text-size-adjust: 130%%;'>\
+                          <body style='-webkit-text-size-adjust: 120%%;'>\
                           <script type='text/javascript'>\
                           window.onload = function(){\
                           var $img = document.getElementsByTagName('img');\
                           for(var p in  $img){\
                           $img[p].style.width = '100%%';\
-                          $img[p].style.height ='50%%'\
+                          $img[p].style.height = 'auto' \
                           }\
                           }\
                           </script>\
@@ -59,7 +59,7 @@
     [self evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         
         if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoadWithSelfHeight:)]) {
-            [self.delegate webViewDidFinishLoadWithSelfHeight:700];
+            [self.delegate webViewDidFinishLoadWithSelfHeight:[result doubleValue]];
         }
     }];
     

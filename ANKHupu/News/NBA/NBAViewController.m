@@ -7,13 +7,12 @@
 //
 
 #import "NBAViewController.h"
-#import "ANKReachabilityManager.h"
 #import "ANKHttpServer.h"
 #import "NBAModel.h"
 #import "NBANewsCell.h"
-
-
+#import "NBATopicViewController.h"
 #import "H5DetailViewController.h"
+
 @interface NBAViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -267,15 +266,19 @@ static int pageNum = 0;
     detail.type = model.type;
     
     NSString *url = @"";
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     if (model.type == NewsTypeNormal) {//1
-        
-        [params setValue:[NSString stringWithFormat:@"%@",model.nid] forKey:@"nid"];
         
         url = [NSString stringWithFormat:@"%@&nid=%@&leaguesEn=nba",kNews_Type1_FullPath,[NSString stringWithFormat:@"%@",model.nid]];
         
     }else if(model.type == NewsTypeSpecial){//2
+        
+        url = [NSString stringWithFormat:@"%@&nid=%@",kNBA_DetailH5_Type2,[NSString stringWithFormat:@"%@",model.nid]];
+        NBATopicViewController *viewC = [NBATopicViewController new];
+        viewC.controllerTitle = @"fasdfasdf";
+        viewC.requestURL = url;
+        [self.navigationController pushViewController:viewC animated:YES];
+        return;
         
         
     }else if (model.type == NewsTypePic){//3
@@ -286,7 +289,7 @@ static int pageNum = 0;
         NSString *tmp = [array objectAtIndex:array.count - 1];
         NSArray *arraytmp = [tmp componentsSeparatedByString:@"?"];
         NSString *linkID = arraytmp[0];
-        [params setValue:linkID forKey:@"link"];
+
         
         url = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
     }

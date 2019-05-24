@@ -9,7 +9,7 @@
 #import "HotListViewController.h"
 #import "ANKHttpServer.h"
 #import "HotListModel.h"
-#import "ANKReachabilityManager.h"
+
 #import "HotListViewCell.h"
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 

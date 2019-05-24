@@ -11,7 +11,7 @@
 #import "NBANewsType5Model.h"
 #import "H5DetailTitleView.h"
 #define kNewsTitleToCellTop1  5
-#define kNewsTitleToCellLeft1 15
+#define kNewsTitleToCellLeft1 10
 #define kNewsTitleWidth1     (SCREEN_WIDTH - kNewsTitleToCellLeft1*2)
 #define kAddTimeToTile1       10
 #define kAddTimeHeight1       10
@@ -94,7 +94,7 @@
         
         [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.newsTitleLab.mas_bottom).offset(5);
+            make.top.mas_equalTo(self.newsTitleLab.mas_bottom).offset(10);
             make.left.mas_equalTo(kNewsTitleToCellLeft1);
             make.width.mas_equalTo(375);
             make.height.mas_equalTo(44);

@@ -15,29 +15,29 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6e-Dp-TPn">
-                    <rect key="frame" x="16" y="7" width="29" height="30"/>
+                    <rect key="frame" x="5" y="7" width="29" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="j3r-Nv-tiM"/>
                         <constraint firstAttribute="width" constant="29" id="vYt-wa-ORy"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-RJ-Lhp">
-                    <rect key="frame" x="59" y="3" width="180" height="18"/>
+                    <rect key="frame" x="48" y="3" width="180" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="Fft-Zv-JWU"/>
                         <constraint firstAttribute="width" constant="180" id="JnE-Ji-tMd"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-f7-znd">
-                    <rect key="frame" x="59" y="25" width="160" height="16"/>
+                    <rect key="frame" x="48" y="25" width="160" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="PVt-Ek-7om"/>
                         <constraint firstAttribute="width" constant="160" id="c44-5M-Oic"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -49,7 +49,7 @@
                 <constraint firstItem="3UM-f7-znd" firstAttribute="leading" secondItem="G6e-Dp-TPn" secondAttribute="trailing" constant="14" id="Ma4-dv-dK9"/>
                 <constraint firstItem="G6e-Dp-TPn" firstAttribute="centerY" secondItem="OST-cZ-mLp" secondAttribute="centerY" id="UWS-7X-fEb"/>
                 <constraint firstItem="hyT-RJ-Lhp" firstAttribute="top" secondItem="OST-cZ-mLp" secondAttribute="top" constant="3" id="t9Y-S5-ivp"/>
-                <constraint firstItem="G6e-Dp-TPn" firstAttribute="leading" secondItem="OST-cZ-mLp" secondAttribute="leading" constant="16" id="v7U-iL-EcA"/>
+                <constraint firstItem="G6e-Dp-TPn" firstAttribute="leading" secondItem="OST-cZ-mLp" secondAttribute="leading" constant="5" id="v7U-iL-EcA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -57,7 +57,7 @@
                 <outlet property="userIconImage" destination="G6e-Dp-TPn" id="PJT-bY-pj1"/>
                 <outlet property="userNameLab" destination="hyT-RJ-Lhp" id="KrV-kw-PO3"/>
             </connections>
-            <point key="canvasLocation" x="-1118" y="-195"/>
+            <point key="canvasLocation" x="-1296" y="-214"/>
         </view>
     </objects>
 </document>

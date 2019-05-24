@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    self.userIconImage.layer.cornerRadius = 3.0;
+    self.userIconImage.layer.cornerRadius = 10.0;
 }
 
 - (void)setNewsInfo:(NSString *)newsInfo{

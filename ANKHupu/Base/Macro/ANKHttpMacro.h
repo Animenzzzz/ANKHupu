@@ -43,6 +43,9 @@
 
 
 
+
+#define kNBA_DetailH5_Type2 @"https://games.mobileapi.hupu.com/3/7.3.12/nba/getSubjectNewsDetail?time_zone=Asia%2FShanghai&advId=E12875A5-1076-4C57-9488-B5311B604032&entrance=1&night=0&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&crt=1558690278&clientId=30980511&_ssid=VFQtUXVXYW4xN0Y&sign=895ad1e44f95d86110a15d56a10c401e&preload=0"
+
 //type = 5
 #define kNBA_DetailH5_Type5_1 @"http://bbs.mobileapi.hupu.com/3/7.3.12/threads/"
 #define kNAB_DetailH5_Type5_2 @"?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&fid=1048&entrance=6&isScheme=1&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1558598038&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%2FShanghai&sign=eacc415f819d085abc8f86418bef4f23"
