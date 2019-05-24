@@ -7,7 +7,7 @@
 //
 
 #import "HotListModel.h"
-#import "UILabel+AutoFit.h"
+
 @implementation HotListModel
 
 + (NSDictionary *)modelCustomPropertyMapper {

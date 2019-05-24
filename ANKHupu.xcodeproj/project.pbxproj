@@ -2109,6 +2109,9 @@
 		4A6C477922978EDB00850EC8 /* H5DetailTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5DetailTitleView.h; sourceTree = "<group>"; };
 		4A6C477A22978EDB00850EC8 /* H5DetailTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5DetailTitleView.m; sourceTree = "<group>"; };
 		4A6C477C22978EEA00850EC8 /* H5DetailTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H5DetailTitleView.xib; sourceTree = "<group>"; };
+		4A6C477E2297C09500850EC8 /* ANKColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKColorMacro.h; sourceTree = "<group>"; };
+		4A6C477F2297C0E600850EC8 /* ANKDataMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKDataMacro.h; sourceTree = "<group>"; };
+		4A6C47802297C13E00850EC8 /* ANKSizeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKSizeMacro.h; sourceTree = "<group>"; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -2142,7 +2145,6 @@
 		4ABDCACF228A8CB60091E341 /* ANKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKViewController.m; sourceTree = "<group>"; };
 		4ABDCAD6228A97D20091E341 /* ANKNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationController.h; sourceTree = "<group>"; };
 		4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigationController.m; sourceTree = "<group>"; };
-		4ABDCAD9228A999E0091E341 /* ANKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKMacro.h; sourceTree = "<group>"; };
 		4ABDCADA228AB52D0091E341 /* search_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bg.png; sourceTree = "<group>"; };
 		4ABDCADE228ABD780091E341 /* ANKNavigationViewSearch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANKNavigationViewSearch.xib; sourceTree = "<group>"; };
 		4ABDCAE4228ACAC50091E341 /* ANKNavigationViewSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKNavigationViewSearch.h; sourceTree = "<group>"; };
@@ -4582,7 +4584,9 @@
 			isa = PBXGroup;
 			children = (
 				4AF660F322897F3700DFC1AF /* ANKHttpMacro.h */,
-				4ABDCAD9228A999E0091E341 /* ANKMacro.h */,
+				4A6C477E2297C09500850EC8 /* ANKColorMacro.h */,
+				4A6C477F2297C0E600850EC8 /* ANKDataMacro.h */,
+				4A6C47802297C13E00850EC8 /* ANKSizeMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

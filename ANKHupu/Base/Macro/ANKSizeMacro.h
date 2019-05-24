@@ -1,17 +1,15 @@
 //
-//  ANKMacro.h
+//  ANKSizeMacro.h
 //  ANKHupu
 //
-//  Created by Animenzzz on 2019/5/14.
+//  Created by Animenzzz on 2019/5/24.
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#ifndef ANKMacro_h
-#define ANKMacro_h
-#import "UIColor+Category.h"
+#ifndef ANKSizeMacro_h
+#define ANKSizeMacro_h
 
 
-#pragma mark =================间距、尺寸=====================
 //屏幕宽高
 #define SCREEN_WIDTH (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 #define SCREEN_HEIGHT (MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
@@ -41,22 +39,4 @@
 //NBA页
 
 
-
-
-#pragma mark ================= 颜色 =====================
-//分割线颜色
-#define kSeperatLineColor [UIColor                                            colorWithHexString:@"eaeaea"]
-//tableview灰色背景y颜色
-#define kGrayBackGroundColor [UIColor                                         colorWithHexString:@"eaeaea"]
-//随机颜色
-#define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
-#define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
-
-
-#pragma mark ================= 其他设置 =====================
-//标签用户数据存储
-#define kOrderUserData @"OrderUserData"
-#define kUnOrderUserData @"UnOrderUserData"
-
-
-#endif /* ANKMacro_h */
+#endif /* ANKSizeMacro_h */

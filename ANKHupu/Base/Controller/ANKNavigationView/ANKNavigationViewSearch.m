@@ -11,6 +11,8 @@
 @interface ANKNavigationViewSearch()
 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UIImageView *searchLeftImage;
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 
 @end
 
@@ -22,6 +24,11 @@
     self.searchView.userInteractionEnabled = YES;
     [self.searchView addGestureRecognizer:tap];
     self.cwHotSearchLab.animateDuration = 1.0;
+    
+    self.searchLeftImage.image = [UIImage imageNamed:kSearchViewLeftImage];
+    [self.commentBtn setImage:[ResUtil imageNamed:kSearchViewRightCommentBtnImage] forState:UIControlStateNormal];
+    self.backgroundColor = kSearchRedBackGroundColor;
+    self.searchView.backgroundColor = kSearchRedBackGroundColor;
 
 }
 

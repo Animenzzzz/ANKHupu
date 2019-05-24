@@ -18,8 +18,8 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 //NBA新闻
 + (void)getNBANewsWithParams:(NSMutableDictionary *)params succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
-//NBA新闻_详情
-+ (void)getNBANewsDetailWithParams:(NSMutableDictionary *)params succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
+//新闻_详情
++ (void)getNewsDetailWithParams:(nullable NSMutableDictionary *)params url:(NSString *)url succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
 //热搜
 + (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock;

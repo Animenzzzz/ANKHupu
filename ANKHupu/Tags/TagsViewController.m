@@ -7,10 +7,7 @@
 //
 
 #import "TagsViewController.h"
-#import "UIView+frame.h"
 #import "TagCellView.h"
-#import "Masonry.h"
-#import "UILabel+AutoFit.h"
 @interface TagsViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,TagCellViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;

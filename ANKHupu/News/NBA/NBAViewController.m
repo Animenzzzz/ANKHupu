@@ -7,15 +7,12 @@
 //
 
 #import "NBAViewController.h"
-#import "Masonry.h"
-#import "MJRefresh.h"
-#import "SVProgressHUD.h"
 #import "ANKReachabilityManager.h"
 #import "ANKHttpServer.h"
 #import "NBAModel.h"
 #import "NBANewsCell.h"
-#import "UILabel+AutoFit.h"
-#import "SDWebImage.h"
+
+
 #import "H5DetailViewController.h"
 @interface NBAViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -208,7 +205,7 @@ static int pageNum = 0;
     cell.titleHeight.constant = heigh;
     cell.newsTitle = model.title;
     NSArray *arr = [model.img componentsSeparatedByString:@"?"];
-    [cell.newsImg sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [cell.newsImg sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         cell.newsImg.image = image;
     }];
     
@@ -262,21 +259,39 @@ static int pageNum = 0;
     H5DetailViewController *detail = [H5DetailViewController new];
     detail.controllerTitle = @"Detail";
     
-    //新闻类型字段一定要有
+    //详情页属性参数
+    // 1.网络请求参数  params
+    // 2.请求         URL
+    // 3.新闻类型     type
+    
+    detail.type = model.type;
+    
+    NSString *url = @"";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:[NSString stringWithFormat:@"%ld",model.type] forKey:@"type"];
-    //传过去，不同的新闻类型需要不同的请求参数
-    if (model.type == NewsTypeNormal) {
+    
+    if (model.type == NewsTypeNormal) {//1
+        
         [params setValue:[NSString stringWithFormat:@"%@",model.nid] forKey:@"nid"];
-    }else if (model.type == NewsTypeTopic){
+        
+        url = [NSString stringWithFormat:@"%@&nid=%@&leaguesEn=nba",kNews_Type1_FullPath,[NSString stringWithFormat:@"%@",model.nid]];
+        
+    }else if(model.type == NewsTypeSpecial){//2
+        
+        
+    }else if (model.type == NewsTypePic){//3
+        
+    }else if (model.type == NewsTypeTopic){//5
+        
         NSArray *array = [model.link componentsSeparatedByString:@"/"];
         NSString *tmp = [array objectAtIndex:array.count - 1];
         NSArray *arraytmp = [tmp componentsSeparatedByString:@"?"];
         NSString *linkID = arraytmp[0];
         [params setValue:linkID forKey:@"link"];
+        
+        url = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
     }
-    
-    detail.params = params;
+
+    detail.requestURL = url;
     [self.navigationController pushViewController:detail animated:YES];
     
    

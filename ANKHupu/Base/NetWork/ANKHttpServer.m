@@ -73,21 +73,10 @@
     }];
 }
 
-+ (void)getNBANewsDetailWithParams:(NSMutableDictionary *)params succesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
-
-    NSString *newType = [params objectForKey:@"type"];
-    NSString *fullURL = @"";
-    if ([newType integerValue] == NewsTypeNormal) {
-        NSString *nid = [params objectForKey:@"nid"];
-        NSString *nid_full = [NSString stringWithFormat:@"nid=%@",nid];
-        fullURL = [NSString stringWithFormat:@"%@&%@",kNBA_DetailH5_Type1,nid_full];
-    }else if ([newType integerValue] == NewsTypeTopic){
-        NSString *linkID = [params objectForKey:@"link"];
-        fullURL = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
-    }
++ (void)getNewsDetailWithParams:(nullable NSMutableDictionary *)params url:(NSString *)url succesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
     
-    ANKLog(@"请求URL:%@",fullURL);
-    [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    ANKLog(@"请求URL:%@",url);
+    [[ANKHttpServer sharedInstance].sessionManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *data = (NSDictionary *)responseObject;
         successBlock(data);

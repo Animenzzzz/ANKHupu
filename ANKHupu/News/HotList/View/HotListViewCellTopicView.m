@@ -7,9 +7,7 @@
 //
 
 #import "HotListViewCellTopicView.h"
-#import "UILabel+AutoFit.h"
-#import "UIView+frame.h"
-#import "Masonry.h"
+
 @interface HotListViewCellTopicView()
 @property (weak, nonatomic) IBOutlet UILabel *topicNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLab;

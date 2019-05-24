@@ -28,17 +28,23 @@
 
 
 #import "ANKHttpMacro.h"
-#import "ANKMacro.h"
+#import "ANKColorMacro.h"
+#import "ANKDataMacro.h"
+#import "ANKSizeMacro.h"
+
 #import "EXTScope.h"
 #import "ResUtil.h"
 
-//NBA news类型  TODO...写的位置待调整
-typedef NS_ENUM(NSInteger,NewsType) {
-    NewsTypeNormal  = 1,//1:视频+正常新闻
-    NewsTypeSpecial = 2,//2:专题
-    NewsTypePic     = 3,//3:cell上有多个图片（在 thumbs 数组里面）
-    NewsTypeTopic   = 5,//5:话题。。球鞋。。经典回顾
-};
+//cocopod
+#import "AFNetworking.h"
+#import "Masonry.h"
+#import "YYModel.h"
+#import "MJRefresh.h"
+#import "SVProgressHUD.h"
+#import "SDWebImage.h"
 
+//my extensions
+#import "UIView+frame.h"
+#import "UILabel+AutoFit.h"
 
 #endif /* AnkHupuPrefixHeader_pch */

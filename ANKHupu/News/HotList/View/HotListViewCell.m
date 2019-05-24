@@ -12,9 +12,7 @@
 #import "HotInfoPhotoCollectionView.h"
 #import "HotListViewCellCommentInfo.h"
 #import "HotListViewCellSocial.h"
-#import "SDWebImage.h"
-#import "Masonry.h"
-#import "UILabel+AutoFit.h"
+
 @interface HotListViewCell()
 
 @property (nonatomic, weak) HotListViewCellTopicView *topicView;
