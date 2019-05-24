@@ -6,9 +6,9 @@
 
 #import "NBAType5data.h"
 
-NSString *const kNBAType5dataNBAType5forum = @"NBAType5forum";
-NSString *const kNBAType5dataNBAType5praise = @"NBAType5praise";
-NSString *const kNBAType5dataNBAType5topic = @"NBAType5topic";
+NSString *const kNBAType5dataNBAType5forum = @"forum";
+NSString *const kNBAType5dataNBAType5praise = @"praise";
+NSString *const kNBAType5dataNBAType5topic = @"topic";
 NSString *const kNBAType5dataAd = @"ad";
 NSString *const kNBAType5dataAllPage = @"allPage";
 NSString *const kNBAType5dataAuthorPuid = @"author_puid";

@@ -74,16 +74,17 @@
 }
 
 + (void)getNBANewsDetailWithParams:(NSMutableDictionary *)params succesBlock :(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
-    
-    NSString *newType = [params objectForKey:@"type"];
-    
-    if ([newType isEqualToString:@"1"]) {
-        NSLog(@"");
-    }
 
-    NSString *nid = [params objectForKey:@"nid"];
-    NSString *nid_full = [NSString stringWithFormat:@"nid=%@",nid];
-    NSString *fullURL = [NSString stringWithFormat:@"%@&%@",kNBA_DetailH5_Type1,nid_full];
+    NSString *newType = [params objectForKey:@"type"];
+    NSString *fullURL = @"";
+    if ([newType integerValue] == NewsTypeNormal) {
+        NSString *nid = [params objectForKey:@"nid"];
+        NSString *nid_full = [NSString stringWithFormat:@"nid=%@",nid];
+        fullURL = [NSString stringWithFormat:@"%@&%@",kNBA_DetailH5_Type1,nid_full];
+    }else if ([newType integerValue] == NewsTypeTopic){
+        NSString *linkID = [params objectForKey:@"link"];
+        fullURL = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
+    }
     
     ANKLog(@"请求URL:%@",fullURL);
     [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

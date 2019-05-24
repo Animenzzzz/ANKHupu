@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface H5DetailViewController : ANKViewController
 
-@property(nonatomic,strong) NSString *nid;
-@property(nonatomic,assign) NewsType newsType;
 @property(nonatomic,strong) NSMutableDictionary *params;
 
 @end

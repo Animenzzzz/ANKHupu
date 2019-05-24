@@ -41,7 +41,8 @@
 //type = 1
 #define kNBA_DetailH5_Type1 @"http://games.mobileapi.hupu.com/3/7.3.12/news/createNewsDetailH5?offline=json&leaguesEn=nba&entrance=&night=0&nopic=0&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0"
 //type = 5
-//#define kNBA_DetailH5_Type5 @"http://bbs.mobileapi.hupu.com/3/7.3.12/threads/27549885?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&fid=1048&entrance=6&isScheme=1&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1558598038&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%2FShanghai&sign=eacc415f819d085abc8f86418bef4f23"
+#define kNBA_DetailH5_Type5_1 @"http://bbs.mobileapi.hupu.com/3/7.3.12/threads/"
+#define kNAB_DetailH5_Type5_2 @"?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&fid=1048&entrance=6&isScheme=1&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1558598038&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%2FShanghai&sign=eacc415f819d085abc8f86418bef4f23"
 
 
 //type

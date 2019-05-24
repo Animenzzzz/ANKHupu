@@ -41,7 +41,7 @@
                           var $img = document.getElementsByTagName('img');\
                           for(var p in  $img){\
                           $img[p].style.width = '100%%';\
-                          $img[p].style.height ='auto'\
+                          $img[p].style.height ='50%%'\
                           }\
                           }\
                           </script>\
@@ -59,10 +59,14 @@
     [self evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         
         if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoadWithSelfHeight:)]) {
-            [self.delegate webViewDidFinishLoadWithSelfHeight:[result doubleValue]];
+            [self.delegate webViewDidFinishLoadWithSelfHeight:700];
         }
     }];
     
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
+    NSLog(@"");
 }
 
 @end

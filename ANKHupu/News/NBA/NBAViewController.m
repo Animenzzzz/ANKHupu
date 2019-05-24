@@ -260,20 +260,23 @@ static int pageNum = 0;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
     H5DetailViewController *detail = [H5DetailViewController new];
-    detail.nid = model.nid;
     detail.controllerTitle = @"Detail";
-    detail.newsType = model.type;
     
-    
+    //新闻类型字段一定要有
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:[NSString stringWithFormat:@"%ld",model.type] forKey:@"type"];
-    
     //传过去，不同的新闻类型需要不同的请求参数
     if (model.type == NewsTypeNormal) {
         [params setValue:[NSString stringWithFormat:@"%@",model.nid] forKey:@"nid"];
     }else if (model.type == NewsTypeTopic){
-        [params setValue:[NSString stringWithFormat:@"%@",model.link] forKey:@"link"];//要重新拼接的
+        NSArray *array = [model.link componentsSeparatedByString:@"/"];
+        NSString *tmp = [array objectAtIndex:array.count - 1];
+        NSArray *arraytmp = [tmp componentsSeparatedByString:@"?"];
+        NSString *linkID = arraytmp[0];
+        [params setValue:linkID forKey:@"link"];
     }
+    
+    detail.params = params;
     [self.navigationController pushViewController:detail animated:YES];
     
    

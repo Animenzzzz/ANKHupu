@@ -6,7 +6,7 @@
 
 #import "NBAType5offlineData.h"
 
-NSString *const kNBAType5offlineDataNBAType5data = @"NBAType5data";
+NSString *const kNBAType5offlineDataNBAType5data = @"data";
 NSString *const kNBAType5offlineDataStatus = @"status";
 
 @interface NBAType5offlineData ()

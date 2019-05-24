@@ -6,9 +6,9 @@
 
 #import "NBANewsType5Model.h"
 
-NSString *const kNBANews5NBAType5offlineData = @"NBAType5offline_data";
-NSString *const kNBANews5NBAType5share = @"NBAType5share";
-NSString *const kNBANews5NBAType5topic1 = @"NBAType5topic1";
+NSString *const kNBANews5NBAType5offlineData = @"offline_data";
+NSString *const kNBANews5NBAType5share = @"share";
+NSString *const kNBANews5NBAType5topic1 = @"topic";
 NSString *const kNBANews5Ad = @"ad";
 NSString *const kNBANews5AdvId = @"advId";
 NSString *const kNBANews5AllCount = @"allCount";

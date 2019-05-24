@@ -19,7 +19,7 @@
 #import "SDWebImage.h"
 #import "ANKWebView.h"
 #import "H5DetailTitleCell.h"
-
+#import "NBANewsType5Model.h"
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
 static NSString *k_title = @"H5DetailTitleCell";
@@ -35,6 +35,7 @@ static NSString *k_title = @"H5DetailTitleCell";
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
 @property(nonatomic, strong) NewsDetailModel *dataModel;
+@property(nonatomic, strong) NBANewsType5Model *type5Model;
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) ANKWebView *contentWebView;
 @property(nonatomic, strong) UIImageView *newsImageView;
@@ -141,10 +142,17 @@ static NSString *k_title = @"H5DetailTitleCell";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        [params setValue:self.nid forKey:@"nid"];
-        [params setValue:[NSString stringWithFormat: @"%ld", (long)self.newsType] forKey:@"type"];
-        [ANKHttpServer getNBANewsDetailWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
+        NSMutableDictionary *postParams = [NSMutableDictionary dictionary];
+        
+        NewsType type = [[self.params objectForKey:@"type"] integerValue];
+        [postParams setValue:[NSString stringWithFormat: @"%ld", type] forKey:@"type"];
+        if (type == NewsTypeNormal) {
+            [postParams setValue:[self.params objectForKey:@"nid"] forKey:@"nid"];
+        }else if(type == NewsTypeTopic){
+            [postParams setValue:[self.params objectForKey:@"link"] forKey:@"link"];
+        }
+    
+        [ANKHttpServer getNBANewsDetailWithParams:postParams succesBlock:^(NSDictionary * _Nonnull data) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 @strongify(self)
                 NSDictionary *dic =data[@"error"];
@@ -154,7 +162,7 @@ static NSString *k_title = @"H5DetailTitleCell";
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     
-                    if (self.newsType == NewsTypeNormal) {
+                    if ([[self.params objectForKey:@"type"] integerValue] == NewsTypeNormal) {
                         self.dataModel = [[NewsDetailModel alloc] initWithDictionary:data];
                         
                         [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.data.news.img] placeholderImage:[ResUtil imageNamed:@"placehold_big"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -163,8 +171,13 @@ static NSString *k_title = @"H5DetailTitleCell";
                         
                         [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
                         [self.tableView reloadData];
-                    }else if(self.newsType == NewsTypeTopic){
                         
+                    }else if([[self.params objectForKey:@"type"] integerValue] == NewsTypeTopic){
+                        
+                        self.type5Model = [[NBANewsType5Model alloc] initWithDictionary:data];
+                        NSLog(@"");
+                        [self.contentWebView loadHTMLString:self.type5Model.nBAType5offlineData.nBAType5data.content];
+                        [self.tableView reloadData];
                     }
                     
                     
@@ -218,7 +231,7 @@ static NSString *k_title = @"H5DetailTitleCell";
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (!self.dataModel) {
+    if (!self.dataModel && !self.type5Model) {
         return 0;
     }
     
@@ -242,7 +255,8 @@ static NSString *k_title = @"H5DetailTitleCell";
             if (!cell) {
                 cell = [[H5DetailTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:k_title];
             }
-            [cell setStyleWithModel:self.dataModel newsType:self.newsType];
+            id tmpModel = [[self.params objectForKey:@"type"] integerValue] == NewsTypeNormal ? self.dataModel:self.type5Model;
+            [cell setStyleWithModel:tmpModel newsType:[[self.params objectForKey:@"type"] integerValue]];
             return cell;
             
         }else{//新闻正文
@@ -289,9 +303,10 @@ static NSString *k_title = @"H5DetailTitleCell";
                 }];
             }
             return resultHeith;
-        }else{
+        }else{//title
             CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
-            return height+kNewsTitleToCellTop+kAddTimeToTile+kAddTimeHeight+kAddTimeToButtom;
+            CGFloat addtimeHeight = [[self.params objectForKey:@"type"] integerValue] == NewsTypeNormal ? kAddTimeHeight:(kAddTimeHeight+34+30);
+            return (height+kNewsTitleToCellTop+kAddTimeToTile+addtimeHeight+kAddTimeToButtom);
         }
     }
     return 32;

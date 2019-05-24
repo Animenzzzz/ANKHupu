@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface H5DetailTitleCell : UITableViewCell
 
-- (void)setStyleWithModel:(NewsDetailModel *)model newsType:(NewsType)type;
+- (void)setStyleWithModel:(id)model newsType:(NewsType)type;
 
 
 @end
