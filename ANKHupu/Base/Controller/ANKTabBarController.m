@@ -12,7 +12,7 @@
 
 #import "NewsViewController.h"
 #import "GameViewController.h"
-
+#import "MoreViewController.h"
 #import "FPSLable.h"
 
 @interface ANKTabBarController ()
@@ -47,11 +47,11 @@
     [self setTabBarStyleWithCon:news3 seletImage:kTab4_Selete normlImage:kTab4_Normal];
     ANKNavigationController *nav3 = [[ANKNavigationController alloc] initWithRootViewController:news3];
     
-    ANKViewController *news4 = [ANKViewController new];
-    [self setTabBarStyleWithCon:news4 seletImage:kTab5_Selete normlImage:kTab5_Normal];
-    ANKNavigationController *nav4 = [[ANKNavigationController alloc] initWithRootViewController:news4];
+    MoreViewController *more = [MoreViewController new];
+    [self setTabBarStyleWithCon:more seletImage:kTab5_Selete normlImage:kTab5_Normal];
+    ANKNavigationController *navMore = [[ANKNavigationController alloc] initWithRootViewController:more];
 
-    self.viewControllers = @[newNav,gameNav,nav2,nav3,nav4];
+    self.viewControllers = @[newNav,gameNav,nav2,nav3,navMore];
     
 #if DEBUG
     _fpsLabel = [FPSLable new];

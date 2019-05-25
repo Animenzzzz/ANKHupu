@@ -27,6 +27,9 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 //推荐
 + (void)getHotListWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
+//更多
++ (void)getMoreListWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

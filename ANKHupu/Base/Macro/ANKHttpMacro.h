@@ -83,6 +83,9 @@
 #define kHotList_full_Params [NSString stringWithFormat:@"?%@&%@",kHotList_param1,kParam_full]
 #define kHotList_FullPath [NSString stringWithFormat:@"%@%@%@",kHPServiceHost1,kHotList,kHotList_full_Params]
 
+//------更多
+#define kMoreList @"https://games.mobileapi.hupu.com/3/7.3.12/user/more?time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&advId=E12875A5-1076-4C57-9488-B5311B604032&night=0&crt=1558775033&clientId=30980511&_ssid=VFQtUXVXYW4xN0Y&sign=a9bd2a1e48950ee2851eb6aed9e431d3"
+
 
 
 
