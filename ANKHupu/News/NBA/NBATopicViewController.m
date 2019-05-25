@@ -38,6 +38,18 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     [self initViews];
     [self laySubView];
     [self requestData];
+    
+    //TODO...暂时写一个返回按钮
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
+    backBtn.titleLabel.textColor = [UIColor whiteColor];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backBtn];
+    [self.view bringSubviewToFront:backBtn];
+}
+
+- (void)backClick{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -204,35 +216,36 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNBATopicCellID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kNBATopicCellID];
-    }
+    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNBATopicCellID];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kNBATopicCellID];
+//    }
     NBATopicGroup *item = [self.dataModel.result.groups objectAtIndex:indexPath.section-1];
     NBATopicNew *newsItem = [item.news objectAtIndex:indexPath.row];
     
     
-//    NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font];
-//    cell.titleHeight.constant = heigh;
-//    cell.newsTitle = model.title;
-//    NSArray *arr = [model.img componentsSeparatedByString:@"?"];
-//    [cell.newsImg sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//        cell.newsImg.image = image;
-//    }];
-//
-//    cell.readLab.text = model.replies;
-//    CGFloat width = [UILabel getWidthWithTitle:cell.readLab.text font:cell.readLab.font];
-//    cell.readLabWidth.constant = width;
-//
-//    if ([model.lights isEqualToString:@"0"]) {
-//        cell.lightImg.hidden = YES;
-//        cell.lightLab.hidden = YES;
-//    }else{
-//        cell.lightLab.text = model.lights;
-//        CGFloat width = [UILabel getWidthWithTitle:cell.lightLab.text font:cell.lightLab.font];
-//        cell.lightWidth.constant = width;
-//    }
+    NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:newsItem.title font:cell.titleLab.font];
+    cell.titleHeight.constant = heigh;
+    cell.newsTitle = newsItem.title;
+    NSArray *arr = [newsItem.img componentsSeparatedByString:@"?"];
+    [cell.newsImg sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        cell.newsImg.image = image;
+    }];
+
+    cell.readLab.text = newsItem.replies;
+    CGFloat width = [UILabel getWidthWithTitle:cell.readLab.text font:cell.readLab.font];
+    cell.readLabWidth.constant = width;
+
+    if ([newsItem.lights isEqualToString:@"0"]) {
+        cell.lightImg.hidden = YES;
+        cell.lightLab.hidden = YES;
+    }else{
+        cell.lightLab.text = newsItem.lights;
+        CGFloat width = [UILabel getWidthWithTitle:cell.lightLab.text font:cell.lightLab.font];
+        cell.lightWidth.constant = width;
+    }
     
     return cell;
 }
@@ -244,6 +257,11 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     }else{
         return kOtherHeaderHeight;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 92;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
