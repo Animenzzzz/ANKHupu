@@ -7,7 +7,7 @@
 //
 
 #import "H5DetailCommentCell.h"
-
+#import "NSString+Util.h"
 @interface H5DetailCommentCell()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *addTimeLab;
@@ -40,15 +40,18 @@
 }
 
 - (void)setContent:(NSString *)content{
-    self.contenLab.text = content;
+    
+    NSString *fil = [NSString filterH5:content];
+    
+    self.contenLab.text = fil;
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:5.0];        //设置行间距
     [paragraphStyle setLineBreakMode:self.contenLab.lineBreakMode];
     [paragraphStyle setAlignment:self.contenLab.textAlignment];
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:content];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [content length])];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:fil];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [fil length])];
     self.contenLab.attributedText = attributedString;
 }
 
@@ -61,7 +64,10 @@
 }
 
 - (void)setQuoteContent:(NSString *)quoteContent{
-    self.quoteContenLab.text = quoteContent;
+    
+    NSString *fil = [NSString filterH5:quoteContent];
+    
+    self.quoteContenLab.text = fil;
     
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -69,8 +75,8 @@
     [paragraphStyle setLineBreakMode:self.quoteContenLab.lineBreakMode];
     [paragraphStyle setAlignment:self.quoteContenLab.textAlignment];
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:quoteContent];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [quoteContent length])];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:fil];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [fil length])];
     self.quoteContenLab.attributedText = attributedString;
     
 }

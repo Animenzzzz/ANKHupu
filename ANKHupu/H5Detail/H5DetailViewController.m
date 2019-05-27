@@ -174,10 +174,14 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         
                         [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
                         [self.tableView reloadData];
+                        
+//                        NSLog(@"加载的html:%@",self.dataModel.data.news.content);
+                        
                     }else if(self.type == NewsTypeTopic){
                         self.type5Model = [[NBANewsType5Model alloc] initWithDictionary:data];
                         [self.contentWebView loadHTMLString:self.type5Model.nBAType5offlineData.nBAType5data.content];
                         [self.tableView reloadData];
+//                        NSLog(@"加载的html:%@",self.type5Model.nBAType5offlineData.nBAType5data.content);
                     }
                     
                     

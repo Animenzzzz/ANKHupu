@@ -28,6 +28,7 @@
 		4A49CE93229C04350044540B /* CommetType5Modl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE87229C04330044540B /* CommetType5Modl.m */; };
 		4A49CE94229C04350044540B /* CommetType5result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE88229C04330044540B /* CommetType5result.m */; };
 		4A49CE95229C04350044540B /* CommentDatalist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE8C229C04340044540B /* CommentDatalist.m */; };
+		4A49CE99229C0F680044540B /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE98229C0F680044540B /* NSString+Util.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
@@ -2111,6 +2112,8 @@
 		4A49CE8A229C04340044540B /* CommentAttr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentAttr.h; sourceTree = "<group>"; };
 		4A49CE8B229C04340044540B /* Lure3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lure3.h; sourceTree = "<group>"; };
 		4A49CE8C229C04340044540B /* CommentDatalist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDatalist.m; sourceTree = "<group>"; };
+		4A49CE97229C0F680044540B /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
+		4A49CE98229C0F680044540B /* NSString+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
@@ -4304,6 +4307,15 @@
 			path = CommentModel_Type5;
 			sourceTree = "<group>";
 		};
+		4A49CE96229C0F260044540B /* Foundation+Category */ = {
+			isa = PBXGroup;
+			children = (
+				4A49CE97229C0F680044540B /* NSString+Util.h */,
+				4A49CE98229C0F680044540B /* NSString+Util.m */,
+			);
+			path = "Foundation+Category";
+			sourceTree = "<group>";
+		};
 		4A5AC81A2293EDDD0026BE7E /* HotList */ = {
 			isa = PBXGroup;
 			children = (
@@ -4656,6 +4668,7 @@
 		4AE5F70D228BB90700BFC9C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4A49CE96229C0F260044540B /* Foundation+Category */,
 				4AE5F70E228BB91700BFC9C8 /* UIKit+Category */,
 			);
 			path = Extensions;
@@ -8861,6 +8874,7 @@
 				4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */,
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
 				4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */,
+				4A49CE99229C0F680044540B /* NSString+Util.m in Sources */,
 				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
 				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4A6C47C62297FA0800850EC8 /* NBATopicShare.m in Sources */,
