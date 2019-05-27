@@ -19,6 +19,15 @@
 		4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EFF1722968EC100C2A345 /* ANKWebView.m */; };
 		4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12BC842292A2D100AF21BD /* TagsViewController.m */; };
 		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
+		4A49CE8D229C04350044540B /* CheckReplyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE7B229C04310044540B /* CheckReplyInfo.m */; };
+		4A49CE8E229C04350044540B /* CommentType5Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE81229C04320044540B /* CommentType5Quote.m */; };
+		4A49CE8F229C04350044540B /* Lure3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE82229C04320044540B /* Lure3.m */; };
+		4A49CE90229C04350044540B /* Certuser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE83229C04320044540B /* Certuser.m */; };
+		4A49CE91229C04350044540B /* CommentAttr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE85229C04330044540B /* CommentAttr.m */; };
+		4A49CE92229C04350044540B /* CommentType5Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE86229C04330044540B /* CommentType5Model.m */; };
+		4A49CE93229C04350044540B /* CommetType5Modl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE87229C04330044540B /* CommetType5Modl.m */; };
+		4A49CE94229C04350044540B /* CommetType5result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE88229C04330044540B /* CommetType5result.m */; };
+		4A49CE95229C04350044540B /* CommentDatalist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE8C229C04340044540B /* CommentDatalist.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
@@ -2084,6 +2093,24 @@
 		4A12BC842292A2D100AF21BD /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
+		4A49CE7B229C04310044540B /* CheckReplyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckReplyInfo.m; sourceTree = "<group>"; };
+		4A49CE7C229C04310044540B /* CommentType5Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentType5Quote.h; sourceTree = "<group>"; };
+		4A49CE7D229C04310044540B /* Certuser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Certuser.h; sourceTree = "<group>"; };
+		4A49CE7E229C04310044540B /* CommetType5result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommetType5result.h; sourceTree = "<group>"; };
+		4A49CE7F229C04320044540B /* CommetType5Modl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommetType5Modl.h; sourceTree = "<group>"; };
+		4A49CE80229C04320044540B /* CommentType5Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentType5Model.h; sourceTree = "<group>"; };
+		4A49CE81229C04320044540B /* CommentType5Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentType5Quote.m; sourceTree = "<group>"; };
+		4A49CE82229C04320044540B /* Lure3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lure3.m; sourceTree = "<group>"; };
+		4A49CE83229C04320044540B /* Certuser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Certuser.m; sourceTree = "<group>"; };
+		4A49CE84229C04320044540B /* CheckReplyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckReplyInfo.h; sourceTree = "<group>"; };
+		4A49CE85229C04330044540B /* CommentAttr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentAttr.m; sourceTree = "<group>"; };
+		4A49CE86229C04330044540B /* CommentType5Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentType5Model.m; sourceTree = "<group>"; };
+		4A49CE87229C04330044540B /* CommetType5Modl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommetType5Modl.m; sourceTree = "<group>"; };
+		4A49CE88229C04330044540B /* CommetType5result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommetType5result.m; sourceTree = "<group>"; };
+		4A49CE89229C04330044540B /* CommentDatalist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentDatalist.h; sourceTree = "<group>"; };
+		4A49CE8A229C04340044540B /* CommentAttr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentAttr.h; sourceTree = "<group>"; };
+		4A49CE8B229C04340044540B /* Lure3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lure3.h; sourceTree = "<group>"; };
+		4A49CE8C229C04340044540B /* CommentDatalist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDatalist.m; sourceTree = "<group>"; };
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
@@ -4252,6 +4279,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A49CE7A229C040C0044540B /* CommentModel_Type5 */ = {
+			isa = PBXGroup;
+			children = (
+				4A49CE7D229C04310044540B /* Certuser.h */,
+				4A49CE83229C04320044540B /* Certuser.m */,
+				4A49CE84229C04320044540B /* CheckReplyInfo.h */,
+				4A49CE7B229C04310044540B /* CheckReplyInfo.m */,
+				4A49CE8A229C04340044540B /* CommentAttr.h */,
+				4A49CE85229C04330044540B /* CommentAttr.m */,
+				4A49CE89229C04330044540B /* CommentDatalist.h */,
+				4A49CE8C229C04340044540B /* CommentDatalist.m */,
+				4A49CE80229C04320044540B /* CommentType5Model.h */,
+				4A49CE86229C04330044540B /* CommentType5Model.m */,
+				4A49CE7C229C04310044540B /* CommentType5Quote.h */,
+				4A49CE81229C04320044540B /* CommentType5Quote.m */,
+				4A49CE7F229C04320044540B /* CommetType5Modl.h */,
+				4A49CE87229C04330044540B /* CommetType5Modl.m */,
+				4A49CE7E229C04310044540B /* CommetType5result.h */,
+				4A49CE88229C04330044540B /* CommetType5result.m */,
+				4A49CE8B229C04340044540B /* Lure3.h */,
+				4A49CE82229C04320044540B /* Lure3.m */,
+			);
+			path = CommentModel_Type5;
+			sourceTree = "<group>";
+		};
 		4A5AC81A2293EDDD0026BE7E /* HotList */ = {
 			isa = PBXGroup;
 			children = (
@@ -4309,7 +4361,8 @@
 		4A5AC8512294E9C50026BE7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4A6C483E229B99BA00850EC8 /* CommentModel */,
+				4A49CE7A229C040C0044540B /* CommentModel_Type5 */,
+				4A6C483E229B99BA00850EC8 /* CommentModel_Type1 */,
 				4A9599ED2296CD4D00725DCE /* NBANews_Type5 */,
 				4A9599AD2296CB2C00725DCE /* NBANews_Type1 */,
 			);
@@ -4412,7 +4465,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4A6C483E229B99BA00850EC8 /* CommentModel */ = {
+		4A6C483E229B99BA00850EC8 /* CommentModel_Type1 */ = {
 			isa = PBXGroup;
 			children = (
 				4A6C4841229B99CC00850EC8 /* CommentData.h */,
@@ -4428,7 +4481,7 @@
 				4A6C483F229B99CB00850EC8 /* LightComment.h */,
 				4A6C4849229B99CD00850EC8 /* LightComment.m */,
 			);
-			path = CommentModel;
+			path = CommentModel_Type1;
 			sourceTree = "<group>";
 		};
 		4A8112A8228D98070036D3C5 /* Reachability */ = {
@@ -8824,11 +8877,14 @@
 				4A6C47EC229B8AD900850EC8 /* H5DetailCommentCell.m in Sources */,
 				4A5AC8342293F3310026BE7E /* NBAModel.m in Sources */,
 				4A9599AC2296C6D000725DCE /* H5DetailTitleCell.m in Sources */,
+				4A49CE92229C04350044540B /* CommentType5Model.m in Sources */,
 				4A959A062296CD4D00725DCE /* NBAType5praise.m in Sources */,
 				4A5AC8362293F3310026BE7E /* NBATab.m in Sources */,
 				4A6C47E82299493600850EC8 /* MoreModelResult.m in Sources */,
 				4A6C484C229B99CD00850EC8 /* CommentData.m in Sources */,
 				4A64E3362294EF31007CE6E7 /* NewsDetailShare.m in Sources */,
+				4A49CE8F229C04350044540B /* Lure3.m in Sources */,
+				4A49CE8E229C04350044540B /* CommentType5Quote.m in Sources */,
 				4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */,
 				4A6C47C42297FA0800850EC8 /* NBATopicResult.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
@@ -8840,12 +8896,16 @@
 				4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */,
 				4A5AC83A2293F3310026BE7E /* GameList.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
+				4A49CE93229C04350044540B /* CommetType5Modl.m in Sources */,
 				4A5AC84C2294E1B90026BE7E /* H5DetailViewController.m in Sources */,
 				4ACD9407229296760043E05F /* ResUtil.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
+				4A49CE91229C04350044540B /* CommentAttr.m in Sources */,
 				4A6C47CF2299390300850EC8 /* MoreControllCell.m in Sources */,
+				4A49CE90229C04350044540B /* Certuser.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
+				4A49CE8D229C04350044540B /* CheckReplyInfo.m in Sources */,
 				4A959A012296CD4D00725DCE /* NBANewsType5Model.m in Sources */,
 				4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */,
 				4ACD93FE229275C20043E05F /* FPSLable.m in Sources */,
@@ -8874,6 +8934,7 @@
 				4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
+				4A49CE95229C04350044540B /* CommentDatalist.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
 				4A959A032296CD4D00725DCE /* BottomAd.m in Sources */,
 				4A5AC8352293F3310026BE7E /* NBAGame.m in Sources */,
@@ -8883,6 +8944,7 @@
 				4A6C47C52297FA0800850EC8 /* NBATopicModel.m in Sources */,
 				4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */,
 				4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */,
+				4A49CE94229C04350044540B /* CommetType5result.m in Sources */,
 				4A959A082296CD4D00725DCE /* NBAType5forum.m in Sources */,
 				4A6C47C32297FA0800850EC8 /* NBATopicGroup.m in Sources */,
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,

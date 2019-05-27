@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *quoteViewHeight;
 @property (weak, nonatomic) IBOutlet UIView *quoteView;
 
+@property(nonatomic, strong) NSString *lightNum;
+
 @end
 
 NS_ASSUME_NONNULL_END

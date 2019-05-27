@@ -13,7 +13,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="3KI-ky-0JV" customClass="H5DetailCommentCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3KI-ky-0JV" id="gnx-cE-JQ8">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3KI-ky-0JV" id="gnx-cE-JQ8">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDk-Zo-CnH">
-                                <rect key="frame" x="38" y="20" width="165" height="10"/>
+                                <rect key="frame" x="38" y="23" width="165" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="Gge-J2-fMB"/>
                                     <constraint firstAttribute="height" constant="10" id="LuM-bR-aHV"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="qEq-L6-vsb" firstAttribute="top" secondItem="WCi-ih-OBJ" secondAttribute="top" id="V2A-PC-NEU"/>
                             <constraint firstItem="qEq-L6-vsb" firstAttribute="leading" secondItem="WCi-ih-OBJ" secondAttribute="leading" id="Xf2-MP-rig"/>
                             <constraint firstItem="8S8-hB-wAC" firstAttribute="leading" secondItem="qEq-L6-vsb" secondAttribute="trailing" constant="8" id="aQt-Jp-Rvl"/>
-                            <constraint firstItem="xDk-Zo-CnH" firstAttribute="top" secondItem="8S8-hB-wAC" secondAttribute="bottom" constant="2" id="pIW-gP-9C4"/>
+                            <constraint firstItem="xDk-Zo-CnH" firstAttribute="top" secondItem="8S8-hB-wAC" secondAttribute="bottom" constant="5" id="pIW-gP-9C4"/>
                             <constraint firstItem="xDk-Zo-CnH" firstAttribute="leading" secondItem="qEq-L6-vsb" secondAttribute="trailing" constant="8" id="zhw-NS-F2f"/>
                         </constraints>
                     </view>
@@ -64,18 +64,18 @@
                         <rect key="frame" x="57" y="155.5" width="318" height="21"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_news_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="qug-pH-Ujy">
-                                <rect key="frame" x="8" y="4" width="16" height="19"/>
+                                <rect key="frame" x="1" y="2" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="亮了" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usD-G3-CIE">
-                                <rect key="frame" x="26" y="7" width="23" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="亮了" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usD-G3-CIE">
+                                <rect key="frame" x="26" y="1" width="56" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0P-u0-dTB">
-                                <rect key="frame" x="66" y="4" width="30" height="19"/>
+                                <rect key="frame" x="90" y="-1" width="30" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="回复">
@@ -138,7 +138,6 @@
                     <constraint firstItem="Msv-m3-i4g" firstAttribute="top" secondItem="K03-Ch-ovF" secondAttribute="bottom" constant="5" id="6ed-Q6-uQn"/>
                     <constraint firstAttribute="bottom" secondItem="Msv-m3-i4g" secondAttribute="bottom" constant="5" id="GE7-3r-WYU"/>
                     <constraint firstItem="WCi-ih-OBJ" firstAttribute="top" secondItem="gnx-cE-JQ8" secondAttribute="top" constant="15" id="Xzl-YW-1W8"/>
-                    <constraint firstAttribute="trailing" secondItem="K03-Ch-ovF" secondAttribute="trailing" constant="20" id="hvo-Ph-K8g"/>
                     <constraint firstItem="WCi-ih-OBJ" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="20" id="ncE-ph-42m"/>
                     <constraint firstItem="Msv-m3-i4g" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="57" id="oJ5-Vf-8OM"/>
                     <constraint firstItem="o3K-3c-trz" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="55" id="ssi-25-TRl"/>
@@ -151,6 +150,7 @@
                 <outlet property="contenLab" destination="K03-Ch-ovF" id="TFD-ZN-wpZ"/>
                 <outlet property="contenLabHeight" destination="Fch-Qm-g3Y" id="iX4-kC-OCq"/>
                 <outlet property="headerIcon" destination="qEq-L6-vsb" id="Z7a-al-NIa"/>
+                <outlet property="lightLab" destination="usD-G3-CIE" id="Kns-4S-fbK"/>
                 <outlet property="quoteContenLab" destination="r5F-xn-jKw" id="r0d-7W-RFM"/>
                 <outlet property="quoteContenLabHeight" destination="moa-Oc-EAG" id="Kwk-Vn-ems"/>
                 <outlet property="quoteUserLab" destination="6rI-2Q-nkf" id="mJ7-5P-Vwn"/>
@@ -158,7 +158,7 @@
                 <outlet property="quoteViewHeight" destination="Y1d-bs-xGH" id="lgn-o6-u37"/>
                 <outlet property="userNameLab" destination="8S8-hB-wAC" id="Wl5-EL-TY8"/>
             </connections>
-            <point key="canvasLocation" x="-551.44927536231887" y="-389.73214285714283"/>
+            <point key="canvasLocation" x="-950.00000000000011" y="-438.61607142857139"/>
         </tableViewCell>
     </objects>
     <resources>

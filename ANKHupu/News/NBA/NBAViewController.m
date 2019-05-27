@@ -268,6 +268,7 @@ static int pageNum = 0;
     if (model.type == NewsTypeNormal) {//1
         
         url = [NSString stringWithFormat:@"%@&nid=%@&leaguesEn=nba",kNews_Type1_FullPath,[NSString stringWithFormat:@"%@",model.nid]];
+        detail.commentURL = [NSString stringWithFormat:@"http://games.mobileapi.hupu.com/3/7.3.12/news/getCommentH5?offline=json&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&nid=%@",model.nid];
         
     }else if(model.type == NewsTypeSpecial){//2
         
@@ -287,13 +288,13 @@ static int pageNum = 0;
         NSString *tmp = [array objectAtIndex:array.count - 1];
         NSArray *arraytmp = [tmp componentsSeparatedByString:@"?"];
         NSString *linkID = arraytmp[0];
-
         
         url = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
+        detail.commentURL = [NSString stringWithFormat:@"https://bbs.mobileapi.hupu.com/3/7.3.12/threads/getsThreadPostList?offline=json&page=1&fid=1048&nopic=0&night=0&order=asc&entrance=6&show_type=default&sort=&postAuthorPuid=&maxpid=&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&tid=%@",linkID];
     }
 
     detail.requestURL = url;
-    detail.commentURL = [NSString stringWithFormat:@"http://games.mobileapi.hupu.com/3/7.3.12/news/getCommentH5?offline=json&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&nid=%@",model.nid];
+    
     [self.navigationController pushViewController:detail animated:YES];
     
    

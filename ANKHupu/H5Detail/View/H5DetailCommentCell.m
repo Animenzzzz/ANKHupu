@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *addTimeLab;
 @property (weak, nonatomic) IBOutlet UILabel *quoteUserLab;
+@property (weak, nonatomic) IBOutlet UILabel *lightLab;
 
 @end
 
@@ -40,6 +41,15 @@
 
 - (void)setContent:(NSString *)content{
     self.contenLab.text = content;
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5.0];        //设置行间距
+    [paragraphStyle setLineBreakMode:self.contenLab.lineBreakMode];
+    [paragraphStyle setAlignment:self.contenLab.textAlignment];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:content];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [content length])];
+    self.contenLab.attributedText = attributedString;
 }
 
 - (void)setUserName:(NSString *)userName{
@@ -52,6 +62,21 @@
 
 - (void)setQuoteContent:(NSString *)quoteContent{
     self.quoteContenLab.text = quoteContent;
+    
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5.0];        //设置行间距
+    [paragraphStyle setLineBreakMode:self.quoteContenLab.lineBreakMode];
+    [paragraphStyle setAlignment:self.quoteContenLab.textAlignment];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:quoteContent];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [quoteContent length])];
+    self.quoteContenLab.attributedText = attributedString;
+    
+}
+
+- (void)setLightNum:(NSString *)lightNum{
+    self.lightLab.text = [NSString stringWithFormat:@"亮了(%@)",lightNum];
 }
 
 @end
