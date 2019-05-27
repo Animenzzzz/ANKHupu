@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface H5DetailViewController : ANKViewController
 
 @property(nonatomic,strong) NSString *requestURL;
+@property(nonatomic,strong) NSString *commentURL;
 @property(nonatomic,assign) NewsType type;
 
 @end

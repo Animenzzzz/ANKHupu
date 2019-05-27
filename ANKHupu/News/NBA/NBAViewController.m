@@ -195,12 +195,14 @@ static int pageNum = 0;
     return self.NBADataArray.count;
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
 
     NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font lineSpacing:5.0];
     cell.titleHeight.constant = heigh;
     cell.newsTitle = model.title;
     NSArray *arr = [model.img componentsSeparatedByString:@"?"];
@@ -244,10 +246,6 @@ static int pageNum = 0;
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (!self.hotListDataArray.count) {
-//        return 10;
-//    }
-//    return [HotListModel caculateHeightWithHotInfoModel:[self.hotListDataArray objectAtIndex:indexPath.row]];
     return 92;
 }
 
@@ -295,6 +293,7 @@ static int pageNum = 0;
     }
 
     detail.requestURL = url;
+    detail.commentURL = [NSString stringWithFormat:@"http://games.mobileapi.hupu.com/3/7.3.12/news/getCommentH5?offline=json&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&nid=%@",model.nid];
     [self.navigationController pushViewController:detail animated:YES];
     
    

@@ -19,7 +19,6 @@
     self.titleLab.numberOfLines = 0;
     self.newsImg.contentMode = UIViewContentModeScaleAspectFill;
     
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,6 +40,23 @@
 //    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [newsTitle length])];
 //    self.titleLab.attributedText = attributedString;
     
+    [self setText:newsTitle lineSpacing:5.0f];
+    
+}
+
+-(void)setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing {
+    if (!text || lineSpacing < 0.01) {
+        self.titleLab.text = text;
+        return;
+    }
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineSpacing];        //设置行间距
+    [paragraphStyle setLineBreakMode:self.titleLab.lineBreakMode];
+    [paragraphStyle setAlignment:self.titleLab.textAlignment];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [text length])];
+    self.titleLab.attributedText = attributedString;
 }
 
 @end
