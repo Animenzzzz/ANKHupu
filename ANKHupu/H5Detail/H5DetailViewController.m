@@ -8,14 +8,13 @@
 
 #import "H5DetailViewController.h"
 #import "ANKHttpServer.h"
-#import "NewsDetailModel.h"
+#import "H5DetailCommentCell.h"
 #import <WebKit/WebKit.h>
 #import "ANKWebView.h"
 #import "H5DetailTitleCell.h"
-#import "NBANewsType5Model.h"
-#import "CommentModel.h"
-#import "H5DetailCommentCell.h"
-#import "CommentType5Model.h"
+
+#import "ANKBaseNewsDetailModel.h"
+#import "ANKBaseNewsCommentModel.h"
 
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
@@ -38,14 +37,13 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
-@property(nonatomic, strong) NewsDetailModel *dataModel;
-@property(nonatomic, strong) CommentModel *commentModel;
-@property(nonatomic, strong) NBANewsType5Model *type5Model;
-@property(nonatomic, strong) CommentType5Model *commentType5Model;
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) ANKWebView *contentWebView;
 @property(nonatomic, strong) UIImageView *newsImageView;
 @property(nonatomic, assign) CGFloat webViewHeight;
+
+@property(nonatomic, strong) ANKBaseNewsDetailModel *detailBaseModel;
+@property(nonatomic, strong) ANKBaseNewsCommentModel *commentBaseModel;
 
 @end
 
@@ -165,26 +163,17 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-                 
+                    
+                    self.detailBaseModel = (ANKBaseNewsDetailModel *)[[ANKBaseNewsDetailModel alloc] initWithDictionary:data type:self.type];
+                    
                     if (self.type == NewsTypeNormal) {
-                        self.dataModel = [[NewsDetailModel alloc] initWithDictionary:data];
-                        [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.dataModel.data.news.img] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                            self.newsImageView.image = image;
+                        [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.detailBaseModel.newsImage] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                                self.newsImageView.image = image;
                         }];
-                        
-                        [self.contentWebView loadHTMLString:self.dataModel.data.news.content];
-                        [self.tableView reloadData];
-                        
-//                        NSLog(@"加载的html:%@",self.dataModel.data.news.content);
-                        
-                    }else if(self.type == NewsTypeTopic){
-                        self.type5Model = [[NBANewsType5Model alloc] initWithDictionary:data];
-                        [self.contentWebView loadHTMLString:self.type5Model.nBAType5offlineData.nBAType5data.content];
-                        [self.tableView reloadData];
-//                        NSLog(@"加载的html:%@",self.type5Model.nBAType5offlineData.nBAType5data.content);
                     }
                     
-                    
+                    [self.contentWebView loadHTMLString:self.detailBaseModel.h5Content];
+                    [self.tableView reloadData];
                 }
                 
             });
@@ -205,22 +194,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                         [SVProgressHUD dismissWithDelay:2.0f];
                     }else{
-
-                        if (self.type == NewsTypeNormal) {//1:视频+正常新闻
-                            
-                            self.commentModel = [[CommentModel alloc] initWithDictionary:data];
-                            
-                            
-                        }else if (self.type == NewsTypeSpecial){//2:专题
-                            
-                        }else if (self.type == NewsTypePic){//3:cell上有多个图片（在 thumbs 数组里面）
-                            
-                        }else if (self.type == NewsTypeTopic){//5:话题。。球鞋。。经典回顾
-                            
-                            self.commentType5Model = [[CommentType5Model alloc] initWithDictionary:data];
                         
-                        }
-                        
+                        self.commentBaseModel = [(ANKBaseNewsCommentModel *)[ANKBaseNewsCommentModel alloc] initWithDictionary:data type:self.type];
                         NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:1];
                         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
                     }
@@ -239,35 +214,21 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (!self.dataModel && !self.type5Model) {
+    if (!self.detailBaseModel) {
         return 0;
     }
     
     if (section == 0) {
         return 2;
     }else{
-    
-        if (self.type == NewsTypeNormal) {//1:视频+正常新闻
-            if (!self.commentModel) {
-                return 0;
-            }
-            return self.commentModel.dtailData.data.count;
-
-        }else if (self.type == NewsTypeSpecial){//2:专题
-            return 0;
-        }else if (self.type == NewsTypePic){//3:cell上有多个图片（在 thumbs 数组里面）
-            return 0;
-        }else if (self.type == NewsTypeTopic){//5:话题。。球鞋。。经典回顾
-            
-            if (!self.commentType5Model) {
-                return 0;
-            }
-            
-            return self.commentType5Model.commetType5Modl.commetType5result.commentDatalist.count;
-        }else{
-            return 0;
+        
+        if (self.commentBaseModel.count) {
+            return self.commentBaseModel.count;
         }
     }
+    
+    
+    return 0;
 
     
 }
@@ -286,8 +247,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             if (!cell) {
                 cell = [[H5DetailTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:k_title];
             }
-            id tmpModel = self.type == NewsTypeNormal ? self.dataModel:self.type5Model;
-            [cell setStyleWithModel:tmpModel newsType:self.type];
+
+            [cell setStyleWithModel:self.detailBaseModel newsType:self.type];
             return cell;
             
         }else{//新闻正文(webView)
@@ -297,7 +258,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             }
             
             //有图才添加这个imageView
-            if (self.dataModel.data.news.img) {
+            if (self.detailBaseModel.newsImage) {
                 [cell addSubview:self.newsImageView];
                 [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.left.mas_equalTo(5);
@@ -313,7 +274,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                 make.left.mas_equalTo(5);
                 make.right.mas_equalTo(-5);
                 make.height.mas_equalTo(webHeight);
-                if (self.dataModel.data.news.img){
+                if (self.detailBaseModel.newsImage){
                     make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
                 }else{
                     make.top.mas_equalTo(5);
@@ -346,76 +307,30 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 //            }
 //
 //        }
-
-        if (self.type == NewsTypeNormal) {//1:视频+正常新闻
-            
-            CommentData *dataM = [self.commentModel.dtailData.data objectAtIndex:indexPath.row];
-            cell.userName = dataM.userName;
-            cell.content = dataM.content;
-            CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
-            cell.contenLabHeight.constant = contenHeight;
-            [cell.headerIcon sd_setImageWithURL:[NSURL URLWithString:dataM.header] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                cell.headerIcon.image = image;
-            }];
-            cell.lightNum = dataM.lightCount;
-            cell.addTime = dataM.formatTime;
-            if (![dataM.quoteData.content length]) {
-                cell.quoteView.hidden = YES;
-            }else{
-                cell.quoteContent = dataM.quoteData.content;
-                cell.quoteName = dataM.quoteData.userName;
-                
-                CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteData.content font:cell.quoteContenLab.font lineSpacing:5.0];
-                CGFloat orignContenLab = cell.quoteContenLabHeight.constant;
-                cell.quoteContenLabHeight.constant = quoteHeight;
-                cell.quoteViewHeight.constant = cell.quoteViewHeight.constant - orignContenLab+quoteHeight;
-                
-                NSLog(@"m名字：%@   回复内容：%@   cell:%p   index:%ld",dataM.userName,dataM.quoteData.content,cell,(long)indexPath.row);
-                
-            }
-            return cell;
-            
-        }else if (self.type == NewsTypeSpecial){//2:专题
-          
-        }else if (self.type == NewsTypePic){//3:cell上有多个图片（在 thumbs 数组里面）
-            
-        }else if (self.type == NewsTypeTopic){//5:话题。。球鞋。。经典回顾
-           
-            CommentDatalist *dataM = [self.commentType5Model.commetType5Modl.commetType5result.commentDatalist objectAtIndex:indexPath.row];
-            cell.userName = dataM.userName;
-            cell.content = dataM.content;
-            CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
-            cell.contenLabHeight.constant = contenHeight;
-            [cell.headerIcon sd_setImageWithURL:[NSURL URLWithString:dataM.userImg] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                cell.headerIcon.image = image;
-            }];
-            cell.lightNum = [NSString stringWithFormat:@"%ld",(long)dataM.quoteLightCount];
-            cell.addTime = dataM.time;
-            if (!dataM.quote.count) {
-                cell.quoteView.hidden = YES;
-            }else{
-                CommentType5Quote *quote = [dataM.quote objectAtIndex:0];
-                cell.quoteContent = quote.content;
-                NSString *name = [quote.header objectAtIndex:0];
-                NSArray *aar = [name componentsSeparatedByString:@">"];
-                NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
-                cell.quoteName = tmp[0];
-                
-                CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:quote.content font:cell.quoteContenLab.font lineSpacing:5.0];
-                CGFloat orignContenLab = cell.quoteContenLabHeight.constant;
-                cell.quoteContenLabHeight.constant = quoteHeight;
-                cell.quoteViewHeight.constant = cell.quoteViewHeight.constant - orignContenLab+quoteHeight;
-                
-            }
-            return cell;
-            
+        CommentDetailData *dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        cell.userName = dataM.userName;
+        cell.content = dataM.content;
+        CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
+        cell.contenLabHeight.constant = contenHeight;
+        [cell.headerIcon sd_setImageWithURL:[NSURL URLWithString:dataM.userHeader] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            cell.headerIcon.image = image;
+        }];
+        cell.lightNum = dataM.lightCount;
+        cell.addTime = dataM.addTime;
+        if (![dataM.quoteContent length]) {
+            cell.quoteView.hidden = YES;
         }else{
-           
+
+            cell.quoteName = dataM.quoteName;
+            cell.quoteContent = dataM.quoteContent;
+            CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteContent font:cell.quoteContenLab.font lineSpacing:5.0];
+            CGFloat orignContenLab = cell.quoteContenLabHeight.constant;
+            cell.quoteContenLabHeight.constant = quoteHeight;
+            cell.quoteViewHeight.constant = cell.quoteViewHeight.constant - orignContenLab+quoteHeight;
+            
         }
-        
-        
-        return [UITableViewCell new];
-        
+    
+        return cell;
     }
 }
 
@@ -431,7 +346,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     make.left.mas_equalTo(5);
                     make.right.mas_equalTo(-5);
                     make.height.mas_equalTo(self.webViewHeight);
-                    if (self.dataModel.data.news.img){
+                    if (self.detailBaseModel.newsImage){
                         make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
                     }else{
                         make.top.mas_equalTo(5);
@@ -440,61 +355,28 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             }
             return resultHeith+50;
         }else{//title
-            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.dataModel.data.news.title font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
+            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.detailBaseModel.newsTitle font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
             CGFloat addtimeHeight = self.type == NewsTypeNormal ? kAddTimeHeight:(kAddTimeHeight+34+30);
             return (height+kNewsTitleToCellTop+kAddTimeToTile+addtimeHeight+kAddTimeToButtom);
         }
     }else{//评论
         
+        CGFloat cellHeight = 0;
+        CommentDetailData *dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        
+        CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:[UIFont systemFontOfSize:16]];
+        cellHeight = kCommentXibHeight-21+contenHeight;
         
         
-        if (self.type == NewsTypeNormal) {//1:视频+正常新闻
-            
-            CGFloat cellHeight = 0;
-            CommentData *dataM = [self.commentModel.dtailData.data objectAtIndex:indexPath.row];
-            
-            CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:[UIFont systemFontOfSize:16]];
-            cellHeight = kCommentXibHeight-21+contenHeight;
-            
-            
-            if (![dataM.quoteData.content length]) {//评论是否有回复
-                cellHeight = cellHeight - kCommentGrayHeight;
-            }else{
-                
-                CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteData.content font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
-                cellHeight = cellHeight - 21+quoteHeight;
-                
-            }
-            
-            return cellHeight;
-          
-        }else if (self.type == NewsTypeSpecial){//2:专题
-       
-        }else if (self.type == NewsTypePic){//3:cell上有多个图片（在 thumbs 数组里面）
-           
-        }else if (self.type == NewsTypeTopic){//5:话题。。球鞋。。经典回顾
-            
-            CGFloat cellHeight = 0;
-            CommentDatalist *dataM = [self.commentType5Model.commetType5Modl.commetType5result.commentDatalist objectAtIndex:indexPath.row];
-            
-            CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:[UIFont systemFontOfSize:16]];
-            cellHeight = kCommentXibHeight-21+contenHeight;
-            
-            if (!dataM.quote.count) {
-                cellHeight = cellHeight - kCommentGrayHeight;
-            }else{
-                
-                CommentType5Quote *quote = [dataM.quote objectAtIndex:0];
-               
-                CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:quote.content font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
-                cellHeight = cellHeight - 21+quoteHeight;
-            }
-            return cellHeight;
-            
+        if (![dataM.quoteContent length]) {//评论是否有回复
+            cellHeight = cellHeight - kCommentGrayHeight;
         }else{
-         
+            
+            CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteContent font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
+            cellHeight = cellHeight - 21+quoteHeight;
+            
         }
-    
+        return cellHeight;
     }
     
     return 0;

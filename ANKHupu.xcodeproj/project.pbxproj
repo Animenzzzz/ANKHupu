@@ -29,6 +29,8 @@
 		4A49CE94229C04350044540B /* CommetType5result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE88229C04330044540B /* CommetType5result.m */; };
 		4A49CE95229C04350044540B /* CommentDatalist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE8C229C04340044540B /* CommentDatalist.m */; };
 		4A49CE99229C0F680044540B /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE98229C0F680044540B /* NSString+Util.m */; };
+		4A49CE9C229D04180044540B /* ANKBaseNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE9B229D04180044540B /* ANKBaseNewsDetailModel.m */; };
+		4A49CE9F229D07AB0044540B /* ANKBaseNewsCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE9E229D07AB0044540B /* ANKBaseNewsCommentModel.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
@@ -2114,6 +2116,10 @@
 		4A49CE8C229C04340044540B /* CommentDatalist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDatalist.m; sourceTree = "<group>"; };
 		4A49CE97229C0F680044540B /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
 		4A49CE98229C0F680044540B /* NSString+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
+		4A49CE9A229D04180044540B /* ANKBaseNewsDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKBaseNewsDetailModel.h; sourceTree = "<group>"; };
+		4A49CE9B229D04180044540B /* ANKBaseNewsDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKBaseNewsDetailModel.m; sourceTree = "<group>"; };
+		4A49CE9D229D07AB0044540B /* ANKBaseNewsCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKBaseNewsCommentModel.h; sourceTree = "<group>"; };
+		4A49CE9E229D07AB0044540B /* ANKBaseNewsCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKBaseNewsCommentModel.m; sourceTree = "<group>"; };
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
@@ -4373,6 +4379,10 @@
 		4A5AC8512294E9C50026BE7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A49CE9A229D04180044540B /* ANKBaseNewsDetailModel.h */,
+				4A49CE9B229D04180044540B /* ANKBaseNewsDetailModel.m */,
+				4A49CE9D229D07AB0044540B /* ANKBaseNewsCommentModel.h */,
+				4A49CE9E229D07AB0044540B /* ANKBaseNewsCommentModel.m */,
 				4A49CE7A229C040C0044540B /* CommentModel_Type5 */,
 				4A6C483E229B99BA00850EC8 /* CommentModel_Type1 */,
 				4A9599ED2296CD4D00725DCE /* NBANews_Type5 */,
@@ -8881,6 +8891,7 @@
 				4A5AC8392293F3310026BE7E /* Badge.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
 				4A959A052296CD4D00725DCE /* NBAType5data.m in Sources */,
+				4A49CE9F229D07AB0044540B /* ANKBaseNewsCommentModel.m in Sources */,
 				4A64E3342294EF31007CE6E7 /* NewsDetailTag.m in Sources */,
 				4A64E3352294EF31007CE6E7 /* NewsDetailModel.m in Sources */,
 				4A6C484D229B99CD00850EC8 /* DtailData.m in Sources */,
@@ -8917,6 +8928,7 @@
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4A49CE91229C04350044540B /* CommentAttr.m in Sources */,
 				4A6C47CF2299390300850EC8 /* MoreControllCell.m in Sources */,
+				4A49CE9C229D04180044540B /* ANKBaseNewsDetailModel.m in Sources */,
 				4A49CE90229C04350044540B /* Certuser.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
 				4A49CE8D229C04350044540B /* CheckReplyInfo.m in Sources */,

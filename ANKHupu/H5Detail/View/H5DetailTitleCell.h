@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewsDetailModel.h"
+//#import "NewsDetailModel.h"
+#import "ANKBaseNewsDetailModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
 
 @interface H5DetailTitleCell : UITableViewCell
 
-- (void)setStyleWithModel:(id)model newsType:(NewsType)type;
+//- (void)setStyleWithModel:(id)model newsType:(NewsType)type;
+
+- (void)setStyleWithModel:(ANKBaseNewsDetailModel *)model newsType:(NewsType)type;
 
 
 @end
