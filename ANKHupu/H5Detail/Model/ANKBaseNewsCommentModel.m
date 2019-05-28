@@ -57,12 +57,16 @@
             reu.lightCount = [NSString stringWithFormat:@"%ld",(long)data.quoteLightCount];
             reu.addTime = data.time;
             
-            CommentType5Quote *quote = [data.quote objectAtIndex:0];
-            reu.quoteContent = quote.content;
-            NSString *name = [quote.header objectAtIndex:0];
-            NSArray *aar = [name componentsSeparatedByString:@">"];
-            NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
-            reu.quoteName = tmp[0];
+            if (data.quote && data.quote.count) {
+                //TODO...字符串的过滤待处理
+                CommentType5Quote *quote = [data.quote objectAtIndex:0];
+                reu.quoteContent = quote.content;
+                NSString *name = [quote.header objectAtIndex:0];
+                NSArray *aar = [name componentsSeparatedByString:@">"];
+                NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
+                reu.quoteName = tmp[0];
+            }
+            
             
             [dataArray addObject:reu];
         }
