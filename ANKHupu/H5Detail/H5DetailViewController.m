@@ -91,7 +91,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -269,11 +269,11 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             
         
             [cell addSubview:self.contentWebView];
-            CGFloat webHeight = self.webViewHeight == 0?400:self.webViewHeight;
+//            CGFloat webHeight = self.webViewHeight == 0?400:self.webViewHeight;
             [self.contentWebView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(5);
                 make.right.mas_equalTo(-5);
-                make.height.mas_equalTo(webHeight);
+                make.height.mas_equalTo(self.webViewHeight);
                 if (self.detailBaseModel.newsImage){
                     make.top.equalTo(self.newsImageView.mas_bottom).offset(5);
                 }else{
@@ -340,7 +340,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
     if (indexPath.section == 0) {
         if (indexPath.row == 1) {//webView那个cell
-            CGFloat resultHeith = self.webViewHeight == 0 ? 800:(self.webViewHeight+kNewBigImageHeight);
+            CGFloat resultHeith = [self.detailBaseModel.newsImage length] ? (self.webViewHeight+kNewBigImageHeight):self.webViewHeight;
             if (self.webViewHeight != 0) {
                 [self.contentWebView mas_remakeConstraints:^(MASConstraintMaker *make) {
                     make.left.mas_equalTo(5);
@@ -353,7 +353,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     }
                 }];
             }
-            return resultHeith+50;
+            return resultHeith+10;
         }else{//title
             CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.detailBaseModel.newsTitle font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
             CGFloat addtimeHeight = self.type == NewsTypeNormal ? kAddTimeHeight:(kAddTimeHeight+34+30);
@@ -437,7 +437,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 - (void)webViewDidFinishLoadWithSelfHeight:(CGFloat)height{
     [SVProgressHUD dismiss];
-    self.webViewHeight = height;
+    self.webViewHeight = height+10;//有些许偏移TODO...待确定，js的计算高度精度不够高
     // 刷新tableView
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
