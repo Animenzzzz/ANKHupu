@@ -28,13 +28,14 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"" forState:UIControlStateNormal];
-    [button setImage:[ResUtil imageNamed:@"zhuangbei_back_btn"] forState:UIControlStateNormal];
-    button.size = CGSizeMake(25, 25);
+    [button setImage:[ResUtil imageNamed:@"back"] forState:UIControlStateNormal];
+    button.size = CGSizeMake(15, 15);
     [button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     // 让按钮内部的所有内容左对齐
     //    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     //    // 让按钮的内容往左边偏移10
     button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+    button.imageEdgeInsets = UIEdgeInsetsMake(7, 6, 7, 6);
     // 修改导航栏左边的item
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.backBtn = button;

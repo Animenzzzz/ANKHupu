@@ -9,8 +9,8 @@
 #import "HotListViewController.h"
 #import "ANKHttpServer.h"
 #import "HotListModel.h"
-
-#import "HotListViewCell.h"
+#import "HotListViewModel.h"
+#import "NewsPhotosCell.h"
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -197,8 +197,8 @@
     
     HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
     
-    HotListViewCell *cell = [[HotListViewCell alloc] init];
-    [cell bindWithHotListModel:model];
+    NewsPhotosCell *cell = [[[UINib nibWithNibName:@"NewsPhotosCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    [cell cellBindWithDataModel:model];
     return cell;
 }
 #pragma mark UITableViewDelegate
@@ -207,7 +207,7 @@
     if (!self.hotListDataArray.count) {
         return 10;
     }
-    return [HotListModel caculateHeightWithHotInfoModel:[self.hotListDataArray objectAtIndex:indexPath.row]];
+    return [HotListViewModel calutaCellHeightWithModel:[self.hotListDataArray objectAtIndex:indexPath.row]];
     
 }
 

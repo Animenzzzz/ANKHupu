@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NBANewsCell : UITableViewCell
+@interface NewsNormalCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *newsImg;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleWidth;

@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02624C228E746100B9F86D /* HotListViewCell.m */; };
-		4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */; };
-		4A026252228E84C800B9F86D /* HotListViewCellTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */; };
-		4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */; };
-		4A02625C228E87A700B9F86D /* HotListViewCellCommentInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */; };
-		4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A02625E228E881400B9F86D /* HotListViewCellSocial.m */; };
-		4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */; };
 		4A026263228EA37B00B9F86D /* HotListCellCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */; };
 		4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */; };
 		4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EFF1722968EC100C2A345 /* ANKWebView.m */; };
@@ -32,6 +25,13 @@
 		4A49CE9C229D04180044540B /* ANKBaseNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE9B229D04180044540B /* ANKBaseNewsDetailModel.m */; };
 		4A49CE9F229D07AB0044540B /* ANKBaseNewsCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE9E229D07AB0044540B /* ANKBaseNewsCommentModel.m */; };
 		4A49CEA1229F890B0044540B /* subjectnews_default_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEA0229F890A0044540B /* subjectnews_default_background@2x.jpg */; };
+		4A49CEA6229FAAFD0044540B /* whiteClose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEA2229FAAFC0044540B /* whiteClose@3x.png */; };
+		4A49CEA7229FAAFD0044540B /* whiteClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEA3229FAAFC0044540B /* whiteClose@2x.png */; };
+		4A49CEA8229FAAFD0044540B /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEA4229FAAFC0044540B /* back@3x.png */; };
+		4A49CEA9229FAAFD0044540B /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEA5229FAAFC0044540B /* back@2x.png */; };
+		4A49CEAC229FC4300044540B /* NewsPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CEAB229FC4300044540B /* NewsPhotosCell.m */; };
+		4A49CEAE229FC4440044540B /* NewsPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */; };
+		4A49CEB3229FE3F10044540B /* HotListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CEB2229FE3F10044540B /* HotListViewModel.m */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
@@ -46,8 +46,8 @@
 		4A5AC8392293F3310026BE7E /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82C2293F32F0026BE7E /* Badge.m */; };
 		4A5AC83A2293F3310026BE7E /* GameList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC82E2293F3300026BE7E /* GameList.m */; };
 		4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8302293F3300026BE7E /* AdGameBorder.m */; };
-		4A5AC83E2293F5A40026BE7E /* NBANewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */; };
-		4A5AC8402293F5AE0026BE7E /* NBANewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */; };
+		4A5AC83E2293F5A40026BE7E /* NewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC83D2293F5A40026BE7E /* NewsNormalCell.m */; };
+		4A5AC8402293F5AE0026BE7E /* NewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */; };
 		4A5AC8432294055B0026BE7E /* pinglun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC8412294055A0026BE7E /* pinglun@3x.png */; };
 		4A5AC8442294055B0026BE7E /* pinglun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC8422294055B0026BE7E /* pinglun@2x.png */; };
 		4A5AC847229407630026BE7E /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC845229407620026BE7E /* light@2x.png */; };
@@ -120,7 +120,6 @@
 		4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AD228CFA01001E56B3 /* WMScrollView.m */; };
 		4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AE228CFA01001E56B3 /* WMMenuView.m */; };
 		4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80AF228CFA01001E56B3 /* WMProgressView.m */; };
-		4AF04A4F229249ED0014C506 /* HotInfoPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF04A4E229249ED0014C506 /* HotInfoPhotoCollectionView.m */; };
 		4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF660D622897F0500DFC1AF /* AppDelegate.m */; };
 		4AF660DF22897F0600DFC1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660DE22897F0600DFC1AF /* Assets.xcassets */; };
 		4AF660E222897F0600DFC1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */; };
@@ -2077,17 +2076,6 @@
 
 /* Begin PBXFileReference section */
 		490A8B8CECA460B580653E91 /* Pods-ANKHupu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANKHupu.release.xcconfig"; path = "Target Support Files/Pods-ANKHupu/Pods-ANKHupu.release.xcconfig"; sourceTree = "<group>"; };
-		4A02624B228E746100B9F86D /* HotListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCell.h; sourceTree = "<group>"; };
-		4A02624C228E746100B9F86D /* HotListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCell.m; sourceTree = "<group>"; };
-		4A02624E228E84BC00B9F86D /* HotListViewCellTopicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellTopicView.h; sourceTree = "<group>"; };
-		4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellTopicView.m; sourceTree = "<group>"; };
-		4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellTopicView.xib; sourceTree = "<group>"; };
-		4A026258228E879D00B9F86D /* HotListViewCellCommentInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellCommentInfo.h; sourceTree = "<group>"; };
-		4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellCommentInfo.m; sourceTree = "<group>"; };
-		4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellCommentInfo.xib; sourceTree = "<group>"; };
-		4A02625D228E881400B9F86D /* HotListViewCellSocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewCellSocial.h; sourceTree = "<group>"; };
-		4A02625E228E881400B9F86D /* HotListViewCellSocial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewCellSocial.m; sourceTree = "<group>"; };
-		4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListViewCellSocial.xib; sourceTree = "<group>"; };
 		4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListCellCollectionCell.xib; sourceTree = "<group>"; };
 		4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListCellCollectionCell.h; sourceTree = "<group>"; };
 		4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListCellCollectionCell.m; sourceTree = "<group>"; };
@@ -2122,6 +2110,15 @@
 		4A49CE9D229D07AB0044540B /* ANKBaseNewsCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKBaseNewsCommentModel.h; sourceTree = "<group>"; };
 		4A49CE9E229D07AB0044540B /* ANKBaseNewsCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKBaseNewsCommentModel.m; sourceTree = "<group>"; };
 		4A49CEA0229F890A0044540B /* subjectnews_default_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "subjectnews_default_background@2x.jpg"; sourceTree = "<group>"; };
+		4A49CEA2229FAAFC0044540B /* whiteClose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteClose@3x.png"; sourceTree = "<group>"; };
+		4A49CEA3229FAAFC0044540B /* whiteClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteClose@2x.png"; sourceTree = "<group>"; };
+		4A49CEA4229FAAFC0044540B /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		4A49CEA5229FAAFC0044540B /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		4A49CEAA229FC4300044540B /* NewsPhotosCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPhotosCell.h; sourceTree = "<group>"; };
+		4A49CEAB229FC4300044540B /* NewsPhotosCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPhotosCell.m; sourceTree = "<group>"; };
+		4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPhotosCell.xib; sourceTree = "<group>"; };
+		4A49CEB1229FE3F10044540B /* HotListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewModel.h; sourceTree = "<group>"; };
+		4A49CEB2229FE3F10044540B /* HotListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewModel.m; sourceTree = "<group>"; };
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
@@ -2146,9 +2143,9 @@
 		4A5AC82F2293F3300026BE7E /* RecommendData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendData.h; sourceTree = "<group>"; };
 		4A5AC8302293F3300026BE7E /* AdGameBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdGameBorder.m; sourceTree = "<group>"; };
 		4A5AC8322293F3300026BE7E /* AdGameBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdGameBorder.h; sourceTree = "<group>"; };
-		4A5AC83C2293F5A40026BE7E /* NBANewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBANewsCell.h; sourceTree = "<group>"; };
-		4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBANewsCell.m; sourceTree = "<group>"; };
-		4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBANewsCell.xib; sourceTree = "<group>"; };
+		4A5AC83C2293F5A40026BE7E /* NewsNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsNormalCell.h; sourceTree = "<group>"; };
+		4A5AC83D2293F5A40026BE7E /* NewsNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsNormalCell.m; sourceTree = "<group>"; };
+		4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsNormalCell.xib; sourceTree = "<group>"; };
 		4A5AC8412294055A0026BE7E /* pinglun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinglun@3x.png"; sourceTree = "<group>"; };
 		4A5AC8422294055B0026BE7E /* pinglun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinglun@2x.png"; sourceTree = "<group>"; };
 		4A5AC845229407620026BE7E /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
@@ -2286,8 +2283,6 @@
 		4AEF80AF228CFA01001E56B3 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
 		4AEF80B0228CFA01001E56B3 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
 		4AEF80B1228CFA01001E56B3 /* UIViewController+WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WMPageController.h"; sourceTree = "<group>"; };
-		4AF04A4D229249ED0014C506 /* HotInfoPhotoCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotInfoPhotoCollectionView.h; sourceTree = "<group>"; };
-		4AF04A4E229249ED0014C506 /* HotInfoPhotoCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotInfoPhotoCollectionView.m; sourceTree = "<group>"; };
 		4AF660D222897F0500DFC1AF /* ANKHupu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKHupu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF660D522897F0500DFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF660D622897F0500DFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -4324,6 +4319,31 @@
 			path = "Foundation+Category";
 			sourceTree = "<group>";
 		};
+		4A49CEAF229FD3040044540B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC83C2293F5A40026BE7E /* NewsNormalCell.h */,
+				4A5AC83D2293F5A40026BE7E /* NewsNormalCell.m */,
+				4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */,
+				4A49CEAA229FC4300044540B /* NewsPhotosCell.h */,
+				4A49CEAB229FC4300044540B /* NewsPhotosCell.m */,
+				4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */,
+				4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */,
+				4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */,
+				4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A49CEB0229FE3D00044540B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A49CEB1229FE3F10044540B /* HotListViewModel.h */,
+				4A49CEB2229FE3F10044540B /* HotListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4A5AC81A2293EDDD0026BE7E /* HotList */ = {
 			isa = PBXGroup;
 			children = (
@@ -4331,6 +4351,7 @@
 				4A135ACA228D68730060EAA6 /* HotListViewController.m */,
 				4ABDCAED228AD1AE0091E341 /* View */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
+				4A49CEB0229FE3D00044540B /* ViewModel */,
 			);
 			path = HotList;
 			sourceTree = "<group>";
@@ -4351,9 +4372,6 @@
 		4A5AC81F2293EE520026BE7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A5AC83C2293F5A40026BE7E /* NBANewsCell.h */,
-				4A5AC83D2293F5A40026BE7E /* NBANewsCell.m */,
-				4A5AC83F2293F5AE0026BE7E /* NBANewsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4579,6 +4597,7 @@
 			children = (
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
+				4A49CEAF229FD3040044540B /* View */,
 				4A5AC81B2293EE270026BE7E /* NBA */,
 				4A5AC81A2293EDDD0026BE7E /* HotList */,
 				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
@@ -4609,22 +4628,6 @@
 		4ABDCAED228AD1AE0091E341 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A02624B228E746100B9F86D /* HotListViewCell.h */,
-				4A02624C228E746100B9F86D /* HotListViewCell.m */,
-				4A02624E228E84BC00B9F86D /* HotListViewCellTopicView.h */,
-				4A02624F228E84BC00B9F86D /* HotListViewCellTopicView.m */,
-				4A026251228E84C800B9F86D /* HotListViewCellTopicView.xib */,
-				4A026264228EA39C00B9F86D /* HotListCellCollectionCell.h */,
-				4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */,
-				4A026262228EA37B00B9F86D /* HotListCellCollectionCell.xib */,
-				4AF04A4D229249ED0014C506 /* HotInfoPhotoCollectionView.h */,
-				4AF04A4E229249ED0014C506 /* HotInfoPhotoCollectionView.m */,
-				4A026258228E879D00B9F86D /* HotListViewCellCommentInfo.h */,
-				4A026259228E879D00B9F86D /* HotListViewCellCommentInfo.m */,
-				4A02625B228E87A700B9F86D /* HotListViewCellCommentInfo.xib */,
-				4A02625D228E881400B9F86D /* HotListViewCellSocial.h */,
-				4A02625E228E881400B9F86D /* HotListViewCellSocial.m */,
-				4A026260228E881D00B9F86D /* HotListViewCellSocial.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4824,6 +4827,10 @@
 		4AF660F9228A64BE00DFC1AF /* HupuRes */ = {
 			isa = PBXGroup;
 			children = (
+				4A49CEA5229FAAFC0044540B /* back@2x.png */,
+				4A49CEA4229FAAFC0044540B /* back@3x.png */,
+				4A49CEA3229FAAFC0044540B /* whiteClose@2x.png */,
+				4A49CEA2229FAAFC0044540B /* whiteClose@3x.png */,
 				4A49CEA0229F890A0044540B /* subjectnews_default_background@2x.jpg */,
 				4A5AC845229407620026BE7E /* light@2x.png */,
 				4A5AC846229407630026BE7E /* light@3x.png */,
@@ -6883,7 +6890,6 @@
 				4AF66ED0228A64D200DFC1AF /* bg_next@2x.png in Resources */,
 				4AF66C79228A64D100DFC1AF /* tab_news_btn_1_pad@2x.png in Resources */,
 				4AF66AC5228A64D100DFC1AF /* close_btn@2x.png in Resources */,
-				4A026261228E881D00B9F86D /* HotListViewCellSocial.xib in Resources */,
 				4AF66D4C228A64D100DFC1AF /* sound-control_s_bg@2x.png in Resources */,
 				4AF668F1228A64D000DFC1AF /* 未关注@3x.png in Resources */,
 				4AF66E0F228A64D200DFC1AF /* football_tactic_ground@3x.png in Resources */,
@@ -7184,6 +7190,7 @@
 				4AF668A6228A64D000DFC1AF /* logo17@3x.png in Resources */,
 				4AF66AC0228A64D000DFC1AF /* foot_goal_door_ic@3x.png in Resources */,
 				4AF66E13228A64D200DFC1AF /* post_close@2x.png in Resources */,
+				4A49CEAE229FC4440044540B /* NewsPhotosCell.xib in Resources */,
 				4AF66C04228A64D100DFC1AF /* scoreboard_bg@2x.png in Resources */,
 				4AF66E49228A64D200DFC1AF /* tab_situation_night@2x.png in Resources */,
 				4AF66E3F228A64D200DFC1AF /* bbspost_share@2x.png in Resources */,
@@ -7329,6 +7336,7 @@
 				4AF66D48228A64D100DFC1AF /* 上屏弹幕-不可选@2x.png in Resources */,
 				4AF66B86228A64D100DFC1AF /* placehold_128_85.png in Resources */,
 				4AF66F4F228A64D200DFC1AF /* 全屏弹幕-不可选@3x.png in Resources */,
+				4A49CEA6229FAAFD0044540B /* whiteClose@3x.png in Resources */,
 				4AF66D7D228A64D100DFC1AF /* open_box_more_gold_pic@3x.png in Resources */,
 				4AF66E8B228A64D200DFC1AF /* ban_ic_night@2x.png in Resources */,
 				4AF66FB8228A64D200DFC1AF /* mark_l_star_ic_1_night@3x.png in Resources */,
@@ -8124,6 +8132,7 @@
 				4AF66FCF228A64D200DFC1AF /* news_btn_search@3x.png in Resources */,
 				4AF66F02228A64D200DFC1AF /* hpgm_home_assist_ic_night@2x.png in Resources */,
 				4AF66C18228A64D100DFC1AF /* hupu_coin_ic@3x.png in Resources */,
+				4A49CEA7229FAAFD0044540B /* whiteClose@2x.png in Resources */,
 				4AF66C85228A64D100DFC1AF /* logo1@2x.png in Resources */,
 				4ABDCADB228AB52D0091E341 /* search_bg.png in Resources */,
 				4AF66997228A64D000DFC1AF /* vode_delete_icon@3x.png in Resources */,
@@ -8186,7 +8195,6 @@
 				4AF66B25228A64D100DFC1AF /* mark_star_ic_night@3x.png in Resources */,
 				4AF66AEC228A64D100DFC1AF /* pop_Cancel_btn_1.png in Resources */,
 				4AF66BFD228A64D100DFC1AF /* tab_bbs_btn_1_night@2x.png in Resources */,
-				4A02625C228E87A700B9F86D /* HotListViewCellCommentInfo.xib in Resources */,
 				4AF66EE0228A64D200DFC1AF /* Foot_Overtime_ic_night@3x.png in Resources */,
 				4AF66FAB228A64D200DFC1AF /* AppIcon20x20@2x~ipad.png in Resources */,
 				4AF66F9A228A64D200DFC1AF /* logo5@2x.png in Resources */,
@@ -8655,11 +8663,13 @@
 				4AF668B1228A64D000DFC1AF /* bbsautoalerttipsclose@2x.png in Resources */,
 				4AF66F2B228A64D200DFC1AF /* search_news_ic_search@3x.png in Resources */,
 				4AF66E1B228A64D200DFC1AF /* account_bind_btn_night@2x.png in Resources */,
+				4A49CEA8229FAAFD0044540B /* back@3x.png in Resources */,
 				4AF66AF7228A64D100DFC1AF /* lottery_pop_Cancel_btn_1_night.png in Resources */,
 				4AF6701B228A64D200DFC1AF /* logo28@3x.png in Resources */,
 				4AF66E8D228A64D200DFC1AF /* me_message_pop_left@2x.png in Resources */,
 				4AF67022228A64D200DFC1AF /* icon_float_background_night@3x.png in Resources */,
 				4AF66D3B228A64D100DFC1AF /* me_message_choose_btn@3x.png in Resources */,
+				4A49CEA9229FAAFD0044540B /* back@2x.png in Resources */,
 				4AF66900228A64D000DFC1AF /* boy_ic@3x.png in Resources */,
 				4AF66E14228A64D200DFC1AF /* tab_news_btn@2x.png in Resources */,
 				4AF66C02228A64D100DFC1AF /* hpgm_home_joker1_ic_night@3x.png in Resources */,
@@ -8685,7 +8695,7 @@
 				4AF67000228A64D200DFC1AF /* add_btn@3x.png in Resources */,
 				4AF6701D228A64D200DFC1AF /* history_btn_Highlighted@3x.png in Resources */,
 				4AF66F6D228A64D200DFC1AF /* newslist_no_pic_s_night@2x.png in Resources */,
-				4A5AC8402293F5AE0026BE7E /* NBANewsCell.xib in Resources */,
+				4A5AC8402293F5AE0026BE7E /* NewsNormalCell.xib in Resources */,
 				4AF66DCE228A64D100DFC1AF /* pop_pop_box_night@2x.png in Resources */,
 				4AF66E86228A64D200DFC1AF /* post_l_btn_1@3x.png in Resources */,
 				4AF66BE9228A64D100DFC1AF /* football_tactic_ground_dot@3x.png in Resources */,
@@ -8738,7 +8748,6 @@
 				4AF66D0C228A64D100DFC1AF /* tab_report_pad@2x.png in Resources */,
 				4AF66DEE228A64D100DFC1AF /* del_btn_search@3x.png in Resources */,
 				4AF66A61228A64D000DFC1AF /* bbsCamera_flip@2x.png in Resources */,
-				4A026252228E84C800B9F86D /* HotListViewCellTopicView.xib in Resources */,
 				4AF669FD228A64D000DFC1AF /* 已关注@3x.png in Resources */,
 				4AF66B4B228A64D100DFC1AF /* person_author_ic@3x.png in Resources */,
 				4AF66DE6228A64D100DFC1AF /* unadd_ic@3x.png in Resources */,
@@ -8889,8 +8898,6 @@
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
 				4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */,
 				4A49CE99229C0F680044540B /* NSString+Util.m in Sources */,
-				4A02625A228E879D00B9F86D /* HotListViewCellCommentInfo.m in Sources */,
-				4A02624D228E746100B9F86D /* HotListViewCell.m in Sources */,
 				4A6C47C62297FA0800850EC8 /* NBATopicShare.m in Sources */,
 				4A5AC8392293F3310026BE7E /* Badge.m in Sources */,
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
@@ -8914,7 +8921,6 @@
 				4A64E3362294EF31007CE6E7 /* NewsDetailShare.m in Sources */,
 				4A49CE8F229C04350044540B /* Lure3.m in Sources */,
 				4A49CE8E229C04350044540B /* CommentType5Quote.m in Sources */,
-				4A026250228E84BC00B9F86D /* HotListViewCellTopicView.m in Sources */,
 				4A6C47C42297FA0800850EC8 /* NBATopicResult.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
@@ -8923,8 +8929,10 @@
 				4A5AC8382293F3310026BE7E /* NBAData.m in Sources */,
 				4A6C484B229B99CD00850EC8 /* CommentQuoteData.m in Sources */,
 				4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */,
+				4A49CEB3229FE3F10044540B /* HotListViewModel.m in Sources */,
 				4A5AC83A2293F3310026BE7E /* GameList.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
+				4A49CEAC229FC4300044540B /* NewsPhotosCell.m in Sources */,
 				4A49CE93229C04350044540B /* CommetType5Modl.m in Sources */,
 				4A5AC84C2294E1B90026BE7E /* H5DetailViewController.m in Sources */,
 				4ACD9407229296760043E05F /* ResUtil.m in Sources */,
@@ -8952,7 +8960,6 @@
 				4A6C4850229B99CD00850EC8 /* CommentLinkNew.m in Sources */,
 				4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */,
 				4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */,
-				4A02625F228E881400B9F86D /* HotListViewCellSocial.m in Sources */,
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
 				4A6C47CA229937A600850EC8 /* MoreViewController.m in Sources */,
 				4A5AC81E2293EE430026BE7E /* NBAViewController.m in Sources */,
@@ -8969,7 +8976,7 @@
 				4A959A032296CD4D00725DCE /* BottomAd.m in Sources */,
 				4A5AC8352293F3310026BE7E /* NBAGame.m in Sources */,
 				4A6C477B22978EDB00850EC8 /* H5DetailTitleView.m in Sources */,
-				4A5AC83E2293F5A40026BE7E /* NBANewsCell.m in Sources */,
+				4A5AC83E2293F5A40026BE7E /* NewsNormalCell.m in Sources */,
 				4A6C47E92299493600850EC8 /* MoreModel.m in Sources */,
 				4A6C47C52297FA0800850EC8 /* NBATopicModel.m in Sources */,
 				4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */,
@@ -8980,7 +8987,6 @@
 				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4ABDCAE6228ACAC50091E341 /* ANKNavigationViewSearch.m in Sources */,
 				4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */,
-				4AF04A4F229249ED0014C506 /* HotInfoPhotoCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

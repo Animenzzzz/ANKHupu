@@ -6,12 +6,12 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "NBANewsCell.h"
+#import "NewsNormalCell.h"
 
-@interface NBANewsCell ()
+@interface NewsNormalCell ()
 @end
 
-@implementation NBANewsCell
+@implementation NewsNormalCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

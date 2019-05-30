@@ -38,9 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)  NSString *schema_url;
 @property (nonatomic, strong)  NSString *xid;
 
-//为了便于在tableviewCell返回高度的代理 计算高度
-+ (CGFloat)caculateHeightWithHotInfoModel:(HotListModel *)hotInfo;
-
 @end
 
 

@@ -9,7 +9,8 @@
 #import "NBATopicViewController.h"
 #import "ANKHttpServer.h"
 #import "NBATopicModel.h"
-#import "NBANewsCell.h"
+#import "NewsNormalCell.h"
+#import "H5DetailViewController.h"
 static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 #define kBackImageHeight 175
@@ -232,7 +233,7 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     NBATopicNew *newsItem = [item.news objectAtIndex:indexPath.row];
     
     
-    NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    NewsNormalCell *cell = [[[UINib nibWithNibName:@"NewsNormalCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:newsItem.title font:cell.titleLab.font lineSpacing:5.0];
     heigh = heigh > 46?46:heigh;//TODO...46不能写死
     cell.titleHeight.constant = heigh;
@@ -272,7 +273,24 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 101;
+    return 106;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NBATopicGroup *item = [self.dataModel.result.groups objectAtIndex:indexPath.section-1];
+    NBATopicNew *newsItem = [item.news objectAtIndex:indexPath.row];
+    NSString *url = [NSString stringWithFormat:@"https://games.mobileapi.hupu.com/3/7.3.12/nba/getNewsDetailSchema?ft=18&clientId=30980511&advId=E12875A5-1076-4C57-9488-B5311B604032&entrance=2&replies=1768&_ssid=VFQtUXVXYW4xN0Y&night=0&crt=1559199995&time_zone=Asia%%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&sign=63197048357ac039b93fd6be47916559&nid=%@",[NSString stringWithFormat:@"%@",newsItem.nid]];
+    NSString *commentURL = [NSString stringWithFormat:@"http://games.mobileapi.hupu.com/3/7.3.12/news/getCommentH5?offline=json&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&nid=%@",newsItem.nid];
+ 
+    
+    H5DetailViewController *detail = [H5DetailViewController new];
+    detail.controllerTitle = @"Detail";
+    detail.requestURL = url;
+    detail.commentURL = commentURL;
+    detail.type = NewsTypeNormal;
+    [self.navigationController pushViewController:detail animated:YES];
+    
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
