@@ -161,21 +161,28 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
                 }else{
                     
                     self.dataModel = [[NBATopicModel alloc] initWithDictionary:data];
+                    if (![self.dataModel.result.imgM length]) {
+                        self.headerImageView.image = [UIImage imageNamed:@"subjectnews_default_background@2x.jpg"];
+                    }else{
+                        NSArray *arr = [self.dataModel.result.imgM componentsSeparatedByString:@"?"];
+                        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                            self.headerImageView.image = image;
+                        }];
+                    }
                     
-                    NSArray *arr = [self.dataModel.result.imgM componentsSeparatedByString:@"?"];
-                    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:arr[0]] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                        self.headerImageView.image = image;
-                    }];
                     
                     UILabel *tlt = [UILabel new];
+                    tlt.numberOfLines = 0;
                     tlt.text = self.dataModel.result.title;
                     tlt.textAlignment = NSTextAlignmentCenter;
                     tlt.font = [UIFont systemFontOfSize:16];
                     tlt.textColor = [UIColor whiteColor];
+                    CGFloat wid = SCREEN_WIDTH - 30;
+                    CGFloat heig = [UILabel getHeightByWidth:wid title:self.dataModel.result.title font:tlt.font lineSpacing:8.0];
                     [self.headerImageView addSubview:tlt];
                     [tlt mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.width.mas_equalTo(SCREEN_WIDTH - 10);
-                        make.height.mas_equalTo(30);
+                        make.width.mas_equalTo(wid);
+                        make.height.mas_equalTo(heig);
                         make.centerX.mas_equalTo(self.headerImageView.mas_centerX);
                         make.bottom.mas_equalTo(-30);
                     }];
@@ -226,7 +233,8 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     
     
     NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:newsItem.title font:cell.titleLab.font];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:newsItem.title font:cell.titleLab.font lineSpacing:5.0];
+    heigh = heigh > 46?46:heigh;//TODO...46不能写死
     cell.titleHeight.constant = heigh;
     cell.newsTitle = newsItem.title;
     NSArray *arr = [newsItem.img componentsSeparatedByString:@"?"];
@@ -247,6 +255,9 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
         cell.lightWidth.constant = width;
     }
     
+    cell.zhuntiLab.hidden = YES;
+    cell.zhidingLab.hidden = YES;
+    
     return cell;
 }
 #pragma mark UITableViewDelegate
@@ -261,7 +272,7 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 92;
+    return 101;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

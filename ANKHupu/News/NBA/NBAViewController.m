@@ -203,6 +203,7 @@ static int pageNum = 0;
 
     NBANewsCell *cell = [[[UINib nibWithNibName:@"NBANewsCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font lineSpacing:5.0];
+    heigh = heigh > 46?46:heigh;//TODO...46不能写死
     cell.titleHeight.constant = heigh;
     cell.newsTitle = model.title;
     NSArray *arr = [model.img componentsSeparatedByString:@"?"];
