@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setStyleWithModel:(NewsDetailAdapter *)model newsType:(NewsType)type;
 
++ (CGFloat)calcuHeightWithType: (NewsType)type model:(NewsDetailAdapter *)model;
+
 
 @end
 

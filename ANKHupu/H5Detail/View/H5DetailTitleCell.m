@@ -7,18 +7,31 @@
 //
 
 #import "H5DetailTitleCell.h"
-//#import "NewsDetailModel.h"
-//#import "NBANewsType5Model.h"
 #import "H5DetailTitleView.h"
 
 
 
-#define kNewsTitleToCellTop1  5
-#define kNewsTitleToCellLeft1 10
-#define kNewsTitleWidth1     (SCREEN_WIDTH - kNewsTitleToCellLeft1*2)
-#define kAddTimeToTile1       10
-#define kAddTimeHeight1       10
-#define kAddTimeToButtom1     10
+
+#define kAddTimeToTile       10
+#define kAddTimeHeight       10
+#define kAddTimeToButtom     10
+
+
+
+
+//type1
+#define kUIFontType1     [UIFont fontWithName:@"Helvetica-Bold" size:19]
+
+#define kType1_NewsTitleToCellTop  5
+#define kType1_NewsTitleToCellLeft 10
+#define kType1_NewsTitleWidth     (SCREEN_WIDTH - kType1_NewsTitleToCellLeft*2)
+
+
+//type2
+#define kUIFontType2     [UIFont fontWithName:@"Helvetica-Bold" size:22]
+#define kType2_NewsTitleToCellTop  18
+#define kType2_NewsTitleToCellLeft 14
+#define kType2_NewsTitleWidth     (SCREEN_WIDTH - kType2_NewsTitleToCellLeft*2)
 
 @interface H5DetailTitleCell ()
 
@@ -43,30 +56,54 @@
 - (void)setStyleWithModel:(NewsDetailAdapter *)model newsType:(NewsType)type{
     
     
-    self.newsTitleLab.text = model.newsTitle;
-    [self addSubview:self.newsTitleLab];
-    CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth1 title:model.newsTitle font:self.newsTitleLab.font];
-    [self.newsTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(kNewsTitleToCellTop1);
-        make.left.mas_equalTo(kNewsTitleToCellLeft1);
-        make.width.mas_equalTo(kNewsTitleWidth1);
-        make.height.mas_equalTo(height);
-    }];
-    
-    
     if (type == NewsTypeNormal) {
+    
+        self.newsTitleLab.text = model.newsTitle;
+        [self.newsTitleLab setFont:kUIFontType1];
+        [self addSubview:self.newsTitleLab];
+        CGFloat height = [UILabel getHeightByWidth:kType1_NewsTitleWidth title:model.newsTitle font:self.newsTitleLab.font];
+        [self.newsTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(kType1_NewsTitleToCellTop);
+            make.left.mas_equalTo(kType1_NewsTitleToCellLeft);
+            make.width.mas_equalTo(kType1_NewsTitleWidth);
+            make.height.mas_equalTo(height);
+        }];
+        
         
         self.addTimeLab.text = [NSString stringWithFormat:@"%@ %@",model.addTime,model.origin];
         [self addSubview:self.addTimeLab];
         [self.addTimeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.newsTitleLab.mas_bottom).offset(kAddTimeToTile1);
-            make.left.mas_equalTo(kNewsTitleToCellLeft1);
+            make.top.equalTo(self.newsTitleLab.mas_bottom).offset(kAddTimeToTile);
+            make.left.mas_equalTo(kType1_NewsTitleToCellLeft);
             make.width.mas_equalTo(160);
-            make.height.mas_equalTo(kAddTimeHeight1);
+            make.height.mas_equalTo(kAddTimeHeight);
         }];
         
         
     }else if(type == NewsTypeTopic){
+        
+        
+        self.newsTitleLab.text = model.newsTitle;
+        [self.newsTitleLab setFont:kUIFontType2];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        [paragraphStyle setLineSpacing:5.0];        //设置行间距
+        [paragraphStyle setLineBreakMode:self.newsTitleLab.lineBreakMode];
+        [paragraphStyle setAlignment:self.newsTitleLab.textAlignment];
+        
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:model.newsTitle];
+        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [model.newsTitle length])];
+        self.newsTitleLab.attributedText = attributedString;
+        
+        
+        
+        [self addSubview:self.newsTitleLab];
+        CGFloat height = [UILabel getHeightByWidth:kType2_NewsTitleWidth title:model.newsTitle font:self.newsTitleLab.font lineSpacing:5.0];
+        [self.newsTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(kType2_NewsTitleToCellTop);
+            make.left.mas_equalTo(kType2_NewsTitleToCellLeft);
+            make.width.mas_equalTo(kType2_NewsTitleWidth);
+            make.height.mas_equalTo(height);
+        }];
     
         
         H5DetailTitleView *view = [[[UINib nibWithNibName:@"H5DetailTitleView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
@@ -79,7 +116,7 @@
         [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.newsTitleLab.mas_bottom).offset(10);
-            make.left.mas_equalTo(kNewsTitleToCellLeft1);
+            make.left.mas_equalTo(kType2_NewsTitleToCellLeft);
             make.width.mas_equalTo(375);
             make.height.mas_equalTo(44);
         }];
@@ -88,10 +125,29 @@
     
 }
 
++ (CGFloat)calcuHeightWithType: (NewsType)type model:(NewsDetailAdapter *)model{
+    
+    
+    if (type == NewsTypeNormal) {
+        
+        CGFloat height = [UILabel getHeightByWidth:kType1_NewsTitleWidth title:model.newsTitle font:kUIFontType1];
+        
+        return height+kType1_NewsTitleToCellTop+kAddTimeHeight+kAddTimeToTile+kAddTimeToButtom;
+        
+    }else if (type == NewsTypeTopic){
+        CGFloat height = [UILabel getHeightByWidth:kType2_NewsTitleWidth title:model.newsTitle font:kUIFontType2];
+        
+        return kType2_NewsTitleToCellTop+height+44+30;
+    }
+    
+    
+    
+    return 30;
+}
+
 - (UILabel *)newsTitleLab{
     if (!_newsTitleLab) {
         _newsTitleLab = [UILabel new];
-        [_newsTitleLab setFont:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
         _newsTitleLab.numberOfLines = 0;
     }
     return _newsTitleLab;

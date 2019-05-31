@@ -21,12 +21,7 @@ static NSString *kDetailWebCellID = @"DetailWebCellID";
 static NSString *k_title = @"H5DetailTitleCell";
 static NSString *kCommentCellID = @"H5DetailCommentCell";
 
-#define kNewsTitleToCellTop  5
-#define kNewsTitleToCellLeft 15
-#define kNewsTitleWidth (SCREEN_WIDTH - kNewsTitleToCellLeft*2)
-#define kAddTimeToTile       10
-#define kAddTimeHeight       10
-#define kAddTimeToButtom 10
+
 #define kNewBigImageHeight 300
 
 #define kCommentSectionHeaderHeight 30
@@ -355,9 +350,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             }
             return resultHeith+10;
         }else{//title
-            CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth title:self.detailBaseModel.newsTitle font:[UIFont fontWithName:@"Helvetica-Bold" size:19]];
-            CGFloat addtimeHeight = self.type == NewsTypeNormal ? kAddTimeHeight:(kAddTimeHeight+34+30);
-            return (height+kNewsTitleToCellTop+kAddTimeToTile+addtimeHeight+kAddTimeToButtom);
+
+            return [H5DetailTitleCell calcuHeightWithType:self.type model:self.detailBaseModel];
+            
         }
     }else{//评论
         
