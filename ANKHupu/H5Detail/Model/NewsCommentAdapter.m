@@ -5,11 +5,12 @@
 //  Created by Animenzzz on 2019/5/28.
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
-
+#import "NSString+Util.h"
 #import "NewsCommentAdapter.h"
 
 #import "CommentModel.h"
 #import "CommentType5Model.h"
+#import "HotListCommentRoot.h"
 
 @implementation NewsCommentAdapter
 
@@ -45,8 +46,6 @@
         CommentType5Model *tmp = (CommentType5Model *)model;
         resultModel.count = tmp.commetType5Modl.commetType5result.commentDatalist.count;
         
-        
-        
         NSMutableArray *dataArray = [NSMutableArray array];
         for (CommentDatalist *data in tmp.commetType5Modl.commetType5result.commentDatalist) {
             
@@ -74,6 +73,39 @@
         resultModel.commentArray = [dataArray copy];
         
         return resultModel;
+        
+    }else if ([model isKindOfClass:[HotListCommentRoot class]]){
+        
+        HotListCommentRoot *tmp = (HotListCommentRoot *)model;
+        resultModel.count = tmp.data.result.list.count;
+        
+        NSMutableArray *dataArray = [NSMutableArray array];
+        for (HotListCommentList *data in tmp.data.result.list) {
+            
+            CommentDetailData *reu = [CommentDetailData new];
+            reu.userName = data.userName;
+            reu.content = data.content;
+            reu.userHeader = data.userImg;
+            reu.lightCount = [NSString stringWithFormat:@"%ld",(long)data.quoteLightCount];
+            reu.addTime = data.time;
+            
+            if (data.quote && data.quote.count) {
+                //TODO...字符串的过滤待处理
+                NSDictionary *quote = [data.quote objectAtIndex:0];
+                reu.quoteContent = [quote objectForKey:@"content"];
+                NSArray *hed = [quote objectForKey:@"header"];
+                NSString *name = [hed objectAtIndex:0];
+                reu.quoteName = [NSString filterH5:name];
+            }
+            
+            
+            [dataArray addObject:reu];
+        }
+        
+        resultModel.commentArray = [dataArray copy];
+        
+        return resultModel;
+        
     }
     
     return resultModel;
@@ -90,11 +122,15 @@
     }else if (type == NewsTypeSpecial){//2:专题
         
     }else if (type == NewsTypePic){//3:cell上有多个图片（在 thumbs
+        
     }else if (type == NewsTypeTopic){
         
         return [self initWithTypeModel:[[CommentType5Model alloc] initWithDictionary:dic]];
         
-    }//5:话题。。球鞋。。经典回顾
+    }else if (type == NewsTypePhotoReply){
+        
+        return [self initWithTypeModel:[[HotListCommentRoot alloc] initWithDictionary:dic]];
+    }
     return nil;
 }
 

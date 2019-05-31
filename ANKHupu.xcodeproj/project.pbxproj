@@ -109,6 +109,12 @@
 		4AB0FC5522A134A400BB767C /* PhotoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC4422A134A200BB767C /* PhotoCellModel.m */; };
 		4AB0FC5622A134A400BB767C /* OfflinePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC4922A134A300BB767C /* OfflinePhotoCell.m */; };
 		4AB0FC5722A134A400BB767C /* SharePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC4B22A134A300BB767C /* SharePhotoCell.m */; };
+		4AB0FC7D22A140F400BB767C /* HotListCommentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7122A140F300BB767C /* HotListCommentList.m */; };
+		4AB0FC7E22A140F400BB767C /* HotCheckReplyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7322A140F300BB767C /* HotCheckReplyInfo.m */; };
+		4AB0FC7F22A140F400BB767C /* HotListCommentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7422A140F300BB767C /* HotListCommentRoot.m */; };
+		4AB0FC8022A140F400BB767C /* HotListAttr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7522A140F300BB767C /* HotListAttr.m */; };
+		4AB0FC8122A140F400BB767C /* HotListCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7B22A140F400BB767C /* HotListCellData.m */; };
+		4AB0FC8222A140F400BB767C /* HotListCommentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC7C22A140F400BB767C /* HotListCommentResult.m */; };
 		4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */; };
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
 		4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD7228A97D20091E341 /* ANKNavigationController.m */; };
@@ -2272,6 +2278,18 @@
 		4AB0FC4C22A134A300BB767C /* ForumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumPhotoCell.h; sourceTree = "<group>"; };
 		4AB0FC4D22A134A400BB767C /* BottomAd1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomAd1.h; sourceTree = "<group>"; };
 		4AB0FC4E22A134A400BB767C /* Userinfo1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Userinfo1.h; sourceTree = "<group>"; };
+		4AB0FC7122A140F300BB767C /* HotListCommentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListCommentList.m; sourceTree = "<group>"; };
+		4AB0FC7222A140F300BB767C /* HotListCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListCellData.h; sourceTree = "<group>"; };
+		4AB0FC7322A140F300BB767C /* HotCheckReplyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCheckReplyInfo.m; sourceTree = "<group>"; };
+		4AB0FC7422A140F300BB767C /* HotListCommentRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListCommentRoot.m; sourceTree = "<group>"; };
+		4AB0FC7522A140F300BB767C /* HotListAttr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListAttr.m; sourceTree = "<group>"; };
+		4AB0FC7622A140F300BB767C /* HotListCommentResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListCommentResult.h; sourceTree = "<group>"; };
+		4AB0FC7722A140F300BB767C /* HotListCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListCommentList.h; sourceTree = "<group>"; };
+		4AB0FC7822A140F400BB767C /* HotListAttr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListAttr.h; sourceTree = "<group>"; };
+		4AB0FC7922A140F400BB767C /* HotListCommentRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListCommentRoot.h; sourceTree = "<group>"; };
+		4AB0FC7A22A140F400BB767C /* HotCheckReplyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCheckReplyInfo.h; sourceTree = "<group>"; };
+		4AB0FC7B22A140F400BB767C /* HotListCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListCellData.m; sourceTree = "<group>"; };
+		4AB0FC7C22A140F400BB767C /* HotListCommentResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListCommentResult.m; sourceTree = "<group>"; };
 		4ABDCAC6228A6E630091E341 /* ANKTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKTabBarController.h; sourceTree = "<group>"; };
 		4ABDCAC7228A6E630091E341 /* ANKTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKTabBarController.m; sourceTree = "<group>"; };
 		4ABDCACE228A8CB60091E341 /* ANKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKViewController.h; sourceTree = "<group>"; };
@@ -4547,6 +4565,7 @@
 		4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */ = {
 			isa = PBXGroup;
 			children = (
+				4AB0FC7022A140AC00BB767C /* Comment */,
 				4AB0FC5C22A13DCC00BB767C /* DetailInfo */,
 			);
 			path = HotListPhotoCell;
@@ -4661,6 +4680,25 @@
 				4AB0FC3D22A134A100BB767C /* Userinfo1.m */,
 			);
 			path = DetailInfo;
+			sourceTree = "<group>";
+		};
+		4AB0FC7022A140AC00BB767C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				4AB0FC7A22A140F400BB767C /* HotCheckReplyInfo.h */,
+				4AB0FC7322A140F300BB767C /* HotCheckReplyInfo.m */,
+				4AB0FC7822A140F400BB767C /* HotListAttr.h */,
+				4AB0FC7522A140F300BB767C /* HotListAttr.m */,
+				4AB0FC7222A140F300BB767C /* HotListCellData.h */,
+				4AB0FC7B22A140F400BB767C /* HotListCellData.m */,
+				4AB0FC7722A140F300BB767C /* HotListCommentList.h */,
+				4AB0FC7122A140F300BB767C /* HotListCommentList.m */,
+				4AB0FC7622A140F300BB767C /* HotListCommentResult.h */,
+				4AB0FC7C22A140F400BB767C /* HotListCommentResult.m */,
+				4AB0FC7922A140F400BB767C /* HotListCommentRoot.h */,
+				4AB0FC7422A140F300BB767C /* HotListCommentRoot.m */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		4ABDCAE0228AC7570091E341 /* ANKNavigationView */ = {
@@ -9016,6 +9054,7 @@
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4A6C47E72299493600850EC8 /* MoreDiscovery.m in Sources */,
 				4A6C47C22297FA0800850EC8 /* NBATopicNew.m in Sources */,
+				4AB0FC7D22A140F400BB767C /* HotListCommentList.m in Sources */,
 				4A5AC8382293F3310026BE7E /* NBAData.m in Sources */,
 				4A6C484B229B99CD00850EC8 /* CommentQuoteData.m in Sources */,
 				4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */,
@@ -9031,10 +9070,12 @@
 				4A49CE91229C04350044540B /* CommentAttr.m in Sources */,
 				4A6C47CF2299390300850EC8 /* MoreControllCell.m in Sources */,
 				4A49CE9C229D04180044540B /* NewsDetailAdapter.m in Sources */,
+				4AB0FC7F22A140F400BB767C /* HotListCommentRoot.m in Sources */,
 				4AB0FC5022A134A400BB767C /* ForumPhotoCell.m in Sources */,
 				4A49CE90229C04350044540B /* Certuser.m in Sources */,
 				4AEF80B5228CFA01001E56B3 /* WMScrollView.m in Sources */,
 				4A49CE8D229C04350044540B /* CheckReplyInfo.m in Sources */,
+				4AB0FC8222A140F400BB767C /* HotListCommentResult.m in Sources */,
 				4A959A012296CD4D00725DCE /* NBANewsType5Model.m in Sources */,
 				4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */,
 				4ACD93FE229275C20043E05F /* FPSLable.m in Sources */,
@@ -9059,17 +9100,20 @@
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,
+				4AB0FC8022A140F400BB767C /* HotListAttr.m in Sources */,
 				4A6C484F229B99CD00850EC8 /* LightComment.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4A49CE95229C04350044540B /* CommentDatalist.m in Sources */,
+				4AB0FC7E22A140F400BB767C /* HotCheckReplyInfo.m in Sources */,
 				4AF660D722897F0500DFC1AF /* AppDelegate.m in Sources */,
 				4A959A032296CD4D00725DCE /* BottomAd.m in Sources */,
 				4A5AC8352293F3310026BE7E /* NBAGame.m in Sources */,
 				4A6C477B22978EDB00850EC8 /* H5DetailTitleView.m in Sources */,
 				4A5AC83E2293F5A40026BE7E /* NewsNormalCell.m in Sources */,
+				4AB0FC8122A140F400BB767C /* HotListCellData.m in Sources */,
 				4A6C47E92299493600850EC8 /* MoreModel.m in Sources */,
 				4A6C47C52297FA0800850EC8 /* NBATopicModel.m in Sources */,
 				4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */,
