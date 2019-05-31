@@ -6,16 +6,16 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "ANKBaseNewsCommentModel.h"
+#import "NewsCommentAdapter.h"
 
 #import "CommentModel.h"
 #import "CommentType5Model.h"
 
-@implementation ANKBaseNewsCommentModel
+@implementation NewsCommentAdapter
 
 
-- (ANKBaseNewsCommentModel *)initWithTypeModel:(id)model{
-    ANKBaseNewsCommentModel *resultModel = [ANKBaseNewsCommentModel new];
+- (NewsCommentAdapter *)initWithTypeModel:(id)model{
+    NewsCommentAdapter *resultModel = [NewsCommentAdapter new];
     if ([model isKindOfClass:[CommentModel class]]) {//type1
         
         CommentModel *tmp = (CommentModel *)model;

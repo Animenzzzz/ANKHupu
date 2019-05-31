@@ -6,17 +6,17 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "ANKBaseNewsDetailModel.h"
+#import "NewsDetailAdapter.h"
 
 #import "NewsDetailModel.h"
 #import "NBANewsType5Model.h"
 #import "CommentModel.h"
 
 
-@implementation ANKBaseNewsDetailModel
+@implementation NewsDetailAdapter
 
-- (ANKBaseNewsDetailModel *)initWithTypeModel:(id)model{
-    ANKBaseNewsDetailModel *resultModel = [ANKBaseNewsDetailModel new];
+- (NewsDetailAdapter *)initWithTypeModel:(id)model{
+    NewsDetailAdapter *resultModel = [NewsDetailAdapter new];
     if ([model isKindOfClass:[NewsDetailModel class]]) {
         
         NewsDetailModel *tmp = (NewsDetailModel *)model;
@@ -31,7 +31,7 @@
         
         NBANewsType5Model *tmp = (NBANewsType5Model *)model;
         resultModel.h5Content = tmp.nBAType5offlineData.nBAType5data.content;
-        
+        resultModel.newsTitle = tmp.title;
         resultModel.userImg = tmp.nBAType5offlineData.nBAType5data.userImg;
         resultModel.userName = tmp.userName;
         resultModel.time = tmp.nBAType5offlineData.nBAType5data.time;

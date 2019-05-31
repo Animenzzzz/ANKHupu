@@ -40,7 +40,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setStyleWithModel:(ANKBaseNewsDetailModel *)model newsType:(NewsType)type{
+- (void)setStyleWithModel:(NewsDetailAdapter *)model newsType:(NewsType)type{
     
     
     self.newsTitleLab.text = model.newsTitle;
@@ -67,27 +67,7 @@
         
         
     }else if(type == NewsTypeTopic){
-        
-//        NBANewsType5Model *resultModel = (NBANewsType5Model *)model;
-        
-        
-//        self.newsTitleLab.text = resultModel.title;
-//        [self addSubview:self.newsTitleLab];
-//        CGFloat height = [UILabel getHeightByWidth:kNewsTitleWidth1 title:resultModel.title font:self.newsTitleLab.font];
-//        [self.newsTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(kNewsTitleToCellTop1);
-//            make.left.mas_equalTo(kNewsTitleToCellLeft1);
-//            make.width.mas_equalTo(kNewsTitleWidth1);
-//            make.height.mas_equalTo(height);
-//        }];
-        
-        
-        
-//        NSString *userIcon = resultModel.nBAType5offlineData.nBAType5data.userImg;
-//        NSString *userName = resultModel.userName;
-//        NSString *time = resultModel.nBAType5offlineData.nBAType5data.time;
-//        NSString *visits = resultModel.nBAType5offlineData.nBAType5data.visits;
-//        NSString *cerInfo = resultModel.nBAType5offlineData.nBAType5data.cert_info;
+    
         
         H5DetailTitleView *view = [[[UINib nibWithNibName:@"H5DetailTitleView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
         [view.userIconImage sd_setImageWithURL:[NSURL URLWithString:model.userImg] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {

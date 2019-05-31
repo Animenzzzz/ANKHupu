@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANKBaseNewsDetailModel : NSObject
+@interface NewsDetailAdapter : NSObject
 
 @property(nonatomic, assign) NewsType newsType;
 
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *newsTitle;
 
 
-- (ANKBaseNewsDetailModel *)initWithTypeModel:(id)model;
+- (NewsDetailAdapter *)initWithTypeModel:(id)model;
 
 - (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type;
 

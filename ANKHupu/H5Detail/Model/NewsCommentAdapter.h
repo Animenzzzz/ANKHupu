@@ -10,12 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class CommentDetailData;
-@interface ANKBaseNewsCommentModel : NSObject
+@interface NewsCommentAdapter : NSObject
 
 @property(nonatomic, assign) NSInteger count;
 @property(nonatomic, strong) NSArray <CommentDetailData *>*commentArray;
 
-- (ANKBaseNewsCommentModel *)initWithTypeModel:(id)model;
+- (NewsCommentAdapter *)initWithTypeModel:(id)model;
 
 - (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type;
 

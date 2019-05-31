@@ -13,8 +13,8 @@
 #import "ANKWebView.h"
 #import "H5DetailTitleCell.h"
 
-#import "ANKBaseNewsDetailModel.h"
-#import "ANKBaseNewsCommentModel.h"
+#import "NewsDetailAdapter.h"
+#import "NewsCommentAdapter.h"
 
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
@@ -42,8 +42,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 @property(nonatomic, strong) UIImageView *newsImageView;
 @property(nonatomic, assign) CGFloat webViewHeight;
 
-@property(nonatomic, strong) ANKBaseNewsDetailModel *detailBaseModel;
-@property(nonatomic, strong) ANKBaseNewsCommentModel *commentBaseModel;
+@property(nonatomic, strong) NewsDetailAdapter *detailBaseModel;
+@property(nonatomic, strong) NewsCommentAdapter *commentBaseModel;
 
 @end
 
@@ -164,7 +164,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     
-                    self.detailBaseModel = (ANKBaseNewsDetailModel *)[[ANKBaseNewsDetailModel alloc] initWithDictionary:data type:self.type];
+                    self.detailBaseModel = (NewsDetailAdapter *)[[NewsDetailAdapter alloc] initWithDictionary:data type:self.type];
                     
                     if (self.type == NewsTypeNormal) {
                         [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.detailBaseModel.newsImage] placeholderImage:[ResUtil imageNamed:kPlaceHoldImg] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -195,7 +195,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         [SVProgressHUD dismissWithDelay:2.0f];
                     }else{
                         
-                        self.commentBaseModel = [(ANKBaseNewsCommentModel *)[ANKBaseNewsCommentModel alloc] initWithDictionary:data type:self.type];
+                        self.commentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data type:self.type];
                         NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:1];
                         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
                     }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "NewsDetailModel.h"
-#import "ANKBaseNewsDetailModel.h"
+#import "NewsDetailAdapter.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (void)setStyleWithModel:(id)model newsType:(NewsType)type;
 
-- (void)setStyleWithModel:(ANKBaseNewsDetailModel *)model newsType:(NewsType)type;
+- (void)setStyleWithModel:(NewsDetailAdapter *)model newsType:(NewsType)type;
 
 
 @end
