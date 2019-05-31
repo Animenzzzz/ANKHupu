@@ -80,7 +80,7 @@
         }];
         
         
-    }else if(type == NewsTypeTopic){
+    }else if(type == NewsTypeTopic || type == NewsTypePhotoReply){
         
         
         self.newsTitleLab.text = model.newsTitle;
@@ -134,7 +134,7 @@
         
         return height+kType1_NewsTitleToCellTop+kAddTimeHeight+kAddTimeToTile+kAddTimeToButtom;
         
-    }else if (type == NewsTypeTopic){
+    }else if (type == NewsTypeTopic || type == NewsTypePhotoReply){
         CGFloat height = [UILabel getHeightByWidth:kType2_NewsTitleWidth title:model.newsTitle font:kUIFontType2];
         
         return kType2_NewsTitleToCellTop+height+44+30;

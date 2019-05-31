@@ -11,7 +11,7 @@
 #import "NewsDetailModel.h"
 #import "NBANewsType5Model.h"
 #import "CommentModel.h"
-
+#import "PhotoCellModel.h"
 
 @implementation NewsDetailAdapter
 
@@ -30,6 +30,7 @@
     }else if([model isKindOfClass:[NBANewsType5Model class]]){
         
         NBANewsType5Model *tmp = (NBANewsType5Model *)model;
+        
         resultModel.h5Content = tmp.nBAType5offlineData.nBAType5data.content;
         resultModel.newsTitle = tmp.title;
         resultModel.userImg = tmp.nBAType5offlineData.nBAType5data.userImg;
@@ -38,6 +39,17 @@
         resultModel.visits = tmp.nBAType5offlineData.nBAType5data.visits;
         
         return resultModel;
+    }else if ([model isKindOfClass:[PhotoCellModel class]]){
+        
+        PhotoCellModel *tmp = (PhotoCellModel *)model;
+        
+        resultModel.h5Content = tmp.offlinePhotoCell.dataPhotoCel.content;
+        resultModel.newsTitle = tmp.title;
+        resultModel.userImg = tmp.offlinePhotoCell.dataPhotoCel.userImg;
+        resultModel.userName = tmp.userName;
+        resultModel.time = tmp.offlinePhotoCell.dataPhotoCel.time;
+        resultModel.visits = tmp.offlinePhotoCell.dataPhotoCel.visits;
+        
     }
     
     return resultModel;
@@ -57,7 +69,10 @@
         
         return [self initWithTypeModel:[[NBANewsType5Model alloc] initWithDictionary:dic]];
         
-    }//5:话题。。球鞋。。经典回顾
+    }else if (type == NewsTypePhotoReply){
+        
+        return [self initWithTypeModel:[[PhotoCellModel alloc] initWithDictionary:dic]];
+    }
     return nil;
 }
 

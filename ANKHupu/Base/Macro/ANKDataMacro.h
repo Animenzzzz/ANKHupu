@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger,NewsType) {
     NewsTypeSpecial = 2,//2:专题
     NewsTypePic     = 3,//3:cell上有多个图片（在 thumbs 数组里面）
     NewsTypeTopic   = 5,//5:话题。。球鞋。。经典回顾
+    
+    NewsTypePhotoReply   = 8,//
 };
 
 //资源

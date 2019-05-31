@@ -11,6 +11,8 @@
 #import "HotListModel.h"
 #import "HotListViewModel.h"
 #import "NewsPhotosCell.h"
+#import "H5DetailViewController.h"
+
 @interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -212,8 +214,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
-    NSLog(@"");
+    NSArray *arr = [model.xid componentsSeparatedByString:@"t"];
+    
+    H5DetailViewController *deta = [H5DetailViewController new];
+    deta.type = NewsTypePhotoReply;
+    deta.requestURL = [NSString stringWithFormat:@"http://bbs.mobileapi.hupu.com/3/7.3.12/threads/%@?client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%%2FShanghai&entrance=16&night=0&crt=1559289217&advId=E12875A5-1076-4C57-9488-B5311B604032&isScheme=1&clientId=30980511&sign=f75e1a13127af806c00810e2de271450&ft=18",arr[1]];
+//    deta.commentURL = @"";
+    [self.navigationController pushViewController:deta animated:YES];
     //TODO...以后再写吧。。。。。太多了东西了。。。
 }
 

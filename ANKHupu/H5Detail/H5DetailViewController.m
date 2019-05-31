@@ -264,7 +264,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             
         
             [cell addSubview:self.contentWebView];
-//            CGFloat webHeight = self.webViewHeight == 0?400:self.webViewHeight;
             [self.contentWebView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(5);
                 make.right.mas_equalTo(-5);
