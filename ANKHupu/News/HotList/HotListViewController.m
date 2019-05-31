@@ -220,12 +220,14 @@
     HotListModel *model = [self.hotListDataArray objectAtIndex:indexPath.row];
     NSArray *arr = [model.xid componentsSeparatedByString:@"t"];
     
+    //TODO...还要加上亮点评论
     H5DetailViewController *deta = [H5DetailViewController new];
     deta.type = NewsTypePhotoReply;
     deta.requestURL = [NSString stringWithFormat:@"http://bbs.mobileapi.hupu.com/3/7.3.12/threads/%@?client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&time_zone=Asia%%2FShanghai&entrance=16&night=0&crt=1559289217&advId=E12875A5-1076-4C57-9488-B5311B604032&isScheme=1&clientId=30980511&sign=f75e1a13127af806c00810e2de271450&ft=18",arr[1]];
-//    deta.commentURL = @"";
+    deta.commentURL = [NSString stringWithFormat:@"https://bbs.mobileapi.hupu.com/3/7.3.12/threads/getsThreadPostList?offline=json&page=1&tid=%@&fid=34&nopic=0&night=0&order=asc&entrance=16&show_type=default&sort=&postAuthorPuid=&maxpid=&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0",arr[1]];
+    
     [self.navigationController pushViewController:deta animated:YES];
-    //TODO...以后再写吧。。。。。太多了东西了。。。
+    
 }
 
 #pragma mark - Custom protocol 

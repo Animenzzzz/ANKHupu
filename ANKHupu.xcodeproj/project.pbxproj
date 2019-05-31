@@ -4320,31 +4320,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4A49CE7A229C040C0044540B /* CommentModel_Type5 */ = {
-			isa = PBXGroup;
-			children = (
-				4A49CE7D229C04310044540B /* Certuser.h */,
-				4A49CE83229C04320044540B /* Certuser.m */,
-				4A49CE84229C04320044540B /* CheckReplyInfo.h */,
-				4A49CE7B229C04310044540B /* CheckReplyInfo.m */,
-				4A49CE8A229C04340044540B /* CommentAttr.h */,
-				4A49CE85229C04330044540B /* CommentAttr.m */,
-				4A49CE89229C04330044540B /* CommentDatalist.h */,
-				4A49CE8C229C04340044540B /* CommentDatalist.m */,
-				4A49CE80229C04320044540B /* CommentType5Model.h */,
-				4A49CE86229C04330044540B /* CommentType5Model.m */,
-				4A49CE7C229C04310044540B /* CommentType5Quote.h */,
-				4A49CE81229C04320044540B /* CommentType5Quote.m */,
-				4A49CE7F229C04320044540B /* CommetType5Modl.h */,
-				4A49CE87229C04330044540B /* CommetType5Modl.m */,
-				4A49CE7E229C04310044540B /* CommetType5result.h */,
-				4A49CE88229C04330044540B /* CommetType5result.m */,
-				4A49CE8B229C04340044540B /* Lure3.h */,
-				4A49CE82229C04320044540B /* Lure3.m */,
-			);
-			path = CommentModel_Type5;
-			sourceTree = "<group>";
-		};
 		4A49CE96229C0F260044540B /* Foundation+Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -4384,7 +4359,6 @@
 			children = (
 				4A135AC9228D68730060EAA6 /* HotListViewController.h */,
 				4A135ACA228D68730060EAA6 /* HotListViewController.m */,
-				4ABDCAED228AD1AE0091E341 /* View */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
 				4A49CEB0229FE3D00044540B /* ViewModel */,
 			);
@@ -4434,13 +4408,11 @@
 		4A5AC8512294E9C50026BE7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */,
 				4A49CE9A229D04180044540B /* NewsDetailAdapter.h */,
 				4A49CE9B229D04180044540B /* NewsDetailAdapter.m */,
 				4A49CE9D229D07AB0044540B /* NewsCommentAdapter.h */,
 				4A49CE9E229D07AB0044540B /* NewsCommentAdapter.m */,
-				4A49CE7A229C040C0044540B /* CommentModel_Type5 */,
-				4A6C483E229B99BA00850EC8 /* CommentModel_Type1 */,
+				4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */,
 				4A9599ED2296CD4D00725DCE /* NBANews_Type5 */,
 				4A9599AD2296CB2C00725DCE /* NBANews_Type1 */,
 			);
@@ -4543,25 +4515,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4A6C483E229B99BA00850EC8 /* CommentModel_Type1 */ = {
-			isa = PBXGroup;
-			children = (
-				4A6C4841229B99CC00850EC8 /* CommentData.h */,
-				4A6C4843229B99CC00850EC8 /* CommentData.m */,
-				4A6C4847229B99CD00850EC8 /* CommentLinkNew.h */,
-				4A6C484A229B99CD00850EC8 /* CommentLinkNew.m */,
-				4A6C4840229B99CC00850EC8 /* CommentModel.h */,
-				4A6C4848229B99CD00850EC8 /* CommentModel.m */,
-				4A6C4846229B99CC00850EC8 /* CommentQuoteData.h */,
-				4A6C4842229B99CC00850EC8 /* CommentQuoteData.m */,
-				4A6C4845229B99CC00850EC8 /* DtailData.h */,
-				4A6C4844229B99CC00850EC8 /* DtailData.m */,
-				4A6C483F229B99CB00850EC8 /* LightComment.h */,
-				4A6C4849229B99CD00850EC8 /* LightComment.m */,
-			);
-			path = CommentModel_Type1;
-			sourceTree = "<group>";
-		};
 		4A8112A8228D98070036D3C5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -4576,21 +4529,30 @@
 		4A9599AD2296CB2C00725DCE /* NBANews_Type1 */ = {
 			isa = PBXGroup;
 			children = (
-				4A64E3312294EF31007CE6E7 /* DetailData.h */,
-				4A64E32A2294EF30007CE6E7 /* DetailData.m */,
-				4A64E3282294EF30007CE6E7 /* H5New.h */,
-				4A64E3292294EF30007CE6E7 /* H5New.m */,
-				4A64E32F2294EF31007CE6E7 /* NewsDetailShare.h */,
-				4A64E32E2294EF31007CE6E7 /* NewsDetailShare.m */,
-				4A64E3302294EF31007CE6E7 /* NewsDetailTag.h */,
-				4A64E32B2294EF30007CE6E7 /* NewsDetailTag.m */,
-				4A64E32C2294EF31007CE6E7 /* NewsDetailModel.h */,
-				4A64E32D2294EF31007CE6E7 /* NewsDetailModel.m */,
+				4AB0FC5B22A13D9F00BB767C /* Comment */,
+				4AB0FC5A22A13D9200BB767C /* DetailInfo */,
 			);
 			path = NBANews_Type1;
 			sourceTree = "<group>";
 		};
 		4A9599ED2296CD4D00725DCE /* NBANews_Type5 */ = {
+			isa = PBXGroup;
+			children = (
+				4AB0FC5922A13D6700BB767C /* Comment */,
+				4AB0FC5822A13D4800BB767C /* DetailInfo */,
+			);
+			path = NBANews_Type5;
+			sourceTree = "<group>";
+		};
+		4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				4AB0FC5C22A13DCC00BB767C /* DetailInfo */,
+			);
+			path = HotListPhotoCell;
+			sourceTree = "<group>";
+		};
+		4AB0FC5822A13D4800BB767C /* DetailInfo */ = {
 			isa = PBXGroup;
 			children = (
 				4A9599FF2296CD4D00725DCE /* BottomAd.h */,
@@ -4612,10 +4574,71 @@
 				4A9599FE2296CD4D00725DCE /* NBAType5topic.h */,
 				4A9599F22296CD4D00725DCE /* NBAType5topic.m */,
 			);
-			path = NBANews_Type5;
+			path = DetailInfo;
 			sourceTree = "<group>";
 		};
-		4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */ = {
+		4AB0FC5922A13D6700BB767C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				4A49CE7D229C04310044540B /* Certuser.h */,
+				4A49CE83229C04320044540B /* Certuser.m */,
+				4A49CE84229C04320044540B /* CheckReplyInfo.h */,
+				4A49CE7B229C04310044540B /* CheckReplyInfo.m */,
+				4A49CE8A229C04340044540B /* CommentAttr.h */,
+				4A49CE85229C04330044540B /* CommentAttr.m */,
+				4A49CE89229C04330044540B /* CommentDatalist.h */,
+				4A49CE8C229C04340044540B /* CommentDatalist.m */,
+				4A49CE80229C04320044540B /* CommentType5Model.h */,
+				4A49CE86229C04330044540B /* CommentType5Model.m */,
+				4A49CE7C229C04310044540B /* CommentType5Quote.h */,
+				4A49CE81229C04320044540B /* CommentType5Quote.m */,
+				4A49CE7F229C04320044540B /* CommetType5Modl.h */,
+				4A49CE87229C04330044540B /* CommetType5Modl.m */,
+				4A49CE7E229C04310044540B /* CommetType5result.h */,
+				4A49CE88229C04330044540B /* CommetType5result.m */,
+				4A49CE8B229C04340044540B /* Lure3.h */,
+				4A49CE82229C04320044540B /* Lure3.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		4AB0FC5A22A13D9200BB767C /* DetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4A64E3312294EF31007CE6E7 /* DetailData.h */,
+				4A64E32A2294EF30007CE6E7 /* DetailData.m */,
+				4A64E3282294EF30007CE6E7 /* H5New.h */,
+				4A64E3292294EF30007CE6E7 /* H5New.m */,
+				4A64E32F2294EF31007CE6E7 /* NewsDetailShare.h */,
+				4A64E32E2294EF31007CE6E7 /* NewsDetailShare.m */,
+				4A64E3302294EF31007CE6E7 /* NewsDetailTag.h */,
+				4A64E32B2294EF30007CE6E7 /* NewsDetailTag.m */,
+				4A64E32C2294EF31007CE6E7 /* NewsDetailModel.h */,
+				4A64E32D2294EF31007CE6E7 /* NewsDetailModel.m */,
+			);
+			path = DetailInfo;
+			sourceTree = "<group>";
+		};
+		4AB0FC5B22A13D9F00BB767C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				4A6C4841229B99CC00850EC8 /* CommentData.h */,
+				4A6C4843229B99CC00850EC8 /* CommentData.m */,
+				4A6C4847229B99CD00850EC8 /* CommentLinkNew.h */,
+				4A6C484A229B99CD00850EC8 /* CommentLinkNew.m */,
+				4A6C4840229B99CC00850EC8 /* CommentModel.h */,
+				4A6C4848229B99CD00850EC8 /* CommentModel.m */,
+				4A6C4846229B99CC00850EC8 /* CommentQuoteData.h */,
+				4A6C4842229B99CC00850EC8 /* CommentQuoteData.m */,
+				4A6C4845229B99CC00850EC8 /* DtailData.h */,
+				4A6C4844229B99CC00850EC8 /* DtailData.m */,
+				4A6C483F229B99CB00850EC8 /* LightComment.h */,
+				4A6C4849229B99CD00850EC8 /* LightComment.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		4AB0FC5C22A13DCC00BB767C /* DetailInfo */ = {
 			isa = PBXGroup;
 			children = (
 				4AB0FC4D22A134A400BB767C /* BottomAd1.h */,
@@ -4637,7 +4660,7 @@
 				4AB0FC4E22A134A400BB767C /* Userinfo1.h */,
 				4AB0FC3D22A134A100BB767C /* Userinfo1.m */,
 			);
-			path = HotListPhotoCell;
+			path = DetailInfo;
 			sourceTree = "<group>";
 		};
 		4ABDCAE0228AC7570091E341 /* ANKNavigationView */ = {
@@ -4684,13 +4707,6 @@
 				4AA6FDC5228D319800A967A0 /* HotListModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4ABDCAED228AD1AE0091E341 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4ABDCAF1228AD2480091E341 /* View */ = {
