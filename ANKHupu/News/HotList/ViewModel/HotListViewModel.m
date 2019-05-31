@@ -30,7 +30,7 @@
     
   
     if (!model.hotInfo.light_replies.count) {//没有评论
-        cellTotalHeight = cellTotalHeight - cell.replyView.height;
+        cellTotalHeight = cellTotalHeight - cell.replyView.height-20;
     }else{
         
         CGFloat orign_Reply_Title_Height = cell.replyContentLabHeight.constant;

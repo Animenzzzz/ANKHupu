@@ -32,6 +32,10 @@
 		4A49CEAC229FC4300044540B /* NewsPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CEAB229FC4300044540B /* NewsPhotosCell.m */; };
 		4A49CEAE229FC4440044540B /* NewsPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */; };
 		4A49CEB3229FE3F10044540B /* HotListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CEB2229FE3F10044540B /* HotListViewModel.m */; };
+		4A49CEC122A0FF080044540B /* reading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEC022A0FF070044540B /* reading.png */; };
+		4A49CEC322A100330044540B /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEC222A100330044540B /* comment.png */; };
+		4A49CEC522A100B20044540B /* zan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEC422A100B20044540B /* zan.png */; };
+		4A49CEC722A101D60044540B /* lightbulb-fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A49CEC622A101D50044540B /* lightbulb-fill.png */; };
 		4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F42292B9510026BE7E /* TagCellView.m */; };
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
@@ -2119,6 +2123,10 @@
 		4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPhotosCell.xib; sourceTree = "<group>"; };
 		4A49CEB1229FE3F10044540B /* HotListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewModel.h; sourceTree = "<group>"; };
 		4A49CEB2229FE3F10044540B /* HotListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewModel.m; sourceTree = "<group>"; };
+		4A49CEC022A0FF070044540B /* reading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reading.png; sourceTree = "<group>"; };
+		4A49CEC222A100330044540B /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		4A49CEC422A100B20044540B /* zan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zan.png; sourceTree = "<group>"; };
+		4A49CEC622A101D50044540B /* lightbulb-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightbulb-fill.png"; sourceTree = "<group>"; };
 		4A5AC7F32292B9510026BE7E /* TagCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		4A5AC7F42292B9510026BE7E /* TagCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
@@ -4827,6 +4835,10 @@
 		4AF660F9228A64BE00DFC1AF /* HupuRes */ = {
 			isa = PBXGroup;
 			children = (
+				4A49CEC622A101D50044540B /* lightbulb-fill.png */,
+				4A49CEC422A100B20044540B /* zan.png */,
+				4A49CEC222A100330044540B /* comment.png */,
+				4A49CEC022A0FF070044540B /* reading.png */,
 				4A49CEA5229FAAFC0044540B /* back@2x.png */,
 				4A49CEA4229FAAFC0044540B /* back@3x.png */,
 				4A49CEA3229FAAFC0044540B /* whiteClose@2x.png */,
@@ -7238,6 +7250,7 @@
 				4AF66B2A228A64D100DFC1AF /* football_tactic_ground_dot@2x.png in Resources */,
 				4AF66D9D228A64D100DFC1AF /* replay_more_bg_night@3x.png in Resources */,
 				4AF66EFD228A64D200DFC1AF /* lightIndicator@2x.png in Resources */,
+				4A49CEC122A0FF080044540B /* reading.png in Resources */,
 				4AF66AE7228A64D100DFC1AF /* team_btn_search@2x.png in Resources */,
 				4AF66AAF228A64D000DFC1AF /* barrage_btn@2x.png in Resources */,
 				4AF66DCD228A64D100DFC1AF /* bbs_album_download@3x.png in Resources */,
@@ -7968,6 +7981,7 @@
 				4AF66B5B228A64D100DFC1AF /* mark_praise_btn_1@3x.png in Resources */,
 				4AF66C43228A64D100DFC1AF /* football_whitejersey@2x.png in Resources */,
 				4AF66CE4228A64D100DFC1AF /* send_btn_1@3x.png in Resources */,
+				4A49CEC722A101D60044540B /* lightbulb-fill.png in Resources */,
 				4AF66BE3228A64D100DFC1AF /* bg_refresh_dis@3x.png in Resources */,
 				4AF66AE3228A64D100DFC1AF /* bbs_icon_iCloud@2x.png in Resources */,
 				4AF66BDC228A64D100DFC1AF /* 8_ic@2x.png in Resources */,
@@ -8370,6 +8384,7 @@
 				4AF66ACE228A64D100DFC1AF /* details_bg_btn_night.png in Resources */,
 				4AF66A1E228A64D000DFC1AF /* liveRoom_arrow_ic@2x.png in Resources */,
 				4AF6697B228A64D000DFC1AF /* football_tactic_ground_dot_night@2x.png in Resources */,
+				4A49CEC522A100B20044540B /* zan.png in Resources */,
 				4AF668CC228A64D000DFC1AF /* bg_m_btn_1@2x.png in Resources */,
 				4AF66C6D228A64D100DFC1AF /* tab_situation_pad@2x.png in Resources */,
 				4AF66ED8228A64D200DFC1AF /* bg_refresh@3x.png in Resources */,
@@ -8789,6 +8804,7 @@
 				4AF66D61228A64D100DFC1AF /* tab_btn_1@2x.png in Resources */,
 				4AF6690A228A64D000DFC1AF /* no_light_ic_hightlight@3x.png in Resources */,
 				4AF669F0228A64D000DFC1AF /* tab_chat_1_night@2x.png in Resources */,
+				4A49CEC322A100330044540B /* comment.png in Resources */,
 				4AF66A4D228A64D000DFC1AF /* me_message_lottery_ic_night@2x.png in Resources */,
 				4AF66F80228A64D200DFC1AF /* red_bg@2x.png in Resources */,
 				4AF66C3A228A64D100DFC1AF /* AppIcon60x60@3x.png in Resources */,

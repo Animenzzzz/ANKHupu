@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 //Cell的标题头
 @property (weak, nonatomic) IBOutlet UIImageView *userIcon;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabWidth;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *userNameLabWidth;
 
 //Cell的内容及其约束
 @property (weak, nonatomic) IBOutlet UILabel *contenLab;
@@ -27,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 //内容照片
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
 
-//回复信息
+//回复View
 @property (weak, nonatomic) IBOutlet UIView *replyView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyViewLeft;
@@ -37,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *replyIcon;
 @property (weak, nonatomic) IBOutlet UILabel *replyName;
 
-
+//回复的内容 及其 约束
 @property (weak, nonatomic) IBOutlet UILabel *replyContentLab;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyContentLabHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyContentLeft;
@@ -49,6 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lightLab;
 @property (weak, nonatomic) IBOutlet UILabel *shareLab;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *visitLabWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *replieLabWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lightLabWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sharLabWidth;
 
 
 - (void)cellBindWithDataModel:(HotListModel *)model;

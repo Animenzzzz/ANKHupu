@@ -109,6 +109,8 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
     
     self.contenLab.numberOfLines = 0;
     self.replyContentLab.numberOfLines = 0;
+    self.titleLab.numberOfLines = 0;
+    self.userNameLab.numberOfLines = 0;
     
 }
 
@@ -125,6 +127,9 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
     }];
     self.titleLab.text = model.hotInfo.topic_name;
     self.userNameLab.text = model.hotInfo.nickname;
+    
+    self.titleLabWidth.constant = [UILabel getWidthWithTitle:model.hotInfo.topic_name font:self.titleLab.font];
+    self.userNameLabWidth.constant = [UILabel getWidthWithTitle:model.hotInfo.nickname font:self.userNameLab.font];
     
     CGFloat height = [UILabel getHeightByWidth:(SCREEN_WIDTH - self.contentLabLeft.constant-self.contentLabRight.constant) title:model.hotInfo.title font:self.contenLab.font];
     self.contenLab.text = model.hotInfo.title;
@@ -157,7 +162,7 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
         self.replyContentLab.text = repls.content;
         CGFloat newHeight = [UILabel getHeightByWidth:(self.replyView.width- self.replyContentLeft.constant-self.replyContentRight.constant) title:repls.content font:self.replieLab.font];
         self.replyContentLabHeight.constant = newHeight;
-        self.replyViewHeight.constant = self.replyViewHeight.constant - orignH+newHeight;
+        self.replyViewHeight.constant = self.replyViewHeight.constant - orignH+newHeight+10;
         
         if (![repls.content length]) {
             self.replyView.hidden = YES;
@@ -174,12 +179,15 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
     }
     
     
-    self.visitLab.text = [NSString stringWithFormat:@"查看:%ld",model.hotInfo.visits];
-    self.replieLab.text = [NSString stringWithFormat:@"回复:%ld",model.hotInfo.replies];
-    self.shareLab.text = [NSString stringWithFormat:@"分享:%ld",model.hotInfo.share_num];
-    self.lightLab.text = [NSString stringWithFormat:@"赞:%ld",model.hotInfo.lights];
-
-
+    self.visitLab.text = [NSString stringWithFormat:@"%ld",model.hotInfo.visits];
+    self.replieLab.text = [NSString stringWithFormat:@"%ld",model.hotInfo.replies];
+    self.shareLab.text = [NSString stringWithFormat:@"%ld",model.hotInfo.share_num];
+    self.lightLab.text = [NSString stringWithFormat:@"%ld",model.hotInfo.lights];
+    
+    self.visitLabWidth.constant = [UILabel getWidthWithTitle:[NSString stringWithFormat:@"%ld",model.hotInfo.visits] font:self.visitLab.font];
+    self.replieLabWidth.constant = [UILabel getWidthWithTitle:[NSString stringWithFormat:@"%ld",model.hotInfo.replies] font:self.replieLab.font];
+    self.sharLabWidth.constant = [UILabel getWidthWithTitle:[NSString stringWithFormat:@"%ld",model.hotInfo.share_num] font:self.shareLab.font];
+    self.lightLabWidth.constant = [UILabel getWidthWithTitle:[NSString stringWithFormat:@"%ld",model.hotInfo.lights] font:self.lightLab.font];
     
 }
 
