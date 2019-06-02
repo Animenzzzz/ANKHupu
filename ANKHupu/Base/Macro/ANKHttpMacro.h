@@ -87,8 +87,27 @@
 #define kMoreList @"https://games.mobileapi.hupu.com/3/7.3.12/user/more?time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&advId=E12875A5-1076-4C57-9488-B5311B604032&night=0&crt=1558775033&clientId=30980511&_ssid=VFQtUXVXYW4xN0Y&sign=a9bd2a1e48950ee2851eb6aed9e431d3"
 
 
+//------装备
+#define kForumList @"https://games.mobileapi.hupu.com/3/7.3.12/forum/index?time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&advId=E12875A5-1076-4C57-9488-B5311B604032&night=0&crt=1559444656&clientId=30980511&_ssid=MkJBOA&is_first=1&sign=756ec35138a29999febb74d77c7240ca&name=gear"
+
+//------数码
+#define kDigitalList @"https://games.mobileapi.hupu.com/3/7.3.14/forum/index?time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&advId=E12875A5-1076-4C57-9488-B5311B604032&night=0&crt=1559447867&clientId=30980511&_ssid=MkJBOA&is_first=0&sign=a4c66b3867ba2987982deee267527e17&name=digital"
 
 
+//------影视娱乐
+#define kEntList @"https://games.mobileapi.hupu.com/3/7.3.14/forum/index?time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&advId=E12875A5-1076-4C57-9488-B5311B604032&night=0&crt=1559447673&clientId=30980511&_ssid=MkJBOA&is_first=1&sign=a85b587e5113dc034d2ecd991855b2f5&name=ent"
+
+//------pubg
+#define kPUBGList @"https://games.mobileapi.hupu.com/3/7.3.12/pubg/getNews?news_first_navi=&pre_count=0&advId=E12875A5-1076-4C57-9488-B5311B604032&clientId=30980511&nid=0&first_navi_numbers=1&preload=1&direc=next&num=20&_ssid=MkJBOA&night=0&crt=1559444707&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&sign=3bb2201f912af78cc9528e6c3eedd2b6"
+
+//------关注
+#define kFollowList @"https://games.mobileapi.hupu.com/3/7.3.14/follow/getNews?news_first_navi=&pre_count=0&advId=E12875A5-1076-4C57-9488-B5311B604032&clientId=30980511&nid=0&first_navi_numbers=1&preload=1&direc=next&num=20&_ssid=MkJBOA&night=0&crt=1559447463&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&sign=7539af4cc89ad5076f8ea482a40dd953"
+
+//------欧洲杯
+#define kEurocupList @"https://games.mobileapi.hupu.com/3/7.3.14/eurocup/getNews?news_first_navi=&pre_count=0&advId=E12875A5-1076-4C57-9488-B5311B604032&clientId=30980511&nid=0&first_navi_numbers=1&preload=1&direc=next&num=20&_ssid=MkJBOA&night=0&crt=1559447673&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&sign=2c2aa964f307d97992c916e93577c488"
+
+//------LOL
+#define kLOLList @"https://games.mobileapi.hupu.com/3/7.3.14/lol/getNews?news_first_navi=%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F&pre_count=0&advId=E12875A5-1076-4C57-9488-B5311B604032&clientId=30980511&nid=0&first_navi_numbers=10&preload=0&direc=next&num=20&_ssid=MkJBOA&night=0&crt=1559448019&time_zone=Asia%2FShanghai&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&sign=e0b858adfb9e27dca570d6b36dce2cde"
 
 
 #endif /* ANKHttpMacro_h */
