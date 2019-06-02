@@ -6,21 +6,21 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "NBAViewController.h"
+#import "NewsNormalListController.h"
 #import "ANKHttpServer.h"
 #import "NBAModel.h"
 #import "NewsNormalCell.h"
 #import "NBATopicViewController.h"
 #import "H5DetailViewController.h"
 
-@interface NBAViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NewsNormalListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *NBADataArray;
 
 @end
 
-@implementation NBAViewController
+@implementation NewsNormalListController
 
 static int pageNum = 0;
 #pragma mark - Lify cycle

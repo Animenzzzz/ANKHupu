@@ -1,8 +1,8 @@
 //
-//  NBAViewController.h
+//  HotListViewController.h
 //  ANKHupu
 //
-//  Created by Animenzzz on 2019/5/21.
+//  Created by Animenzzz on 2019/5/16.
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NBAViewController : UIViewController
+@interface NewsPhotosListController : UIViewController
 
 @end
 

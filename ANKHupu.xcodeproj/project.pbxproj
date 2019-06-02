@@ -11,7 +11,7 @@
 		4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A026265228EA39C00B9F86D /* HotListCellCollectionCell.m */; };
 		4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EFF1722968EC100C2A345 /* ANKWebView.m */; };
 		4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12BC842292A2D100AF21BD /* TagsViewController.m */; };
-		4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* HotListViewController.m */; };
+		4A135ACB228D68730060EAA6 /* NewsPhotosListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */; };
 		4A49CE8D229C04350044540B /* CheckReplyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE7B229C04310044540B /* CheckReplyInfo.m */; };
 		4A49CE8E229C04350044540B /* CommentType5Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE81229C04320044540B /* CommentType5Quote.m */; };
 		4A49CE8F229C04350044540B /* Lure3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A49CE82229C04320044540B /* Lure3.m */; };
@@ -40,7 +40,7 @@
 		4A5AC7F72292B95C0026BE7E /* TagCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F62292B95C0026BE7E /* TagCellView.xib */; };
 		4A5AC7FA229396370026BE7E /* post_tex_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */; };
 		4A5AC7FB229396370026BE7E /* post_tex_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */; };
-		4A5AC81E2293EE430026BE7E /* NBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC81D2293EE430026BE7E /* NBAViewController.m */; };
+		4A5AC81E2293EE430026BE7E /* NewsNormalListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC81D2293EE430026BE7E /* NewsNormalListController.m */; };
 		4A5AC8332293F3310026BE7E /* NBAResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8212293F32D0026BE7E /* NBAResult.m */; };
 		4A5AC8342293F3310026BE7E /* NBAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8222293F32E0026BE7E /* NBAModel.m */; };
 		4A5AC8352293F3310026BE7E /* NBAGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AC8242293F32E0026BE7E /* NBAGame.m */; };
@@ -2102,8 +2102,8 @@
 		4A0EFF1722968EC100C2A345 /* ANKWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKWebView.m; sourceTree = "<group>"; };
 		4A12BC832292A2D100AF21BD /* TagsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
 		4A12BC842292A2D100AF21BD /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
-		4A135AC9228D68730060EAA6 /* HotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
-		4A135ACA228D68730060EAA6 /* HotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
+		4A135AC9228D68730060EAA6 /* NewsPhotosListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPhotosListController.h; sourceTree = "<group>"; };
+		4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPhotosListController.m; sourceTree = "<group>"; };
 		4A49CE7B229C04310044540B /* CheckReplyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckReplyInfo.m; sourceTree = "<group>"; };
 		4A49CE7C229C04310044540B /* CommentType5Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentType5Quote.h; sourceTree = "<group>"; };
 		4A49CE7D229C04310044540B /* Certuser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Certuser.h; sourceTree = "<group>"; };
@@ -2147,8 +2147,8 @@
 		4A5AC7F62292B95C0026BE7E /* TagCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCellView.xib; sourceTree = "<group>"; };
 		4A5AC7F8229396370026BE7E /* post_tex_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@2x.png"; sourceTree = "<group>"; };
 		4A5AC7F9229396370026BE7E /* post_tex_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_tex_add@3x.png"; sourceTree = "<group>"; };
-		4A5AC81C2293EE430026BE7E /* NBAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBAViewController.h; sourceTree = "<group>"; };
-		4A5AC81D2293EE430026BE7E /* NBAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBAViewController.m; sourceTree = "<group>"; };
+		4A5AC81C2293EE430026BE7E /* NewsNormalListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsNormalListController.h; sourceTree = "<group>"; };
+		4A5AC81D2293EE430026BE7E /* NewsNormalListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsNormalListController.m; sourceTree = "<group>"; };
 		4A5AC8212293F32D0026BE7E /* NBAResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAResult.m; sourceTree = "<group>"; };
 		4A5AC8222293F32E0026BE7E /* NBAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAModel.m; sourceTree = "<group>"; };
 		4A5AC8232293F32E0026BE7E /* NBATab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBATab.h; sourceTree = "<group>"; };
@@ -4375,8 +4375,6 @@
 		4A5AC81A2293EDDD0026BE7E /* HotList */ = {
 			isa = PBXGroup;
 			children = (
-				4A135AC9228D68730060EAA6 /* HotListViewController.h */,
-				4A135ACA228D68730060EAA6 /* HotListViewController.m */,
 				4ABDCAEC228AD1A70091E341 /* Model */,
 				4A49CEB0229FE3D00044540B /* ViewModel */,
 			);
@@ -4386,8 +4384,6 @@
 		4A5AC81B2293EE270026BE7E /* NBA */ = {
 			isa = PBXGroup;
 			children = (
-				4A5AC81C2293EE430026BE7E /* NBAViewController.h */,
-				4A5AC81D2293EE430026BE7E /* NBAViewController.m */,
 				4A6C47812297F55A00850EC8 /* NBATopicViewController.h */,
 				4A6C47822297F55B00850EC8 /* NBATopicViewController.m */,
 				4A5AC8202293EE590026BE7E /* Model */,
@@ -4719,6 +4715,10 @@
 			children = (
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
+				4A5AC81C2293EE430026BE7E /* NewsNormalListController.h */,
+				4A5AC81D2293EE430026BE7E /* NewsNormalListController.m */,
+				4A135AC9228D68730060EAA6 /* NewsPhotosListController.h */,
+				4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */,
 				4A49CEAF229FD3040044540B /* View */,
 				4A5AC81B2293EE270026BE7E /* NBA */,
 				4A5AC81A2293EDDD0026BE7E /* HotList */,
@@ -9017,7 +9017,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A135ACB228D68730060EAA6 /* HotListViewController.m in Sources */,
+				4A135ACB228D68730060EAA6 /* NewsPhotosListController.m in Sources */,
 				4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */,
 				4AB0FC5522A134A400BB767C /* PhotoCellModel.m in Sources */,
 				4A026266228EA39C00B9F86D /* HotListCellCollectionCell.m in Sources */,
@@ -9096,7 +9096,7 @@
 				4AB0FC5222A134A400BB767C /* BottomAd1.m in Sources */,
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
 				4A6C47CA229937A600850EC8 /* MoreViewController.m in Sources */,
-				4A5AC81E2293EE430026BE7E /* NBAViewController.m in Sources */,
+				4A5AC81E2293EE430026BE7E /* NewsNormalListController.m in Sources */,
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,

@@ -6,21 +6,21 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "HotListViewController.h"
+#import "NewsPhotosListController.h"
 #import "ANKHttpServer.h"
 #import "HotListModel.h"
 #import "HotListViewModel.h"
 #import "NewsPhotosCell.h"
 #import "H5DetailViewController.h"
 
-@interface HotListViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NewsPhotosListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *hotListDataArray;
 
 @end
 
-@implementation HotListViewController{
+@implementation NewsPhotosListController{
 //    NSMutableArray *_hotListDataArray;
 }
 

@@ -9,9 +9,9 @@
 #import "NewsViewController.h"
 #import "ANKNavigationViewSearch.h"
 #import "ANKHttpServer.h"
-#import "HotListViewController.h"
+#import "NewsPhotosListController.h"
 #import "TagsViewController.h"
-#import "NBAViewController.h"
+#import "NewsNormalListController.h"
 @interface NewsViewController ()<ANKNavigationViewSearchDelegate>
 
 @property (nonatomic, strong) ANKNavigationViewSearch *navigationView;
@@ -148,8 +148,8 @@ static NSInteger timeCount = 0;
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     switch (index % 10) {
-        case 0: return [[HotListViewController alloc] init];//推荐页
-        case 1: return [[NBAViewController alloc] init];
+        case 0: return [[NewsPhotosListController alloc] init];//推荐页
+        case 1: return [[NewsNormalListController alloc] init];
 //        case 2: return [[WMCollectionViewController alloc] init];
     }
     return [[UIViewController alloc] init];
