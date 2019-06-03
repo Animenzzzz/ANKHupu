@@ -53,7 +53,7 @@
         return [self initWithTypeModel:[[NBAModel alloc] initWithDictionary:dic]];
         
     }
-    return nil;
+    return [self initWithTypeModel:[[NBAModel alloc] initWithDictionary:dic]];
 }
 
 @end
