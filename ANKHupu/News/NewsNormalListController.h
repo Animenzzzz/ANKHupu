@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsNormalListController : UIViewController
 
+@property (nonatomic, copy) NSString *tagTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END

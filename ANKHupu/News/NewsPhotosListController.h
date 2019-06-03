@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsPhotosListController : UIViewController
 
+@property (nonatomic, copy) NSString *tagTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -147,11 +147,34 @@ static NSInteger timeCount = 0;
 
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-    switch (index % 10) {
-        case 0: return [[NewsPhotosListController alloc] init];//推荐页
-        case 1: return [[NewsNormalListController alloc] init];
-//        case 2: return [[WMCollectionViewController alloc] init];
+    
+    //根据newsTag.plist文件中的cell类型 来返回
+    NSString *type = @"";
+    
+    NSString *tagTitle = [_seletTagArray objectAtIndex:index];
+    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NewsTag" ofType:@"plist"];
+    NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
+    NSMutableArray *arr = [dataDic mutableCopy];
+  
+    for (NSDictionary *dic in arr) {
+        NSString *titile = [dic objectForKey:@"title"];
+        if ([titile isEqualToString:tagTitle]) {
+            type = [dic objectForKey:@"type"];
+            break;
+        }
     }
+    
+    if ([type isEqualToString:@"1"]) {
+        NewsNormalListController *listC = [[NewsNormalListController alloc] init];
+        listC.tagTitle = tagTitle;
+        return listC;
+    }else if ([type isEqualToString:@"2"]){
+        NewsPhotosListController *listC = [[NewsPhotosListController alloc] init];
+        listC.tagTitle = tagTitle;
+        return listC;
+    }
+
     return [[UIViewController alloc] init];
 }
 
