@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *newsTitle;
 
 
-- (NewsDetailAdapter *)initWithTypeModel:(id)model;
+//- (NewsDetailAdapter *)initWithTypeModel:(id)model;
 
 - (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type;
 

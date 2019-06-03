@@ -8,7 +8,7 @@
 
 #import "NewsNormalListController.h"
 #import "ANKHttpServer.h"
-#import "NBAModel.h"
+#import "NewsNormalAdapter.h"
 #import "NewsNormalCell.h"
 #import "NBATopicViewController.h"
 #import "H5DetailViewController.h"
@@ -16,7 +16,7 @@
 @interface NewsNormalListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *NBADataArray;
+@property (nonatomic, strong) NSMutableArray *dataList;
 
 @end
 
@@ -103,8 +103,8 @@ static int pageNum = 0;
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-                    NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
-                    self.NBADataArray = [nbaModel.result.data mutableCopy];
+                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                    self.dataList = [normalModel.dataArray mutableCopy];
                     [self.tableView reloadData];
                 }
             });
@@ -139,8 +139,8 @@ static int pageNum = 0;
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
-                    NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
-                    self.NBADataArray = [nbaModel.result.data mutableCopy];
+                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                    self.dataList = [normalModel.dataArray mutableCopy];
                     [self.tableView reloadData];
                 }
             });
@@ -162,7 +162,7 @@ static int pageNum = 0;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @weakify(self)
-        NBAData *model = [self.NBADataArray objectAtIndex:self.NBADataArray.count-1];
+        NewsNormal *model = [self.dataList objectAtIndex:self.dataList.count-1];
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:@(pageNum) forKey:@"pre_count"];
         [params setValue:model.nid forKey:@"nid"];
@@ -177,8 +177,8 @@ static int pageNum = 0;
                     [SVProgressHUD dismissWithDelay:2.0f];
                 }else{
                     pageNum++;
-                    NBAModel *nbaModel = [[NBAModel alloc] initWithDictionary:data];
-                    self.NBADataArray = [[self.NBADataArray arrayByAddingObjectsFromArray:[nbaModel.result.data mutableCopy]] mutableCopy];
+                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                    self.dataList = [[self.dataList arrayByAddingObjectsFromArray:[normalModel.dataArray mutableCopy]] mutableCopy];
                     [self.tableView reloadData];
                 }
             });
@@ -192,14 +192,14 @@ static int pageNum = 0;
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return self.NBADataArray.count;
+    return self.dataList.count;
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
+    NewsNormal *model = [self.dataList objectAtIndex:indexPath.row];
 
     NewsNormalCell *cell = [[[UINib nibWithNibName:@"NewsNormalCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font lineSpacing:5.0];
@@ -253,7 +253,7 @@ static int pageNum = 0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NBAData *model = [self.NBADataArray objectAtIndex:indexPath.row];
+    NewsNormal *model = [self.dataList objectAtIndex:indexPath.row];
     H5DetailViewController *detail = [H5DetailViewController new];
     detail.controllerTitle = @"Detail";
     

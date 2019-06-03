@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) NSInteger count;
 @property(nonatomic, strong) NSArray <CommentDetailData *>*commentArray;
 
-- (NewsCommentAdapter *)initWithTypeModel:(id)model;
+//- (NewsCommentAdapter *)initWithTypeModel:(id)model;
 
 - (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type;
 

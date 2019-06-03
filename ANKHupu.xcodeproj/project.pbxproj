@@ -62,6 +62,8 @@
 		4A64E3342294EF31007CE6E7 /* NewsDetailTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64E32B2294EF30007CE6E7 /* NewsDetailTag.m */; };
 		4A64E3352294EF31007CE6E7 /* NewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64E32D2294EF31007CE6E7 /* NewsDetailModel.m */; };
 		4A64E3362294EF31007CE6E7 /* NewsDetailShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64E32E2294EF31007CE6E7 /* NewsDetailShare.m */; };
+		4A6A782222A5063600B671FA /* NewsNormalAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A782122A5063600B671FA /* NewsNormalAdapter.m */; };
+		4A6A782522A5065A00B671FA /* NewsPhotosAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A782422A5065A00B671FA /* NewsPhotosAdapter.m */; };
 		4A6C477B22978EDB00850EC8 /* H5DetailTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C477A22978EDB00850EC8 /* H5DetailTitleView.m */; };
 		4A6C477D22978EEA00850EC8 /* H5DetailTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C477C22978EEA00850EC8 /* H5DetailTitleView.xib */; };
 		4A6C47832297F55B00850EC8 /* NBATopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C47822297F55B00850EC8 /* NBATopicViewController.m */; };
@@ -2186,6 +2188,10 @@
 		4A64E32F2294EF31007CE6E7 /* NewsDetailShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailShare.h; sourceTree = "<group>"; };
 		4A64E3302294EF31007CE6E7 /* NewsDetailTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailTag.h; sourceTree = "<group>"; };
 		4A64E3312294EF31007CE6E7 /* DetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailData.h; sourceTree = "<group>"; };
+		4A6A782022A5063600B671FA /* NewsNormalAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsNormalAdapter.h; sourceTree = "<group>"; };
+		4A6A782122A5063600B671FA /* NewsNormalAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsNormalAdapter.m; sourceTree = "<group>"; };
+		4A6A782322A5065A00B671FA /* NewsPhotosAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPhotosAdapter.h; sourceTree = "<group>"; };
+		4A6A782422A5065A00B671FA /* NewsPhotosAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPhotosAdapter.m; sourceTree = "<group>"; };
 		4A6C477922978EDB00850EC8 /* H5DetailTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5DetailTitleView.h; sourceTree = "<group>"; };
 		4A6C477A22978EDB00850EC8 /* H5DetailTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5DetailTitleView.m; sourceTree = "<group>"; };
 		4A6C477C22978EEA00850EC8 /* H5DetailTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H5DetailTitleView.xib; sourceTree = "<group>"; };
@@ -4432,6 +4438,8 @@
 		4A6A781722A502FD00B671FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A6A782022A5063600B671FA /* NewsNormalAdapter.h */,
+				4A6A782122A5063600B671FA /* NewsNormalAdapter.m */,
 				4A6A781F22A5050A00B671FA /* NBA */,
 			);
 			path = Model;
@@ -4463,6 +4471,8 @@
 		4A6A781D22A5049800B671FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A6A782322A5065A00B671FA /* NewsPhotosAdapter.h */,
+				4A6A782422A5065A00B671FA /* NewsPhotosAdapter.m */,
 				4A5AC81A2293EDDD0026BE7E /* HotList */,
 			);
 			path = Model;
@@ -9082,6 +9092,7 @@
 				4A49CE8F229C04350044540B /* Lure3.m in Sources */,
 				4A49CE8E229C04350044540B /* CommentType5Quote.m in Sources */,
 				4A6C47C42297FA0800850EC8 /* NBATopicResult.m in Sources */,
+				4A6A782222A5063600B671FA /* NewsNormalAdapter.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNavigationController.m in Sources */,
 				4A6C47E72299493600850EC8 /* MoreDiscovery.m in Sources */,
@@ -9093,6 +9104,7 @@
 				4A49CEB3229FE3F10044540B /* HotListViewModel.m in Sources */,
 				4A5AC83A2293F3310026BE7E /* GameList.m in Sources */,
 				4ABDCAC8228A6E630091E341 /* ANKTabBarController.m in Sources */,
+				4A6A782522A5065A00B671FA /* NewsPhotosAdapter.m in Sources */,
 				4A49CEAC229FC4300044540B /* NewsPhotosCell.m in Sources */,
 				4A49CE93229C04350044540B /* CommetType5Modl.m in Sources */,
 				4A5AC84C2294E1B90026BE7E /* H5DetailViewController.m in Sources */,
