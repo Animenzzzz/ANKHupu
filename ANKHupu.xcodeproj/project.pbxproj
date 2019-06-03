@@ -4350,9 +4350,6 @@
 		4A49CEAF229FD3040044540B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A5AC83C2293F5A40026BE7E /* NewsNormalCell.h */,
-				4A5AC83D2293F5A40026BE7E /* NewsNormalCell.m */,
-				4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */,
 				4A49CEAA229FC4300044540B /* NewsPhotosCell.h */,
 				4A49CEAB229FC4300044540B /* NewsPhotosCell.m */,
 				4A49CEAD229FC4440044540B /* NewsPhotosCell.xib */,
@@ -4386,26 +4383,8 @@
 			children = (
 				4A6C47812297F55A00850EC8 /* NBATopicViewController.h */,
 				4A6C47822297F55B00850EC8 /* NBATopicViewController.m */,
-				4A5AC8202293EE590026BE7E /* Model */,
-				4A5AC81F2293EE520026BE7E /* View */,
 			);
 			path = NBA;
-			sourceTree = "<group>";
-		};
-		4A5AC81F2293EE520026BE7E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4A5AC8202293EE590026BE7E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4A6C47B72297FA0700850EC8 /* NBATopicModel */,
-				4A6C47B62297F9AD00850EC8 /* NBANewsListModel */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4A5AC8492294E1320026BE7E /* H5Detail */ = {
@@ -4448,6 +4427,64 @@
 				4A6C47ED229B8AE300850EC8 /* H5DetailCommentCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4A6A781722A502FD00B671FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A6A781F22A5050A00B671FA /* NBA */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A6A781B22A5038800B671FA /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC81C2293EE430026BE7E /* NewsNormalListController.h */,
+				4A5AC81D2293EE430026BE7E /* NewsNormalListController.m */,
+				4A5AC81B2293EE270026BE7E /* NBA */,
+				4A6A781722A502FD00B671FA /* Model */,
+				4A6A781E22A504CE00B671FA /* View */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		4A6A781C22A5039000B671FA /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				4A135AC9228D68730060EAA6 /* NewsPhotosListController.h */,
+				4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */,
+				4A6A781D22A5049800B671FA /* Model */,
+				4A49CEAF229FD3040044540B /* View */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		4A6A781D22A5049800B671FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC81A2293EDDD0026BE7E /* HotList */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A6A781E22A504CE00B671FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AC83C2293F5A40026BE7E /* NewsNormalCell.h */,
+				4A5AC83D2293F5A40026BE7E /* NewsNormalCell.m */,
+				4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A6A781F22A5050A00B671FA /* NBA */ = {
+			isa = PBXGroup;
+			children = (
+				4A6C47B72297FA0700850EC8 /* NBATopicModel */,
+				4A6C47B62297F9AD00850EC8 /* NBANewsListModel */,
+			);
+			path = NBA;
 			sourceTree = "<group>";
 		};
 		4A6C47B62297F9AD00850EC8 /* NBANewsListModel */ = {
@@ -4713,16 +4750,11 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
-				4A5AC81C2293EE430026BE7E /* NewsNormalListController.h */,
-				4A5AC81D2293EE430026BE7E /* NewsNormalListController.m */,
-				4A135AC9228D68730060EAA6 /* NewsPhotosListController.h */,
-				4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */,
-				4A49CEAF229FD3040044540B /* View */,
-				4A5AC81B2293EE270026BE7E /* NBA */,
-				4A5AC81A2293EDDD0026BE7E /* HotList */,
-				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
+				4A6A781B22A5038800B671FA /* Normal */,
+				4A6A781C22A5039000B671FA /* PhotoList */,
 			);
 			path = News;
 			sourceTree = "<group>";
