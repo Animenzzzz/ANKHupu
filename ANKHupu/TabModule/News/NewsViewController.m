@@ -112,7 +112,7 @@ static NSInteger timeCount = 0;
 - (NSArray *)getOrderUserData{
     NSMutableArray *result = [[NSUserDefaults standardUserDefaults] objectForKey:kOrderUserData];
     if (!result.count) {//第一次进入
-        NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐", nil];
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐",@"NBA",@"绝地求生",@"英雄联盟", nil];
         result = [arr mutableCopy];
     }
     

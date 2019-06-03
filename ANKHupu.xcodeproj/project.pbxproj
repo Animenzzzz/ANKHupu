@@ -4497,6 +4497,42 @@
 			path = NBA;
 			sourceTree = "<group>";
 		};
+		4A6A782622A54A3000B671FA /* TabModule */ = {
+			isa = PBXGroup;
+			children = (
+				4ABDCAE7228AD1210091E341 /* News */,
+				4ABDCAE8228AD12C0091E341 /* Game */,
+				4A6A782722A54B0900B671FA /* BBS */,
+				4A6A782922A54B2700B671FA /* Shihuo */,
+				4A6C47C72299377500850EC8 /* More */,
+				4A6A782A22A54B5A00B671FA /* Other */,
+			);
+			path = TabModule;
+			sourceTree = "<group>";
+		};
+		4A6A782722A54B0900B671FA /* BBS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BBS;
+			sourceTree = "<group>";
+		};
+		4A6A782922A54B2700B671FA /* Shihuo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shihuo;
+			sourceTree = "<group>";
+		};
+		4A6A782A22A54B5A00B671FA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4A12BC822292A2AE00AF21BD /* Tags */,
+				4A5AC8492294E1320026BE7E /* H5Detail */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		4A6C47B62297F9AD00850EC8 /* NBANewsListModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -4916,11 +4952,7 @@
 		4AF660D422897F0500DFC1AF /* ANKHupu */ = {
 			isa = PBXGroup;
 			children = (
-				4A6C47C72299377500850EC8 /* More */,
-				4A5AC8492294E1320026BE7E /* H5Detail */,
-				4A12BC822292A2AE00AF21BD /* Tags */,
-				4ABDCAE8228AD12C0091E341 /* Game */,
-				4ABDCAE7228AD1210091E341 /* News */,
+				4A6A782622A54A3000B671FA /* TabModule */,
 				4AF660EE22897F3700DFC1AF /* Base */,
 				4ACD9404229296530043E05F /* Tools */,
 				4AF660EB22897F2800DFC1AF /* Third */,

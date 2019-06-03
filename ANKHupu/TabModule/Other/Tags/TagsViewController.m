@@ -282,7 +282,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     NSMutableArray *result = [[NSUserDefaults standardUserDefaults] objectForKey:key];
     if (!result.count) {//第一次进入
         if ([key isEqualToString:kOrderUserData]) {//我的频道
-            NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐", nil];
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"推荐",@"NBA",@"绝地求生",@"英雄联盟", nil];
             [self updateOrderUserDataWithKey:key multArray:arr];
             result = [arr mutableCopy];
         }else{
