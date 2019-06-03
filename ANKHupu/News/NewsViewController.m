@@ -148,22 +148,13 @@ static NSInteger timeCount = 0;
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     
-    //根据newsTag.plist文件中的cell类型 来返回
-    NSString *type = @"";
-    
     NSString *tagTitle = [_seletTagArray objectAtIndex:index];
     
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NewsTag" ofType:@"plist"];
-    NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
-    NSMutableArray *arr = [dataDic mutableCopy];
-  
-    for (NSDictionary *dic in arr) {
-        NSString *titile = [dic objectForKey:@"title"];
-        if ([titile isEqualToString:tagTitle]) {
-            type = [dic objectForKey:@"type"];
-            break;
-        }
-    }
+    NSDictionary *tmpDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    NSDictionary *dataDic = [tmpDic objectForKey:tagTitle];
+    NSString *type = [dataDic objectForKey:@"type"];
     
     if ([type isEqualToString:@"1"]) {
         NewsNormalListController *listC = [[NewsNormalListController alloc] init];

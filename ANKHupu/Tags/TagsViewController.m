@@ -287,19 +287,12 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             result = [arr mutableCopy];
         }else{
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
-            NSArray *dataDic = [NSArray arrayWithContentsOfFile:plistPath];
-            NSMutableArray *arr = [dataDic mutableCopy];
-            [arr removeObjectAtIndex:0];
-            
-            NSMutableArray *tmpArr = [NSMutableArray array];
-            for (NSDictionary *dic in arr) {
-                NSString *titile = [dic objectForKey:@"title"];
-                [tmpArr addObject:titile];
-            }
-//
-//            [arr removeObject:@"推荐"];
+            NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+            NSMutableDictionary *tmp = [dataDic mutableCopy];
+            [tmp removeObjectForKey:@"推荐"];
+            NSMutableArray *arr = [[tmp allKeys] mutableCopy];
             [self updateOrderUserDataWithKey:key multArray:arr];
-            result = [tmpArr mutableCopy];
+            result = arr;
         }
     }
     

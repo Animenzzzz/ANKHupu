@@ -93,24 +93,36 @@ static int pageNum = 0;
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:@(0) forKey:@"pre_count"];
         [params setValue:@"0" forKey:@"nid"];
-        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-                @strongify(self)
-                NSDictionary *dic =data[@"error"];
-                if (dic) {//请求报错
-                    NSString *errorInfo = [dic objectForKey:@"text"];
-                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-                    [SVProgressHUD dismissWithDelay:2.0f];
-                }else{
-                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
-                    self.dataList = [normalModel.dataArray mutableCopy];
-                    [self.tableView reloadData];
-                }
-            });
-        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-            NSLog(@"");
-        }];
+        
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+        NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
+        NSString *url = [tagDic objectForKey:@"url"];
+        
+        if ([url length]) {
+            [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    @strongify(self)
+                    NSDictionary *dic =data[@"error"];
+                    if (dic) {//请求报错
+                        NSString *errorInfo = [dic objectForKey:@"text"];
+                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                        [SVProgressHUD dismissWithDelay:2.0f];
+                    }else{
+                        NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                        self.dataList = [normalModel.dataArray mutableCopy];
+                        [self.tableView reloadData];
+                    }
+                });
+            } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+                NSLog(@"");
+            }];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"暂无URL"];
+        }
+        
+        
     });
 }
 
@@ -129,24 +141,36 @@ static int pageNum = 0;
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:@(0) forKey:@"pre_count"];
         [params setValue:@"0" forKey:@"nid"];
-        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView.mj_header endRefreshing];
-                @strongify(self)
-                NSDictionary *dic =data[@"error"];
-                if (dic) {//请求报错
-                    NSString *errorInfo = [dic objectForKey:@"text"];
-                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-                    [SVProgressHUD dismissWithDelay:2.0f];
-                }else{
-                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
-                    self.dataList = [normalModel.dataArray mutableCopy];
-                    [self.tableView reloadData];
-                }
-            });
-        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-            NSLog(@"");
-        }];
+        
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+        NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
+        NSString *url = [tagDic objectForKey:@"url"];
+        
+        if ([url length]) {
+            [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView.mj_header endRefreshing];
+                    @strongify(self)
+                    NSDictionary *dic =data[@"error"];
+                    if (dic) {//请求报错
+                        NSString *errorInfo = [dic objectForKey:@"text"];
+                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                        [SVProgressHUD dismissWithDelay:2.0f];
+                    }else{
+                        NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                        self.dataList = [normalModel.dataArray mutableCopy];
+                        [self.tableView reloadData];
+                    }
+                });
+            } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+                NSLog(@"");
+            }];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"暂无URL"];
+        }
+        
+        
     });
 }
 
@@ -166,25 +190,37 @@ static int pageNum = 0;
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:@(pageNum) forKey:@"pre_count"];
         [params setValue:model.nid forKey:@"nid"];
-        [ANKHttpServer getNBANewsWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView.mj_footer endRefreshing];
-                @strongify(self)
-                NSDictionary *dic =data[@"error"];
-                if (dic) {//请求报错
-                    NSString *errorInfo = [dic objectForKey:@"text"];
-                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-                    [SVProgressHUD dismissWithDelay:2.0f];
-                }else{
-                    pageNum++;
-                    NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
-                    self.dataList = [[self.dataList arrayByAddingObjectsFromArray:[normalModel.dataArray mutableCopy]] mutableCopy];
-                    [self.tableView reloadData];
-                }
-            });
-        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-            NSLog(@"");
-        }];
+        
+        
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NewsTag" ofType:@"plist"];
+        NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
+        NSString *url = [tagDic objectForKey:@"url"];
+        
+        if ([url length]) {
+            [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView.mj_footer endRefreshing];
+                    @strongify(self)
+                    NSDictionary *dic =data[@"error"];
+                    if (dic) {//请求报错
+                        NSString *errorInfo = [dic objectForKey:@"text"];
+                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                        [SVProgressHUD dismissWithDelay:2.0f];
+                    }else{
+                        pageNum++;
+                        NewsNormalAdapter *normalModel = [[NewsNormalAdapter alloc] initWithDictionary:data type:self.tagTitle];
+                        self.dataList = [[self.dataList arrayByAddingObjectsFromArray:[normalModel.dataArray mutableCopy]] mutableCopy];
+                        [self.tableView reloadData];
+                    }
+                });
+            } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+                NSLog(@"");
+            }];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"暂无URL"];
+        }
+        
     });
 }
 
