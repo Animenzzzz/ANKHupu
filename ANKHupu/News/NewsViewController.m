@@ -179,6 +179,11 @@ static NSInteger timeCount = 0;
     return CGRectMake(0, originY, self.view.frame.size.width, self.view.frame.size.height - originY);
 }
 
+//即将要进入的controller
+- (void)pageController:(WMPageController *)pageController willEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
+    NSLog(@"");
+}
+
 
 #pragma mark - Custom functions
 

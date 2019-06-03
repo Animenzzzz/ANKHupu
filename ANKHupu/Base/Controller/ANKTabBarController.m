@@ -30,7 +30,7 @@
     NewsViewController *news = [NewsViewController new];
     [self setTabBarStyleWithCon:news seletImage:kTab1_Selete normlImage:kTab1_Normal];
     news.menuViewStyle = WMMenuViewStyleLine;
-    news.selectIndex = 1;
+//    news.selectIndex = 1;
     news.automaticallyCalculatesItemWidths = YES;
     news.showMore = YES;
     ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
