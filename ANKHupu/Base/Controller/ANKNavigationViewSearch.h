@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ANKNavigationViewSearch : UIView
 
-+ (instancetype)shareInstance;
+//+ (ANKNavigationViewSearch *)shareInstance;
 
 @property (weak, nonatomic) IBOutlet CWCalendarLabel *cwHotSearchLab;
 

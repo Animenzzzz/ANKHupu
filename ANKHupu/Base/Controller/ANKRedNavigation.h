@@ -1,8 +1,8 @@
 //
-//  ANKNavigationController.h
+//  ANKRedNavigation.h
 //  ANKHupu
 //
-//  Created by Animenzzz on 2019/5/14.
+//  Created by Animenzzz on 2019/6/4.
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ANKNavigationController : UINavigationController
+@interface ANKRedNavigation : UINavigationController
 
 @end
 

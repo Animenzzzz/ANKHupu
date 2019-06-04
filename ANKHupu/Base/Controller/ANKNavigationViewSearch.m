@@ -33,14 +33,14 @@
 }
 
 
-+ (instancetype)shareInstance {
-    static ANKNavigationViewSearch *shareInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        shareInstance = [[[UINib nibWithNibName:@"ANKNavigationViewSearch" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    });
-    return shareInstance;
-}
+//+ (ANKNavigationViewSearch *)shareInstance {
+//    static ANKNavigationViewSearch *shareInstance = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        shareInstance = [[[UINib nibWithNibName:@"ANKNavigationViewSearch" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+//    });
+//    return shareInstance;
+//}
 
 
 - (void)searchViewTap{

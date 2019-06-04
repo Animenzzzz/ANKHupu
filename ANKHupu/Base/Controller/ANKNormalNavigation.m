@@ -6,13 +6,13 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-#import "ANKNavigationController.h"
+#import "ANKNormalNavigation.h"
 
-@interface ANKNavigationController ()
+@interface ANKNormalNavigation ()
 
 @end
 
-@implementation ANKNavigationController
+@implementation ANKNormalNavigation
 
 - (void)viewDidLoad {
     [super viewDidLoad];

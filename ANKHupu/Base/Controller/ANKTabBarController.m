@@ -8,8 +8,8 @@
 
 #import "ANKTabBarController.h"
 #import "ANKViewController.h"
-#import "ANKNavigationController.h"
-
+#import "ANKNormalNavigation.h"
+#import "ANKRedNavigation.h"
 #import "NewsViewController.h"
 #import "GameViewController.h"
 #import "MoreViewController.h"
@@ -33,23 +33,24 @@
 //    news.selectIndex = 1;
     news.automaticallyCalculatesItemWidths = YES;
     news.showMore = YES;
-    ANKNavigationController *newNav = [[ANKNavigationController alloc] initWithRootViewController:news];
+    ANKRedNavigation *newNav = [[ANKRedNavigation alloc] initWithRootViewController:news];
     
     GameViewController *game = [GameViewController new];
     [self setTabBarStyleWithCon:game seletImage:kTab2_Selete normlImage:kTab2_Normal];
-    ANKNavigationController *gameNav = [[ANKNavigationController alloc] initWithRootViewController:game];
+    ANKRedNavigation *gameNav = [[ANKRedNavigation alloc] initWithRootViewController:game];
+    
    
     ANKViewController *news2 = [ANKViewController new];
     [self setTabBarStyleWithCon:news2 seletImage:kTab3_Selete normlImage:kTab3_Normal];
-    ANKNavigationController *nav2 = [[ANKNavigationController alloc] initWithRootViewController:news2];
+    ANKRedNavigation *nav2 = [[ANKRedNavigation alloc] initWithRootViewController:news2];
     
     ANKViewController *news3 = [ANKViewController new];
     [self setTabBarStyleWithCon:news3 seletImage:kTab4_Selete normlImage:kTab4_Normal];
-    ANKNavigationController *nav3 = [[ANKNavigationController alloc] initWithRootViewController:news3];
+    ANKRedNavigation *nav3 = [[ANKRedNavigation alloc] initWithRootViewController:news3];
     
     MoreViewController *more = [MoreViewController new];
     [self setTabBarStyleWithCon:more seletImage:kTab5_Selete normlImage:kTab5_Normal];
-    ANKNavigationController *navMore = [[ANKNavigationController alloc] initWithRootViewController:more];
+    ANKNormalNavigation *navMore = [[ANKNormalNavigation alloc] initWithRootViewController:more];
 
     self.viewControllers = @[newNav,gameNav,nav2,nav3,navMore];
     
