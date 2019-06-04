@@ -87,6 +87,39 @@
     }];
 }
 
++ (void)getBBSListWithParams:(NSMutableDictionary *)params succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock{
+    
+    
+    NSString *url = @"http://bbs.mobileapi.hupu.com/3/7.3.14/recommend/getThreadsList?crt=1559633123&additionTid=-1&clientId=30980511&sign=e8b132b7e112d8c1aa7c25bf06453c1f&advId=E12875A5-1076-4C57-9488-B5311B604032&isHome=1&stamp=0&_ssid=VFQtUXVXYW4xN0Y&night=0&nav=buffer%2Cnba%2Cgear%2Cpubg%2Cchlg%2Cfollow&time_zone=Asia%2FShanghai&follow_team=%E6%B9%96%E4%BA%BA&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a";
+    
+
+    NSString *lastTid = [params objectForKey:@"lastTid"];
+    NSString *paramsString = [NSString stringWithFormat:@"lastTid=%@",lastTid];
+    NSString *fullURL = [NSString stringWithFormat:@"%@&%@",url,paramsString];
+    
+    
+    //TODO...加载不了更多了
+//    if ([lastTid isEqualToString:@"0"]) {//第一次加载
+//        fullURL = @"http://bbs.mobileapi.hupu.com/3/7.3.14/recommend/getThreadsList?crt=1559633123&additionTid=-1&clientId=30980511&sign=e8b132b7e112d8c1aa7c25bf06453c1f&advId=E12875A5-1076-4C57-9488-B5311B604032&lastTid=0&isHome=1&stamp=0&_ssid=VFQtUXVXYW4xN0Y&night=0&nav=buffer%2Cnba%2Cgear%2Cpubg%2Cchlg%2Cfollow&time_zone=Asia%2FShanghai&follow_team=%E6%B9%96%E4%BA%BA&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a";
+//    }else{//不是第一次加载
+//
+//    }
+    
+    ANKLog(@"请求URL:%@",fullURL);
+    [[ANKHttpServer sharedInstance].sessionManager GET:fullURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary *data = (NSDictionary *)responseObject;
+        //        ANKLog(@"成功请求到数据:%@",data);
+        successBlock(data);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"");
+        NSDictionary *data = (NSDictionary *)task.response;
+        failureBlock(data,error);
+    }];
+    
+}
+
 
 + (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock{
     

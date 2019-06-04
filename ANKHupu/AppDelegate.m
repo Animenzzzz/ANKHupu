@@ -27,8 +27,17 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     return YES;
 }
+
+void uncaughtExceptionHandler(NSException*exception){
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@",[exception callStackSymbols]);
+    // Internal error reporting
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -102,6 +102,15 @@
 		4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599FA2296CD4D00725DCE /* NBAType5offlineData.m */; };
 		4A959A082296CD4D00725DCE /* NBAType5forum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599FB2296CD4D00725DCE /* NBAType5forum.m */; };
 		4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6FDC5228D319800A967A0 /* HotListModel.m */; };
+		4AAA07F822A653A700F5D668 /* BBSRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07EA22A653A400F5D668 /* BBSRootModel.m */; };
+		4AAA07F922A653A700F5D668 /* BBSAdInsidePop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07EB22A653A500F5D668 /* BBSAdInsidePop.m */; };
+		4AAA07FA22A653A700F5D668 /* BBSForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07ED22A653A500F5D668 /* BBSForum.m */; };
+		4AAA07FB22A653A700F5D668 /* BBSTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07F322A653A600F5D668 /* BBSTopic.m */; };
+		4AAA07FC22A653A700F5D668 /* BBSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07F522A653A600F5D668 /* BBSData.m */; };
+		4AAA07FD22A653A700F5D668 /* BBSResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07F622A653A600F5D668 /* BBSResult.m */; };
+		4AAA07FE22A653A700F5D668 /* BBSBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA07F722A653A700F5D668 /* BBSBadge.m */; };
+		4AAA080122A65B4900F5D668 /* BBSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA080022A65B4900F5D668 /* BBSCell.m */; };
+		4AAA080322A65B5700F5D668 /* BBSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA080222A65B5700F5D668 /* BBSCell.xib */; };
 		4AB0FC4F22A134A400BB767C /* Userinfo1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC3D22A134A100BB767C /* Userinfo1.m */; };
 		4AB0FC5022A134A400BB767C /* ForumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC3E22A134A100BB767C /* ForumPhotoCell.m */; };
 		4AB0FC5122A134A400BB767C /* DataPhotoCel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0FC3F22A134A200BB767C /* DataPhotoCel.m */; };
@@ -2266,6 +2275,23 @@
 		4A9599FF2296CD4D00725DCE /* BottomAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomAd.h; sourceTree = "<group>"; };
 		4AA6FDC4228D319800A967A0 /* HotListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotListModel.h; sourceTree = "<group>"; };
 		4AA6FDC5228D319800A967A0 /* HotListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotListModel.m; sourceTree = "<group>"; };
+		4AAA07EA22A653A400F5D668 /* BBSRootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSRootModel.m; sourceTree = "<group>"; };
+		4AAA07EB22A653A500F5D668 /* BBSAdInsidePop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSAdInsidePop.m; sourceTree = "<group>"; };
+		4AAA07EC22A653A500F5D668 /* BBSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSData.h; sourceTree = "<group>"; };
+		4AAA07ED22A653A500F5D668 /* BBSForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSForum.m; sourceTree = "<group>"; };
+		4AAA07EE22A653A600F5D668 /* BBSAdInsidePop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSAdInsidePop.h; sourceTree = "<group>"; };
+		4AAA07EF22A653A600F5D668 /* BBSRootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSRootModel.h; sourceTree = "<group>"; };
+		4AAA07F022A653A600F5D668 /* BBSResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSResult.h; sourceTree = "<group>"; };
+		4AAA07F122A653A600F5D668 /* BBSTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSTopic.h; sourceTree = "<group>"; };
+		4AAA07F222A653A600F5D668 /* BBSBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSBadge.h; sourceTree = "<group>"; };
+		4AAA07F322A653A600F5D668 /* BBSTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSTopic.m; sourceTree = "<group>"; };
+		4AAA07F422A653A600F5D668 /* BBSForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSForum.h; sourceTree = "<group>"; };
+		4AAA07F522A653A600F5D668 /* BBSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSData.m; sourceTree = "<group>"; };
+		4AAA07F622A653A600F5D668 /* BBSResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSResult.m; sourceTree = "<group>"; };
+		4AAA07F722A653A700F5D668 /* BBSBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSBadge.m; sourceTree = "<group>"; };
+		4AAA07FF22A65B4900F5D668 /* BBSCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBSCell.h; sourceTree = "<group>"; };
+		4AAA080022A65B4900F5D668 /* BBSCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBSCell.m; sourceTree = "<group>"; };
+		4AAA080222A65B5700F5D668 /* BBSCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBSCell.xib; sourceTree = "<group>"; };
 		4AB0FC3D22A134A100BB767C /* Userinfo1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Userinfo1.m; sourceTree = "<group>"; };
 		4AB0FC3E22A134A100BB767C /* ForumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumPhotoCell.m; sourceTree = "<group>"; };
 		4AB0FC3F22A134A200BB767C /* DataPhotoCel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPhotoCel.m; sourceTree = "<group>"; };
@@ -4516,6 +4542,8 @@
 			children = (
 				4AD9C78522A6419D009047B5 /* BBSViewController.h */,
 				4AD9C78622A6419D009047B5 /* BBSViewController.m */,
+				4AAA07D322A651F500F5D668 /* View */,
+				4AAA07D222A651EB00F5D668 /* Model */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -4642,6 +4670,37 @@
 				4AB0FC5822A13D4800BB767C /* DetailInfo */,
 			);
 			path = NBANews_Type5;
+			sourceTree = "<group>";
+		};
+		4AAA07D222A651EB00F5D668 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AAA07EE22A653A600F5D668 /* BBSAdInsidePop.h */,
+				4AAA07EB22A653A500F5D668 /* BBSAdInsidePop.m */,
+				4AAA07F222A653A600F5D668 /* BBSBadge.h */,
+				4AAA07F722A653A700F5D668 /* BBSBadge.m */,
+				4AAA07EC22A653A500F5D668 /* BBSData.h */,
+				4AAA07F522A653A600F5D668 /* BBSData.m */,
+				4AAA07F422A653A600F5D668 /* BBSForum.h */,
+				4AAA07ED22A653A500F5D668 /* BBSForum.m */,
+				4AAA07F022A653A600F5D668 /* BBSResult.h */,
+				4AAA07F622A653A600F5D668 /* BBSResult.m */,
+				4AAA07EF22A653A600F5D668 /* BBSRootModel.h */,
+				4AAA07EA22A653A400F5D668 /* BBSRootModel.m */,
+				4AAA07F122A653A600F5D668 /* BBSTopic.h */,
+				4AAA07F322A653A600F5D668 /* BBSTopic.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4AAA07D322A651F500F5D668 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AAA07FF22A65B4900F5D668 /* BBSCell.h */,
+				4AAA080022A65B4900F5D668 /* BBSCell.m */,
+				4AAA080222A65B5700F5D668 /* BBSCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4AB0FC3C22A1346A00BB767C /* HotListPhotoCell */ = {
@@ -8941,6 +9000,7 @@
 				4AF66B4B228A64D100DFC1AF /* person_author_ic@3x.png in Resources */,
 				4AF66DE6228A64D100DFC1AF /* unadd_ic@3x.png in Resources */,
 				4AF66CAA228A64D100DFC1AF /* tab_news_btn@3x.png in Resources */,
+				4AAA080322A65B5700F5D668 /* BBSCell.xib in Resources */,
 				4AF66EC5228A64D200DFC1AF /* guess_hupu_night@3x.png in Resources */,
 				4AF66B28228A64D100DFC1AF /* 弹幕开关-on_night@2x.png in Resources */,
 				4AF66ACC228A64D100DFC1AF /* Career_bg@2x.png in Resources */,
@@ -9103,6 +9163,7 @@
 				4AB0FC4F22A134A400BB767C /* Userinfo1.m in Sources */,
 				4ACD9401229276190043E05F /* WeakProxy.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
+				4AAA07FA22A653A700F5D668 /* BBSForum.m in Sources */,
 				4A6C47EC229B8AD900850EC8 /* H5DetailCommentCell.m in Sources */,
 				4A5AC8342293F3310026BE7E /* NBAModel.m in Sources */,
 				4A9599AC2296C6D000725DCE /* H5DetailTitleCell.m in Sources */,
@@ -9120,7 +9181,9 @@
 				4A6A782222A5063600B671FA /* NewsNormalAdapter.m in Sources */,
 				4AF660ED22897F2800DFC1AF /* BYFoundationLog.m in Sources */,
 				4ABDCAD8228A97D20091E341 /* ANKNormalNavigation.m in Sources */,
+				4AAA07F922A653A700F5D668 /* BBSAdInsidePop.m in Sources */,
 				4A6C47E72299493600850EC8 /* MoreDiscovery.m in Sources */,
+				4AAA07FD22A653A700F5D668 /* BBSResult.m in Sources */,
 				4A6C47C22297FA0800850EC8 /* NBATopicNew.m in Sources */,
 				4AB0FC7D22A140F400BB767C /* HotListCommentList.m in Sources */,
 				4A5AC8382293F3310026BE7E /* NBAData.m in Sources */,
@@ -9135,6 +9198,7 @@
 				4A5AC84C2294E1B90026BE7E /* H5DetailViewController.m in Sources */,
 				4ACD9407229296760043E05F /* ResUtil.m in Sources */,
 				4ABDCAF0228AD2070091E341 /* GameViewController.m in Sources */,
+				4AAA07FC22A653A700F5D668 /* BBSData.m in Sources */,
 				4AA6FDC6228D319800A967A0 /* HotListModel.m in Sources */,
 				4A49CE91229C04350044540B /* CommentAttr.m in Sources */,
 				4A6C47CF2299390300850EC8 /* MoreControllCell.m in Sources */,
@@ -9153,6 +9217,7 @@
 				4A959A022296CD4D00725DCE /* NBANewType5Userinfo.m in Sources */,
 				4A5AC8372293F3310026BE7E /* RecommendData.m in Sources */,
 				4A64E3322294EF31007CE6E7 /* H5New.m in Sources */,
+				4AAA07F822A653A700F5D668 /* BBSRootModel.m in Sources */,
 				4A6C484E229B99CD00850EC8 /* CommentModel.m in Sources */,
 				4A5AC8332293F3310026BE7E /* NBAResult.m in Sources */,
 				4A8112AB228D98110036D3C5 /* Reachability.m in Sources */,
@@ -9171,7 +9236,9 @@
 				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,
 				4AB0FC8022A140F400BB767C /* HotListAttr.m in Sources */,
 				4A6C484F229B99CD00850EC8 /* LightComment.m in Sources */,
+				4AAA080122A65B4900F5D668 /* BBSCell.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
+				4AAA07FB22A653A700F5D668 /* BBSTopic.m in Sources */,
 				4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
@@ -9187,6 +9254,7 @@
 				4AD9C78222A60EC7009047B5 /* ANKRedNavigation.m in Sources */,
 				4A6C47C52297FA0800850EC8 /* NBATopicModel.m in Sources */,
 				4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */,
+				4AAA07FE22A653A700F5D668 /* BBSBadge.m in Sources */,
 				4A12BC852292A2D100AF21BD /* TagsViewController.m in Sources */,
 				4A49CE94229C04350044540B /* CommetType5result.m in Sources */,
 				4A959A082296CD4D00725DCE /* NBAType5forum.m in Sources */,

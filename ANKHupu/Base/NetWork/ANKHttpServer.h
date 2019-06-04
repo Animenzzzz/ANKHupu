@@ -24,6 +24,9 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 //热搜
 + (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock;
 
+//社区列表
++ (void)getBBSListWithParams:(NSMutableDictionary *)params succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
+
 //推荐
 + (void)getHotListWithSuccesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
