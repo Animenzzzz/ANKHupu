@@ -14,6 +14,7 @@
 #import "GameViewController.h"
 #import "MoreViewController.h"
 #import "FPSLable.h"
+#import "BBSViewController.h"
 
 @interface ANKTabBarController ()
 
@@ -30,9 +31,9 @@
     NewsViewController *news = [NewsViewController new];
     [self setTabBarStyleWithCon:news seletImage:kTab1_Selete normlImage:kTab1_Normal];
     news.menuViewStyle = WMMenuViewStyleLine;
-//    news.selectIndex = 1;
     news.automaticallyCalculatesItemWidths = YES;
     news.showMore = YES;
+    news.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
     ANKRedNavigation *newNav = [[ANKRedNavigation alloc] initWithRootViewController:news];
     
     GameViewController *game = [GameViewController new];
@@ -40,9 +41,12 @@
     ANKRedNavigation *gameNav = [[ANKRedNavigation alloc] initWithRootViewController:game];
     
    
-    ANKViewController *news2 = [ANKViewController new];
-    [self setTabBarStyleWithCon:news2 seletImage:kTab3_Selete normlImage:kTab3_Normal];
-    ANKRedNavigation *nav2 = [[ANKRedNavigation alloc] initWithRootViewController:news2];
+    BBSViewController *bbsControler = [BBSViewController new];
+    [self setTabBarStyleWithCon:bbsControler seletImage:kTab3_Selete normlImage:kTab3_Normal];
+    bbsControler.menuViewStyle = WMMenuViewStyleLine;
+    bbsControler.automaticallyCalculatesItemWidths = YES;
+    bbsControler.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
+    ANKRedNavigation *nav2 = [[ANKRedNavigation alloc] initWithRootViewController:bbsControler];
     
     ANKViewController *news3 = [ANKViewController new];
     [self setTabBarStyleWithCon:news3 seletImage:kTab4_Selete normlImage:kTab4_Normal];

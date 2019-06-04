@@ -129,6 +129,7 @@
 		4ACD9401229276190043E05F /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9400229276190043E05F /* WeakProxy.m */; };
 		4ACD9407229296760043E05F /* ResUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9406229296760043E05F /* ResUtil.m */; };
 		4AD9C78222A60EC7009047B5 /* ANKRedNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9C78122A60EC7009047B5 /* ANKRedNavigation.m */; };
+		4AD9C78722A6419D009047B5 /* BBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9C78622A6419D009047B5 /* BBSViewController.m */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
 		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
@@ -2317,6 +2318,8 @@
 		4ACD9406229296760043E05F /* ResUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResUtil.m; sourceTree = "<group>"; };
 		4AD9C78022A60EC7009047B5 /* ANKRedNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKRedNavigation.h; sourceTree = "<group>"; };
 		4AD9C78122A60EC7009047B5 /* ANKRedNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKRedNavigation.m; sourceTree = "<group>"; };
+		4AD9C78522A6419D009047B5 /* BBSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBSViewController.h; sourceTree = "<group>"; };
+		4AD9C78622A6419D009047B5 /* BBSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBSViewController.m; sourceTree = "<group>"; };
 		4AE5F70F228BB92F00BFC9C8 /* UILabel+AutoFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoFit.h"; sourceTree = "<group>"; };
 		4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoFit.m"; sourceTree = "<group>"; };
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
@@ -4511,6 +4514,8 @@
 		4A6A782722A54B0900B671FA /* BBS */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9C78522A6419D009047B5 /* BBSViewController.h */,
+				4AD9C78622A6419D009047B5 /* BBSViewController.m */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -9160,6 +9165,7 @@
 				4AEF80B4228CFA01001E56B3 /* WMMenuItem.m in Sources */,
 				4A6C47CA229937A600850EC8 /* MoreViewController.m in Sources */,
 				4A5AC81E2293EE430026BE7E /* NewsNormalListController.m in Sources */,
+				4AD9C78722A6419D009047B5 /* BBSViewController.m in Sources */,
 				4AEF80B7228CFA01001E56B3 /* WMProgressView.m in Sources */,
 				4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */,
 				4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */,
