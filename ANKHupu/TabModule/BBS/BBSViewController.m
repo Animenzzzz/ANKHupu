@@ -106,6 +106,8 @@
                     NSString *errorInfo = [dic objectForKey:@"text"];
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
+                }else if([data allKeys].count == 0){
+                    [SVProgressHUD showInfoWithStatus:@"请求不到数据"];
                 }else{
                     
                     if ([data objectForKey:@"text"]) {
@@ -153,6 +155,8 @@
                     NSString *errorInfo = [dic objectForKey:@"text"];
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
+                }else if([data allKeys].count == 0){
+                    [SVProgressHUD showInfoWithStatus:@"请求不到数据"];
                 }else{
                     
                     if ([data objectForKey:@"text"]) {
@@ -202,6 +206,8 @@
                     NSString *errorInfo = [dic objectForKey:@"text"];
                     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
                     [SVProgressHUD dismissWithDelay:2.0f];
+                }else if([data allKeys].count == 0){
+                    [SVProgressHUD showInfoWithStatus:@"请求不到数据"];
                 }else{
                    
                     if ([data objectForKey:@"text"]) {
