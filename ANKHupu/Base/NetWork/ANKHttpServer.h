@@ -21,6 +21,10 @@ typedef void (^ANKFailureBlock) (NSDictionary *data,NSError *error);
 //新闻_详情
 + (void)getNewsDetailWithParams:(nullable NSMutableDictionary *)params url:(NSString *)url succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
 
+
+//比赛列表
++ (void)getGameListWithURL:(NSString *)url params:(NSMutableDictionary *)params succesBlock:(ANKSuccessBlock)successBlock failure:(ANKFailureBlock)failureBlock;
+
 //热搜
 + (void)getHotSearchWithResponData:(void(^)(NSMutableArray *))successBlock failure:(ANKFailureBlock)failureBlock;
 

@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "ANKHttpServer.h"
+#import "MatchesRootModel.h"
 @interface GameViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) NSMutableArray *seletTagArray;
@@ -53,8 +54,8 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorColor = kSeperatLineColor;//间隔线
-        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
-        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
+//        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
+//        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
     
     return _tableView;
@@ -80,50 +81,49 @@
 
 - (void)requestData {
     
-//    [SVProgressHUD showWithStatus:@"加载中..."];
-//    if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
-//        [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
-//        [SVProgressHUD dismissWithDelay:2.0f];
-//        return;
-//    }
-//
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-//        @weakify(self)
-//
-//
-//        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//        [params setValue:@"0" forKey:@"lastTid"];
-//
-//
-//        [ANKHttpServer getBBSListWithParams:params succesBlock:^(NSDictionary * _Nonnull data) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [SVProgressHUD dismiss];
-//                @strongify(self)
-//                NSDictionary *dic =data[@"error"];
-//                if (dic) {//请求报错
-//                    NSString *errorInfo = [dic objectForKey:@"text"];
-//                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
-//                    [SVProgressHUD dismissWithDelay:2.0f];
-//                }else if([data allKeys].count == 0){
-//                    [SVProgressHUD showInfoWithStatus:@"请求不到数据"];
-//                }else{
-//
-//                    if ([data objectForKey:@"text"]) {
-//                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",[data objectForKey:@"text"]]];
-//                        [SVProgressHUD dismissWithDelay:2.0f];
-//                        return ;
-//                    }
-//
-//                    BBSRootModel *mode = [[BBSRootModel alloc] initWithDictionary:data];
-//                    self.dataList = [mode.result.data mutableCopy];
-//                    [self.tableView reloadData];
-//                }
-//            });
-//        } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-//            NSLog(@"");
-//        }];
-//
-//    });
+    [SVProgressHUD showWithStatus:@"加载中..."];
+    if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
+        [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
+        [SVProgressHUD dismissWithDelay:2.0f];
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @weakify(self)
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        [params setValue:@(0) forKey:@"preload"];
+        
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"GamesUrl" ofType:@"plist"];
+        NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        NSDictionary *tagDic = [dataDic objectForKey:@"NBA"];
+        NSString *url = [tagDic objectForKey:@"url"];
+        
+        if ([url length]) {
+            [ANKHttpServer getGameListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    @strongify(self)
+                    NSDictionary *dic =data[@"error"];
+                    if (dic) {//请求报错
+                        NSString *errorInfo = [dic objectForKey:@"text"];
+                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                        [SVProgressHUD dismissWithDelay:2.0f];
+                    }else{
+                        MatchesRootModel *normalModel = [[MatchesRootModel alloc] initWithDictionary:data];
+                        self.dataList = [normalModel.result.games mutableCopy];
+                        [self.tableView reloadData];
+                        NSLog(@"");
+                    }
+                });
+            } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+                NSLog(@"");
+            }];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"暂无URL"];
+        }
+        
+        
+    });
 }
 
 //下拉刷新
@@ -232,6 +232,11 @@
     if (!self.dataList.count) {
         return 0;
     }
+    MatchesGame *game = [self.dataList objectAtIndex:section];
+    return game.data.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return self.dataList.count;
 }
@@ -272,6 +277,34 @@
 //
 //    return newH;
     return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (!self.dataList.count) {
+        return nil;
+    }
+    MatchesGame *game = [self.dataList objectAtIndex:section];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+    view.backgroundColor = kSeperatLineColor;
+    UILabel *la = [UILabel new];
+    la.text = game.dateBlock;
+    [view addSubview:la];
+    [la mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(20);
+        make.centerY.mas_equalTo(view.mas_centerY);
+    }];
+    return view;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
