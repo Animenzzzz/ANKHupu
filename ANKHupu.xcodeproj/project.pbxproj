@@ -98,6 +98,8 @@
 		4A7B746B22AE7085008E9A8B /* MatchesResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B746022AE7083008E9A8B /* MatchesResult.m */; };
 		4A7B746C22AE7085008E9A8B /* MatchesRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B746322AE7084008E9A8B /* MatchesRootModel.m */; };
 		4A7B746D22AE7085008E9A8B /* MatchesAway.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B746422AE7084008E9A8B /* MatchesAway.m */; };
+		4A7B747022AE7CE6008E9A8B /* GameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B746F22AE7CE6008E9A8B /* GameCell.m */; };
+		4A7B747222AE7D70008E9A8B /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B747122AE7D70008E9A8B /* GameCell.xib */; };
 		4A8112A7228D97C40036D3C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */; };
 		4A8112AB228D98110036D3C5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112A9228D98110036D3C5 /* Reachability.m */; };
 		4A8112AE228D98440036D3C5 /* ANKReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8112AD228D98440036D3C5 /* ANKReachabilityManager.m */; };
@@ -2277,6 +2279,9 @@
 		4A7B746222AE7084008E9A8B /* MatchesStatu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesStatu.h; sourceTree = "<group>"; };
 		4A7B746322AE7084008E9A8B /* MatchesRootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesRootModel.m; sourceTree = "<group>"; };
 		4A7B746422AE7084008E9A8B /* MatchesAway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesAway.m; sourceTree = "<group>"; };
+		4A7B746E22AE7CE6008E9A8B /* GameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameCell.h; path = ANKHupu/TabModule/Game/GameCell.h; sourceTree = SOURCE_ROOT; };
+		4A7B746F22AE7CE6008E9A8B /* GameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameCell.m; path = ANKHupu/TabModule/Game/GameCell.m; sourceTree = SOURCE_ROOT; };
+		4A7B747122AE7D70008E9A8B /* GameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameCell.xib; path = ANKHupu/TabModule/Game/GameCell.xib; sourceTree = SOURCE_ROOT; };
 		4A8112A6228D97C40036D3C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A8112A9228D98110036D3C5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4A8112AA228D98110036D3C5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -4907,6 +4912,9 @@
 		4ABDCAF1228AD2480091E341 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A7B746E22AE7CE6008E9A8B /* GameCell.h */,
+				4A7B746F22AE7CE6008E9A8B /* GameCell.m */,
+				4A7B747122AE7D70008E9A8B /* GameCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -7686,6 +7694,7 @@
 				4AF66B3B228A64D100DFC1AF /* news_ic_comment_msg@3x.png in Resources */,
 				4AF66E30228A64D200DFC1AF /* left_more_ic_1@2x.png in Resources */,
 				4AF66CE1228A64D100DFC1AF /* whiteArrow.png in Resources */,
+				4A7B747222AE7D70008E9A8B /* GameCell.xib in Resources */,
 				4AF66FC5228A64D200DFC1AF /* bbsautoalerttipsclose_night@2x.png in Resources */,
 				4AF66BB9228A64D100DFC1AF /* post_上传失败@2x.png in Resources */,
 				4AF66CBB228A64D100DFC1AF /* tab_live_1_night@3x.png in Resources */,
@@ -9295,6 +9304,7 @@
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4AAA07FB22A653A700F5D668 /* BBSTopic.m in Sources */,
 				4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */,
+				4A7B747022AE7CE6008E9A8B /* GameCell.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4A49CE95229C04350044540B /* CommentDatalist.m in Sources */,

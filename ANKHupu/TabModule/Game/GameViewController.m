@@ -9,6 +9,8 @@
 #import "GameViewController.h"
 #import "ANKHttpServer.h"
 #import "MatchesRootModel.h"
+#import "GameCell.h"
+
 @interface GameViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) NSMutableArray *seletTagArray;
@@ -36,9 +38,9 @@
 - (void)initViews{
     
     if (@available(iOS 11.0, *)) {
-        self.tableView.estimatedRowHeight           = 0;
-        self.tableView.estimatedSectionFooterHeight = 0;
-        self.tableView.estimatedSectionHeaderHeight = 0;
+//        self.tableView.estimatedRowHeight           = 0;
+//        self.tableView.estimatedSectionFooterHeight = 0;
+//        self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
     }
     
@@ -245,38 +247,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    BBSCell *cell = (BBSCell *)[[[UINib nibWithNibName:@"BBSCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//
-//    [cell cellBindWithDataModel:[self.dataList objectAtIndex:indexPath.row]];
+    GameCell *cell = (GameCell *)[[[UINib nibWithNibName:@"GameCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+
+    MatchesGame *game = [self.dataList objectAtIndex:indexPath.section];
+    [cell cellBindWithModel:[game.data objectAtIndex:indexPath.row]];
     
-    return [UITableViewCell new];
+    return cell;
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    if (!self.dataList.count) {
-//        return 0;
-//    }
-//
-//    BBSData *modeldata = [self.dataList objectAtIndex:indexPath.row];
-//
-//    BBSCell *cell = (BBSCell *)[[[UINib nibWithNibName:@"BBSCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-//    CGFloat OrignHeigh = cell.titLbHeight.constant;
-//
-//    NSString *titConten = modeldata.title;
-//
-//    CGFloat titH = 21;
-//    if ([titConten length]) {
-//
-//        titH = [UILabel getHeightByWidth:(SCREEN_WIDTH - cell.titLbLeft.constant - cell.titLbRight.constant) title:titConten font:cell.titleLab.font lineSpacing:5.0];
-//    }
-//
-//
-//
-//    CGFloat newH = cell.height - OrignHeigh + titH;
-//
-//    return newH;
-    return 30;
+    GameCell *cell = (GameCell *)[[[UINib nibWithNibName:@"GameCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    
+    return cell.height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
