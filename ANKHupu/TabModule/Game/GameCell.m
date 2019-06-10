@@ -30,10 +30,10 @@
 }
 
 - (void)setFrame:(CGRect)frame{
-    frame.origin.y += kCellSeparaOffset;
-    frame.size.height -= kCellSeparaOffset;
-    frame.origin.x += kCellSeparaOffset;
-    frame.size.width -= kCellSeparaOffset;
+    frame.origin.y += 8;
+    frame.size.height -= 8;
+    frame.origin.x += 8;
+    frame.size.width -= 16;
     [super setFrame:frame];
 }
 

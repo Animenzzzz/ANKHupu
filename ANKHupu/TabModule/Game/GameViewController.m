@@ -51,7 +51,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.backgroundColor = kGrayBackGroundColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -112,7 +112,7 @@
                         [SVProgressHUD dismissWithDelay:2.0f];
                     }else{
                         MatchesRootModel *normalModel = [[MatchesRootModel alloc] initWithDictionary:data];
-                        self.dataList = [normalModel.result.games mutableCopy];
+                        self.dataList = [[[normalModel.result.games reverseObjectEnumerator] allObjects] mutableCopy];
                         [self.tableView reloadData];
                         NSLog(@"");
                     }
