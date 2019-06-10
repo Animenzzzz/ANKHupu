@@ -38,6 +38,9 @@
     
     GameViewController *game = [GameViewController new];
     [self setTabBarStyleWithCon:game seletImage:kTab2_Selete normlImage:kTab2_Normal];
+    game.menuViewStyle = WMMenuViewStyleLine;
+    game.automaticallyCalculatesItemWidths = YES;
+    game.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
     ANKRedNavigation *gameNav = [[ANKRedNavigation alloc] initWithRootViewController:game];
     
    
