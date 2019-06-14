@@ -94,10 +94,10 @@ static int pageNum = 0;
         [params setValue:@(0) forKey:@"pre_count"];
         [params setValue:@"0" forKey:@"nid"];
         
-        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"URLInfo" ofType:@"plist"];
         NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
-        NSString *url = [tagDic objectForKey:@"url"];
+        NSString *url = [tagDic objectForKey:@"urlNews"];
         
         if ([url length]) {
             [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
@@ -142,10 +142,10 @@ static int pageNum = 0;
         [params setValue:@(0) forKey:@"pre_count"];
         [params setValue:@"0" forKey:@"nid"];
         
-        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"URLInfo" ofType:@"plist"];
         NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
-        NSString *url = [tagDic objectForKey:@"url"];
+        NSString *url = [tagDic objectForKey:@"urlNews"];
         
         if ([url length]) {
             [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
@@ -192,10 +192,10 @@ static int pageNum = 0;
         [params setValue:model.nid forKey:@"nid"];
         
         
-        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NewsTag" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"URLInfo" ofType:@"plist"];
         NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         NSDictionary *tagDic = [dataDic objectForKey:self.tagTitle];
-        NSString *url = [tagDic objectForKey:@"url"];
+        NSString *url = [tagDic objectForKey:@"urlNews"];
         
         if ([url length]) {
             [ANKHttpServer getNewsListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {

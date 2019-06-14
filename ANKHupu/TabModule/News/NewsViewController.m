@@ -102,7 +102,7 @@
     
     NSString *tagTitle = [_seletTagArray objectAtIndex:index];
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NewsTag" ofType:@"plist"];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"URLInfo" ofType:@"plist"];
     NSDictionary *tmpDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
     NSDictionary *dataDic = [tmpDic objectForKey:tagTitle];

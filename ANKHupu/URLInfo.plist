@@ -17,7 +17,9 @@
 		<string>NBA</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
+		<string>https://games.mobileapi.hupu.com/3/7.3.12/nba/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
+		<key>urlMatchs</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.14/nba/getMatchs?time_zone=Asia%2FShanghai&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;night=0&amp;crt=1560161043&amp;clientId=30980511&amp;_ssid=VFQtUXVXYW4xN0Y&amp;sign=121b7dd294ef908ec89116f1446c596b</string>
 	</dict>
 	<key>视频</key>
@@ -26,7 +28,7 @@
 		<string>视频</string>
 		<key>type</key>
 		<string>2</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string></string>
 	</dict>
 	<key>影视娱乐</key>
@@ -35,7 +37,7 @@
 		<string>影视娱乐</string>
 		<key>type</key>
 		<string>2</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string></string>
 	</dict>
 	<key>绝地求生</key>
@@ -44,7 +46,7 @@
 		<string>绝地求生</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/pubg/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>关注</key>
@@ -53,7 +55,7 @@
 		<string>关注</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/follow/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>数码</key>
@@ -62,7 +64,7 @@
 		<string>数码</string>
 		<key>type</key>
 		<string>2</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string></string>
 	</dict>
 	<key>装备</key>
@@ -71,7 +73,7 @@
 		<string>装备</string>
 		<key>type</key>
 		<string>2</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string></string>
 	</dict>
 	<key>英雄联盟</key>
@@ -80,7 +82,7 @@
 		<string>英雄联盟</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/lol/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>中国足球</key>
@@ -89,7 +91,7 @@
 		<string>中国足球</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/csl/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>欧洲杯</key>
@@ -98,7 +100,7 @@
 		<string>欧洲杯</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/eurocup/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>意甲</key>
@@ -107,7 +109,7 @@
 		<string>意甲</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/seri/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>德甲</key>
@@ -116,7 +118,7 @@
 		<string>德甲</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/bund/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>欧冠</key>
@@ -125,7 +127,7 @@
 		<string>欧冠</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/chlg/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>法甲</key>
@@ -134,7 +136,7 @@
 		<string>法甲</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/fran/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>英超</key>
@@ -143,7 +145,7 @@
 		<string>英超</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/epl/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>西甲</key>
@@ -152,7 +154,7 @@
 		<string>西甲</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/liga/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>路人王</key>
@@ -161,7 +163,7 @@
 		<string>路人王</string>
 		<key>type</key>
 		<string>0</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string></string>
 	</dict>
 	<key>王者荣耀</key>
@@ -170,7 +172,7 @@
 		<string>王者荣耀</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/kog/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>中国篮球</key>
@@ -179,7 +181,7 @@
 		<string>中国篮球</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/cba/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>国际足球</key>
@@ -188,7 +190,7 @@
 		<string>国际足球</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/fifa/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>型男</key>
@@ -197,7 +199,7 @@
 		<string>型男</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/stylish/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>欧联</key>
@@ -206,7 +208,7 @@
 		<string>欧联</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/uefael/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 	<key>联合会杯</key>
@@ -215,7 +217,7 @@
 		<string>联合会杯</string>
 		<key>type</key>
 		<string>1</string>
-		<key>url</key>
+		<key>urlNews</key>
 		<string>https://games.mobileapi.hupu.com/3/7.3.12/confederationscup/getNews?news_first_navi=NBA&amp;first_navi_numbers=2&amp;preload=0&amp;direc=next&amp;num=20&amp;client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&amp;clientId=30980511&amp;advId=E12875A5-1076-4C57-9488-B5311B604032&amp;_ssid=VFQtUXVXYW4xN0Y&amp;night=0&amp;crt=1557906702&amp;time_zone=Asia%2FShanghai&amp;sign=3366090f5a1d473a7b9ff3904c816af7</string>
 	</dict>
 </dict>

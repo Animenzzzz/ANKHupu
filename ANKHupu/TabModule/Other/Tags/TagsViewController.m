@@ -286,7 +286,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             [self updateOrderUserDataWithKey:key multArray:arr];
             result = [arr mutableCopy];
         }else{
-            NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"NewsTag" ofType:@"plist"];
+            NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"URLInfo" ofType:@"plist"];
             NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
             NSMutableDictionary *tmp = [dataDic mutableCopy];
             [tmp removeObjectForKey:@"推荐"];

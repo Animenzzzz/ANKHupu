@@ -88,7 +88,6 @@
 		4A6C484E229B99CD00850EC8 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C4848229B99CD00850EC8 /* CommentModel.m */; };
 		4A6C484F229B99CD00850EC8 /* LightComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C4849229B99CD00850EC8 /* LightComment.m */; };
 		4A6C4850229B99CD00850EC8 /* CommentLinkNew.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C484A229B99CD00850EC8 /* CommentLinkNew.m */; };
-		4A7B743622AE63E8008E9A8B /* GamesUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B743522AE63E7008E9A8B /* GamesUrl.plist */; };
 		4A7B746522AE7085008E9A8B /* MatchesData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B745422AE7080008E9A8B /* MatchesData.m */; };
 		4A7B746622AE7085008E9A8B /* MatchesDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B745622AE7081008E9A8B /* MatchesDay.m */; };
 		4A7B746722AE7085008E9A8B /* MatchesAdGameBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B745A22AE7082008E9A8B /* MatchesAdGameBorder.m */; };
@@ -153,7 +152,7 @@
 		4AD9C78722A6419D009047B5 /* BBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9C78622A6419D009047B5 /* BBSViewController.m */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
-		4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */; };
+		4AE5F718228BED4D00BFC9C8 /* URLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* URLInfo.plist */; };
 		4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */; };
 		4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */; };
 		4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80A5228CFA01001E56B3 /* WMPageController.m */; };
@@ -2260,7 +2259,6 @@
 		4A6C4848229B99CD00850EC8 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		4A6C4849229B99CD00850EC8 /* LightComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightComment.m; sourceTree = "<group>"; };
 		4A6C484A229B99CD00850EC8 /* CommentLinkNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentLinkNew.m; sourceTree = "<group>"; };
-		4A7B743522AE63E7008E9A8B /* GamesUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GamesUrl.plist; sourceTree = "<group>"; };
 		4A7B745322AE7080008E9A8B /* MatchesAdGameBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesAdGameBorder.h; sourceTree = "<group>"; };
 		4A7B745422AE7080008E9A8B /* MatchesData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesData.m; sourceTree = "<group>"; };
 		4A7B745522AE7080008E9A8B /* MatchesDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesDay.h; sourceTree = "<group>"; };
@@ -2384,7 +2382,7 @@
 		4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoFit.m"; sourceTree = "<group>"; };
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		4AE5F713228BB96D00BFC9C8 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
-		4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NewsTag.plist; sourceTree = "<group>"; };
+		4AE5F717228BED4D00BFC9C8 /* URLInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLInfo.plist; sourceTree = "<group>"; };
 		4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCalendarLabel.m; sourceTree = "<group>"; };
 		4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCalendarLabel.h; sourceTree = "<group>"; };
 		4AE5F71E228C080700BFC9C8 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
@@ -4879,7 +4877,6 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				4AE5F717228BED4D00BFC9C8 /* NewsTag.plist */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
 				4A6A781B22A5038800B671FA /* Normal */,
@@ -4891,7 +4888,6 @@
 		4ABDCAE8228AD12C0091E341 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				4A7B743522AE63E7008E9A8B /* GamesUrl.plist */,
 				4ABDCAEE228AD2070091E341 /* GameViewController.h */,
 				4ABDCAEF228AD2070091E341 /* GameViewController.m */,
 				4ABDCAF1228AD2480091E341 /* View */,
@@ -5071,6 +5067,7 @@
 				4AF660DE22897F0600DFC1AF /* Assets.xcassets */,
 				4AF660E022897F0600DFC1AF /* LaunchScreen.storyboard */,
 				4AF660E322897F0600DFC1AF /* Info.plist */,
+				4AE5F717228BED4D00BFC9C8 /* URLInfo.plist */,
 				4AF660E422897F0600DFC1AF /* main.m */,
 				4AF660F522897F4F00DFC1AF /* AnkHupuPrefixHeader.pch */,
 			);
@@ -8326,7 +8323,6 @@
 				4AF66B80228A64D100DFC1AF /* default_forum_logo@3x.png in Resources */,
 				4AF66B32228A64D100DFC1AF /* unadd_ic_night@2x.png in Resources */,
 				4AF66DD5228A64D100DFC1AF /* btn_selectyellow_1@2x.png in Resources */,
-				4A7B743622AE63E8008E9A8B /* GamesUrl.plist in Resources */,
 				4AF66B87228A64D100DFC1AF /* mjrefresh_arrow@2x.png in Resources */,
 				4A6C47D12299391000850EC8 /* MoreControllCell.xib in Resources */,
 				4AF66EC7228A64D200DFC1AF /* guess_gold_night@2x.png in Resources */,
@@ -8710,7 +8706,7 @@
 				4AF66C1F228A64D100DFC1AF /* guess_winning_bg_night@3x.png in Resources */,
 				4AF66A2E228A64D000DFC1AF /* nbaTeam_btn_1@2x.png in Resources */,
 				4AF66B56228A64D100DFC1AF /* football_weather_clear_night@3x.png in Resources */,
-				4AE5F718228BED4D00BFC9C8 /* NewsTag.plist in Resources */,
+				4AE5F718228BED4D00BFC9C8 /* URLInfo.plist in Resources */,
 				4AF66FEB228A64D200DFC1AF /* open_box_more_gold_pic_night@3x.png in Resources */,
 				4AF66987228A64D000DFC1AF /* hpgm_home_money_ic_night@3x.png in Resources */,
 				4AF66A42228A64D000DFC1AF /* rank_ic@2x.png in Resources */,

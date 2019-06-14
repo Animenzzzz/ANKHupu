@@ -93,10 +93,10 @@
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setValue:@(0) forKey:@"preload"];
         
-        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"GamesUrl" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"URLInfo" ofType:@"plist"];
         NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile:plistPath];
         NSDictionary *tagDic = [dataDic objectForKey:@"NBA"];
-        NSString *url = [tagDic objectForKey:@"url"];
+        NSString *url = [tagDic objectForKey:@"urlMatchs"];
         
         if ([url length]) {
             [ANKHttpServer getGameListWithURL:url params:params succesBlock:^(NSDictionary * _Nonnull data) {
@@ -275,7 +275,7 @@
     MatchesGame *game = [self.dataList objectAtIndex:section];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TableViewSectionHeaderHeight)];
-    view.backgroundColor = [UIColor colorWithHexString:@"EBEBEB"];
+    view.backgroundColor = [UIColor colorWithHexString:@"F6F6F6"];
     
     UILabel *la = [UILabel new];
     la.text = game.dateBlock;
@@ -289,7 +289,7 @@
     }];
     
     UIView *topLine = [UIView new];
-//    topLine.backgroundColor = [UIColor lightGrayColor];
+    topLine.backgroundColor = [UIColor colorWithHexString:@"DADADA"];
     [view addSubview:topLine];
     [topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
@@ -299,7 +299,7 @@
     }];
     
     UIView *btmLine = [UIView new];
-//    btmLine.backgroundColor = [UIColor lightGrayColor];
+    btmLine.backgroundColor = [UIColor colorWithHexString:@"DADADA"];
     [view addSubview:btmLine];
     [btmLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
