@@ -31,8 +31,17 @@ static NSInteger timeCount = 0;
     @weakify(self)
     [ANKHttpServer getHotSearchWithResponData:^(NSMutableArray * _Nonnull data) {
         @strongify(self)
+        
+        NSString *showString = @"";
+        
+        if (!data.count) {
+            showString = @"搜索";
+        }else{
+            showString = [NSString stringWithFormat:@"%@ | %@ | %@",data[0],data[1],data[2]];
+        }
+        
         self->_hotSearchDataArray = data;
-        NSString *showString = [NSString stringWithFormat:@"%@ | %@ | %@",data[0],data[1],data[2]];
+       
         [self.navigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
         [self startTimer];
     } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
@@ -99,6 +108,11 @@ static NSInteger timeCount = 0;
 
 - (void)onTimerAction
 {
+    
+    if (!_hotSearchDataArray.count) {
+        [self.navigationView.cwHotSearchLab showNextText:@"搜索" withDirection:CWCalendarLabelScrollToTop];
+        return;
+    }
     
     if (timeCount > _hotSearchDataArray.count - 1) {
         timeCount = 0;

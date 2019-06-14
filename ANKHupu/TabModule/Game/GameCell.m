@@ -27,6 +27,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.layer.cornerRadius = 5.0;
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -49,7 +50,11 @@
     [self.awayLogoImage sd_setImageWithURL:[NSURL URLWithString:model.away.logo] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         self.awayLogoImage.image = image;
     }];
-    self.awayNameLab.text = model.away.name;
+    NSString *aSera = @"";
+    if (model.awaySeries || model.awaySeries.length) {
+        aSera = [NSString stringWithFormat:@"(%@)",model.awaySeries];
+    }
+    self.awayNameLab.text = [NSString stringWithFormat:@"%@%@",model.away.name,aSera];
     self.awaySorLab.text = [NSString stringWithFormat:@"%ld",(long)model.awayScore];
     
     self.statusLab.text = model.status.txt;
@@ -57,7 +62,12 @@
     [self.homeLogoImage sd_setImageWithURL:[NSURL URLWithString:model.home.logo] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         self.homeLogoImage.image = image;
     }];
-    self.homeNameLab.text = model.home.name;
+    
+    NSString *hSera = @"";
+    if (model.awaySeries || model.awaySeries.length) {
+        hSera = [NSString stringWithFormat:@"(%@)",model.homeSeries];
+    }
+    self.homeNameLab.text = [NSString stringWithFormat:@"%@%@",model.home.name,hSera];
     self.homeSorLab.text = [NSString stringWithFormat:@"%ld",(long)model.homeScore];
 }
 
