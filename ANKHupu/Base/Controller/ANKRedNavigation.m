@@ -35,7 +35,7 @@ static NSInteger timeCount = 0;
         NSString *showString = @"";
         
         if (!data.count) {
-            showString = @"搜索";
+            showString = @"暂时获取不到数据，服务器崩了";
         }else{
             showString = [NSString stringWithFormat:@"%@ | %@ | %@",data[0],data[1],data[2]];
         }
@@ -110,7 +110,7 @@ static NSInteger timeCount = 0;
 {
     
     if (!_hotSearchDataArray.count) {
-        [self.navigationView.cwHotSearchLab showNextText:@"搜索" withDirection:CWCalendarLabelScrollToTop];
+        [self.navigationView.cwHotSearchLab showNextText:@"暂时获取不到数据，服务器崩了" withDirection:CWCalendarLabelScrollToTop];
         return;
     }
     

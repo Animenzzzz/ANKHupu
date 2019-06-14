@@ -11,6 +11,9 @@
 #import "MatchesRootModel.h"
 #import "GameCell.h"
 
+#define TableViewSectionHeaderHeight 30
+#define TableViewSectionFooterHeight 25
+
 @interface GameViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) NSMutableArray *seletTagArray;
@@ -38,9 +41,6 @@
 - (void)initViews{
     
     if (@available(iOS 11.0, *)) {
-//        self.tableView.estimatedRowHeight           = 0;
-//        self.tableView.estimatedSectionFooterHeight = 0;
-//        self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
     }
     
@@ -56,8 +56,6 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorColor = kSeperatLineColor;//间隔线
-//        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
-//        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
     
     return _tableView;
@@ -263,11 +261,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 30;
+    return TableViewSectionHeaderHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.1;
+    return TableViewSectionFooterHeight;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -276,10 +274,12 @@
     }
     MatchesGame *game = [self.dataList objectAtIndex:section];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
-    view.backgroundColor = kSeperatLineColor;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TableViewSectionHeaderHeight)];
+    view.backgroundColor = [UIColor colorWithHexString:@"EBEBEB"];
+    
     UILabel *la = [UILabel new];
     la.text = game.dateBlock;
+    la.font = [UIFont systemFontOfSize:15];
     [view addSubview:la];
     [la mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
@@ -287,6 +287,36 @@
         make.height.mas_equalTo(20);
         make.centerY.mas_equalTo(view.mas_centerY);
     }];
+    
+    UIView *topLine = [UIView new];
+//    topLine.backgroundColor = [UIColor lightGrayColor];
+    [view addSubview:topLine];
+    [topLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.width.mas_equalTo(view.mas_width);
+        make.height.mas_equalTo(1);
+        make.top.mas_equalTo(0);
+    }];
+    
+    UIView *btmLine = [UIView new];
+//    btmLine.backgroundColor = [UIColor lightGrayColor];
+    [view addSubview:btmLine];
+    [btmLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.width.mas_equalTo(view.mas_width);
+        make.height.mas_equalTo(1);
+        make.bottom.mas_equalTo(0);
+    }];
+    
+    
+    return view;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TableViewSectionFooterHeight)];
+    view.backgroundColor = kSeperatLineColor;
+    
     return view;
 }
 
