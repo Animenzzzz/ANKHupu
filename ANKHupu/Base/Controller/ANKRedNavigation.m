@@ -11,8 +11,7 @@
 #import "ANKHttpServer.h"
 @interface ANKRedNavigation ()<ANKNavigationViewSearchDelegate>
 
-@property (nonatomic, strong) ANKNavigationViewSearch *navigationView;
-
+@property (nonatomic, strong) ANKNavigationViewSearch *redNavigationView;
 @property (nonatomic, strong) NSTimer *timer;
 
 @end
@@ -42,7 +41,7 @@ static NSInteger timeCount = 0;
         
         self->_hotSearchDataArray = data;
        
-        [self.navigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
+        [self.redNavigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
         [self startTimer];
     } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
         NSLog(@"");
@@ -65,8 +64,8 @@ static NSInteger timeCount = 0;
     [super loadView];
     
     //设置导航栏
-    [self.view addSubview:self.navigationView];
-    [self.navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.redNavigationView];
+    [self.redNavigationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
@@ -76,14 +75,19 @@ static NSInteger timeCount = 0;
     
 }
 
+- (void)hiddenRedNavigationView:(BOOL)hidden{
+    
+    self.redNavigationView.hidden = hidden;
+}
 
-- (ANKNavigationViewSearch *)navigationView{
-    if (!_navigationView) {
-        _navigationView = (ANKNavigationViewSearch *)[[[UINib nibWithNibName:@"ANKNavigationViewSearch" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-        _navigationView.delegate = self;
+
+- (ANKNavigationViewSearch *)redNavigationView{
+    if (!_redNavigationView) {
+        _redNavigationView = (ANKNavigationViewSearch *)[[[UINib nibWithNibName:@"ANKNavigationViewSearch" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+        _redNavigationView.delegate = self;
     }
     
-    return _navigationView;
+    return _redNavigationView;
 }
 
 - (void)hotSearchViewClick{
@@ -110,7 +114,7 @@ static NSInteger timeCount = 0;
 {
     
     if (!_hotSearchDataArray.count) {
-        [self.navigationView.cwHotSearchLab showNextText:@"暂时获取不到数据，服务器崩了" withDirection:CWCalendarLabelScrollToTop];
+        [self.redNavigationView.cwHotSearchLab showNextText:@"暂时获取不到数据，服务器崩了" withDirection:CWCalendarLabelScrollToTop];
         return;
     }
     
@@ -119,7 +123,7 @@ static NSInteger timeCount = 0;
     }
     
     NSString *showString = [NSString stringWithFormat:@"%@ | %@ | %@",_hotSearchDataArray[timeCount],_hotSearchDataArray[timeCount+1],_hotSearchDataArray[timeCount+2]];
-    [self.navigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
+    [self.redNavigationView.cwHotSearchLab showNextText:showString withDirection:CWCalendarLabelScrollToTop];
     timeCount = timeCount+3;
 }
 

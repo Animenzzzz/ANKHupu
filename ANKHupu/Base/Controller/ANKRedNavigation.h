@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ANKRedNavigation : UINavigationController
 
+- (void)hiddenRedNavigationView:(BOOL)hidden;
+
 @end
 
 NS_ASSUME_NONNULL_END

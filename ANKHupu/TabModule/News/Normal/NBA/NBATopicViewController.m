@@ -11,6 +11,7 @@
 #import "NBATopicModel.h"
 #import "NewsNormalCell.h"
 #import "H5DetailViewController.h"
+#import "ANKRedNavigation.h"
 static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 #define kBackImageHeight 175
@@ -55,7 +56,20 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:NO];
+
+    if ([self.navigationController isKindOfClass:[ANKRedNavigation class]]) {
+        ANKRedNavigation *red = (ANKRedNavigation *)self.navigationController;
+        [red hiddenRedNavigationView:YES];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    if ([self.navigationController isKindOfClass:[ANKRedNavigation class]]) {
+        ANKRedNavigation *red = (ANKRedNavigation *)self.navigationController;
+        [red hiddenRedNavigationView:NO];
+    }
 }
 
 
