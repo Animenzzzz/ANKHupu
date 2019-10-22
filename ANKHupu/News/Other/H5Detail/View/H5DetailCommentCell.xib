@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="9TO-nS-lFZ"/>
                             <constraint firstAttribute="width" constant="355" id="CR6-te-1jL"/>
@@ -91,7 +91,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U0P-u0-dTB" firstAttribute="top" secondItem="usD-G3-CIE" secondAttribute="bottom" constant="-19" id="1ky-tS-aJE"/>
                             <constraint firstAttribute="bottom" secondItem="usD-G3-CIE" secondAttribute="bottom" constant="1" id="8ej-yP-GuH"/>

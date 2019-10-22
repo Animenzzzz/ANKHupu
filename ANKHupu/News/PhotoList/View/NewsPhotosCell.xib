@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="POx-4b-vhH" id="0TR-jL-ygL">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="309.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kre-Hw-cGF">
@@ -53,7 +52,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bix-tF-m3F" firstAttribute="leading" secondItem="kre-Hw-cGF" secondAttribute="leading" constant="5" id="E3a-pv-Ba9"/>
                             <constraint firstItem="tlR-f2-dGT" firstAttribute="centerY" secondItem="kre-Hw-cGF" secondAttribute="centerY" id="IUZ-bM-cAU"/>
@@ -74,7 +73,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9F-q3-GT1">
-                        <rect key="frame" x="12" y="275.5" width="358" height="26"/>
+                        <rect key="frame" x="12" y="276" width="358" height="26"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq6-2m-YLH">
                                 <rect key="frame" x="20" y="5" width="60" height="16"/>
@@ -145,7 +144,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Bq-5A-1QC" firstAttribute="centerY" secondItem="a9F-q3-GT1" secondAttribute="centerY" id="0nr-om-QkA"/>
                             <constraint firstItem="Q4p-qp-47u" firstAttribute="leading" secondItem="YmU-OZ-hbH" secondAttribute="trailing" constant="4" id="Ch1-4q-Ecn"/>
@@ -184,7 +183,7 @@
                         </connections>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfH-m3-TAa">
-                        <rect key="frame" x="12" y="216.5" width="358" height="54"/>
+                        <rect key="frame" x="12" y="217" width="358" height="54"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-eM-XzV">
                                 <rect key="frame" x="0.0" y="0.0" width="358" height="24"/>

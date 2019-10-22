@@ -91,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Ze-5D-9qN" firstAttribute="centerY" secondItem="efY-PB-1xR" secondAttribute="centerY" id="0B1-Em-cnn"/>
                             <constraint firstItem="MEM-SE-nt1" firstAttribute="leading" secondItem="TKa-qp-CBf" secondAttribute="trailing" constant="2" id="0VF-GG-Dbd"/>
@@ -133,7 +133,7 @@
                 <outlet property="zhidingTrailing" destination="cS7-14-prq" id="Nn1-4e-qd3"/>
                 <outlet property="zhuntiLab" destination="sGP-e1-bIl" id="5qs-03-pSQ"/>
             </connections>
-            <point key="canvasLocation" x="-692" y="-124"/>
+            <point key="canvasLocation" x="-305" y="-112"/>
         </tableViewCell>
     </objects>
     <resources>
