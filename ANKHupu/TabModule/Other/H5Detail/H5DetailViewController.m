@@ -167,7 +167,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         }];
                     }
                     
-                    [self.contentWebView loadHTMLString:self.detailBaseModel.h5Content];
+                    [self.contentWebView loadHTMLString:[self.detailBaseModel.h5Content stringByReplacingOccurrencesOfString:@"data-origin" withString:@"src"]];
                     [self.tableView reloadData];
                 }
                 
@@ -346,6 +346,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         make.top.mas_equalTo(5);
                     }
                 }];
+            }else{
+                resultHeith = 800;
             }
             return resultHeith+10;
         }else{//title
