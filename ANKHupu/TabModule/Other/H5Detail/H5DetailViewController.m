@@ -167,7 +167,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         }];
                     }
                     
-                    [self.contentWebView loadHTMLString:[self.detailBaseModel.h5Content stringByReplacingOccurrencesOfString:@"data-origin" withString:@"src"]];
+                    [self.contentWebView loadHTMLString:[[self.detailBaseModel.h5Content stringByReplacingOccurrencesOfString:@"data-origin" withString:@"src"]stringByReplacingOccurrencesOfString:@"data_url" withString:@"src"]];
                     [self.tableView reloadData];
                 }
                 

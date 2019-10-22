@@ -42,12 +42,18 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     [self requestData];
     
     //TODO...暂时写一个返回按钮
-    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
+    UIButton *backBtn = [UIButton new];
     backBtn.titleLabel.textColor = [UIColor whiteColor];
-    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn setBackgroundImage:[ResUtil imageNamed:@"back_btn"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     [self.view bringSubviewToFront:backBtn];
+    [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(18);
+        make.left.mas_equalTo(10);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(22);
+    }];
 }
 
 - (void)backClick{
