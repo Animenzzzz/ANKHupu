@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ANKTabBarController.h"
-#import "ANKNormalNavigation.h"
+#import "ANKNavigation.h"
+#import "NewsViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,10 +19,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NewsViewController *news = [NewsViewController new];
+    news.menuViewStyle = WMMenuViewStyleLine;
+    news.automaticallyCalculatesItemWidths = YES;
+    news.showMore = YES;
+    news.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
+    
+    ANKNavigation *nav = [[ANKNavigation alloc] initWithRootViewController:news];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ANKTabBarController *tab = [[ANKTabBarController alloc] init];
-    ANKNormalNavigation *nav = [[ANKNormalNavigation alloc] initWithRootViewController:tab];
-    [nav setNavigationBarHidden:YES];
     self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

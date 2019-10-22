@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.showBack = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -128,7 +129,7 @@
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     CGFloat leftMargin = self.showOnNavigationBar ? 50 : 0;
-    CGFloat originY = 64;
+    CGFloat originY = self.navigationController.navigationBar.isTranslucent ? 64:0;
     CGFloat moreBtnOffset = self.showMore ? kScrollTagMoreBtnWidth:0;
     return CGRectMake(leftMargin, originY, self.view.frame.size.width - 2*leftMargin - moreBtnOffset, 44);
 }
@@ -137,7 +138,7 @@
 //    if (self.menuViewPosition == WMMenuViewPositionBottom) {
 //        return CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 44);
 //    }
-    CGFloat originY = 64;
+    CGFloat originY = self.navigationController.navigationBar.isTranslucent ? 64:0;;
 //    if (self.menuViewStyle == WMMenuViewStyleTriangle) {
 //        originY += self.redView.frame.size.height;
 //    }

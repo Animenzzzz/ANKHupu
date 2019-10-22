@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   [self setNavigationBarHidden:YES];
+//   [self setNavigationBarHidden:YES];
+    self.navigationBar.barTintColor = kSearchRedBackGroundColor;
+    self.navigationBar.translucent = NO;//默认为 YES，如果为YES，颜色有一层蒙版，不清晰
 }
 
 // push进去的控制器隐藏tabBar

@@ -43,7 +43,7 @@
     
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [shareButton setTitle:@"" forState:UIControlStateNormal];
-    [shareButton setImage:[ResUtil imageNamed:@"share_btn_night"] forState:UIControlStateNormal];
+    [shareButton setImage:[ResUtil imageNamed:@"biaoqing"] forState:UIControlStateNormal];
     shareButton.size = CGSizeMake(25, 25);
     [shareButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     shareButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10);
@@ -62,7 +62,7 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     //在pop回界面的时候，使用动画
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 #pragma mark - Init（initVars initViews）
