@@ -169,7 +169,7 @@
                 <outlet property="quoteViewHeight" destination="Y1d-bs-xGH" id="lgn-o6-u37"/>
                 <outlet property="userNameLab" destination="8S8-hB-wAC" id="Wl5-EL-TY8"/>
             </connections>
-            <point key="canvasLocation" x="-950.00000000000011" y="-438.61607142857139"/>
+            <point key="canvasLocation" x="-470" y="-372"/>
         </tableViewCell>
     </objects>
     <resources>

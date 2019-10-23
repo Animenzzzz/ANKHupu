@@ -29,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.showBack = NO;
+    self.controllerTitle = NAV_TITLE_DEFAUL;
+    self.titleColor = NAV_TITLE_COLOR_DEFAUL;
 }
 
 - (void)viewWillAppear:(BOOL)animated{

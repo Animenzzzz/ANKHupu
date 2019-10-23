@@ -84,6 +84,14 @@
     self.shareBtn.hidden = !showShare;
 }
 
+- (void)setTitleColor:(UIColor *)titleColor{
+    [self.navigationController.navigationBar setTitleTextAttributes:
+
+    @{NSFontAttributeName:[UIFont systemFontOfSize:19],
+
+    NSForegroundColorAttributeName:titleColor}];
+}
+
 #pragma mark - Layout Subviews（layoutSubview）
 - (void)loadView{
     [super loadView];

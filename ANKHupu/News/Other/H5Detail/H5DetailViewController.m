@@ -65,6 +65,11 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if([SVProgressHUD isVisible]) [SVProgressHUD dismiss];
+}
+
 
 #pragma mark - Init（initVars initViews）
 - (void)initViews{
@@ -393,37 +398,30 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         return [UIView new];
     }else{
         UIView *se1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCommentSectionHeaderHeight)];
+        se1.backgroundColor = kGrayWhiteBackGroundColor;
         UILabel *lab = [UILabel new];
         lab.textColor = kSearchRedBackGroundColor;
+        lab.backgroundColor = [UIColor clearColor];
         lab.text = @"最新评论";
+        [lab setFont:[UIFont systemFontOfSize:13]];
         [se1 addSubview:lab];
-        [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(10);
-            make.centerY.equalTo(se1.mas_centerY);
-            make.width.mas_equalTo(SCREEN_WIDTH);
-            make.height.mas_equalTo(kCommentSectionHeaderHeight-10);
-        }];
         
-        UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3, kCommentSectionHeaderHeight)];
+        UIView *lineV = [UIView new];
         lineV.backgroundColor = kSearchRedBackGroundColor;
         [se1 addSubview:lineV];
         
-        UIView *upLine = [UIView new];
-        upLine.backgroundColor = kGrayBackGroundColor;
-        [se1 addSubview:upLine];
-        [upLine mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.mas_equalTo(0);
-            make.width.mas_equalTo(SCREEN_WIDTH);
-            make.height.mas_equalTo(1);
+        [lineV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(se1.mas_centerY);
+            make.left.mas_equalTo(4);
+            make.height.mas_equalTo(kCommentSectionHeaderHeight - 15);
+            make.width.mas_equalTo(2);
         }];
         
-        UIView *downLine = [UIView new];
-        downLine.backgroundColor = kGrayBackGroundColor;
-        [se1 addSubview:downLine];
-        [downLine mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.mas_equalTo(0);
+        [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(lineV.mas_right).mas_offset(2);
+            make.centerY.equalTo(se1.mas_centerY);
             make.width.mas_equalTo(SCREEN_WIDTH);
-            make.height.mas_equalTo(1);
+            make.height.mas_equalTo(kCommentSectionHeaderHeight);
         }];
 
         return se1;
