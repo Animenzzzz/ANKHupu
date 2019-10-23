@@ -100,6 +100,8 @@
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     
+    if (!_seletTagArray.count) _seletTagArray = [[self getOrderUserData] copy];
+    
     NSString *tagTitle = [_seletTagArray objectAtIndex:index];
     
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"URLInfo" ofType:@"plist"];

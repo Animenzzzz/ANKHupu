@@ -24,6 +24,7 @@
     news.automaticallyCalculatesItemWidths = YES;
     news.showMore = YES;
     news.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
+    news.selectIndex = 1;
     
     ANKNavigation *nav = [[ANKNavigation alloc] initWithRootViewController:news];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

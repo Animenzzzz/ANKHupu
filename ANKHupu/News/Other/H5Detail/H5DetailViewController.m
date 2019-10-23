@@ -248,6 +248,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             
         }else{//新闻正文(webView)
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailWebCellID];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (!cell) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDetailWebCellID];
             }

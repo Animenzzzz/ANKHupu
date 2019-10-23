@@ -56,6 +56,7 @@
 - (void)setStyleWithModel:(NewsDetailAdapter *)model newsType:(NewsType)type{
     
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     if (type == NewsTypeNormal) {
     
         self.newsTitleLab.text = model.newsTitle;
