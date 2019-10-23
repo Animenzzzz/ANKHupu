@@ -28,7 +28,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 #define kCommentXibHeight 182
 #define kCommentGrayHeight 60
-#define kCommentQuoteWidth 292
+#define kCommentQuoteWidth (SCREEN_WIDTH - 55 - 12) // H5DetailCommentCell.xib的queote view左右间距
+#define kCommentContentWidth (SCREEN_WIDTH - 55 - 20)
 
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
@@ -349,7 +350,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         
         cell.userName = dataM.userName;
         cell.content = dataM.content;
-        CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
+        CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
         cell.contenLabHeight.constant = contenHeight;
         [cell.headerIcon sd_setImageWithURL:[NSURL URLWithString:dataM.userHeader] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             cell.headerIcon.image = image;
