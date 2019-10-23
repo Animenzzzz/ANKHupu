@@ -18,6 +18,8 @@
     // Initialization code
     self.titleLab.numberOfLines = 0;
     self.newsImg.contentMode = UIViewContentModeScaleAspectFill;
+    // 左 右 image宽 iamge右
+    self.titleWidth = SCREEN_WIDTH - 14 - 18 - 100 - 15;
     
 }
 

@@ -39,6 +39,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 @property(nonatomic, strong) NewsDetailAdapter *detailBaseModel;
 @property(nonatomic, strong) NewsCommentAdapter *commentBaseModel;
+@property(nonatomic, strong) NewsCommentAdapter *lightCommentBaseModel;
 
 @end
 
@@ -182,6 +183,32 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             NSLog(@"");
         }];
         
+        
+        if (self.lightCommentURL.length) {
+            //请求新闻的评论信息
+            [ANKHttpServer getNewsDetailWithParams:nil url:self.lightCommentURL succesBlock:^(NSDictionary * _Nonnull data) {
+                @strongify(self)
+                dispatch_async(dispatch_get_main_queue(),^{
+                    
+                    NSDictionary *dic =data[@"error"];
+                    if (dic) {//请求报错
+                        NSString *errorInfo = [dic objectForKey:@"text"];
+                        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",errorInfo]];
+                        [SVProgressHUD dismissWithDelay:2.0f];
+                    }else{
+                        
+                        self.lightCommentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data newsType:self.type commentType:CommentTypeLight];
+                        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:1];
+                        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                    
+                });
+                
+            } failure:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+                NSLog(@"");
+            }];
+        }
+        
         if (self.commentURL.length) {
             //请求新闻的评论信息
             [ANKHttpServer getNewsDetailWithParams:nil url:self.commentURL succesBlock:^(NSDictionary * _Nonnull data) {
@@ -195,8 +222,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                         [SVProgressHUD dismissWithDelay:2.0f];
                     }else{
                         
-                        self.commentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data type:self.type];
-                        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:1];
+                        self.commentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data newsType:self.type commentType:CommentTypeNormal];
+                        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:2];
                         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
                     }
                     
@@ -218,10 +245,14 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         return 0;
     }
     
+    // section 0:新闻标题和内容   1:亮评  2：普通评论
     if (section == 0) {
         return 2;
-    }else{
-        
+    }else if(section == 1){
+        if (self.lightCommentBaseModel.count) {
+            return self.lightCommentBaseModel.count;
+        }
+    }else if(section == 2){
         if (self.commentBaseModel.count) {
             return self.commentBaseModel.count;
         }
@@ -234,8 +265,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -307,7 +337,16 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 //            }
 //
 //        }
-        CommentDetailData *dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        CommentDetailData *dataM = nil;
+        
+        if (self.commentBaseModel.commentArray.count && indexPath.section == 2) {
+            dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        }else if (self.lightCommentBaseModel.commentArray.count && indexPath.section == 1){
+            dataM = [self.lightCommentBaseModel.commentArray objectAtIndex:indexPath.row];
+        }else{
+            return cell;
+        }
+        
         cell.userName = dataM.userName;
         cell.content = dataM.content;
         CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
@@ -364,7 +403,15 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     }else{//评论
         
         CGFloat cellHeight = 0;
-        CommentDetailData *dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        
+        
+        CommentDetailData *dataM = nil;
+        
+        if (self.commentBaseModel.commentArray.count && indexPath.section == 2) {
+            dataM = [self.commentBaseModel.commentArray objectAtIndex:indexPath.row];
+        }else if (self.lightCommentBaseModel.commentArray.count && indexPath.section == 1){
+            dataM = [self.lightCommentBaseModel.commentArray objectAtIndex:indexPath.row];
+        }
         
         CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:[UIFont systemFontOfSize:16]];
         cellHeight = kCommentXibHeight-21+contenHeight;
@@ -403,6 +450,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         lab.textColor = kSearchRedBackGroundColor;
         lab.backgroundColor = [UIColor clearColor];
         lab.text = @"最新评论";
+        if(section == 1) lab.text = @"这些评论亮了";
         [lab setFont:[UIFont systemFontOfSize:13]];
         [se1 addSubview:lab];
         

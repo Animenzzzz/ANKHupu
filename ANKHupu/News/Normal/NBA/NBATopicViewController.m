@@ -40,19 +40,6 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     [self laySubView];
     [self requestData];
     
-    //TODO...暂时写一个返回按钮
-    UIButton *backBtn = [UIButton new];
-    backBtn.titleLabel.textColor = [UIColor whiteColor];
-    [backBtn setBackgroundImage:[ResUtil imageNamed:@"back_btn"] forState:UIControlStateNormal];
-    [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backBtn];
-    [self.view bringSubviewToFront:backBtn];
-    [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(18);
-        make.left.mas_equalTo(10);
-        make.width.mas_equalTo(30);
-        make.height.mas_equalTo(22);
-    }];
 }
 
 - (void)backClick{
@@ -248,7 +235,7 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     
     
     NewsNormalCell *cell = [[[UINib nibWithNibName:@"NewsNormalCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:newsItem.title font:cell.titleLab.font lineSpacing:5.0];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth title:newsItem.title font:cell.titleLab.font lineSpacing:5.0];
     heigh = heigh > 46?46:heigh;//TODO...46不能写死
     cell.titleHeight.constant = heigh;
     cell.newsTitle = newsItem.title;

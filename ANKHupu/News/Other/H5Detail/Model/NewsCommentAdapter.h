@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (NewsCommentAdapter *)initWithTypeModel:(id)model;
 
-- (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type;
+- (id)initWithDictionary:(NSDictionary *)dic newsType:(NewsType)ntype commentType:(CommentType)ctype;
 
 @end
 

@@ -10,6 +10,7 @@
 
 #import "CommentModel.h"
 #import "CommentType5Model.h"
+#import "LightCommentRoot.h"
 #import "HotListCommentRoot.h"
 
 @implementation NewsCommentAdapter
@@ -60,7 +61,7 @@
                 //TODO...字符串的过滤待处理
                 CommentType5Quote *quote = [data.quote objectAtIndex:0];
                 reu.quoteContent = quote.content;
-                NSString *name = [quote.header objectAtIndex:0];
+                NSString *name = quote.header.count ? [quote.header objectAtIndex:0] : @"";
                 NSArray *aar = [name componentsSeparatedByString:@">"];
                 NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
                 reu.quoteName = tmp[0];
@@ -72,6 +73,39 @@
         
         resultModel.commentArray = [dataArray copy];
         
+        return resultModel;
+        
+    }else if([model isKindOfClass:[LightCommentRoot class]]){
+        
+        LightCommentRoot *tmp = (LightCommentRoot *)model;
+        resultModel.count = tmp.data.list.count;
+
+        NSMutableArray *dataArray = [NSMutableArray array];
+        for (LightCommentList *data in tmp.data.list) {
+
+            CommentDetailData *reu = [CommentDetailData new];
+            reu.userName = data.userName;
+            reu.content = data.content;
+            reu.userHeader = data.userImg;
+            reu.lightCount = [NSString stringWithFormat:@"%ld",(long)data.lightCount];
+            reu.addTime = data.time;
+
+            if (data.quote && data.quote.count) {
+                //TODO...字符串的过滤待处理
+                CommentType5Quote *quote = [data.quote objectAtIndex:0];
+                reu.quoteContent = quote.content;
+                NSString *name = [quote.header objectAtIndex:0];
+                NSArray *aar = [name componentsSeparatedByString:@">"];
+                NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
+                reu.quoteName = tmp[0];
+            }
+
+
+            [dataArray addObject:reu];
+        }
+
+        resultModel.commentArray = [dataArray copy];
+
         return resultModel;
         
     }else if ([model isKindOfClass:[HotListCommentRoot class]]){
@@ -112,22 +146,27 @@
 }
 
 
-- (id)initWithDictionary:(NSDictionary *)dic type:(NewsType)type{
+- (id)initWithDictionary:(NSDictionary *)dic newsType:(NewsType)ntype commentType:(CommentType)ctype{
     
     
-    if (type == NewsTypeNormal) {//1:视频+正常新闻
+    if (ntype == NewsTypeNormal) {//1:视频+正常新闻
         
         return [self initWithTypeModel:[[CommentModel alloc] initWithDictionary:dic]];
         
-    }else if (type == NewsTypeSpecial){//2:专题
+    }else if (ntype == NewsTypeSpecial){//2:专题
         
-    }else if (type == NewsTypePic){//3:cell上有多个图片（在 thumbs
+    }else if (ntype == NewsTypePic){//3:cell上有多个图片（在 thumbs
         
-    }else if (type == NewsTypeTopic){
+    }else if (ntype == NewsTypeTopic){
+        NewsCommentAdapter *reslut = nil;
+        if(ctype == CommentTypeLight){
+            reslut = [self initWithTypeModel:[[LightCommentRoot alloc] initWithDictionary:dic]];
+        }else{
+            reslut = [self initWithTypeModel:[[CommentType5Model alloc] initWithDictionary:dic]];
+        }
+        return reslut;
         
-        return [self initWithTypeModel:[[CommentType5Model alloc] initWithDictionary:dic]];
-        
-    }else if (type == NewsTypePhotoReply){
+    }else if (ntype == NewsTypePhotoReply){
         
         return [self initWithTypeModel:[[HotListCommentRoot alloc] initWithDictionary:dic]];
     }

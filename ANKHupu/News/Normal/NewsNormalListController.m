@@ -238,7 +238,7 @@ static int pageNum = 0;
     NewsNormal *model = [self.dataList objectAtIndex:indexPath.row];
 
     NewsNormalCell *cell = [[[UINib nibWithNibName:@"NewsNormalCell" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth.constant title:model.title font:cell.titleLab.font lineSpacing:5.0];
+    CGFloat heigh = [UILabel getHeightByWidth:cell.titleWidth title:model.title font:cell.titleLab.font lineSpacing:5.0];
     heigh = heigh > 46?46:heigh;//TODO...46不能写死
     cell.titleHeight.constant = heigh;
     cell.newsTitle = model.title;
@@ -328,6 +328,8 @@ static int pageNum = 0;
         
         url = [NSString stringWithFormat:@"%@%@%@",kNBA_DetailH5_Type5_1,linkID,kNAB_DetailH5_Type5_2];
         detail.commentURL = [NSString stringWithFormat:@"https://bbs.mobileapi.hupu.com/3/7.3.12/threads/getsThreadPostList?offline=json&page=1&fid=1048&nopic=0&night=0&order=asc&entrance=6&show_type=default&sort=&postAuthorPuid=&maxpid=&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&tid=%@",linkID];
+        
+        detail.lightCommentURL = [NSString stringWithFormat:@"https://bbs.mobileapi.hupu.com/3/7.3.25/threads/getsThreadLightReplyList?offline=json&page=1&fid=1048&nopic=0&night=0&order=asc&entrance=6&show_type=default&sort=&postAuthorPuid=&maxpid=&client=c77bc7cfa00b1800f399938c4b3720aae4783b2a&webp=0&tid=%@",linkID];
     }
 
     detail.requestURL = url;

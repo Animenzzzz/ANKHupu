@@ -70,9 +70,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="亮了" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usD-G3-CIE">
-                                <rect key="frame" x="26" y="0.0" width="55" height="20"/>
+                                <rect key="frame" x="26" y="0.0" width="100" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="K2p-3c-pTT"/>
+                                    <constraint firstAttribute="width" constant="100" id="K2p-3c-pTT"/>
                                     <constraint firstAttribute="height" constant="20" id="z0T-OS-GfX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>

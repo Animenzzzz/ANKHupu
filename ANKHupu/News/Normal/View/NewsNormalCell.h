@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NewsNormalCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *newsImg;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleWidth;
+@property (assign, nonatomic) CGFloat titleWidth;
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *readLab;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *readLabWidth;

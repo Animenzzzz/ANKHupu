@@ -28,7 +28,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"" forState:UIControlStateNormal];
-    [button setImage:[ResUtil imageNamed:@"back"] forState:UIControlStateNormal];
+    [button setImage:[ResUtil imageNamed:@"back_btn"] forState:UIControlStateNormal];
     button.size = CGSizeMake(15, 15);
     [button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     // 让按钮内部的所有内容左对齐

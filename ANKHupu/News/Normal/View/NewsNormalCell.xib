@@ -24,10 +24,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d48-jN-GqM">
-                        <rect key="frame" x="14" y="15" width="232" height="21"/>
+                        <rect key="frame" x="14" y="15" width="228" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="DhF-8k-ugd"/>
-                            <constraint firstAttribute="width" constant="232" id="ttx-gk-P90"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -117,6 +116,7 @@
                     <constraint firstItem="fWS-Jq-27d" firstAttribute="leading" secondItem="efY-PB-1xR" secondAttribute="trailing" id="Qnc-rA-r6L"/>
                     <constraint firstItem="efY-PB-1xR" firstAttribute="leading" secondItem="Ozj-lB-82E" secondAttribute="leading" constant="15" id="RKE-Sa-BjD"/>
                     <constraint firstItem="d48-jN-GqM" firstAttribute="top" secondItem="Ozj-lB-82E" secondAttribute="top" constant="15" id="Wlm-9l-B45"/>
+                    <constraint firstItem="fWS-Jq-27d" firstAttribute="leading" secondItem="d48-jN-GqM" secondAttribute="trailing" constant="18" id="jrd-gw-GGS"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -128,12 +128,11 @@
                 <outlet property="readLabWidth" destination="ZbK-TK-z8A" id="Sgz-Wl-7kH"/>
                 <outlet property="titleHeight" destination="DhF-8k-ugd" id="voY-au-9vm"/>
                 <outlet property="titleLab" destination="d48-jN-GqM" id="nGc-V1-oie"/>
-                <outlet property="titleWidth" destination="ttx-gk-P90" id="fWj-Sr-rrq"/>
                 <outlet property="zhidingLab" destination="atG-ec-Uk1" id="1h7-CG-BnF"/>
                 <outlet property="zhidingTrailing" destination="cS7-14-prq" id="Nn1-4e-qd3"/>
                 <outlet property="zhuntiLab" destination="sGP-e1-bIl" id="5qs-03-pSQ"/>
             </connections>
-            <point key="canvasLocation" x="-305" y="-112"/>
+            <point key="canvasLocation" x="-305.07246376811594" y="-112.5"/>
         </tableViewCell>
     </objects>
     <resources>

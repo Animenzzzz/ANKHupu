@@ -23,6 +23,11 @@ typedef NS_ENUM(NSInteger,NewsType) {
     NewsTypePhotoReply   = 8,//
 };
 
+typedef NS_ENUM(NSInteger,CommentType) {
+    CommentTypeNormal  = 1,  //普通评论
+    CommentTypeLight = 2,    //亮评
+};
+
 //资源
 //首页搜索框样式
 #define kSearchViewLeftImage @"projectIcon.png"

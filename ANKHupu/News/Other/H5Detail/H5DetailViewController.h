@@ -15,7 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface H5DetailViewController : ANKViewController
 
 @property(nonatomic,strong) NSString *requestURL;
+
+// 普通评论
 @property(nonatomic,strong) NSString *commentURL;
+// 亮论
+@property(nonatomic,strong) NSString *lightCommentURL;
+
 @property(nonatomic,assign) NewsType type;
 
 @end
