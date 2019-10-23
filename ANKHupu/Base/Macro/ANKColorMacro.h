@@ -10,17 +10,20 @@
 #define ANKColorMacro_h
 #import "UIColor+Category.h"
 //分割线颜色
-#define kSeperatLineColor [UIColor                                            colorWithHexString:@"eaeaea"]
+#define kSeperatLineColor           [UIColor colorWithHexString:@"eaeaea"]
 //tableview灰色背景y颜色
-#define kGrayBackGroundColor [UIColor                                         colorWithHexString:@"eaeaea"]
+#define kGrayBackGroundColor        [UIColor colorWithHexString:@"eaeaea"]
 
-#define kGrayWhiteBackGroundColor [UIColor                                         colorWithHexString:@"FBFAFB"]
+#define kGrayWhiteBackGroundColor   [UIColor colorWithHexString:@"FBFAFB"]
+
+// 评论 引用的蓝色 姓名 颜色
+#define kBlueLinkColor              [UIColor colorWithHexString:@"2B6EE9"]
+
+#define kSearchRedBackGroundColor   [UIColor colorWithHexString:@"C01E2F"]
 
 //随机颜色
 #define random(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
-
-#define kSearchRedBackGroundColor [UIColor                                         colorWithHexString:@"C01E2F"]
 
 
 #define NAV_TITLE_DEFAUL       @"Animenzzz"

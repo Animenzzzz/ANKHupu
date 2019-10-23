@@ -12,16 +12,12 @@
 
 + (NSString *)filterH5:(NSString *)h5Stri{
     NSString *tagString = h5Stri;
-    NSScanner * scanner = [NSScanner scannerWithString:tagString];
-    NSString * text = nil;
-    while([scanner isAtEnd]==NO)
-    {
-        //找到标签的起始位置
-        [scanner scanUpToString:@"<" intoString:nil];
-        //找到标签的结束位置
-        [scanner scanUpToString:@">" intoString:&text];
-        //替换字符
-        tagString = [tagString stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
+
+    if (h5Stri.length) {
+        
+        NSRegularExpression *regularExpretion=[NSRegularExpression regularExpressionWithPattern:@"<[^>]*>|\n" options:0 error:nil];
+        tagString = [regularExpretion stringByReplacingMatchesInString:tagString options:NSMatchingReportProgress range:NSMakeRange(0, tagString.length) withTemplate:@""];
+        tagString = [tagString stringByReplacingOccurrencesOfString:@" " withString:@""];
     }
     
     return tagString;

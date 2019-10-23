@@ -62,9 +62,12 @@
                 CommentType5Quote *quote = [data.quote objectAtIndex:0];
                 reu.quoteContent = quote.content;
                 NSString *name = quote.header.count ? [quote.header objectAtIndex:0] : @"";
-                NSArray *aar = [name componentsSeparatedByString:@">"];
-                NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
-                reu.quoteName = tmp[0];
+              
+                name = [NSString filterH5:name];
+                name = [name stringByReplacingOccurrencesOfString:@"@" withString:@""];
+                name = [name stringByReplacingOccurrencesOfString:@"引用" withString:@""];
+                name = [name stringByReplacingOccurrencesOfString:@"发表的" withString:@""];
+                reu.quoteName = [NSString stringWithFormat:@"%@:",name];
             }
             
             
@@ -91,13 +94,14 @@
             reu.addTime = data.time;
 
             if (data.quote && data.quote.count) {
-                //TODO...字符串的过滤待处理
                 CommentType5Quote *quote = [data.quote objectAtIndex:0];
                 reu.quoteContent = quote.content;
-                NSString *name = [quote.header objectAtIndex:0];
-                NSArray *aar = [name componentsSeparatedByString:@">"];
-                NSArray *tmp = [aar[0] componentsSeparatedByString:@"<"];
-                reu.quoteName = tmp[0];
+                NSString *name = quote.header.count ? [quote.header objectAtIndex:0] : @"";
+                name = [NSString filterH5:name];
+                name = [name stringByReplacingOccurrencesOfString:@"@" withString:@""];
+                name = [name stringByReplacingOccurrencesOfString:@"引用" withString:@""];
+                name = [name stringByReplacingOccurrencesOfString:@"发表的" withString:@""];
+                reu.quoteName = [NSString stringWithFormat:@"%@:",name];
             }
 
 
