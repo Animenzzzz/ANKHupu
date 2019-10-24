@@ -26,10 +26,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 #define kCommentSectionHeaderHeight 30
 
-#define kCommentXibHeight 182
-#define kCommentGrayHeight 60
-#define kCommentQuoteWidth (SCREEN_WIDTH - 55 - 12) // H5DetailCommentCell.xib的queote view左右间距
-#define kCommentContentWidth (SCREEN_WIDTH - 55 - 20)
 
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
 
@@ -317,12 +313,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }
     }else{//评论
         
-        
-//        H5DetailCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:kCommentCellID];
-//        if (!cell) {
-//            cell = [[H5DetailCommentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCommentCellID];
-//        }
-        
         H5DetailCommentCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 //        解决xib复用数据混乱问题
         if (nil == cell) {
@@ -330,14 +320,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             cell= (H5DetailCommentCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"H5DetailCommentCell" owner:self options:nil]  lastObject];
 
         }
-//        else{
-//            //删除cell的所有子视图
-//            while ([cell.contentView.subviews lastObject] != nil)
-//            {
-//                [(UIView*)[cell.contentView.subviews lastObject] removeFromSuperview];
-//            }
-//
-//        }
         CommentDetailData *dataM = nil;
         
         if (self.commentBaseModel.commentArray.count && indexPath.section == 2) {
@@ -348,27 +330,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             return cell;
         }
         
-        cell.userName = dataM.userName;
-        cell.content = dataM.content;
-        CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:dataM.content font:cell.contenLab.font lineSpacing:5.0];
-        cell.contenLabHeight.constant = contenHeight;
-        [cell.headerIcon sd_setImageWithURL:[NSURL URLWithString:dataM.userHeader] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            cell.headerIcon.image = image;
-        }];
-        cell.lightNum = dataM.lightCount;
-        cell.addTime = dataM.addTime;
-        if (![dataM.quoteContent length]) {
-            cell.quoteView.hidden = YES;
-        }else{
-
-            cell.quoteName = dataM.quoteName;
-            cell.quoteContent = dataM.quoteContent;
-            CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteContent font:cell.quoteContenLab.font lineSpacing:5.0];
-            CGFloat orignContenLab = cell.quoteContenLabHeight.constant;
-            cell.quoteContenLabHeight.constant = quoteHeight;
-            cell.quoteViewHeight.constant = cell.quoteViewHeight.constant - orignContenLab+quoteHeight;
-            
-        }
+        [cell loadDataWithModel:dataM];
     
         return cell;
     }
@@ -403,9 +365,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }
     }else{//评论
         
-        CGFloat cellHeight = 0;
-        
-        
         CommentDetailData *dataM = nil;
         
         if (self.commentBaseModel.commentArray.count && indexPath.section == 2) {
@@ -413,20 +372,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }else if (self.lightCommentBaseModel.commentArray.count && indexPath.section == 1){
             dataM = [self.lightCommentBaseModel.commentArray objectAtIndex:indexPath.row];
         }
-        
-        CGFloat contenHeight = [UILabel getHeightByWidth:284 title:dataM.content font:[UIFont systemFontOfSize:16]];
-        cellHeight = kCommentXibHeight-21+contenHeight;
-        
-        
-        if (![dataM.quoteContent length]) {//评论是否有回复
-            cellHeight = cellHeight - kCommentGrayHeight;
-        }else{
-            
-            CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:dataM.quoteContent font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
-            cellHeight = cellHeight - 21+quoteHeight;
-            
-        }
-        return cellHeight;
+
+        return [H5DetailCommentCell calculatHeightWithModel:dataM];
     }
     
     return 0;

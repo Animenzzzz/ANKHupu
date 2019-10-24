@@ -8,11 +8,26 @@
 
 #import "H5DetailCommentCell.h"
 #import "NSString+Util.h"
+
+
+#define kCommentXibHeight 182
+#define kCommentGrayHeight 60
+#define kCommentQuoteWidth (SCREEN_WIDTH - 55 - 12) // H5DetailCommentCell.xib的queote view左右间距
+#define kCommentContentWidth (SCREEN_WIDTH - 55 - 20)
+
+
 @interface H5DetailCommentCell()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *addTimeLab;
 @property (weak, nonatomic) IBOutlet UILabel *quoteUserLab;
 @property (weak, nonatomic) IBOutlet UILabel *lightLab;
+@property (weak, nonatomic) IBOutlet UILabel *contenLab;
+@property (weak, nonatomic) IBOutlet UILabel *quoteContenLab;
+@property (weak, nonatomic) IBOutlet UIImageView *headerIcon;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contenLabHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *quoteContenLabHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *quoteViewHeight;
+@property (weak, nonatomic) IBOutlet UIView *quoteView;
 
 @end
 
@@ -35,54 +50,78 @@
     // Configure the view for the selected state
 }
 
-- (void)setAddTime:(NSString *)addTime{
-    self.addTimeLab.text = addTime;
+- (void)loadDataWithModel:(CommentDetailData *)model{
+    
+    // 用户名
+    self.userNameLab.text = model.userName;
+    
+    // 用户头像
+    [self.headerIcon sd_setImageWithURL:[NSURL URLWithString:model.userHeader] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        self.headerIcon.image = image;
+    }];
+    
+    // 评论的内容
+    [self changeLineSpaceWithText:model.content label:self.contenLab];
+    CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:model.content font:self.contenLab.font lineSpacing:5.0];
+    self.contenLabHeight.constant = contenHeight;
+    
+    // 评论的时间
+    self.addTimeLab.text = model.addTime;
+    
+    // 亮了
+    self.lightLab.text = [NSString stringWithFormat:@"亮了(%@)",model.lightCount];
+    
+    // 是否引用了别人的评论
+    if (![model.quoteContent length]) {
+        self.quoteView.hidden = YES;
+    }else{
+        
+        // 被引用的用户名
+        self.quoteUserLab.text = model.quoteName;
+        
+        // 被引用的内容
+        [self changeLineSpaceWithText:model.quoteContent label:self.quoteContenLab];
+
+        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:model.quoteContent font:self.quoteContenLab.font lineSpacing:5.0];
+        CGFloat orignContenLab = self.quoteContenLabHeight.constant;
+        self.quoteContenLabHeight.constant = quoteHeight;
+        self.quoteViewHeight.constant = self.quoteViewHeight.constant - orignContenLab+quoteHeight;
+        
+    }
 }
 
-- (void)setContent:(NSString *)content{
+- (void)changeLineSpaceWithText:(NSString *)text label:(UILabel *)lab{
     
-    NSString *fil = [NSString filterH5:content];
-    
-    self.contenLab.text = fil;
-    
+    NSString *fil = [NSString filterH5:text];
+
+    lab.text = fil;
+
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:5.0];        //设置行间距
-    [paragraphStyle setLineBreakMode:self.contenLab.lineBreakMode];
-    [paragraphStyle setAlignment:self.contenLab.textAlignment];
-    
+    [paragraphStyle setLineBreakMode:lab.lineBreakMode];
+    [paragraphStyle setAlignment:lab.textAlignment];
+
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:fil];
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [fil length])];
-    self.contenLab.attributedText = attributedString;
+    lab.attributedText = attributedString;
 }
 
-- (void)setUserName:(NSString *)userName{
-    self.userNameLab.text = userName;
-}
-
-- (void)setQuoteName:(NSString *)quoteName{
-    self.quoteUserLab.text = quoteName;
-}
-
-- (void)setQuoteContent:(NSString *)quoteContent{
++ (CGFloat)calculatHeightWithModel:(CommentDetailData *)model{
     
-    NSString *fil = [NSString filterH5:quoteContent];
-    
-    self.quoteContenLab.text = fil;
+    CGFloat cellHeight = 0;
+    CGFloat contenHeight = [UILabel getHeightByWidth:284 title:model.content font:[UIFont systemFontOfSize:16]];
+    cellHeight = kCommentXibHeight-21+contenHeight;
     
     
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:5.0];        //设置行间距
-    [paragraphStyle setLineBreakMode:self.quoteContenLab.lineBreakMode];
-    [paragraphStyle setAlignment:self.quoteContenLab.textAlignment];
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:fil];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [fil length])];
-    self.quoteContenLab.attributedText = attributedString;
-    
-}
-
-- (void)setLightNum:(NSString *)lightNum{
-    self.lightLab.text = [NSString stringWithFormat:@"亮了(%@)",lightNum];
+    if (![model.quoteContent length]) {//评论是否有回复
+        cellHeight = cellHeight - kCommentGrayHeight;
+    }else{
+        
+        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:model.quoteContent font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
+        cellHeight = cellHeight - 21+quoteHeight;
+        
+    }
+    return cellHeight;
 }
 
 @end
