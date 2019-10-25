@@ -104,6 +104,10 @@
 		4A8C069B23603462009CE27F /* LightCommentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C069423603462009CE27F /* LightCommentRoot.m */; };
 		4A8C06A52362DD27009CE27F /* SkeletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06A42362DD27009CE27F /* SkeletonView.m */; };
 		4A8C06AB2362E0C5009CE27F /* UIView+Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */; };
+		4A8C06AF2362E296009CE27F /* H5DetailSkeletonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06AD2362E296009CE27F /* H5DetailSkeletonCell.m */; };
+		4A8C06B02362E296009CE27F /* H5DetailSkeletonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C06AE2362E296009CE27F /* H5DetailSkeletonCell.xib */; };
+		4A8C06B72362E3AB009CE27F /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06B52362E3AB009CE27F /* FBShimmeringLayer.m */; };
+		4A8C06B82362E3AB009CE27F /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06B62362E3AB009CE27F /* FBShimmeringView.m */; };
 		4A9599AC2296C6D000725DCE /* H5DetailTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599AB2296C6D000725DCE /* H5DetailTitleCell.m */; };
 		4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599EE2296CD4D00725DCE /* NBAType5share.m */; };
 		4A959A012296CD4D00725DCE /* NBANewsType5Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599EF2296CD4D00725DCE /* NBANewsType5Model.m */; };
@@ -323,6 +327,14 @@
 		4A8C06A82362DEC2009CE27F /* Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
 		4A8C06A92362E0C5009CE27F /* UIView+Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Skeleton.h"; sourceTree = "<group>"; };
 		4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Skeleton.m"; sourceTree = "<group>"; };
+		4A8C06AC2362E296009CE27F /* H5DetailSkeletonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5DetailSkeletonCell.h; sourceTree = "<group>"; };
+		4A8C06AD2362E296009CE27F /* H5DetailSkeletonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5DetailSkeletonCell.m; sourceTree = "<group>"; };
+		4A8C06AE2362E296009CE27F /* H5DetailSkeletonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H5DetailSkeletonCell.xib; sourceTree = "<group>"; };
+		4A8C06B22362E3AB009CE27F /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		4A8C06B32362E3AB009CE27F /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		4A8C06B42362E3AB009CE27F /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		4A8C06B52362E3AB009CE27F /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		4A8C06B62362E3AB009CE27F /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
 		4A9599AA2296C6D000725DCE /* H5DetailTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5DetailTitleCell.h; sourceTree = "<group>"; };
 		4A9599AB2296C6D000725DCE /* H5DetailTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H5DetailTitleCell.m; sourceTree = "<group>"; };
 		4A9599EE2296CD4D00725DCE /* NBAType5share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAType5share.m; sourceTree = "<group>"; };
@@ -555,6 +567,9 @@
 				4A6C47EA229B8AD900850EC8 /* H5DetailCommentCell.h */,
 				4A6C47EB229B8AD900850EC8 /* H5DetailCommentCell.m */,
 				4A6C47ED229B8AE300850EC8 /* H5DetailCommentCell.xib */,
+				4A8C06AC2362E296009CE27F /* H5DetailSkeletonCell.h */,
+				4A8C06AD2362E296009CE27F /* H5DetailSkeletonCell.m */,
+				4A8C06AE2362E296009CE27F /* H5DetailSkeletonCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -704,11 +719,12 @@
 		4A8C06A12362DBA9009CE27F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4A8C06A22362DCF9009CE27F /* Skeleton */,
-				4ACD9404229296530043E05F /* Tools */,
 				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
 				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
 				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
+				4A8C06B12362E3AB009CE27F /* FBShimmering */,
+				4A8C06A22362DCF9009CE27F /* Skeleton */,
+				4ACD9404229296530043E05F /* Tools */,
 				4AEF80A4228CFA01001E56B3 /* WMPageController */,
 				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4A8112A8228D98070036D3C5 /* Reachability */,
@@ -729,6 +745,18 @@
 				4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */,
 			);
 			path = Skeleton;
+			sourceTree = "<group>";
+		};
+		4A8C06B12362E3AB009CE27F /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				4A8C06B22362E3AB009CE27F /* FBShimmering.h */,
+				4A8C06B32362E3AB009CE27F /* FBShimmeringLayer.h */,
+				4A8C06B42362E3AB009CE27F /* FBShimmeringView.h */,
+				4A8C06B52362E3AB009CE27F /* FBShimmeringLayer.m */,
+				4A8C06B62362E3AB009CE27F /* FBShimmeringView.m */,
+			);
+			path = FBShimmering;
 			sourceTree = "<group>";
 		};
 		4A9599AD2296CB2C00725DCE /* NBANews_Type1 */ = {
@@ -1207,6 +1235,7 @@
 				4A437A71235EFDE40060BDAD /* placehold_big_night@3x.png in Resources */,
 				4A437A7E235EFDE40060BDAD /* post_textfield_delete@2x.png in Resources */,
 				4A437A8B235F01A80060BDAD /* biaoqing@3x.png in Resources */,
+				4A8C06B02362E296009CE27F /* H5DetailSkeletonCell.xib in Resources */,
 				4A437A76235EFDE40060BDAD /* arrange_btn@3x.png in Resources */,
 				4A437A7A235EFDE40060BDAD /* back_btn_1@3x.png in Resources */,
 				4A437A81235EFDE40060BDAD /* post_textfield_delete@3x.png in Resources */,
@@ -1287,6 +1316,7 @@
 				4AF660F422897F3700DFC1AF /* ANKHttpServer.m in Sources */,
 				4A959A052296CD4D00725DCE /* NBAType5data.m in Sources */,
 				4AB0FC5422A134A400BB767C /* TopicPhotoCell.m in Sources */,
+				4A8C06B72362E3AB009CE27F /* FBShimmeringLayer.m in Sources */,
 				4A49CE9F229D07AB0044540B /* NewsCommentAdapter.m in Sources */,
 				4A64E3342294EF31007CE6E7 /* NewsDetailTag.m in Sources */,
 				4A64E3352294EF31007CE6E7 /* NewsDetailModel.m in Sources */,
@@ -1301,6 +1331,7 @@
 				4A8C069823603462009CE27F /* LightCommentCheckReplyInfo.m in Sources */,
 				4A9599AC2296C6D000725DCE /* H5DetailTitleCell.m in Sources */,
 				4AB0FC5622A134A400BB767C /* OfflinePhotoCell.m in Sources */,
+				4A8C06AF2362E296009CE27F /* H5DetailSkeletonCell.m in Sources */,
 				4A49CE92229C04350044540B /* CommentType5Model.m in Sources */,
 				4A959A062296CD4D00725DCE /* NBAType5praise.m in Sources */,
 				4A5AC8362293F3310026BE7E /* NBATab.m in Sources */,
@@ -1373,6 +1404,7 @@
 				4A5AC8352293F3310026BE7E /* NBAGame.m in Sources */,
 				4A6C477B22978EDB00850EC8 /* H5DetailTitleView.m in Sources */,
 				4A5AC83E2293F5A40026BE7E /* NewsNormalCell.m in Sources */,
+				4A8C06B82362E3AB009CE27F /* FBShimmeringView.m in Sources */,
 				4AB0FC8122A140F400BB767C /* HotListCellData.m in Sources */,
 				4A6C47C52297FA0800850EC8 /* NBATopicModel.m in Sources */,
 				4A959A072296CD4D00725DCE /* NBAType5offlineData.m in Sources */,
