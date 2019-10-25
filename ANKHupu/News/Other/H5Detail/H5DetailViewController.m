@@ -16,6 +16,8 @@
 #import "NewsDetailAdapter.h"
 #import "NewsCommentAdapter.h"
 
+#import "H5DetailSkeletonCell.h"
+
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
 static NSString *k_title = @"H5DetailTitleCell";
@@ -38,6 +40,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 @property(nonatomic, strong) NewsCommentAdapter *commentBaseModel;
 @property(nonatomic, strong) NewsCommentAdapter *lightCommentBaseModel;
 
+@property (nonatomic, assign) NSInteger loadNums;
+
 @end
 
 @implementation H5DetailViewController
@@ -52,6 +56,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;//半透明属性设置为no,  fix:返回的控制器导航栏是红色，消除视图切换影响
     self.webViewHeight = 0;
+    self.loadNums = 0;
     [self initViews];
     [self laySubView];
     [self requestData];
@@ -65,7 +70,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    if([SVProgressHUD isVisible]) [SVProgressHUD dismiss];
 }
 
 
@@ -99,6 +103,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailWebCellID];
         [_tableView registerClass:[H5DetailTitleCell class] forCellReuseIdentifier:k_title];
+        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([H5DetailSkeletonCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([H5DetailSkeletonCell class])];
         [_tableView registerNib:[UINib nibWithNibName:@"H5DetailCommentCell" bundle:nil] forCellReuseIdentifier:kCommentCellID];
         if (self.type == NewsTypeTopic) {
             _tableView.separatorColor = [UIColor whiteColor];
@@ -140,7 +145,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 #pragma mark - Network request
 - (void)requestData {
 
-    [SVProgressHUD showWithStatus:@"加载中..."];
     if ([[ANKReachabilityManager sharedInstance] getNetworkStatus] == NotReachable) {
         [SVProgressHUD showErrorWithStatus:@"当前网络不可用，请检查网络设置"];
         [SVProgressHUD dismissWithDelay:2.0f];
@@ -155,6 +159,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             @strongify(self)
             dispatch_async(dispatch_get_main_queue(),^{
                 
+                self.loadNums++;
                 NSDictionary *dic =data[@"error"];
                 if (dic) {//请求报错
                     NSString *errorInfo = [dic objectForKey:@"text"];
@@ -171,7 +176,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     }
                     
                     [self.contentWebView loadHTMLString:[[self.detailBaseModel.h5Content stringByReplacingOccurrencesOfString:@"data-origin" withString:@"src"]stringByReplacingOccurrencesOfString:@"data_url" withString:@"src"]];
-                    [self.tableView reloadData];
+                    if(self.loadNums == 3) [self.tableView reloadData];
                 }
                 
             });
@@ -184,6 +189,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         if (self.lightCommentURL.length) {
             //请求新闻的评论信息
             [ANKHttpServer getNewsDetailWithParams:nil url:self.lightCommentURL succesBlock:^(NSDictionary * _Nonnull data) {
+                self.loadNums++;
                 @strongify(self)
                 dispatch_async(dispatch_get_main_queue(),^{
                     
@@ -195,8 +201,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     }else{
                         
                         self.lightCommentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data newsType:self.type commentType:CommentTypeLight];
-                        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:1];
-                        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                        if(self.loadNums == 3) [self.tableView reloadData];
                     }
                     
                 });
@@ -207,6 +212,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }
         
         if (self.commentURL.length) {
+            self.loadNums++;
             //请求新闻的评论信息
             [ANKHttpServer getNewsDetailWithParams:nil url:self.commentURL succesBlock:^(NSDictionary * _Nonnull data) {
                 @strongify(self)
@@ -220,8 +226,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                     }else{
                         
                         self.commentBaseModel = [(NewsCommentAdapter *)[NewsCommentAdapter alloc] initWithDictionary:data newsType:self.type commentType:CommentTypeNormal];
-                        NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndex:2];
-                        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                        if(self.loadNums == 3) [self.tableView reloadData];
                     }
                     
                 });
@@ -238,8 +243,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (!self.detailBaseModel) {
-        return 0;
+    // 骨架屏
+    if (!self.detailBaseModel || self.loadNums < 3) {
+        return 1;
     }
     
     // section 0:新闻标题和内容   1:亮评  2：普通评论
@@ -262,10 +268,20 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    // 骨架屏
+    if (self.loadNums < 3) {
+        return 1;
+    }
     return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 骨架屏
+    if (self.loadNums < 3) {
+        H5DetailSkeletonCell *cell = (H5DetailSkeletonCell *)[tableView dequeueReusableCellWithIdentifier:@"H5DetailSkeletonCell" forIndexPath:indexPath];
+        return cell;
+    }
     
     if (indexPath.section == 0) {
         
@@ -339,6 +355,11 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 骨架屏
+    if (self.loadNums < 3) {
+        return 169;
+    }
 
     if (indexPath.section == 0) {
         if (indexPath.row == 1) {//webView那个cell
@@ -381,7 +402,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0 || self.loadNums < 3) {
         return 0.1;
     }
     
@@ -389,7 +410,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if(section == 0) {
+    
+    if(section == 0 || self.loadNums < 3) {
         return [UIView new];
     }else{
         UIView *se1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCommentSectionHeaderHeight)];
@@ -424,14 +446,19 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(H5DetailSkeletonCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell isKindOfClass:[H5DetailSkeletonCell class]]) {
+        cell.shouldLoading = self.loadNums < 3 ? YES:NO;
+    }
+}
+
 #pragma mark ANKNavigationDelegate
 
 - (void)webViewDidFinishLoadWithSelfHeight:(CGFloat)height{
     [SVProgressHUD dismiss];
     self.webViewHeight = height+10;//有些许偏移TODO...待确定，js的计算高度精度不够高
     // 刷新tableView
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadData];
 }
 
 

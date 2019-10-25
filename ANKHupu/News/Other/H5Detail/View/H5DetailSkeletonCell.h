@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface H5DetailSkeletonCell : UITableViewCell
 
+@property (nonatomic, assign) BOOL shouldLoading;
+
 @end
 
 NS_ASSUME_NONNULL_END
