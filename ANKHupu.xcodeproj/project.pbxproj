@@ -503,6 +503,7 @@
 			children = (
 				4A6C47812297F55A00850EC8 /* NBATopicViewController.h */,
 				4A6C47822297F55B00850EC8 /* NBATopicViewController.m */,
+				4A8C06A02362D814009CE27F /* Model */,
 			);
 			path = NBA;
 			sourceTree = "<group>";
@@ -554,7 +555,6 @@
 			children = (
 				4A6A782022A5063600B671FA /* NewsNormalAdapter.h */,
 				4A6A782122A5063600B671FA /* NewsNormalAdapter.m */,
-				4A6A781F22A5050A00B671FA /* NBA */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -576,6 +576,7 @@
 			children = (
 				4A135AC9228D68730060EAA6 /* NewsPhotosListController.h */,
 				4A135ACA228D68730060EAA6 /* NewsPhotosListController.m */,
+				4A5AC81A2293EDDD0026BE7E /* HotList */,
 				4A6A781D22A5049800B671FA /* Model */,
 				4A49CEAF229FD3040044540B /* View */,
 			);
@@ -587,7 +588,6 @@
 			children = (
 				4A6A782322A5065A00B671FA /* NewsPhotosAdapter.h */,
 				4A6A782422A5065A00B671FA /* NewsPhotosAdapter.m */,
-				4A5AC81A2293EDDD0026BE7E /* HotList */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,15 +600,6 @@
 				4A5AC83F2293F5AE0026BE7E /* NewsNormalCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4A6A781F22A5050A00B671FA /* NBA */ = {
-			isa = PBXGroup;
-			children = (
-				4A6C47B72297FA0700850EC8 /* NBATopicModel */,
-				4A6C47B62297F9AD00850EC8 /* NBANewsListModel */,
-			);
-			path = NBA;
 			sourceTree = "<group>";
 		};
 		4A6A782A22A54B5A00B671FA /* Other */ = {
@@ -690,6 +681,15 @@
 				4A8C069523603462009CE27F /* LightCommentData.h */,
 			);
 			path = lightComment;
+			sourceTree = "<group>";
+		};
+		4A8C06A02362D814009CE27F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A6C47B72297FA0700850EC8 /* NBATopicModel */,
+				4A6C47B62297F9AD00850EC8 /* NBANewsListModel */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4A9599AD2296CB2C00725DCE /* NBANews_Type1 */ = {
@@ -853,11 +853,11 @@
 		4ABDCAE7228AD1210091E341 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				4A6A782A22A54B5A00B671FA /* Other */,
 				4ABDCAE9228AD16B0091E341 /* NewsViewController.h */,
 				4ABDCAEA228AD16B0091E341 /* NewsViewController.m */,
 				4A6A781B22A5038800B671FA /* Normal */,
 				4A6A781C22A5039000B671FA /* PhotoList */,
+				4A6A782A22A54B5A00B671FA /* Other */,
 			);
 			path = News;
 			sourceTree = "<group>";
