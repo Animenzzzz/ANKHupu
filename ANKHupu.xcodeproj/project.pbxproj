@@ -102,6 +102,8 @@
 		4A8C069923603462009CE27F /* LightCommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C068E23603462009CE27F /* LightCommentData.m */; };
 		4A8C069A23603462009CE27F /* LightCommentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C069023603462009CE27F /* LightCommentList.m */; };
 		4A8C069B23603462009CE27F /* LightCommentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C069423603462009CE27F /* LightCommentRoot.m */; };
+		4A8C06A52362DD27009CE27F /* SkeletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06A42362DD27009CE27F /* SkeletonView.m */; };
+		4A8C06AB2362E0C5009CE27F /* UIView+Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */; };
 		4A9599AC2296C6D000725DCE /* H5DetailTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599AB2296C6D000725DCE /* H5DetailTitleCell.m */; };
 		4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599EE2296CD4D00725DCE /* NBAType5share.m */; };
 		4A959A012296CD4D00725DCE /* NBANewsType5Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9599EF2296CD4D00725DCE /* NBANewsType5Model.m */; };
@@ -314,6 +316,13 @@
 		4A8C069323603462009CE27F /* LightCommentQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightCommentQuote.h; sourceTree = "<group>"; };
 		4A8C069423603462009CE27F /* LightCommentRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightCommentRoot.m; sourceTree = "<group>"; };
 		4A8C069523603462009CE27F /* LightCommentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightCommentData.h; sourceTree = "<group>"; };
+		4A8C06A32362DD27009CE27F /* SkeletonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkeletonView.h; sourceTree = "<group>"; };
+		4A8C06A42362DD27009CE27F /* SkeletonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkeletonView.m; sourceTree = "<group>"; };
+		4A8C06A62362DDB8009CE27F /* SkeletonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkeletonMacro.h; sourceTree = "<group>"; };
+		4A8C06A72362DE80009CE27F /* SkeletonLayoutProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkeletonLayoutProtocol.h; sourceTree = "<group>"; };
+		4A8C06A82362DEC2009CE27F /* Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
+		4A8C06A92362E0C5009CE27F /* UIView+Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Skeleton.h"; sourceTree = "<group>"; };
+		4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Skeleton.m"; sourceTree = "<group>"; };
 		4A9599AA2296C6D000725DCE /* H5DetailTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5DetailTitleCell.h; sourceTree = "<group>"; };
 		4A9599AB2296C6D000725DCE /* H5DetailTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H5DetailTitleCell.m; sourceTree = "<group>"; };
 		4A9599EE2296CD4D00725DCE /* NBAType5share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAType5share.m; sourceTree = "<group>"; };
@@ -695,6 +704,7 @@
 		4A8C06A12362DBA9009CE27F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4A8C06A22362DCF9009CE27F /* Skeleton */,
 				4ACD9404229296530043E05F /* Tools */,
 				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
 				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
@@ -705,6 +715,20 @@
 				4ACD93FB229275940043E05F /* FPSLable */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4A8C06A22362DCF9009CE27F /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				4A8C06A32362DD27009CE27F /* SkeletonView.h */,
+				4A8C06A42362DD27009CE27F /* SkeletonView.m */,
+				4A8C06A62362DDB8009CE27F /* SkeletonMacro.h */,
+				4A8C06A72362DE80009CE27F /* SkeletonLayoutProtocol.h */,
+				4A8C06A82362DEC2009CE27F /* Skeleton.h */,
+				4A8C06A92362E0C5009CE27F /* UIView+Skeleton.h */,
+				4A8C06AA2362E0C5009CE27F /* UIView+Skeleton.m */,
+			);
+			path = Skeleton;
 			sourceTree = "<group>";
 		};
 		4A9599AD2296CB2C00725DCE /* NBANews_Type1 */ = {
@@ -1292,6 +1316,7 @@
 				4A6C47C22297FA0800850EC8 /* NBATopicNew.m in Sources */,
 				4AB0FC7D22A140F400BB767C /* HotListCommentList.m in Sources */,
 				4A5AC8382293F3310026BE7E /* NBAData.m in Sources */,
+				4A8C06AB2362E0C5009CE27F /* UIView+Skeleton.m in Sources */,
 				4A6C484B229B99CD00850EC8 /* CommentQuoteData.m in Sources */,
 				4A5AC7F52292B9510026BE7E /* TagCellView.m in Sources */,
 				4A49CEB3229FE3F10044540B /* HotListViewModel.m in Sources */,
@@ -1338,6 +1363,7 @@
 				4A6C484F229B99CD00850EC8 /* LightComment.m in Sources */,
 				4AF660E522897F0600DFC1AF /* main.m in Sources */,
 				4A959A002296CD4D00725DCE /* NBAType5share.m in Sources */,
+				4A8C06A52362DD27009CE27F /* SkeletonView.m in Sources */,
 				4AEF80B6228CFA01001E56B3 /* WMMenuView.m in Sources */,
 				4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */,
 				4A49CE95229C04350044540B /* CommentDatalist.m in Sources */,
