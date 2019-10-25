@@ -45,7 +45,7 @@
     [shareButton setTitle:@"" forState:UIControlStateNormal];
     [shareButton setImage:[ResUtil imageNamed:@"biaoqing"] forState:UIControlStateNormal];
     shareButton.size = CGSizeMake(25, 25);
-    [shareButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    [shareButton addTarget:self action:@selector(switchDayNight) forControlEvents:UIControlEventTouchUpInside];
     shareButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10);
     // 修改导航栏左边的item
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
@@ -114,6 +114,11 @@
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (void)switchDayNight{
+    
+    
 }
 #pragma mark - Notification(addNotificationaObserver)
 
