@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *zhidingLab;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *zhidingTrailing;
 
+- (void)readStyleWithNid:(NSString *)nid;
+
 @end
 
 NS_ASSUME_NONNULL_END

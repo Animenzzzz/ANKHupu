@@ -278,7 +278,7 @@ static int pageNum = 0;
     }else{
         cell.zhidingLab.hidden = YES;
     }
-    
+    [cell readStyleWithNid:model.nid];
     return cell;
 }
 #pragma mark UITableViewDelegate
@@ -292,6 +292,18 @@ static int pageNum = 0;
     NewsNormal *model = [self.dataList objectAtIndex:indexPath.row];
     H5DetailViewController *detail = [H5DetailViewController new];
     detail.controllerTitle = @"Detail";
+    
+    // 读过的新闻，存进userdata
+    NSDictionary *haveReadNews = [[NSUserDefaults standardUserDefaults] dictionaryForKey:USER_DEFAULTS_HAVE_READ_NEWS];
+    NSMutableDictionary *haveReadDic = [NSMutableDictionary dictionaryWithDictionary:haveReadNews];
+    [haveReadDic setObject:model.nid forKey:model.nid];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_DEFAULTS_HAVE_READ_NEWS];
+    [[NSUserDefaults standardUserDefaults] setObject:haveReadDic forKey:USER_DEFAULTS_HAVE_READ_NEWS];
+    
+    // 改变当前选中cell样式
+    NewsNormalCell *cell = (NewsNormalCell*)[tableView cellForRowAtIndexPath:indexPath];
+    cell.titleLab.textColor = kCellSelGrayColor;
+    
     
     //详情页属性参数
     // 1.网络请求参数  params

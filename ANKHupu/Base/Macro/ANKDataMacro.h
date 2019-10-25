@@ -52,5 +52,8 @@ typedef NS_ENUM(NSInteger,CommentType) {
 //网络请求大图placehld图片
 #define kPlaceHoldImg @"placehold_big"
 
+// 已经阅读过的新闻
+#define USER_DEFAULTS_HAVE_READ_NEWS  @"UserDefaultsNewsHaveRead"
+
 
 #endif /* ANKDataMacro_h */

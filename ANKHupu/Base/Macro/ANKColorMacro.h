@@ -13,6 +13,8 @@
 #define kSeperatLineColor           [UIColor colorWithHexString:@"eaeaea"]
 //tableview灰色背景y颜色
 #define kGrayBackGroundColor        [UIColor colorWithHexString:@"eaeaea"]
+//cell新闻选中灰色
+#define kCellSelGrayColor           [UIColor colorWithHexString:@"BFBFBF"]
 
 #define kGrayWhiteBackGroundColor   [UIColor colorWithHexString:@"FBFAFB"]
 

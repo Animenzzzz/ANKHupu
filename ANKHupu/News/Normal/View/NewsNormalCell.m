@@ -61,4 +61,14 @@
     self.titleLab.attributedText = attributedString;
 }
 
+- (void)readStyleWithNid:(NSString *)nid{
+    NSDictionary *haveReadNews = [[NSUserDefaults standardUserDefaults] dictionaryForKey:USER_DEFAULTS_HAVE_READ_NEWS];
+    if ([haveReadNews objectForKey:nid]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.titleLab.textColor = kCellSelGrayColor;
+        });
+        
+    }
+}
+
 @end
