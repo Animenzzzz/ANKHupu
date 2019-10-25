@@ -9,7 +9,7 @@
 #import "H5DetailCommentCell.h"
 #import "NSString+Util.h"
 
-
+#define kContentLineSpace 5.0
 #define kCommentXibHeight 182
 #define kCommentGrayHeight 60
 #define kCommentQuoteWidth (SCREEN_WIDTH - 55 - 12) // H5DetailCommentCell.xib的queote view左右间距
@@ -60,9 +60,10 @@
         self.headerIcon.image = image;
     }];
     
-    // 评论的内容
-    [self changeLineSpaceWithText:model.content label:self.contenLab];
-    CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:model.content font:self.contenLab.font lineSpacing:5.0];
+    // 评论的内容  TODO...这是过滤了html标签的m，有些评论是带图的
+    NSString *contenString = [NSString filterH5:model.content];
+    [self changeLineSpaceWithText:contenString label:self.contenLab];
+    CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:contenString font:self.contenLab.font lineSpacing:kContentLineSpace];
     self.contenLabHeight.constant = contenHeight;
     
     // 评论的时间
@@ -72,7 +73,8 @@
     self.lightLab.text = [NSString stringWithFormat:@"亮了(%@)",model.lightCount];
     
     // 是否引用了别人的评论
-    if (![model.quoteContent length]) {
+    NSString *quoteContenString = [NSString filterH5:model.quoteContent];
+    if (![quoteContenString length]) {
         self.quoteView.hidden = YES;
     }else{
         
@@ -80,9 +82,9 @@
         self.quoteUserLab.text = model.quoteName;
         
         // 被引用的内容
-        [self changeLineSpaceWithText:model.quoteContent label:self.quoteContenLab];
+        [self changeLineSpaceWithText:quoteContenString label:self.quoteContenLab];
 
-        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:model.quoteContent font:self.quoteContenLab.font lineSpacing:5.0];
+        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:quoteContenString font:self.quoteContenLab.font lineSpacing:kContentLineSpace];
         CGFloat orignContenLab = self.quoteContenLabHeight.constant;
         self.quoteContenLabHeight.constant = quoteHeight;
         self.quoteViewHeight.constant = self.quoteViewHeight.constant - orignContenLab+quoteHeight;
@@ -109,15 +111,17 @@
 + (CGFloat)calculatHeightWithModel:(CommentDetailData *)model{
     
     CGFloat cellHeight = 0;
-    CGFloat contenHeight = [UILabel getHeightByWidth:284 title:model.content font:[UIFont systemFontOfSize:16]];
+    // TODO...这是过滤了html标签的，有些评论是带图的
+    NSString *contenString = [NSString filterH5:model.content];
+    CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:contenString font:[UIFont systemFontOfSize:16] lineSpacing:kContentLineSpace];
     cellHeight = kCommentXibHeight-21+contenHeight;
     
-    
-    if (![model.quoteContent length]) {//评论是否有回复
+    NSString *quoteContenString = [NSString filterH5:model.quoteContent];
+    if (![quoteContenString length]) {//评论是否有回复
         cellHeight = cellHeight - kCommentGrayHeight;
     }else{
-        
-        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:model.quoteContent font:[UIFont systemFontOfSize:15] lineSpacing:5.0];
+        // TODO...这是过滤了html标签的，有些评论是带图的
+        CGFloat quoteHeight = [UILabel getHeightByWidth:kCommentQuoteWidth title:quoteContenString font:[UIFont systemFontOfSize:15] lineSpacing:kContentLineSpace];
         cellHeight = cellHeight - 21+quoteHeight;
         
     }
