@@ -692,6 +692,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A8C06A12362DBA9009CE27F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4ACD9404229296530043E05F /* Tools */,
+				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
+				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
+				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
+				4AEF80A4228CFA01001E56B3 /* WMPageController */,
+				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
+				4A8112A8228D98070036D3C5 /* Reachability */,
+				4ACD93FB229275940043E05F /* FPSLable */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		4A9599AD2296CB2C00725DCE /* NBANews_Type1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -983,8 +998,7 @@
 			children = (
 				4ABDCAE7228AD1210091E341 /* News */,
 				4AF660EE22897F3700DFC1AF /* Base */,
-				4ACD9404229296530043E05F /* Tools */,
-				4AF660EB22897F2800DFC1AF /* Third */,
+				4A8C06A12362DBA9009CE27F /* Components */,
 				4AF660F9228A64BE00DFC1AF /* HupuRes */,
 				4AF660D522897F0500DFC1AF /* AppDelegate.h */,
 				4AF660D622897F0500DFC1AF /* AppDelegate.m */,
@@ -996,20 +1010,6 @@
 				4AF660F522897F4F00DFC1AF /* AnkHupuPrefixHeader.pch */,
 			);
 			path = ANKHupu;
-			sourceTree = "<group>";
-		};
-		4AF660EB22897F2800DFC1AF /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				4ACD93FB229275940043E05F /* FPSLable */,
-				4A8112A8228D98070036D3C5 /* Reachability */,
-				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
-				4AEF80A4228CFA01001E56B3 /* WMPageController */,
-				4AE5F726228C180E00BFC9C8 /* EXTScope.h */,
-				4AE5F727228C180E00BFC9C8 /* metamacros.h */,
-				4AF660EC22897F2800DFC1AF /* BYFoundationLog.m */,
-			);
-			path = Third;
 			sourceTree = "<group>";
 		};
 		4AF660EE22897F3700DFC1AF /* Base */ = {
