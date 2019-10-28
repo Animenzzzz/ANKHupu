@@ -7,7 +7,7 @@
 //
 
 #import "NewsNormalCell.h"
-
+#import "DynamicColorUtil.h"
 @interface NewsNormalCell ()
 @end
 
@@ -21,6 +21,13 @@
     // 左 右 image宽 iamge右
     self.titleWidth = SCREEN_WIDTH - 14 - 18 - 100 - 15;
     
+    [DynamicColorUtil cellBackGroundColor:^(UIColor *color) {
+        self.backgroundColor = color;
+    }];
+    [DynamicColorUtil cellTitleBackGroundColor:^(UIColor *color) {
+        self.titleLab.textColor = color;
+    }];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -65,7 +72,9 @@
     NSDictionary *haveReadNews = [[NSUserDefaults standardUserDefaults] dictionaryForKey:USER_DEFAULTS_HAVE_READ_NEWS];
     if ([haveReadNews objectForKey:nid]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.titleLab.textColor = kCellSelGrayColor;
+            [DynamicColorUtil cellTitleSelBackGroundColor:^(UIColor *color) {
+                self.titleLab.textColor = color;
+            }];
         });
         
     }

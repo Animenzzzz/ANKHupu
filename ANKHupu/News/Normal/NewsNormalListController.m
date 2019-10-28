@@ -12,7 +12,7 @@
 #import "NewsNormalCell.h"
 #import "NBATopicViewController.h"
 #import "H5DetailViewController.h"
-
+#import "DynamicColorUtil.h"
 @interface NewsNormalListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -58,7 +58,11 @@ static int pageNum = 0;
         _tableView.backgroundColor = kGrayBackGroundColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = kSeperatLineColor;//间隔线
+        //间隔线
+        __weak typeof(self)weakSelf = self;
+        [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.separatorColor = color;
+        }];
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
         _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }
