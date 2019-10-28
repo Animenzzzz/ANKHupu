@@ -137,13 +137,10 @@
 		4ABDCAD0228A8CB60091E341 /* ANKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCACF228A8CB60091E341 /* ANKViewController.m */; };
 		4ABDCAD8228A97D20091E341 /* ANKNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAD7228A97D20091E341 /* ANKNavigation.m */; };
 		4ABDCAEB228AD16B0091E341 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDCAEA228AD16B0091E341 /* NewsViewController.m */; };
-		4ACD93FE229275C20043E05F /* FPSLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD93FD229275C20043E05F /* FPSLable.m */; };
-		4ACD9401229276190043E05F /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9400229276190043E05F /* WeakProxy.m */; };
 		4ACD9407229296760043E05F /* ResUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD9406229296760043E05F /* ResUtil.m */; };
 		4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F710228BB92F00BFC9C8 /* UILabel+AutoFit.m */; };
 		4AE5F714228BB96D00BFC9C8 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */; };
 		4AE5F718228BED4D00BFC9C8 /* URLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5F717228BED4D00BFC9C8 /* URLInfo.plist */; };
-		4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */; };
 		4AE5F720228C080700BFC9C8 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */; };
 		4AEF80B2228CFA01001E56B3 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80A5228CFA01001E56B3 /* WMPageController.m */; };
 		4AEF80B3228CFA01001E56B3 /* UIViewController+WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF80A6228CFA01001E56B3 /* UIViewController+WMPageController.m */; };
@@ -393,10 +390,6 @@
 		4ABDCAD7228A97D20091E341 /* ANKNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKNavigation.m; sourceTree = "<group>"; };
 		4ABDCAE9228AD16B0091E341 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		4ABDCAEA228AD16B0091E341 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		4ACD93FC229275C20043E05F /* FPSLable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPSLable.h; sourceTree = "<group>"; };
-		4ACD93FD229275C20043E05F /* FPSLable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSLable.m; sourceTree = "<group>"; };
-		4ACD93FF229276190043E05F /* WeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
-		4ACD9400229276190043E05F /* WeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
 		4ACD9405229296760043E05F /* ResUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResUtil.h; sourceTree = "<group>"; };
 		4ACD9406229296760043E05F /* ResUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResUtil.m; sourceTree = "<group>"; };
 		4AE5F70F228BB92F00BFC9C8 /* UILabel+AutoFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoFit.h"; sourceTree = "<group>"; };
@@ -404,8 +397,6 @@
 		4AE5F712228BB96D00BFC9C8 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		4AE5F713228BB96D00BFC9C8 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		4AE5F717228BED4D00BFC9C8 /* URLInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLInfo.plist; sourceTree = "<group>"; };
-		4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCalendarLabel.m; sourceTree = "<group>"; };
-		4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCalendarLabel.h; sourceTree = "<group>"; };
 		4AE5F71E228C080700BFC9C8 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		4AE5F726228C180E00BFC9C8 /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
@@ -726,9 +717,7 @@
 				4A8C06A22362DCF9009CE27F /* Skeleton */,
 				4ACD9404229296530043E05F /* Tools */,
 				4AEF80A4228CFA01001E56B3 /* WMPageController */,
-				4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */,
 				4A8112A8228D98070036D3C5 /* Reachability */,
-				4ACD93FB229275940043E05F /* FPSLable */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -938,17 +927,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4ACD93FB229275940043E05F /* FPSLable */ = {
-			isa = PBXGroup;
-			children = (
-				4ACD93FC229275C20043E05F /* FPSLable.h */,
-				4ACD93FD229275C20043E05F /* FPSLable.m */,
-				4ACD93FF229276190043E05F /* WeakProxy.h */,
-				4ACD9400229276190043E05F /* WeakProxy.m */,
-			);
-			path = FPSLable;
-			sourceTree = "<group>";
-		};
 		4ACD9404229296530043E05F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,15 +967,6 @@
 				4AE5F71F228C080700BFC9C8 /* UIColor+Category.m */,
 			);
 			path = "UIKit+Category";
-			sourceTree = "<group>";
-		};
-		4AE5F719228C01FF00BFC9C8 /* CWCalendarLabel */ = {
-			isa = PBXGroup;
-			children = (
-				4AE5F71A228C01FF00BFC9C8 /* CWCalendarLabel.m */,
-				4AE5F71B228C01FF00BFC9C8 /* CWCalendarLabel.h */,
-			);
-			path = CWCalendarLabel;
 			sourceTree = "<group>";
 		};
 		4AEF80A4228CFA01001E56B3 /* WMPageController */ = {
@@ -1323,7 +1292,6 @@
 				4A6C484D229B99CD00850EC8 /* DtailData.m in Sources */,
 				4A959A042296CD4D00725DCE /* NBAType5topic.m in Sources */,
 				4AB0FC4F22A134A400BB767C /* Userinfo1.m in Sources */,
-				4ACD9401229276190043E05F /* WeakProxy.m in Sources */,
 				4A8C069923603462009CE27F /* LightCommentData.m in Sources */,
 				4AE5F711228BB92F00BFC9C8 /* UILabel+AutoFit.m in Sources */,
 				4A6C47EC229B8AD900850EC8 /* H5DetailCommentCell.m in Sources */,
@@ -1369,7 +1337,6 @@
 				4AB0FC8222A140F400BB767C /* HotListCommentResult.m in Sources */,
 				4A959A012296CD4D00725DCE /* NBANewsType5Model.m in Sources */,
 				4A5AC83B2293F3310026BE7E /* AdGameBorder.m in Sources */,
-				4ACD93FE229275C20043E05F /* FPSLable.m in Sources */,
 				4A64E3332294EF31007CE6E7 /* DetailData.m in Sources */,
 				4A6C47832297F55B00850EC8 /* NBATopicViewController.m in Sources */,
 				4A959A022296CD4D00725DCE /* NBANewType5Userinfo.m in Sources */,
@@ -1412,7 +1379,6 @@
 				4A49CE94229C04350044540B /* CommetType5result.m in Sources */,
 				4A959A082296CD4D00725DCE /* NBAType5forum.m in Sources */,
 				4A6C47C32297FA0800850EC8 /* NBATopicGroup.m in Sources */,
-				4AE5F71C228C01FF00BFC9C8 /* CWCalendarLabel.m in Sources */,
 				4AB0FC5722A134A400BB767C /* SharePhotoCell.m in Sources */,
 				4A0EFF1822968EC100C2A345 /* ANKWebView.m in Sources */,
 			);
