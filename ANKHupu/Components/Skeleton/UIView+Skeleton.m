@@ -19,7 +19,8 @@ static void * kSkeletonContainerKey = &kSkeletonContainerKey;
 - (void)setSkeletonContainer:(UIView *)skeletonContainer {
     skeletonContainer.frame = self.bounds;
     
-    UIColor *color = SkeletonColorFromRGBV(248.0);
+//    UIColor *color = SkeletonColorFromRGBV(248.0); //这是原来的颜色。。。
+    UIColor *color = [UIColor clearColor];
     
     if ([self respondsToSelector:@selector(skeletonBackgroundColor)]) {
         
