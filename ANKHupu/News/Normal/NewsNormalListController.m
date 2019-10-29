@@ -309,7 +309,10 @@ static int pageNum = 0;
     
     // 改变当前选中cell样式
     NewsNormalCell *cell = (NewsNormalCell*)[tableView cellForRowAtIndexPath:indexPath];
-    cell.titleLab.textColor = kCellSelGrayColor;
+    [DynamicColorUtil titleSelectBackGroundColor:^(UIColor * _Nullable color) {
+        cell.titleLab.textColor = color;
+    }];
+    
     
     
     //详情页属性参数

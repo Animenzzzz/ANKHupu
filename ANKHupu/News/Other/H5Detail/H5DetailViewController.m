@@ -68,6 +68,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    self.webViewHeight = 0;
+    self.loadNums = 0;
 }
 
 

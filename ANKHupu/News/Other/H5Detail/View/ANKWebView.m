@@ -17,6 +17,32 @@
 @implementation ANKWebView
 
 - (instancetype)initWithFrame:(CGRect)frame{
+    
+    // 在初始化的时候先判断当前的mode，下面的通知是为了实时获取mode
+    if (@available(iOS 13.0, *)) {
+        BOOL isDark = [UITraitCollection currentTraitCollection].userInterfaceStyle == UIUserInterfaceStyleDark? YES: NO;
+        if (isDark){
+            
+            NSString *jScript = @"document.body.style.backgroundColor=\"#2B2C2D\";document.getElementsByTagName('body')[0].style.webkitTextFillColor= '#6F7070';";
+            WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+            WKPreferences *preference = [[WKPreferences alloc] init];
+            preference.javaScriptEnabled = YES;
+            WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+            config.preferences = preference;
+            [config.userContentController addUserScript:wkUScript];
+            
+            self = [super initWithFrame:frame configuration:config];
+            if (self) {
+                self.navigationDelegate = self;
+                self.scrollView.scrollEnabled = NO;
+                self.scrollView.backgroundColor = [UIColor colorWithHexString:@"2B2C2D"];
+
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dynamicColorDidChange:) name:DynamicColorDidChangeNotification object:nil];
+            }
+            return self;
+        }
+    }
+    
     self = [super initWithFrame:frame];
     if (self) {
         self.navigationDelegate = self;

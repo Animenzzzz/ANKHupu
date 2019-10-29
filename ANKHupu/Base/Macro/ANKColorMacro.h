@@ -16,8 +16,6 @@
 //cell新闻选中灰色
 #define kCellSelGrayColor           [UIColor colorWithHexString:@"BFBFBF"]
 
-#define kGrayWhiteBackGroundColor   [UIColor colorWithHexString:@"FBFAFB"]
-
 // 评论 引用的蓝色 姓名 颜色
 #define kBlueLinkColor              [UIColor colorWithHexString:@"2B6EE9"]
 
