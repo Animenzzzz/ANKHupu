@@ -26,6 +26,10 @@
 #define kSeperatLineLightColor           [UIColor colorWithHexString:@"eaeaea"]
 #define kSeperatLineDarkColor            [UIColor colorWithHexString:@"6F7070"]
 
+// 这些评论亮了  sectionhead的背景
+#define kSectionBackGroundLightColor   [UIColor colorWithHexString:@"FBFAFB"]
+#define kSectionBackGroundDarkColor    [UIColor colorWithHexString:@"292A2B"]
+
 #import "DynamicColorUtil.h"
 
 @implementation DynamicColorUtil
@@ -97,6 +101,19 @@
         }]);
     }else{
         dynamicColor(kRedBackGroundLightColor);
+    }
+}
+
++ (void)sectionBackGroundColor: (DynamicColor) dynamicColor{
+    if (@available(iOS 13.0, *)){
+        dynamicColor([UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return kSectionBackGroundDarkColor;
+            }
+            return kSectionBackGroundLightColor;
+        }]);
+    }else{
+        dynamicColor(kSectionBackGroundLightColor);
     }
 }
 

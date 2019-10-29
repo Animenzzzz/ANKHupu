@@ -26,7 +26,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 
 #define kNewBigImageHeight 300
 
-#define kCommentSectionHeaderHeight 30
+#define kCommentSectionHeaderHeight 40
 
 
 @interface H5DetailViewController ()<UITableViewDelegate,UITableViewDataSource,ANKWebViewDelegate>
@@ -52,8 +52,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;//半透明属性设置为no,  fix:返回的控制器导航栏是红色，消除视图切换影响
     self.webViewHeight = 0;
     self.loadNums = 0;
@@ -101,7 +99,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = kSeperatLineColor;//间隔线
+        _tableView.separatorColor = [UIColor clearColor];
 //        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 1)];
 //        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];
@@ -109,9 +107,6 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         [_tableView registerClass:[H5DetailTitleCell class] forCellReuseIdentifier:k_title];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([H5DetailSkeletonCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([H5DetailSkeletonCell class])];
         [_tableView registerNib:[UINib nibWithNibName:@"H5DetailCommentCell" bundle:nil] forCellReuseIdentifier:kCommentCellID];
-        if (self.type == NewsTypeTopic) {
-            _tableView.separatorColor = [UIColor whiteColor];
-        }
     }
     
     return _tableView;
@@ -296,6 +291,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             }
 
             [cell setStyleWithModel:self.detailBaseModel newsType:self.type];
+            cell.backgroundColor = [UIColor clearColor];
             return cell;
             
         }else{//新闻正文(webView)
@@ -418,18 +414,25 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     if(section == 0 || self.loadNums < 3) {
         return [UIView new];
     }else{
+        
+        // section head view
         UIView *se1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCommentSectionHeaderHeight)];
-        se1.backgroundColor = kGrayWhiteBackGroundColor;
+        [DynamicColorUtil sectionBackGroundColor:^(UIColor * _Nullable color) {
+            se1.backgroundColor = color;
+        }];
+        
+        // 标题
         UILabel *lab = [UILabel new];
-        [DynamicColorUtil redBackGroundColor:^(UIColor * _Nullable color) {
+        [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
             lab.textColor = color;
         }];
         lab.backgroundColor = [UIColor clearColor];
         lab.text = @"最新评论";
         if(section == 1) lab.text = @"这些评论亮了";
-        [lab setFont:[UIFont systemFontOfSize:13]];
+        [lab setFont:[UIFont systemFontOfSize:15]];
         [se1 addSubview:lab];
         
+        // 竖的红条
         UIView *lineV = [UIView new];
         [DynamicColorUtil redBackGroundColor:^(UIColor * _Nullable color) {
             lineV.backgroundColor = color;
@@ -439,12 +442,12 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         [lineV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(se1.mas_centerY);
             make.left.mas_equalTo(4);
-            make.height.mas_equalTo(kCommentSectionHeaderHeight - 15);
+            make.height.mas_equalTo(kCommentSectionHeaderHeight - 28);
             make.width.mas_equalTo(2);
         }];
         
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(lineV.mas_right).mas_offset(2);
+            make.left.mas_equalTo(lineV.mas_right).mas_offset(5);
             make.centerY.equalTo(se1.mas_centerY);
             make.width.mas_equalTo(SCREEN_WIDTH);
             make.height.mas_equalTo(kCommentSectionHeaderHeight);

@@ -156,6 +156,7 @@
                     <constraint firstItem="o3K-3c-trz" firstAttribute="top" secondItem="WCi-ih-OBJ" secondAttribute="bottom" constant="10" id="vPB-NZ-5fC"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="addTimeLab" destination="xDk-Zo-CnH" id="dX6-1d-wCF"/>
                 <outlet property="contenLab" destination="K03-Ch-ovF" id="TFD-ZN-wpZ"/>

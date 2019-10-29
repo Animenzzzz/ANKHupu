@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 导航栏红色背景
 + (void)redBackGroundColor: (DynamicColor) dynamicColor;
 
+// 这些评论亮了  sectionhead的背景
++ (void)sectionBackGroundColor: (DynamicColor) dynamicColor;
+
 @end
 
 NS_ASSUME_NONNULL_END
