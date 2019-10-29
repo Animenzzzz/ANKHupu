@@ -8,7 +8,7 @@
 
 #import "H5DetailCommentCell.h"
 #import "NSString+Util.h"
-
+#import "DynamicColorUtil.h"
 #define kContentLineSpace 5.0
 #define kCommentXibHeight 182
 #define kCommentGrayHeight 60
@@ -54,6 +54,9 @@
     
     // 用户名
     self.userNameLab.text = model.userName;
+    [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+        self.userNameLab.textColor = color;
+    }];
     
     // 用户头像
     [self.headerIcon sd_setImageWithURL:[NSURL URLWithString:model.userHeader] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -65,9 +68,15 @@
     [self changeLineSpaceWithText:contenString label:self.contenLab];
     CGFloat contenHeight = [UILabel getHeightByWidth:kCommentContentWidth title:contenString font:self.contenLab.font lineSpacing:kContentLineSpace];
     self.contenLabHeight.constant = contenHeight;
+    [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+        self.contenLab.textColor = color;
+    }];
     
     // 评论的时间
     self.addTimeLab.text = model.addTime;
+    [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+        self.addTimeLab.textColor = color;
+    }];
     
     // 亮了
     self.lightLab.text = [NSString stringWithFormat:@"亮了(%@)",model.lightCount];
@@ -88,6 +97,9 @@
         CGFloat orignContenLab = self.quoteContenLabHeight.constant;
         self.quoteContenLabHeight.constant = quoteHeight;
         self.quoteViewHeight.constant = self.quoteViewHeight.constant - orignContenLab+quoteHeight;
+        [DynamicColorUtil commentLinkBackGroundColor:^(UIColor * _Nullable color) {
+            self.quoteView.backgroundColor = color;
+        }];
         
     }
 }

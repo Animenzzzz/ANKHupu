@@ -99,7 +99,10 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         }];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = [UIColor clearColor];
+//        _tableView.separatorColor = [UIColor clearColor];
+        [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.separatorColor = color;
+        }];
 //        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 1)];
 //        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kDetailTitleCellID];

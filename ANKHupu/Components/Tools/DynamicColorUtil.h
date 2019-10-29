@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 这些评论亮了  sectionhead的背景
 + (void)sectionBackGroundColor: (DynamicColor) dynamicColor;
 
+// 引用评论的背景
++ (void)commentLinkBackGroundColor: (DynamicColor) dynamicColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

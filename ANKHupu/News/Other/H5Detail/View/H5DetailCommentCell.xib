@@ -132,23 +132,13 @@
                             <constraint firstItem="6rI-2Q-nkf" firstAttribute="leading" secondItem="o3K-3c-trz" secondAttribute="leading" constant="8" id="sWA-GF-giu"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFS-Yl-scI">
-                        <rect key="frame" x="57" y="181" width="318" height="1"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="GnY-8y-AKM"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Msv-m3-i4g" firstAttribute="top" secondItem="K03-Ch-ovF" secondAttribute="bottom" constant="5" id="6ed-Q6-uQn"/>
                     <constraint firstAttribute="trailing" secondItem="K03-Ch-ovF" secondAttribute="trailing" constant="25" id="CQu-pz-fr9"/>
                     <constraint firstAttribute="bottom" secondItem="Msv-m3-i4g" secondAttribute="bottom" constant="5" id="GE7-3r-WYU"/>
                     <constraint firstAttribute="trailing" secondItem="o3K-3c-trz" secondAttribute="trailing" constant="12" id="MPk-yI-Xlj"/>
-                    <constraint firstItem="rFS-Yl-scI" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="57" id="SPR-IK-B4m"/>
                     <constraint firstItem="WCi-ih-OBJ" firstAttribute="top" secondItem="gnx-cE-JQ8" secondAttribute="top" constant="15" id="Xzl-YW-1W8"/>
-                    <constraint firstAttribute="bottom" secondItem="rFS-Yl-scI" secondAttribute="bottom" id="cMC-eO-pRw"/>
-                    <constraint firstAttribute="trailing" secondItem="rFS-Yl-scI" secondAttribute="trailing" id="gPL-Af-Ycw"/>
                     <constraint firstItem="WCi-ih-OBJ" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="20" id="ncE-ph-42m"/>
                     <constraint firstItem="Msv-m3-i4g" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="57" id="oJ5-Vf-8OM"/>
                     <constraint firstItem="o3K-3c-trz" firstAttribute="leading" secondItem="gnx-cE-JQ8" secondAttribute="leading" constant="55" id="ssi-25-TRl"/>
