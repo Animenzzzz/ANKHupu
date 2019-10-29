@@ -62,7 +62,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msv-m3-i4g">
                         <rect key="frame" x="57" y="156" width="318" height="21"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_news_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="qug-pH-Ujy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light" translatesAutoresizingMaskIntoConstraints="NO" id="qug-pH-Ujy">
                                 <rect key="frame" x="1" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OFF-VX-GVR"/>
@@ -164,6 +164,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bg_news_light.png" width="13" height="13"/>
+        <image name="light" width="16" height="16"/>
     </resources>
 </document>

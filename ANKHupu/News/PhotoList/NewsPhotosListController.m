@@ -12,7 +12,7 @@
 #import "HotListViewModel.h"
 #import "NewsPhotosCell.h"
 #import "H5DetailViewController.h"
-
+#import "DynamicColorUtil.h"
 @interface NewsPhotosListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;

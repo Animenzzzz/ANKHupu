@@ -53,6 +53,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.translucent = NO;//半透明属性设置为no,  fix:返回的控制器导航栏是红色，消除视图切换影响
+    self.showShare = NO;
     self.webViewHeight = 0;
     self.loadNums = 0;
     [self initViews];
