@@ -52,7 +52,7 @@
                                 <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-qp-CBf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-qp-CBf">
                                 <rect key="frame" x="66" y="0.0" width="16" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="6pJ-Fv-uDg"/>
@@ -137,6 +137,6 @@
     </objects>
     <resources>
         <image name="comment" width="16" height="16"/>
-        <image name="light.png" width="16" height="16"/>
+        <image name="light" width="16" height="16"/>
     </resources>
 </document>

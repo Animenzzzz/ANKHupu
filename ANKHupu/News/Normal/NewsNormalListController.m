@@ -55,13 +55,16 @@ static int pageNum = 0;
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = kGrayBackGroundColor;
+//        _tableView.backgroundColor = kGrayBackGroundColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         //间隔线
         __weak typeof(self)weakSelf = self;
         [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
             weakSelf.tableView.separatorColor = color;
+        }];
+        [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.backgroundColor = color;
         }];
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
         _tableView.tableHeaderView = headView;//为了消除cell顶部的空间

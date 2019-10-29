@@ -5,7 +5,7 @@
 //  Created by Mark on 15/4/26.
 //  Copyright (c) 2015年 yq. All rights reserved.
 //
-
+#import "DynamicColorUtil.h"
 #import "WMMenuView.h"
 #define WMMENUITEM_TAG_OFFSET 6250
 #define WMBADGEVIEW_TAG_OFFSET 1212
@@ -467,7 +467,9 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator   = NO;
-    scrollView.backgroundColor = [UIColor clearColor];
+    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        scrollView.backgroundColor = color;
+    }];
     scrollView.scrollsToTop = NO;
     if (@available(iOS 11.0, *)) {
         scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -482,7 +484,10 @@
     CGFloat height = 1;
     CGRect frame = CGRectMake(0, self.frame.size.height+1, width, height);
     UIView *line = [[UIView alloc] initWithFrame:frame];
-    [line setBackgroundColor:kSeperatLineColor];
+//    [line setBackgroundColor:kSeperatLineColor];
+    [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+        line.backgroundColor = color;
+    }];
     self.bottomLineView = line;
     [self addSubview:line];
 }

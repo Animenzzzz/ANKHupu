@@ -7,7 +7,7 @@
 //
 
 #import "WMPageController.h"
-
+#import "DynamicColorUtil.h"
 NSString *const WMControllerDidAddToSuperViewNotification = @"WMControllerDidAddToSuperViewNotification";
 NSString *const WMControllerDidFullyDisplayedNotification = @"WMControllerDidFullyDisplayedNotification";
 
@@ -462,7 +462,13 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [tagBtn setBackgroundImage:[UIImage imageNamed:@"arrange_btn"] forState:UIControlStateNormal];
     [self.view addSubview:tagBtn];
     UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
-    grayLine.backgroundColor = kSeperatLineColor;
+//    grayLine.backgroundColor = kSeperatLineColor;
+    [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+        grayLine.backgroundColor = color;
+    }];
+    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        tagBtn.backgroundColor = color;
+    }];
     [tagBtn addTarget:self action:@selector(moreBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [tagBtn addSubview:grayLine];
     self.moreBtn = tagBtn;
