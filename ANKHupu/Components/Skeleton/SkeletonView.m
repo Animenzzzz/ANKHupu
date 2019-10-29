@@ -35,7 +35,12 @@ static const CGFloat kShadowWidth = 60.0f;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self _setupWithColor:SkeletonColorFromRGBV(234) animationStyle:SkeletonAnimationStyleGradientHorizontal];
+        BOOL isDark = NO;
+        if (@available(iOS 13.0, *)) {
+            isDark = [UITraitCollection currentTraitCollection].userInterfaceStyle == UIUserInterfaceStyleDark? YES: NO;
+        }
+        UIColor *color = isDark ? [UIColor colorWithHexString:@"4C4F4F"] : SkeletonColorFromRGBV(234);
+        [self _setupWithColor:color animationStyle:SkeletonAnimationStyleGradientHorizontal];
     }
     return self;
 }
