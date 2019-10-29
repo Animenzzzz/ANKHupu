@@ -466,7 +466,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
         grayLine.backgroundColor = color;
     }];
-    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+    [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
         tagBtn.backgroundColor = color;
     }];
     [tagBtn addTarget:self action:@selector(moreBtnClick) forControlEvents:UIControlEventTouchUpInside];

@@ -17,7 +17,7 @@
 #import "NewsCommentAdapter.h"
 
 #import "H5DetailSkeletonCell.h"
-
+#import "DynamicColorUtil.h"
 static NSString *kDetailTitleCellID = @"DetailTitleCellID";
 static NSString *kDetailWebCellID = @"DetailWebCellID";
 static NSString *k_title = @"H5DetailTitleCell";
@@ -94,7 +94,11 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = [UIColor whiteColor];
+
+        __weak typeof(self)weakSelf = self;
+        [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.backgroundColor = color;
+        }];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorColor = kSeperatLineColor;//间隔线
@@ -324,7 +328,7 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                 }
                 
             }];
-          
+            cell.backgroundColor = [UIColor clearColor];
             return cell;
         }
     }else{//评论
@@ -417,7 +421,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         UIView *se1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCommentSectionHeaderHeight)];
         se1.backgroundColor = kGrayWhiteBackGroundColor;
         UILabel *lab = [UILabel new];
-        lab.textColor = kSearchRedBackGroundColor;
+        [DynamicColorUtil redBackGroundColor:^(UIColor * _Nullable color) {
+            lab.textColor = color;
+        }];
         lab.backgroundColor = [UIColor clearColor];
         lab.text = @"最新评论";
         if(section == 1) lab.text = @"这些评论亮了";
@@ -425,7 +431,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
         [se1 addSubview:lab];
         
         UIView *lineV = [UIView new];
-        lineV.backgroundColor = kSearchRedBackGroundColor;
+        [DynamicColorUtil redBackGroundColor:^(UIColor * _Nullable color) {
+            lineV.backgroundColor = color;
+        }];
         [se1 addSubview:lineV];
         
         [lineV mas_makeConstraints:^(MASConstraintMaker *make) {

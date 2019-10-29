@@ -467,7 +467,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator   = NO;
-    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+    [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
         scrollView.backgroundColor = color;
     }];
     scrollView.scrollsToTop = NO;

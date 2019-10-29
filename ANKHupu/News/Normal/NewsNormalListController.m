@@ -63,7 +63,7 @@ static int pageNum = 0;
         [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
             weakSelf.tableView.separatorColor = color;
         }];
-        [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
             weakSelf.tableView.backgroundColor = color;
         }];
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];

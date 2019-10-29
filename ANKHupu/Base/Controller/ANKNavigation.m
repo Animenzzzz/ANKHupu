@@ -7,7 +7,7 @@
 //
 
 #import "ANKNavigation.h"
-
+#import "DynamicColorUtil.h"
 @interface ANKNavigation ()
 
 @end
@@ -18,7 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //   [self setNavigationBarHidden:YES];
-    self.navigationBar.barTintColor = kSearchRedBackGroundColor;
+    [DynamicColorUtil redBackGroundColor:^(UIColor * _Nullable color) {
+        self.navigationBar.barTintColor = color;
+    }];
     self.navigationBar.translucent = NO;//默认为 YES，如果为YES，颜色有一层蒙版，不清晰
 }
 

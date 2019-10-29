@@ -21,7 +21,7 @@
     // 左 右 image宽 iamge右
     self.titleWidth = SCREEN_WIDTH - 14 - 18 - 100 - 15;
     self.backgroundColor = [UIColor clearColor];
-    [DynamicColorUtil cellTitleBackGroundColor:^(UIColor *color) {
+    [DynamicColorUtil titleBackGroundColor:^(UIColor *color) {
         self.titleLab.textColor = color;
     }];
 
@@ -69,7 +69,7 @@
     NSDictionary *haveReadNews = [[NSUserDefaults standardUserDefaults] dictionaryForKey:USER_DEFAULTS_HAVE_READ_NEWS];
     if ([haveReadNews objectForKey:nid]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [DynamicColorUtil cellTitleSelBackGroundColor:^(UIColor *color) {
+            [DynamicColorUtil titleSelectBackGroundColor:^(UIColor *color) {
                 self.titleLab.textColor = color;
             }];
         });
