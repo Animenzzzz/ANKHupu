@@ -485,7 +485,7 @@
     CGRect frame = CGRectMake(0, self.frame.size.height+1, width, height);
     UIView *line = [[UIView alloc] initWithFrame:frame];
 //    [line setBackgroundColor:kSeperatLineColor];
-    [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+    [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
         line.backgroundColor = color;
     }];
     self.bottomLineView = line;

@@ -60,7 +60,7 @@ static int pageNum = 0;
         _tableView.dataSource = self;
         //间隔线
         __weak typeof(self)weakSelf = self;
-        [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+        [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
             weakSelf.tableView.separatorColor = color;
         }];
         [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {

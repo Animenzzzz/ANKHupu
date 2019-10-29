@@ -463,7 +463,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     [self.view addSubview:tagBtn];
     UIView *grayLine = [[UIView alloc] initWithFrame:CGRectMake(0, kScrollTagHeight+1, kScrollTagMoreBtnWidth, 1)];
 //    grayLine.backgroundColor = kSeperatLineColor;
-    [DynamicColorUtil cellSeperatLineColor:^(UIColor * _Nullable color) {
+    [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
         grayLine.backgroundColor = color;
     }];
     [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {

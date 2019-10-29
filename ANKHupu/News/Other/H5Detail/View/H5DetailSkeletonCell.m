@@ -26,8 +26,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    self.backgroundColor = [UIColor whiteColor];
+
     
     _s1.shimmering = YES;
     _s1.shimmeringBeginFadeDuration = 0.3;

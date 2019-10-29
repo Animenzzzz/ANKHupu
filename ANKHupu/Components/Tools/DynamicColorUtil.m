@@ -6,21 +6,25 @@
 //  Copyright © 2019 Animenzzz. All rights reserved.
 //
 
-// 新闻tableview cell 列表的背景颜色
+// 背景颜色
 #define kBackGroundLightColor [UIColor whiteColor]
 #define kBackGroundDarkColor  [UIColor colorWithHexString:@"2B2C2D"]
 
-// 新闻tableview cell 标题的背景颜色
+// 标题的背景颜色
 #define kTitleBackGroundLightColor [UIColor colorWithHexString:@"2B2C2D"]
 #define kTitleBackGroundDarkColor  [UIColor colorWithHexString:@"6F7070"]
 
-// 新闻tableview cell 标题_选中_背景颜色
+// 标题_选中_背景颜色
 #define kTitleSelectBackGroundLightColor [UIColor colorWithHexString:@"BFBFBF"]
 #define kTitleSelectBackGroundDarkColor  [UIColor colorWithHexString:@"44494C"]
 
 // 导航栏红色背景
 #define kRedBackGroundLightColor   [UIColor colorWithHexString:@"C01E2F"]
 #define kRedBackGroundDarkColor    [UIColor colorWithHexString:@"96242C"]
+
+// 间隔线颜色
+#define kSeperatLineLightColor           [UIColor colorWithHexString:@"eaeaea"]
+#define kSeperatLineDarkColor            [UIColor colorWithHexString:@"6F7070"]
 
 #import "DynamicColorUtil.h"
 
@@ -68,16 +72,16 @@
     
 }
 
-+ (void)cellSeperatLineColor: (DynamicColor) dynamicColor{
++ (void)seperatLineColor: (DynamicColor) dynamicColor{
     if (@available(iOS 13.0, *)){
         dynamicColor([UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
             if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-                return kTitleBackGroundDarkColor;
+                return kSeperatLineDarkColor;
             }
-            return kSeperatLineColor;
+            return kSeperatLineLightColor;
         }]);
     }else{
-        dynamicColor(kSeperatLineColor);
+        dynamicColor(kSeperatLineLightColor);
     }
 }
 
@@ -85,10 +89,10 @@
     if (@available(iOS 13.0, *)){
         dynamicColor([UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
             if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:DynamicColorDidChangeNotification object:@"Dark"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:DynamicColorDidChangeNotification object:DynamicDarkNotificationInfo];
                 return kRedBackGroundDarkColor;
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:DynamicColorDidChangeNotification object:@"Light"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:DynamicColorDidChangeNotification object:DynamicLightNotificationInfo];
             return kRedBackGroundLightColor;
         }]);
     }else{
