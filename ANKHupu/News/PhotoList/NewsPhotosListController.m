@@ -58,10 +58,17 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = kGrayBackGroundColor;
+//        _tableView.backgroundColor = kGrayBackGroundColor;
+        __weak typeof(self)weakSelf = self;
+        [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.backgroundColor = color;
+        }];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = [UIColor whiteColor];//消除间隔线
+//        _tableView.separatorColor = [UIColor whiteColor];//消除间隔线
+        [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.separatorColor = color;
+        }];
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 5)];
         _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
     }

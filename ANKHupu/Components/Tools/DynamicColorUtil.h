@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 背景颜色
 + (void)backGroundColor: (DynamicColor) dynamicColor;
 
+// cell背景颜色
++ (void)cellBackGroundColor: (DynamicColor) dynamicColor;
+
 // 标题的背景颜色
 + (void)titleBackGroundColor: (DynamicColor) dynamicColor;
 

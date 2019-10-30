@@ -19,11 +19,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kre-Hw-cGF">
                         <rect key="frame" x="12" y="15" width="358" height="25"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZ0-rY-Yin">
-                                <rect key="frame" x="334" y="0.0" width="23" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="share_btn_1_night.png"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtw-RF-FtH">
                                 <rect key="frame" x="116" y="2" width="73" height="21"/>
                                 <constraints>
@@ -289,7 +284,6 @@
         <image name="light" width="16" height="16"/>
         <image name="lightbulb-fill.png" width="32" height="32"/>
         <image name="reading.png" width="32" height="32"/>
-        <image name="share_btn_1_night.png" width="30" height="40"/>
         <image name="zan.png" width="32" height="32"/>
     </resources>
 </document>

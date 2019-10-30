@@ -8,7 +8,11 @@
 
 // 背景颜色
 #define kBackGroundLightColor [UIColor whiteColor]
-#define kBackGroundDarkColor  [UIColor colorWithHexString:@"2B2C2D"]
+#define kBackGroundDarkColor  [UIColor colorWithHexString:@"1E1F20"]
+
+// cell背景颜色
+#define kCellBackGroundLightColor [UIColor whiteColor]
+#define kCellBackGroundDarkColor  [UIColor colorWithHexString:@"2B2C2D"]
 
 // 标题的背景颜色
 #define kTitleBackGroundLightColor [UIColor colorWithHexString:@"2B2C2D"]
@@ -28,7 +32,7 @@
 
 // 这些评论亮了  sectionhead的背景
 #define kSectionBackGroundLightColor   [UIColor colorWithHexString:@"FBFAFB"]
-#define kSectionBackGroundDarkColor    [UIColor colorWithHexString:@"292A2B"]
+#define kSectionBackGroundDarkColor    [UIColor colorWithHexString:@"1E1F20"]
 
 // 引用评论的背景
 #define kCommeLinkBackGroundLightColor   [UIColor colorWithHexString:@"F2F2F7"]
@@ -48,6 +52,20 @@
         }]);
     }else{
         dynamicColor(kBackGroundLightColor);
+    }
+    
+}
+
++ (void)cellBackGroundColor: (DynamicColor) dynamicColor{
+    if (@available(iOS 13.1, *)){
+        dynamicColor([UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return kCellBackGroundDarkColor;
+            }
+            return kCellBackGroundLightColor;
+        }]);
+    }else{
+        dynamicColor(kCellBackGroundLightColor);
     }
     
 }

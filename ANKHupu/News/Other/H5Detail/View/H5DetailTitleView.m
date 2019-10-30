@@ -7,7 +7,7 @@
 //
 
 #import "H5DetailTitleView.h"
-
+#import "DynamicColorUtil.h"
 @interface H5DetailTitleView()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *newsInfoLab;
@@ -19,6 +19,9 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     self.userIconImage.layer.cornerRadius = 10.0;
+    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        self.backgroundColor = color;
+    }];
 }
 
 - (void)setNewsInfo:(NSString *)newsInfo{

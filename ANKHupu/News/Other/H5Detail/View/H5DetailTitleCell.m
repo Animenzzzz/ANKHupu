@@ -8,7 +8,7 @@
 
 #import "H5DetailTitleCell.h"
 #import "H5DetailTitleView.h"
-
+#import "DynamicColorUtil.h"
 
 
 

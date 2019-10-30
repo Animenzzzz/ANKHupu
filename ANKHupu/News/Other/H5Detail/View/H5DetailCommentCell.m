@@ -42,6 +42,10 @@
     //  把图片设置成圆形。  我这里在故事版里面设置的imageView是一个正方形(因为头像图片都是放在正方形的imageView里)
     self.headerIcon.layer.cornerRadius=self.headerIcon.frame.size.width/2;//裁成圆角
     self.headerIcon.layer.masksToBounds=YES;//隐藏裁剪掉的部分
+    
+    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        self.backgroundColor = color;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -88,8 +88,8 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
 //        self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
         
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
         self.automaticallyAdjustsScrollViewInsets=NO;
     }
@@ -301,7 +301,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
             }
 
             [cell setStyleWithModel:self.detailBaseModel newsType:self.type];
-            cell.backgroundColor = [UIColor clearColor];
+            [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+                cell.backgroundColor = color;
+            }];
             return cell;
             
         }else{//新闻正文(webView)
@@ -334,7 +336,9 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
                 }
                 
             }];
-            cell.backgroundColor = [UIColor clearColor];
+            [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+                cell.backgroundColor = color;
+            }];
             return cell;
         }
     }else{//评论
@@ -417,6 +421,10 @@ static NSString *kCommentCellID = @"H5DetailCommentCell";
     }
     
     return kCommentSectionHeaderHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return  0.1;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

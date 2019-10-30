@@ -20,7 +20,9 @@
     self.newsImg.contentMode = UIViewContentModeScaleAspectFill;
     // 左 右 image宽 iamge右
     self.titleWidth = SCREEN_WIDTH - 14 - 18 - 100 - 15;
-    self.backgroundColor = [UIColor clearColor];
+    [DynamicColorUtil cellBackGroundColor:^(UIColor *color) {
+        self.backgroundColor = color;
+    }];
     [DynamicColorUtil titleBackGroundColor:^(UIColor *color) {
         self.titleLab.textColor = color;
     }];

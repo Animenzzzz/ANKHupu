@@ -8,7 +8,7 @@
 
 #import "NewsPhotosCell.h"
 #import "HotListCellCollectionCell.h"
-
+#import "DynamicColorUtil.h"
 static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
 
 @interface NewsPhotosCell()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -35,7 +35,19 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
     self.replyContentLab.numberOfLines = 0;
     self.titleLab.numberOfLines = 0;
     self.userNameLab.numberOfLines = 0;
+    [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+        self.backgroundColor = color;
+    }];
     
+    [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+        self.userNameLab.textColor = color;
+        self.titleLab.textColor = color;
+        self.contenLab.textColor = color;
+        self.visitLab.textColor = color;
+        self.replieLab.textColor = color;
+        self.lightLab.textColor = color;
+        self.shareLab.textColor = color;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -96,6 +108,14 @@ static NSString *kPhotoCollectionViewCellID = @"CollectionCellID";
             self.replyIcon.contentMode = UIViewContentModeScaleAspectFill;//因为图片尺寸不一致，选择填充
             [self.replyIcon sd_setImageWithURL:[NSURL URLWithString:arr[0]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                 self.replyIcon.image = image;
+            }];
+            [DynamicColorUtil commentLinkBackGroundColor:^(UIColor * _Nullable color) {
+                self.replyView.backgroundColor = color;
+            }];
+            [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+                self.replyName.textColor = color;
+                self.replyContentLab.textColor = color;
+              
             }];
         }
     }else{
