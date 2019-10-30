@@ -11,6 +11,7 @@
 #import "NBATopicModel.h"
 #import "NewsNormalCell.h"
 #import "H5DetailViewController.h"
+#import "DynamicColorUtil.h"
 static NSString *kNBATopicCellID = @"NBATopicCellID";
 
 #define kBackImageHeight 175
@@ -87,10 +88,15 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = kSeperatLineColor;//间隔线
+        __weak typeof(self)weaSelf = self;
+        [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
+            weaSelf.tableView.separatorColor = color;
+        }];
+        [DynamicColorUtil backGroundColor:^(UIColor * _Nullable color) {
+            weaSelf.tableView.backgroundColor = color;
+        }];
         //        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 1)];
         //        _tableView.tableHeaderView = headView;//为了消除cell顶部的空间
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kNBATopicCellID];
@@ -301,13 +307,17 @@ static NSString *kNBATopicCellID = @"NBATopicCellID";
     }else{
 
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kOtherHeaderHeight)];
-        headerView.backgroundColor = kGrayBackGroundColor;
+        [DynamicColorUtil sectionBackGroundColor:^(UIColor * _Nullable color) {
+            headerView.backgroundColor = color;
+        }];
         
         
         NBATopicGroup *item = [self.dataModel.result.groups objectAtIndex:section-1];
     
         UILabel *titLab = [[UILabel alloc] initWithFrame:CGRectMake(3, 0, SCREEN_WIDTH, kOtherHeaderHeight)];
-     
+        [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+            titLab.textColor = color;
+        }];
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:item.title];
         [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,1)];
         
