@@ -84,6 +84,7 @@
 - (void)moreBtnDidClick{
     TagsViewController *tagViewCon = [TagsViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tagViewCon];
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:nav animated:YES completion:nil];
 }
 

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL showBack;//默认显示
 @property(nonatomic, assign) BOOL showShare;//默认显示
 
+- (NSString *)backIcon;
+
 @end
 
 NS_ASSUME_NONNULL_END

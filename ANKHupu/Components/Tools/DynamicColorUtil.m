@@ -38,6 +38,10 @@
 #define kCommeLinkBackGroundLightColor   [UIColor colorWithHexString:@"F2F2F7"]
 #define kCommeLinkBackGroundDarkColor    [UIColor colorWithHexString:@"303132"]
 
+// 标签背景
+#define kTagBackGroundLightColor   [UIColor colorWithHexString:@"F6F6F8"]
+#define kTagBackGroundDarkColor    [UIColor colorWithHexString:@"1E1F20"]
+
 #import "DynamicColorUtil.h"
 
 @implementation DynamicColorUtil
@@ -149,6 +153,19 @@
         }]);
     }else{
         dynamicColor(kCommeLinkBackGroundLightColor);
+    }
+}
+
++ (void)tagBackGroundColor: (DynamicColor) dynamicColor{
+    if (@available(iOS 13.0, *)){
+        dynamicColor([UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return kTagBackGroundDarkColor;
+            }
+            return kTagBackGroundLightColor;
+        }]);
+    }else{
+        dynamicColor(kTagBackGroundLightColor);
     }
 }
 

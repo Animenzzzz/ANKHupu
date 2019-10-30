@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 引用评论的背景
 + (void)commentLinkBackGroundColor: (DynamicColor) dynamicColor;
 
+// 标签背景
++ (void)tagBackGroundColor: (DynamicColor) dynamicColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

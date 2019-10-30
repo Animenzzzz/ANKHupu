@@ -8,6 +8,7 @@
 
 #import "TagsViewController.h"
 #import "TagCellView.h"
+#import "DynamicColorUtil.h"
 @interface TagsViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,TagCellViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
@@ -38,7 +39,9 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
     [self requestData];
 }
 
-
+- (NSString *)backIcon{
+    return @"back_white";
+}
 #pragma mark - Init（initVars initViews）
 - (void)initViews{
 
@@ -54,7 +57,13 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
         _tableView.scrollEnabled = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorColor = [UIColor whiteColor];
+        __weak typeof(self)weakSelf = self;
+        [DynamicColorUtil cellBackGroundColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.backgroundColor = color;
+        }];
+        [DynamicColorUtil seperatLineColor:^(UIColor * _Nullable color) {
+            weakSelf.tableView.separatorColor = color;
+        }];
     }
     
     return _tableView;
@@ -74,7 +83,7 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
         _tagListColleView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _tagListColleView.delegate = self;
         _tagListColleView.dataSource = self;
-        _tagListColleView.backgroundColor = [UIColor whiteColor];
+        _tagListColleView.backgroundColor = [UIColor clearColor];
         _tagListColleView.scrollEnabled = NO;
         [_tagListColleView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCellIDentify];
         [_tagListColleView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderViewIDentify];
@@ -119,18 +128,8 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             make.height.mas_equalTo(35);
             make.width.mas_equalTo(69);
         }];
-        
-        
-        UIView *line = [UIView new];
-        line.backgroundColor = kSeperatLineColor;
-        [cell addSubview:line];
-        [line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.left.mas_equalTo(10);
-            make.height.mas_equalTo(1);
-        }];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor clearColor];
         return cell;
     }else{
         UITableViewCell *cell = [UITableViewCell new];
@@ -141,6 +140,8 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
             make.width.mas_equalTo(SCREEN_WIDTH);
             make.height.mas_equalTo(440);
         }];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
@@ -184,6 +185,9 @@ static NSString* const kHeaderViewIDentify = @"HeaderView";
         UILabel *l1 = [UILabel new];
         [l1 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:17]];
         [headerView addSubview:l1];
+        [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+            l1.textColor = color;
+        }];
         
         UILabel *l2 = [UILabel new];
         [l2 setFont:[UIFont systemFontOfSize:15]];

@@ -7,7 +7,7 @@
 //
 
 #import "TagCellView.h"
-
+#import "DynamicColorUtil.h"
 @interface TagCellView()
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UIImageView *tagImageView;
@@ -25,6 +25,9 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGesture:)];
     [self addGestureRecognizer:singleTap];
     
+    [DynamicColorUtil tagBackGroundColor:^(UIColor * _Nullable color) {
+        self.backgroundColor = color;
+    }];
 }
 
 - (void)setTitle:(NSString *)title{
@@ -32,6 +35,10 @@
     self.titleLab.text = title;
     if ([title isEqualToString:@"推荐"]) {
         self.titleLab.textColor = [UIColor grayColor];
+    }else{
+        [DynamicColorUtil titleBackGroundColor:^(UIColor * _Nullable color) {
+            self.titleLab.textColor = color;
+        }];
     }
 }
 
@@ -39,9 +46,9 @@
     self.tagImageView.hidden = NO;
     _actionType = actionType;
     if (actionType == TagDeleteAction) {
-        self.tagImageView.image = [ResUtil imageNamed:@"post_textfield_delete"];
+        self.tagImageView.image = [UIImage imageNamed:@"tag_delete"];
     }else if (actionType == TagAddAction){
-        self.tagImageView.image = [ResUtil imageNamed:@"post_tex_add"];
+        self.tagImageView.image = [UIImage imageNamed:@"tag_add"];
     }else if(actionType == TagNoneAction){
         self.tagImageView.hidden = YES;
     }
