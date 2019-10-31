@@ -28,27 +28,6 @@ typedef NS_ENUM(NSInteger,CommentType) {
     CommentTypeLight = 2,    //亮评
 };
 
-//资源
-//首页搜索框样式
-#define kSearchViewLeftImage @"projectIcon.png"
-#define kSearchViewRightCommentBtnImage @"bg_nav_comment"
-
-//首页tab图标
-#define kTab1_Normal @"tab_news_btn_night"
-#define kTab1_Selete @"tab_news_btn_1"
-
-#define kTab2_Normal @"tab_games1_btn_normal_night"
-#define kTab2_Selete @"tab_games1_btn_select"
-
-#define kTab3_Normal @"tab_bbs_btn_night"
-#define kTab3_Selete @"tab_bbs_btn_1"
-
-#define kTab4_Normal @"tab_shoes_btn_night"
-#define kTab4_Selete @"tab_shoes_btn_select"
-
-#define kTab5_Normal @"tab_more_btn_night"
-#define kTab5_Selete @"tab_more_btn_1"
-
 //网络请求大图placehld图片
 #define kPlaceHoldImg @"placehold_big"
 
